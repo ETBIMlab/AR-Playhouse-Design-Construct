@@ -28,17 +28,17 @@ public class TestCommands : MonoBehaviour
     void OrderLadder()
     {
         int distFromCamera = 3;
-        Instantiate(twoByFour, new Vector3(0,0,0), Quaternion.identity);
+        Instantiate(ladder, new Vector3(56,-20,150), Quaternion.identity);
     }
     void OrderSlide()
     {
         int distFromCamera = 3;
-        Instantiate(slide, new Vector3(0, 0, 0), Quaternion.identity);
+        Instantiate(slide, new Vector3(0, -20, 150), Quaternion.identity);
     }
     void OrderScrew()
     {
         int distFromCamera = 1;
-        Instantiate(screw, new Vector3(0, 0, 0), Quaternion.identity);
+        Instantiate(screw, new Vector3(45, -29, 102), Quaternion.identity);
     }
 
    
