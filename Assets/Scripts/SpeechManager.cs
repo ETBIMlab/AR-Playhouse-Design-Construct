@@ -12,12 +12,10 @@ public class SpeechManager : MonoBehaviour
     void Start()
     {
         // global command
-        keywords.Add("Create Cube", () =>   // added the "Create Cube" command to dictionary of commands (keywords)
-        {
-            //Debug.Log("Create Cube");
-            // Call the OnReset method on every descendant object.
-            this.BroadcastMessage("CreateCube");    // when this keyword is invoked, this will be broadcasted, calling the method CreateCube
-        });
+        keywords.Add("Order Two By Four", () => { this.BroadcastMessage("OrderTwoByFour"); });
+        keywords.Add("Order Ladder", () => { this.BroadcastMessage("OrderLadder"); });
+        keywords.Add("Order Screw", () => { this.BroadcastMessage("OrderScrew"); });
+        keywords.Add("Order Slide", () => { this.BroadcastMessage("OrderSlide"); });
 
 
         // Tell the KeywordRecognizer about our keywords.
