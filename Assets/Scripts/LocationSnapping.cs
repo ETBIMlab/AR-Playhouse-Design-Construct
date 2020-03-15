@@ -20,12 +20,17 @@ public class LocationSnapping : MonoBehaviour
 
     private GameObject screwToBeSnappedObj;
 
+    private Collider snapCollider;      // new
+
+    private SnapObject screwRef;
+
     // connect to snapping manager
 
     private void Start()
     {
         snapped = false;
         grabbed = true;
+        snapCollider = GetComponent<Collider>();        // new
     }
 
     // when a object enters the collider (trigger)
@@ -33,13 +38,15 @@ public class LocationSnapping : MonoBehaviour
     {
         Debug.Log(other.gameObject.name + "object has entered collider!");
 
-        if (other.gameObject.CompareTag("screw"))   // if the gameobject that entered the collider is tagged with screw
+        if (other.gameObject.CompareTag("screw"))   // if the gameobject that entered the collider is tagged with "screw"
         {
             screwToBeSnappedObj = other.gameObject;        // recording the screw that entered the collider (snap zone)
             
             insideCollider = true;
-            Debug.Log("SCREW inside collider");
+            Debug.Log("SCREW inside collider"); // debugging
         }
+
+        // for other objects, just copy above and change the tag part
         
     }
 
@@ -49,8 +56,6 @@ public class LocationSnapping : MonoBehaviour
         Debug.Log("something exited collider!");
         if (other.gameObject.CompareTag("screw"))
         {
-            //screwToBeSnappedObj = null;        // removing the screw that left collider (snap zone)
-            //screwInsideZone = false;
             insideCollider = false;
             Debug.Log("screw LEFT collider/zone");
 
@@ -66,7 +71,11 @@ public class LocationSnapping : MonoBehaviour
         {
             
             SnapObject screw = other.GetComponent<SnapObject>();        // getting SnapObject script from object that is inside snap zone/collider
+            
+            screwRef = other.GetComponent<SnapObject>();        // keeping a reference to the screw that entered the collider
+
             grabbed = screw.grabbed;        // finding out whether object is currently being grabbed or not
+
             //Debug.Log("Inside Trigger, Grabbed is [ " + grabbed + " ]");
         }
     }
@@ -76,34 +85,50 @@ public class LocationSnapping : MonoBehaviour
     {
         if (insideCollider == true)
         {
-            //screw.gameObject.transform.position = transform.position;
 
-            // PROBLEM: Cant get screw to snap at the right location, I want it to snap to the snapRefObject
-            Vector3 snapPos = new Vector3(0.4f, -0.2022f, 0.801f);
+            var snapRefTranform = snapRefObject.transform.position;
+            snapRefTranform.z -= 0.01f;         // modified z to make the screw look better when snapped
 
-            screwToBeSnappedObj.transform.position = snapRefObject.transform.position;     // works for the cubes (which are tagged as "screw") BUT NOT the actual screw :C
+            screwToBeSnappedObj.transform.position = snapRefTranform;       // snapping transform
 
-            screwToBeSnappedObj.transform.rotation = snapRefObject.transform.rotation;    // making the rotation the same as the reference object
+            var snapRefRot = snapRefObject.transform.rotation.eulerAngles;  
+            snapRefRot = new Vector3(snapRefRot.x, snapRefRot.y + 180, snapRefRot.z);       // changing rotation to make screw face the right way
+
+            screwToBeSnappedObj.transform.rotation = Quaternion.Euler(snapRefRot);      // match rotation to snap object
+
 
             // disable object manipulation temporarily (cant grab object once its snapped temporarily)
             snapped = true;
-            screwToBeSnappedObj.GetComponent<SnapObject>().disableGrabbingtemporarily();
+            snapCollider.enabled = false;       // disabling the collider to prevent other objects from snapping to it and just removing the collider 
+                                                // since not needed once snapped
 
-            //screwToBeSnappedObj.GetComponent<ManipulationHandler>().enabled = false;    // makes it so you cant pick up the screw again
-            
-            Debug.Log("OBJECT SNAPPED!");
+            screwToBeSnappedObj.GetComponent<SnapObject>().disableGrabbingtemporarily();        // disable grabbing for a sec
+
+            Debug.Log("OBJECT SNAPPED!");       // debugging
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        // new 
+        // if object has snapped, check if object is being grabbed, if it is then enable the collider again to allow objects to snap to it
+        if (snapped)
+        {
+            if (screwRef.grabbed == true)
+            {
+                snapCollider.enabled = true;       // new
+            }
+        }
+
         // Now allowing grabbing it back up after snapping it
         if (grabbed)
         {
             //Debug.Log("Object being grabbed inside zone");
             snapped = false;
-        } 
+        }
+
+        
 
         if (insideCollider == true && snapped == false)
         {
@@ -115,10 +140,6 @@ public class LocationSnapping : MonoBehaviour
             {
                 SnapObject();
             }
-           //-----------------------------
-
-
         }
-        
     }
 }
