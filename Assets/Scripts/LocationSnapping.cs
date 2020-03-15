@@ -142,4 +142,15 @@ public class LocationSnapping : MonoBehaviour
             }
         }
     }
+
+    // drawing a graphic to see where the snap zone is
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        var gizmoTransform = transform.position;
+        gizmoTransform.x -= 0.001f;
+
+        Gizmos.DrawWireSphere(gizmoTransform, 0.01f);
+        //new Vector3(0.01f, 0.01f, 0.01f)
+    }
 }
