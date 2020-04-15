@@ -17,6 +17,13 @@ public class SpeechManager : MonoBehaviour
             //Debug.Log("Create Cube");
             // Call the OnReset method on every descendant object.
             this.BroadcastMessage("CreateCube");    // when this keyword is invoked, this will be broadcasted, calling the method CreateCube
+     
+        });
+        keywords.Add("Shift", () =>   // added the "Create Cube" command to dictionary of commands (keywords)
+        {
+            //Debug.Log("Create Cube");
+            // Call the OnReset method on every descendant object.
+            this.BroadcastMessage("Shift");    // when this keyword is invoked, this will be broadcasted, calling the method CreateCube
         });
 
 
