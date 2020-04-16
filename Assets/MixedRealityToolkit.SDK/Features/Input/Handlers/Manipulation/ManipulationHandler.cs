@@ -967,9 +967,11 @@ namespace Microsoft.MixedReality.Toolkit.UI
         private Vector3 storedPosition;
         private Quaternion storedRotation;
         private GameObject ActionLogger;
+        private bool safe = false;
 
         public void StartMovement()
         {
+            safe = true;
             ActionLogger = GameObject.Find("ActivityLogger");
             if(ActionLogger == null)
             {
@@ -984,7 +986,7 @@ namespace Microsoft.MixedReality.Toolkit.UI
 
         public void EndMovement()
         {
-            
+            safe = false;
             string message = "";
             if (!transform.position.Equals(storedPosition))
             {
@@ -995,6 +997,15 @@ namespace Microsoft.MixedReality.Toolkit.UI
                 message += "User Rotated " + hostTransform.gameObject.name + " from " + storedRotation + " to " + transform.rotation + ".";
             }
             ActionLogger.SendMessage("LogItem", message);
+        }
+
+        public void Destroy()
+        {
+            if (!safe)
+            {
+                Destroy(this.gameObject);
+                Debug.Log("Destroyed");
+            }
         }
 
         #endregion
