@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6157930584401058294}
   - component: {fileID: 6157930584401058295}
   - component: {fileID: 6157930584401058292}
+  - component: {fileID: 1581815299}
   m_Layer: 0
   m_Name: bolt
   m_TagString: screw
@@ -218,3 +219,16 @@ MonoBehaviour:
   onHoverExited:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1581815299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2762026173616096335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0
