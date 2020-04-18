@@ -16,6 +16,7 @@ public class SpeechManager : MonoBehaviour
         keywords.Add("Order Ladder", () => { this.BroadcastMessage("OrderLadder"); });
         keywords.Add("Order Screw", () => { this.BroadcastMessage("OrderScrew"); });
         keywords.Add("Order Slide", () => { this.BroadcastMessage("OrderSlide"); });
+        keywords.Add("Change Size", () => { this.BroadcastMessage("ChangeSize"); });
 
 
         // Tell the KeywordRecognizer about our keywords.

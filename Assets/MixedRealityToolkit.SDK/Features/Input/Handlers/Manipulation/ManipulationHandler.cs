@@ -961,5 +961,53 @@ namespace Microsoft.MixedReality.Toolkit.UI
         }
 
         #endregion
+
+        #region AddedFunctions
+
+        private Vector3 storedPosition;
+        private Quaternion storedRotation;
+        private GameObject ActionLogger;
+        private bool safe = false;
+
+        public void StartMovement()
+        {
+            safe = true;
+            ActionLogger = GameObject.Find("ActivityLogger");
+            if(ActionLogger == null)
+            {
+                Debug.Log("ActionLogger Not Found");
+            } else
+            {
+                Debug.Log("ActionLogger Found");
+            }
+            storedPosition = transform.position;
+            storedRotation = transform.rotation;
+        }
+
+        public void EndMovement()
+        {
+            safe = false;
+            string message = "";
+            if (!transform.position.Equals(storedPosition))
+            {
+                message += "User Moved " + hostTransform.gameObject.name + " from " + storedPosition + " to " + transform.position + ".";
+            }
+            if (!transform.rotation.Equals(storedRotation))
+            {
+                message += "User Rotated " + hostTransform.gameObject.name + " from " + storedRotation + " to " + transform.rotation + ".";
+            }
+            ActionLogger.SendMessage("LogItem", message);
+        }
+
+        public void Destroy()
+        {
+            if (!safe)
+            {
+                Destroy(this.gameObject);
+                Debug.Log("Destroyed");
+            }
+        }
+
+        #endregion
     }
 }

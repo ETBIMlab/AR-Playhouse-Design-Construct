@@ -10,6 +10,7 @@ public class TestCommands : MonoBehaviour
     public GameObject ladder;
     public GameObject slide;
     public GameObject screw;
+    public GameObject playhouseEnvironment;
 
     void Start()
     {
@@ -41,5 +42,9 @@ public class TestCommands : MonoBehaviour
         Instantiate(screw, new Vector3(45, -29, 102), Quaternion.identity);
     }
 
+    void ChangeSize()
+    {
+        playhouseEnvironment.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+    }
    
 }
