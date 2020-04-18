@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
@@ -14,8 +14,7 @@ public class ShiftScale : MonoBehaviour
     private Vector3 scaleChange, positionChange;
     public GameObject environment; 
 
-    private GameObject cube; 
-    private Vector3 scaleChange, positionChange; 
+     
 
     // Use this for initialization
     void Start()
@@ -25,9 +24,7 @@ public class ShiftScale : MonoBehaviour
 
         cube.transform.position = new Vector3(0, 0, 5);
 
-        cube.transform.position = new Vector3(0, 0, 0);
-
-        cube.transform.position = new Vector3(0, 0, 0);
+ 
 
         //create plane and adjust down by 0.5
         GameObject plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
@@ -36,12 +33,7 @@ public class ShiftScale : MonoBehaviour
         scaleChange = new Vector3(5f, 5f, 5f);
         positionChange = new Vector3(0.0f, 5f, 0.0f);
 
-        
-        scaleChange = new Vector3(-0.01f, -0.01f, -0.01f);
-        positionChange = new Vector3(0.0f, -0.005f, 0.0f);
-
-        scaleChange = new Vector3(-0.01f, -0.01f, -0.01f);
-        positionChange = new Vector3(0.0f, -0.005f, 0.0f);
+       
 
     }
  
