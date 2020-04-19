@@ -39,12 +39,12 @@ public class TestCommands : MonoBehaviour
     void OrderScrew()
     {
         int distFromCamera = 1;
-        Instantiate(screw, new Vector3(45, -29, 102), Quaternion.identity);
+        Instantiate(screw, new Vector3(48, -29, 101), Quaternion.identity);
     }
 
     void ChangeSize()
     {
-        playhouseEnvironment.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+        playhouseEnvironment.transform.localScale = new Vector3(0.3f, 0.3f, 1f);
     }
    
 }
