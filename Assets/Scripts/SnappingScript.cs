@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityScript.Steps;
 
 public class SnappingScript : MonoBehaviour
 {
@@ -44,7 +45,7 @@ public class SnappingScript : MonoBehaviour
     public void SnapToLocation()
     {
         float minDistance = -1f;
-        Vector3 minDistanceChildColliderLocation = new Vector3(0,0,0);
+        GameObject minDistanceChildCollider = null;
         Vector3 minDistanceHitColliderLocation = new Vector3(0,0,0);
         foreach(GameObject SnapPoint in ColliderList)
         {
@@ -60,13 +61,52 @@ public class SnappingScript : MonoBehaviour
                     if (distance < minDistance || minDistance < 0)
                     {
                         minDistance = distance;
-                        minDistanceChildColliderLocation = SnapPoint.transform.position;
+                        minDistanceChildCollider = SnapPoint;
                         minDistanceHitColliderLocation = ConnectedSnappingPoint.transform.position;
                     }
                 }
             }
         }
-        Debug.Log("Min Distance is: " + minDistance);
-        transform.position = transform.position + (minDistanceHitColliderLocation - minDistanceChildColliderLocation);
+
+        float AngleSnappingNum = 30f;
+
+        Vector3 currentRotation = transform.eulerAngles;
+        Debug.Log("X Rotation:" + currentRotation.x);
+        Debug.Log("Y Rotation:" + currentRotation.y);
+        Debug.Log("Z Rotation:" + currentRotation.z);
+        if (currentRotation.x% AngleSnappingNum < (AngleSnappingNum/2))
+        {
+            currentRotation.x -= currentRotation.x % AngleSnappingNum;
+
+        }
+        else
+        {
+            currentRotation.x += AngleSnappingNum - (currentRotation.x % AngleSnappingNum);
+        }
+        if (currentRotation.y % AngleSnappingNum < (AngleSnappingNum/2))
+        {
+            currentRotation.y -= currentRotation.y % AngleSnappingNum;
+
+        }
+        else
+        {
+            currentRotation.y += AngleSnappingNum - (currentRotation.y % AngleSnappingNum);
+        }
+        if (currentRotation.z % AngleSnappingNum < (AngleSnappingNum/2))
+        {
+            currentRotation.z -= currentRotation.z % AngleSnappingNum;
+
+        }
+        else
+        {
+            currentRotation.z += AngleSnappingNum - (currentRotation.z % AngleSnappingNum);
+        }
+        transform.eulerAngles = currentRotation;
+
+        if (minDistance >= 0f)
+        {
+            transform.position = transform.position + (minDistanceHitColliderLocation - minDistanceChildCollider.transform.position);
+        }
+        
     }
 }
