@@ -13,6 +13,9 @@ public class SnappingScript : MonoBehaviour
     {
         ColliderList = GetChildSnappingColliders(transform.gameObject);
 
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.AddForce(new Vector3(0, 0, 10));
+
     }
 
     private List<GameObject> GetChildSnappingColliders(GameObject obj)

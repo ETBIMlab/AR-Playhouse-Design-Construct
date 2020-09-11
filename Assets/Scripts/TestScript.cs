@@ -49,4 +49,14 @@ public class TestScript : MonoBehaviour, IMixedRealityPointerHandler
             material = 1;
         }
     }
+
+    public void ManipStarted()
+    {
+        Debug.Log("Manipulation Started");
+    }
+
+    public void ManipStop()
+    {
+        Debug.Log("Manipulation Ended");
+    }
 }
