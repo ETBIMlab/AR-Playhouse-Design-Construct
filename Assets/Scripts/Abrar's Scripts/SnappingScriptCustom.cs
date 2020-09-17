@@ -9,6 +9,7 @@ public class SnappingScriptCustom : MonoBehaviour
 
     private List<GameObject> ColliderListObjects = new List<GameObject>();
     public float snappingRadius;
+    private float minDistance = -1f;
 
     private ItemInfo.ItemType itemType;
     private int snappingCollidersLayer;
@@ -55,12 +56,14 @@ public class SnappingScriptCustom : MonoBehaviour
     public void SnapToLocation()
     {
         snappedOnToObject = false;
+        bool foundSnapLocation = false;
+
         // disable colliders in colliderObjectsToEnable
         if (collidersEnabled == true) disableColliderObjects();
 
         Debug.Log("--------------------------");
         Debug.Log("SnapToLocation() called from: " + transform.gameObject.name);
-        float minDistance = -1f;
+
         GameObject minDistanceChildCollider = null;
         Vector3 minDistanceHitColliderLocation = new Vector3(0, 0, 0);
 
@@ -131,13 +134,18 @@ public class SnappingScriptCustom : MonoBehaviour
                                 Debug.Log("no child found, count was " + ConnectedSnappingPoint.transform.childCount);
                             }
 
-                            //minDistanceHitColliderLocation = ConnectedSnappingPoint.transform.position;
+                            foundSnapLocation = true;
                         }
                     }
                 }
             }
         }
 
+        if (foundSnapLocation == true) SnapObjectToLocation(minDistanceChildCollider, minDistanceHitColliderLocation);
+    }
+
+    private void SnapObjectToLocation(GameObject minDistChildCollider, Vector3 minDistHitColliderLocation)
+    {
         float AngleSnappingNum = 30f;
 
         Vector3 currentRotation = transform.eulerAngles;
@@ -172,13 +180,17 @@ public class SnappingScriptCustom : MonoBehaviour
 
         if (minDistance >= 0f)
         {
-            transform.position = transform.position + (minDistanceHitColliderLocation - minDistanceChildCollider.transform.position);
+            transform.position = transform.position + (minDistHitColliderLocation - minDistChildCollider.transform.position);
         }
 
         snappedOnToObject = true;
 
+        // play corresponding snap sound
+        FindObjectOfType<SoundManager>().PlaySoundAtLocation(itemType, transform.position);
+
         // since object is snapped onto another object, enable the other colliders
         enableColliderObjects();
+
     }
 
     /* enabling other colliders (like the slide snapping point) after it is snapped
@@ -202,4 +214,5 @@ public class SnappingScriptCustom : MonoBehaviour
         }
         collidersEnabled = false;
     }
+
 }

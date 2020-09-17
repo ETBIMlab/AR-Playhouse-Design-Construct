@@ -24,10 +24,6 @@ public class SnappingValidator : MonoBehaviour
         {
             case ItemInfo.ItemType.Half_Panel:
                 if (canSnapHalfFacePanel == true) return true;
-                else
-                {
-                    Debug.Log("canSnapHalfFacePanel is " + canSnapHalfFacePanel + " from gameobject: " + transform.gameObject.name); ;
-                }
                 break;
             case ItemInfo.ItemType.Full_Panel:
                 if (canSnapFullFacePanel == true) return true;
