@@ -52,6 +52,8 @@ public class SnappingScriptCustom : MonoBehaviour
 
     public void SnapToLocation()
     {
+        minDistance = -1f;  // refresh min distance
+
         snappedOnToObject = false;
         bool foundSnapLocation = false;
 
