@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [Header("Sounds")]
-    [Range(0f, 2f)]
+    [Range(0f, 1f)]
     [SerializeField] private float soundVolume;
 
     [SerializeField] private AudioClip woodSnapSound;

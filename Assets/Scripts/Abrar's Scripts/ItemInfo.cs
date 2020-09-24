@@ -13,6 +13,7 @@ public class ItemInfo : MonoBehaviour
         // add more item types here
     }
 
+    // readonly outside of this class
     public ItemType itemType;
 
 }
