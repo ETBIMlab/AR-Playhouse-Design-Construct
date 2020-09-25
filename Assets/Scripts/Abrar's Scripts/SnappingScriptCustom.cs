@@ -7,11 +7,16 @@ public class SnappingScriptCustom : MonoBehaviour
     // Modified version of TJ's script "SnappingScript.cs"
     // This will snap to a specific point and not the origin of the snapping collider
 
-    private List<GameObject> ColliderListObjects = new List<GameObject>();
+    //private List<GameObject> ColliderListObjects = new List<GameObject>();
+
+    private List<Collider> ColliderListObjects = new List<Collider>(); // new
+
     public float snappingRadius;
     private float minDistance = -1f;
 
     private ItemInfo.ItemType itemType;
+
+    private Collider snappedCollider = null;
 
     [Header("Settings for Enabling other Snap Points After Being Snapped")]
     private bool snappedOnToObject = false;
@@ -31,16 +36,17 @@ public class SnappingScriptCustom : MonoBehaviour
         this.itemType = GetComponent<ItemInfo>().itemType;
     }
 
-    private List<GameObject> GetChildSnappingColliders(GameObject obj)
+    // changed to colliders instead of gameobject
+    private List<Collider> GetChildSnappingColliders(GameObject obj)
     {
-        List<GameObject> childSnappingColliders = new List<GameObject>();
+        List<Collider> childSnappingColliders = new List<Collider>();
 
         foreach (Transform child in obj.transform)
         {
             if (child.gameObject.tag.Equals("SnappingCollider"))
             {
                 //Debug.Log("Adding " + child.gameObject.name + " to colliders of " + transform.gameObject.name);
-                childSnappingColliders.Add(child.gameObject);
+                childSnappingColliders.Add(child.gameObject.GetComponent<Collider>());
             }
             else
             {
@@ -52,6 +58,8 @@ public class SnappingScriptCustom : MonoBehaviour
 
     public void SnapToLocation()
     {
+        Debug.Log("-------------------------------\n-------------------------------");
+
         minDistance = -1f;  // refresh min distance
 
         snappedOnToObject = false;
@@ -60,13 +68,14 @@ public class SnappingScriptCustom : MonoBehaviour
         // disable colliders in colliderObjectsToEnable
         if (collidersEnabled == true) disableColliderObjects();
 
-        GameObject minDistanceChildCollider = null;
+        Collider minDistanceChildCollider = null;
         Vector3 minDistanceHitColliderLocation = new Vector3(0, 0, 0);
 
-        foreach (GameObject SnapPointObject in ColliderListObjects)
+        //foreach (GameObject SnapPointObject in ColliderListObjects)
+        foreach (Collider SnapPointCollider in ColliderListObjects)
         {
             //Debug.Log("Looking at collider: " + SnapPoint.name);
-            Collider[] hitColliders = Physics.OverlapSphere(SnapPointObject.transform.position, snappingRadius);
+            Collider[] hitColliders = Physics.OverlapSphere(SnapPointCollider.transform.position, snappingRadius);
 
             if (hitColliders.Length == 0)
             {
@@ -99,22 +108,25 @@ public class SnappingScriptCustom : MonoBehaviour
                 if (canSnap == true)
                 {
                     //Debug.Log(SnapPoint.name + " is close enough to " + ConnectedSnappingPoint.gameObject.name);
-                    if (ConnectedSnappingPoint.gameObject.CompareTag("SnappingCollider") && !ColliderListObjects.Contains(ConnectedSnappingPoint.gameObject))
+                    if (ConnectedSnappingPoint.gameObject.CompareTag("SnappingCollider") && !ColliderListObjects.Contains(ConnectedSnappingPoint.gameObject.GetComponent<Collider>()))
                     {
-                        float distance = Vector3.Distance(SnapPointObject.transform.position, ConnectedSnappingPoint.transform.position);
+                        float distance = Vector3.Distance(SnapPointCollider.transform.position, ConnectedSnappingPoint.transform.position);
                         if (distance < minDistance || minDistance < 0)
                         {
-                            Debug.Log("Found snapping point named:" + SnapPointObject.name);
+                            Debug.Log("Found snapping point named:" + SnapPointCollider.name);
 
                             if (ConnectedSnappingPoint.transform.childCount > 0)
                             {
                                 minDistance = distance;
-                                minDistanceChildCollider = SnapPointObject;
+                                minDistanceChildCollider = SnapPointCollider;
 
                                 // NEW: get child object "custom snap point" from snapping collider game object to get custom snap point
                                 Debug.Log("found CHILD snapping point: " + ConnectedSnappingPoint.name);
 
                                 minDistanceHitColliderLocation = ConnectedSnappingPoint.transform.GetChild(0).transform.position;
+
+                                // keeping reference to collider we are going to snap to
+                                snappedCollider = ConnectedSnappingPoint;
                             }
                             else
                             {
@@ -122,8 +134,11 @@ public class SnappingScriptCustom : MonoBehaviour
                                 Debug.Log("no child (custom snapping point) found");
                                 
                                 minDistance = distance;
-                                minDistanceChildCollider = SnapPointObject;
+                                minDistanceChildCollider = SnapPointCollider;
                                 minDistanceHitColliderLocation = ConnectedSnappingPoint.transform.position;
+
+                                // keeping reference to collider we are going to snap to
+                                snappedCollider = ConnectedSnappingPoint;   
                             }
                             foundSnapLocation = true;
                         }
@@ -132,10 +147,28 @@ public class SnappingScriptCustom : MonoBehaviour
             }
         }
 
-        if (foundSnapLocation == true) SnapObjectToLocation(minDistanceChildCollider, minDistanceHitColliderLocation);
+        if (foundSnapLocation == true)
+        {
+            SnapObjectToLocation(minDistanceChildCollider, minDistanceHitColliderLocation);
+
+            // disabling collider to prevent other objects from snapping to it
+            snappedCollider.enabled = false;
+            Debug.Log("Disabled: " + minDistanceChildCollider.name);
+        }
     }
 
-    private void SnapObjectToLocation(GameObject minDistChildCollider, Vector3 minDistHitColliderLocation)
+
+    /* 
+    * Enables the collider that had an object snapped to it
+    * Will be called when user grabs object ("On Manipulation Started" in 
+    * the ManipulationHandler component)
+    */
+    public void EnableSnappedCollider()
+    {
+        if (snappedCollider != null)  snappedCollider.enabled = true; 
+    }
+
+    private void SnapObjectToLocation(Collider minDistChildCollider, Vector3 minDistHitColliderLocation)
     {
         float AngleSnappingNum = 30f;
 
