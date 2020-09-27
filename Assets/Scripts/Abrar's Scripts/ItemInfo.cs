@@ -14,5 +14,19 @@ public class ItemInfo : MonoBehaviour
     }
 
     public ItemType itemType;
+    
+
+    // Problem: Orientation/rototion of each object is different, which makes it very confusing to set up a orientation
+    // Model needs to be fixed
+    
+    // For storing info on the objects orientaion (direction it is facing)
+    public enum ItemOrientation
+    {
+        NorthSouth,
+        EastWest
+    }
+
+    public ItemOrientation itemOrientation;
+    
 
 }

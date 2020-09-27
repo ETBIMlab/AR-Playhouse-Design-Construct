@@ -15,6 +15,7 @@ public class SnappingScriptCustom : MonoBehaviour
     private float minDistance = -1f;
 
     private ItemInfo.ItemType itemType;
+    private ItemInfo.ItemOrientation itemOrientation;
 
     private Collider snappedCollider = null;
 
@@ -34,6 +35,7 @@ public class SnappingScriptCustom : MonoBehaviour
         rb.AddForce(new Vector3(0, 0, 10));
 
         this.itemType = GetComponent<ItemInfo>().itemType;
+        this.itemOrientation = GetComponent<ItemInfo>().itemOrientation;
     }
 
     // changed to colliders instead of gameobject
@@ -58,7 +60,7 @@ public class SnappingScriptCustom : MonoBehaviour
 
     public void SnapToLocation()
     {
-        Debug.Log("-------------------------------\n-------------------------------");
+        Debug.Log("\n-------------------------------");
 
         minDistance = -1f;  // refresh min distance
 
@@ -89,26 +91,14 @@ public class SnappingScriptCustom : MonoBehaviour
                 {
                     continue; // Could not find SnappingValidator script on snap point collider so continue to next iteration of foreach loop
                 }
-                else
-                {
-                    bool canSnapTemp = ConnectedSnappingPoint.GetComponent<SnappingValidator>().verifySnapCapability(itemType);
-                    if (canSnapTemp)
-                    {
-                        Debug.Log("Snap-able!!!   item is: " + itemType.ToString());
-                    }
-                    else
-                    {
-                        Debug.Log("CANT SNAP :(   item is: " + itemType.ToString());
-                        return;
-                    }
-                }
-
                 // NEW: checking if this object can even snap to that snapping point
-                bool canSnap = ConnectedSnappingPoint.GetComponent<SnappingValidator>().verifySnapCapability(itemType);
+                bool canSnap = ConnectedSnappingPoint.GetComponent<SnappingValidator>().verifySnapCapability(itemType, itemOrientation);
                 if (canSnap == true)
                 {
+                    Debug.Log("Snap-able!!!   item is: " + itemType.ToString());
                     //Debug.Log(SnapPoint.name + " is close enough to " + ConnectedSnappingPoint.gameObject.name);
-                    if (ConnectedSnappingPoint.gameObject.CompareTag("SnappingCollider") && !ColliderListObjects.Contains(ConnectedSnappingPoint.gameObject.GetComponent<Collider>()))
+                    if (ConnectedSnappingPoint.gameObject.CompareTag("SnappingCollider") && 
+                        !ColliderListObjects.Contains(ConnectedSnappingPoint.gameObject.GetComponent<Collider>()))
                     {
                         float distance = Vector3.Distance(SnapPointCollider.transform.position, ConnectedSnappingPoint.transform.position);
                         if (distance < minDistance || minDistance < 0)
@@ -144,6 +134,7 @@ public class SnappingScriptCustom : MonoBehaviour
                         }
                     }
                 }
+                else Debug.Log("CANT SNAP :(   item type is: " + itemType.ToString());
             }
         }
 
@@ -151,7 +142,7 @@ public class SnappingScriptCustom : MonoBehaviour
         {
             SnapObjectToLocation(minDistanceChildCollider, minDistanceHitColliderLocation);
 
-            // disabling collider to prevent other objects from snapping to it
+            // disabling snap collider to prevent other objects from snapping to it
             snappedCollider.enabled = false;
             Debug.Log("Disabled: " + minDistanceChildCollider.name);
         }
