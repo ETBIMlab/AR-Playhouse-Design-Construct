@@ -103,6 +103,7 @@ PlayerSettings:
   xboxOneMonoLoggingLevel: 0
   xboxOneLoggingLevel: 1
   xboxOneDisableEsram: 0
+  xboxOneEnableTypeOptimization: 0
   xboxOnePresentImmediateThreshold: 0
   switchQueueCommandMemory: 0
   switchQueueControlMemory: 16384
@@ -342,7 +343,7 @@ PlayerSettings:
     - Oculus
     - OpenVR
   - m_BuildTarget: Windows Store Apps
-    m_Enabled: 0
+    m_Enabled: 1
     m_Devices:
     - WindowsMR
   openGLRequireES31: 0
@@ -545,6 +546,7 @@ PlayerSettings:
   ps4UseResolutionFallback: 0
   ps4ReprojectionSupport: 0
   ps4UseAudio3dBackend: 0
+  ps4UseLowGarlicFragmentationMode: 1
   ps4SocialScreenEnabled: 0
   ps4ScriptOptimizationLevel: 0
   ps4Audio3dVirtualSpeakerCount: 14
@@ -634,7 +636,7 @@ PlayerSettings:
       Contacts: False
       EnterpriseAuthentication: False
       GazeInput: True
-      HumanInterfaceDevice: False
+      HumanInterfaceDevice: True
       InputInjectionBrokered: False
       InternetClient: True
       InternetClientServer: False
@@ -658,7 +660,7 @@ PlayerSettings:
       SystemManagement: False
       UserAccountInformation: False
       UserDataTasks: False
-      UserNotificationListener: False
+      UserNotificationListener: True
       VideosLibrary: False
       VoipCall: False
       WebCam: False
