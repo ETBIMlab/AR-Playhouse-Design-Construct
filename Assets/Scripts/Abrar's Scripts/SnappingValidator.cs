@@ -7,7 +7,6 @@ using UnityEngine;
 
 /*
  * This class will validate whether the object can snap to this collider or snap point
- * 
 */ 
 public class SnappingValidator : MonoBehaviour
 {
@@ -16,29 +15,69 @@ public class SnappingValidator : MonoBehaviour
     [SerializeField] private bool canSnapFullFacePanel = false;
     [SerializeField] private bool canSnapSlide = false;
 
+    [Header("Object Orientation")]
+    [Tooltip("If set to false, orientation will not matter")]
+    [SerializeField] private bool isOrientationSpecific = false;
+
+    // choose what orientation is allowed for snapping for this snap collider in inspector
+    public ItemInfo.ItemOrientation allowedItemOrientation;   
+
     // verifies if object/item can snap at this snap point
-    public bool verifySnapCapability(ItemInfo.ItemType itemType)
+    public bool verifySnapCapability(ItemInfo.ItemType itemType, ItemInfo.ItemOrientation itemOrientation)
     {
         Debug.Log("verifying item: " + itemType.ToString());
         switch (itemType)
         {
             case ItemInfo.ItemType.Half_Panel:
-                if (canSnapHalfFacePanel == true) return true;
-                else
+                if (canSnapHalfFacePanel == true) // checking if the snap collider allows HalfFacePanels to snap here
                 {
-                    Debug.Log("canSnapHalfFacePanel is " + canSnapHalfFacePanel + " from gameobject: " + transform.gameObject.name); ;
+                    if (isOrientationSpecific)  // checking if the snap collider cares about orientation
+                    {
+                        return verifyOrientation(itemOrientation);
+                    }
+                    else return true;
                 }
                 break;
+
             case ItemInfo.ItemType.Full_Panel:
-                if (canSnapFullFacePanel == true) return true;
+                if (canSnapFullFacePanel == true)
+                {
+                    if (isOrientationSpecific)  
+                    {
+                        return verifyOrientation(itemOrientation);
+                    }
+                    else return true;
+                }
                 break;
+
             case ItemInfo.ItemType.Slide:
-                if (canSnapSlide == true) return true;
+                if (canSnapSlide == true)
+                {
+                    if (isOrientationSpecific)
+                    {
+                        return verifyOrientation(itemOrientation);
+                    }
+                    else return true;
+                }
                 break;
+
             default:
                 break;
         }
 
         return false;
+    }
+
+    private bool verifyOrientation(ItemInfo.ItemOrientation itemOrientation)
+    {
+        if (allowedItemOrientation == itemOrientation)
+        {
+            return true;
+        }
+        else
+        {
+            Debug.Log("not allowed: allowed = " + allowedItemOrientation.ToString() + ", items = " + itemOrientation.ToString());
+            return false;
+        }
     }
 }

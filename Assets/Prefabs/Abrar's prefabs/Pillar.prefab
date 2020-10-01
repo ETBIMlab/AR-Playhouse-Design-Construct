@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 5074955663290750000}
   - component: {fileID: 1373879626}
   m_Layer: 0
-  m_Name: Pillar 1
+  m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,7 +292,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1666131793894661339, guid: e32b547492db0de4db92ec95a6a9e960, type: 3}
+  m_Mesh: {fileID: 2760931618156279696, guid: d414f39e57b1bee458dd80b25a736fd4, type: 3}
 --- !u!114 &2001854170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +307,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSnapHalfFacePanel: 1
   canSnapFullFacePanel: 1
+  canSnapSlide: 0
+  isOrientationSpecific: 0
+  allowedItemOrientation: 0
 --- !u!64 &1086044235
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -320,7 +323,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1666131793894661339, guid: e32b547492db0de4db92ec95a6a9e960, type: 3}
+  m_Mesh: {fileID: 2760931618156279696, guid: d414f39e57b1bee458dd80b25a736fd4, type: 3}
 --- !u!114 &2001854169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +338,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSnapHalfFacePanel: 1
   canSnapFullFacePanel: 1
+  canSnapSlide: 0
+  isOrientationSpecific: 0
+  allowedItemOrientation: 0
 --- !u!64 &323701950
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -348,7 +354,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1666131793894661339, guid: e32b547492db0de4db92ec95a6a9e960, type: 3}
+  m_Mesh: {fileID: 2760931618156279696, guid: d414f39e57b1bee458dd80b25a736fd4, type: 3}
 --- !u!114 &2001854167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +369,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSnapHalfFacePanel: 1
   canSnapFullFacePanel: 0
+  canSnapSlide: 0
+  isOrientationSpecific: 0
+  allowedItemOrientation: 0
 --- !u!64 &459528843
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -376,7 +385,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1666131793894661339, guid: e32b547492db0de4db92ec95a6a9e960, type: 3}
+  m_Mesh: {fileID: 2760931618156279696, guid: d414f39e57b1bee458dd80b25a736fd4, type: 3}
 --- !u!114 &2001854165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,6 +400,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSnapHalfFacePanel: 1
   canSnapFullFacePanel: 0
+  canSnapSlide: 0
+  isOrientationSpecific: 0
+  allowedItemOrientation: 0
 --- !u!64 &1170760262
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -404,7 +416,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1666131793894661339, guid: e32b547492db0de4db92ec95a6a9e960, type: 3}
+  m_Mesh: {fileID: 2760931618156279696, guid: d414f39e57b1bee458dd80b25a736fd4, type: 3}
 --- !u!114 &2001854166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +431,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSnapHalfFacePanel: 1
   canSnapFullFacePanel: 0
+  canSnapSlide: 0
+  isOrientationSpecific: 0
+  allowedItemOrientation: 0
 --- !u!64 &1261945937
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -432,7 +447,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1666131793894661339, guid: e32b547492db0de4db92ec95a6a9e960, type: 3}
+  m_Mesh: {fileID: 2760931618156279696, guid: d414f39e57b1bee458dd80b25a736fd4, type: 3}
 --- !u!114 &2001854168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,6 +462,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSnapHalfFacePanel: 1
   canSnapFullFacePanel: 0
+  canSnapSlide: 0
+  isOrientationSpecific: 0
+  allowedItemOrientation: 0
 --- !u!1001 &421836892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -477,7 +495,7 @@ PrefabInstance:
     - target: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -540.47
+      value: -540.32
       objectReference: {fileID: 0}
     - target: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
         type: 3}
@@ -566,10 +584,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Snapping Location 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5779419116815512445, guid: 029152c50e7efdf48ae70a8bad432d25,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.24
+      value: -8.29
       objectReference: {fileID: 0}
     - target: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
         type: 3}
@@ -668,10 +691,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Snapping Location 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5779419116815512445, guid: 029152c50e7efdf48ae70a8bad432d25,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.24
+      value: -8.33
       objectReference: {fileID: 0}
     - target: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
         type: 3}
@@ -783,7 +811,7 @@ PrefabInstance:
     - target: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -540.47
+      value: -540.13
       objectReference: {fileID: 0}
     - target: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
         type: 3}
@@ -872,10 +900,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Snapping Location 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5779419116815512445, guid: 029152c50e7efdf48ae70a8bad432d25,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.24
+      value: -8.4
       objectReference: {fileID: 0}
     - target: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
         type: 3}
@@ -987,7 +1020,7 @@ PrefabInstance:
     - target: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -540.47
+      value: -540.29
       objectReference: {fileID: 0}
     - target: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
         type: 3}
