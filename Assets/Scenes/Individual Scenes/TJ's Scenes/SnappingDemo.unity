@@ -24256,6 +24256,7 @@ GameObject:
   - component: {fileID: 6006770095026719648}
   - component: {fileID: 6006770095026719678}
   - component: {fileID: 6006770095026719680}
+  - component: {fileID: 6006770095026719681}
   m_Layer: 0
   m_Name: 2''x4''x8' Stud Fewer Spots
   m_TagString: Untagged
@@ -24757,6 +24758,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snappingRadius: 0.0125
+--- !u!114 &6006770095026719681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006770095026719675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7bf59ceb028a749be3a7cbe0211eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderableObjs:
+  - name: ladder
+    obj: {fileID: 5895923864232879608, guid: 5c8362c8cd5704441a7ca10b5551b895, type: 3}
 --- !u!1001 &6018975258544471616
 PrefabInstance:
   m_ObjectHideFlags: 0

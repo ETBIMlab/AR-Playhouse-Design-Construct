@@ -19,8 +19,10 @@ public class ObjectRemovalScript : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         Debug.Log("Collision!");
-        other.gameObject.BroadcastMessage("Destroy");
-
+        if(other.GetComponent<Removable>() == null)
+        {
+            other.GetComponent<Removable>().RemoveObject();
+        }
     }
 
 }

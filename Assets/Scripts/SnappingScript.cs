@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityScript.Steps;
+using Microsoft.MixedReality.Toolkit.UI;
 
+[RequireComponent(typeof(ManipulationHandler))]
 public class SnappingScript : MonoBehaviour
 {
     private List<GameObject> ColliderList = new List<GameObject>();
     public float snappingRadius;
+
+    private void Reset()
+    {
+        
+    }
 
     // Start is called before the first frame update
     void Start()

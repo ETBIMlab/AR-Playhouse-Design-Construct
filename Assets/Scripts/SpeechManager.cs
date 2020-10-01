@@ -1,12 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 
 public class SpeechManager : MonoBehaviour
 {
+    [Serializable]
+    public struct OrderableObj
+    {
+        public string name;
+        public GameObject obj;
+    }
+
     KeywordRecognizer keywordRecognizer = null;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
+    public OrderableObj[] orderableObjs;
+    
 
     // Use this for initialization
     void Start()
