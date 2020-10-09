@@ -9,7 +9,7 @@ public class Removable : MonoBehaviour
 {
     public void RemoveObject()
     {
-
+        Destroy(this.gameObject);
     }
 
     public void Reset()

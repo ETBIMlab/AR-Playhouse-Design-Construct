@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
+
 public class ObjectRemovalScript : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -18,10 +20,9 @@ public class ObjectRemovalScript : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        Debug.Log("Collision!");
-        if(other.GetComponent<Removable>() == null)
+        if(other.gameObject.GetComponent<Removable>() != null)
         {
-            other.GetComponent<Removable>().RemoveObject();
+            other.gameObject.GetComponent<Removable>().RemoveObject();
         }
     }
 
