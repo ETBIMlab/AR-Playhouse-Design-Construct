@@ -9,7 +9,8 @@ public class ItemInfo : MonoBehaviour
     {
         Half_Panel,
         Full_Panel,
-        Slide
+        Slide,
+        Full_Panel_Attachment
         // add more item types here
     }
 

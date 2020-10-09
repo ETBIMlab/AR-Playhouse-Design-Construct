@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
+  itemOrientation: 0
 --- !u!1 &8906194638314026873
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8906194639315798130
 Transform:
   m_ObjectHideFlags: 0
@@ -363,3 +364,6 @@ MonoBehaviour:
   canSnapHalfFacePanel: 0
   canSnapFullFacePanel: 0
   canSnapSlide: 1
+  canSnapFullFacePanelAttachment: 0
+  isOrientationSpecific: 1
+  allowedItemOrientation: 0

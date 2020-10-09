@@ -1,4 +1,4 @@
-﻿using Boo.Lang;
+﻿//using Boo.Lang;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,6 +14,8 @@ public class SnappingValidator : MonoBehaviour
     [SerializeField] private bool canSnapHalfFacePanel = false;
     [SerializeField] private bool canSnapFullFacePanel = false;
     [SerializeField] private bool canSnapSlide = false;
+    [Tooltip("canSnapFullFacePanelAttachment")]
+    [SerializeField] private bool canSnapFullFacePanelAttachment = false;
 
     [Header("Object Orientation")]
     [Tooltip("If set to false, orientation will not matter")]
@@ -52,6 +54,17 @@ public class SnappingValidator : MonoBehaviour
 
             case ItemInfo.ItemType.Slide:
                 if (canSnapSlide == true)
+                {
+                    if (isOrientationSpecific)
+                    {
+                        return verifyOrientation(itemOrientation);
+                    }
+                    else return true;
+                }
+                break;
+
+            case ItemInfo.ItemType.Full_Panel_Attachment:
+                if (canSnapFullFacePanelAttachment == true)
                 {
                     if (isOrientationSpecific)
                     {
