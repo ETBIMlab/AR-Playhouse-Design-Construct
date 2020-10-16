@@ -106,7 +106,7 @@ public class InteractionTrackable : MonoBehaviour
 
     private void Reset()
     {
-        if(gameObject.GetComponent<ManipulationHandler>() == null)
+        if((trackMovement || trackRotation) && gameObject.GetComponent<ManipulationHandler>() == null)
         {
             Debug.Log("Null Manipulation Handler");
             if(UnityEditor.EditorUtility.DisplayDialog("Missing required component", "Trackable object requires a ManipulationHandler component", "Add ManipulationHandler", "Stop Tracking Movement and/or Rotation"))
