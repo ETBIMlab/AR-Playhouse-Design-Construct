@@ -26,10 +26,13 @@ public class InteractionTrackable : MonoBehaviour
 
     private UnityAction<ManipulationEventData> StartMovementAction;
     private UnityAction<ManipulationEventData> EndMovementAction;
+    private UnityAction StartRemovalAction;
+    private UnityAction EndRemovalAction;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Required for all logging actions
         ActionLogger = GameObject.Find("ActivityLogger");
         if (ActionLogger == null)
         {
@@ -39,6 +42,8 @@ public class InteractionTrackable : MonoBehaviour
         {
             Debug.Log("ActionLogger Found");
         }
+
+        // If trackMovement or trackRotation is true, check for ManipulationHandler
         if (gameObject.GetComponent<ManipulationHandler>() == null)
         {
             Debug.Log("Null Manipulation Handler");
@@ -52,12 +57,44 @@ public class InteractionTrackable : MonoBehaviour
                 trackRotation = false;
             }
         }
-        if (trackMovement) {
+        if (trackMovement || trackRotation) {
+            if (gameObject.GetComponent<ManipulationHandler>() == null)
+            {
+                Debug.Log("Null Manipulation Handler");
+                if (UnityEditor.EditorUtility.DisplayDialog("Missing required component", "Trackable object requires a \"ManipulationHandler component\"", "Add \"ManipulationHandler\"", "Stop Tracking Movement and/or Rotation"))
+                {
+                    gameObject.AddComponent(typeof(ManipulationHandler));
+                }
+                else
+                {
+                    trackMovement = false;
+                    trackRotation = false;
+                }
+            }
             ManipulationHandler manipHandler = gameObject.GetComponent<ManipulationHandler>();
             StartMovementAction += StartMovement;
             EndMovementAction += EndMovement;
             manipHandler.OnManipulationStarted.AddListener(StartMovementAction);
             manipHandler.OnManipulationEnded.AddListener(EndMovementAction);
+        }
+        if (trackRemoval)
+        {
+            if(gameObject.GetComponent<Removable>() == null)
+            {
+                if(UnityEditor.EditorUtility.DisplayDialog("Missing required component", "Trackable object requires a \"Removable\" component", "Add \"Removable\"", "Stop Tracking Removal"))
+                {
+                    gameObject.AddComponent(typeof(Removable));
+                }
+                else
+                {
+                    trackRemoval = false;
+                }
+            }
+            Removable removableComponent = gameObject.GetComponent<Removable>();
+            StartRemovalAction += StartRemoval;
+            EndRemovalAction += EndRemoval;
+            removableComponent.OnRemovalStart.AddListener(StartRemovalAction);
+            removableComponent.OnRemovalEnd.AddListener(EndRemovalAction);
         }
     }
 
@@ -75,6 +112,8 @@ public class InteractionTrackable : MonoBehaviour
             if(UnityEditor.EditorUtility.DisplayDialog("Missing required component", "Trackable object requires a ManipulationHandler component", "Add ManipulationHandler", "Stop Tracking Movement and/or Rotation"))
             {
                 gameObject.AddComponent(typeof(ManipulationHandler));
+                trackMovement = true;
+                trackRotation = true;
             } else
             {
                 trackMovement = false;
@@ -106,17 +145,29 @@ public class InteractionTrackable : MonoBehaviour
     private void EndMovement(ManipulationEventData eData)
     {
         string message = "";
-        if (!transform.position.Equals(storedPosition))
+        if (!transform.position.Equals(storedPosition) && trackMovement)
         {
             message += "User Moved " + gameObject.name + " from " + storedPosition + " to " + transform.position + ".";
         }
-        if (!transform.rotation.Equals(storedRotation))
+        if (!transform.rotation.Equals(storedRotation) && trackRotation)
         {
             message += "User Rotated " + gameObject.name + " from " + storedRotation + " to " + transform.rotation + ".";
         }
         ActionLogger.SendMessage("LogItem", message);
     }
     #endregion
+
+    #region RemovalTracking
+    private void StartRemoval()
+    {
+        Debug.Log("Start Removal");
+    }
+
+    private void EndRemoval()
+    {
+        Debug.Log("End Removal");
+    }
+    #endregion RemovalTracking
 
     #region SnappingTracking
 
