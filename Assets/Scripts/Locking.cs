@@ -21,6 +21,10 @@ public class Locking : MonoBehaviour
 
     public void SnapToLockLocation()
     {
+        Debug.Log("SnapToLockLocation() called");
+
+
+
         GameObject toBeLockedObject = null;
         float minDistance = -1f;
         Vector3 minDistanceHitColliderLocation = new Vector3(0, 0, 0);
@@ -35,7 +39,15 @@ public class Locking : MonoBehaviour
                 {
                     minDistance = distance;
                     minDistanceHitColliderLocation = NearbyLockingPoint.transform.position;
-                    toBeLockedObject = NearbyLockingPoint.transform.root.gameObject;
+                    //toBeLockedObject = NearbyLockingPoint.transform.root.gameObject;
+
+                    // go up only one parent level (changed since objects are now in a gameobject
+                    // containing all the playhouse pieces)
+                    /*
+                     * TODO: make for loop/function that traverses up the gameobject hierarchy
+                     * until it finds the object or finds nothing (at root) and return
+                     */
+                    toBeLockedObject = NearbyLockingPoint.transform.parent.parent.gameObject;
                 }
             }
         }
@@ -46,15 +58,23 @@ public class Locking : MonoBehaviour
         lockedObject = toBeLockedObject;
         if(lockedObject != null && lockedObject.GetComponent<Lockable>() != null)
         {
-            Debug.Log(toBeLockedObject.name);
+            Debug.Log(toBeLockedObject.name + " Will be locked");
             lockedObject.GetComponent<Lockable>().addLock(gameObject);
         }
+
+        // debugging REMOVE
+        if (lockedObject == null) Debug.Log("lockedObject is null..");
+        else Debug.Log("lockedObject is " + lockedObject.name);
+
+        if (lockedObject.GetComponent<Lockable>() == null) Debug.Log(lockedObject.name + " does not have Lockable component..");
+
     }
 
     public void UnlockObject()
     {
         if(lockedObject != null)
         {
+            Debug.Log("Unlocked object");
             lockedObject.GetComponent<Lockable>().removeLock(gameObject);
         }
     }

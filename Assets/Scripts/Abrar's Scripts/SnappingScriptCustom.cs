@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class SnappingScriptCustom : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class SnappingScriptCustom : MonoBehaviour
     public float snappingRadius;
     private float minDistance = -1f;
 
+    private ItemInfo itemInfo;
     private ItemInfo.ItemType itemType;
     private ItemInfo.ItemOrientation itemOrientation;
 
@@ -34,8 +37,12 @@ public class SnappingScriptCustom : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.AddForce(new Vector3(0, 0, 10));
 
-        this.itemType = GetComponent<ItemInfo>().itemType;
-        this.itemOrientation = GetComponent<ItemInfo>().itemOrientation;
+        itemInfo = GetComponent<ItemInfo>();
+
+        //this.itemType = GetComponent<ItemInfo>().itemType;
+        this.itemType = itemInfo.itemType;
+        //this.itemOrientation = GetComponent<ItemInfo>().itemOrientation;
+        this.itemOrientation = itemInfo.itemOrientation;
     }
 
     // changed to colliders instead of gameobject
@@ -72,6 +79,10 @@ public class SnappingScriptCustom : MonoBehaviour
 
         Collider minDistanceChildCollider = null;
         Vector3 minDistanceHitColliderLocation = new Vector3(0, 0, 0);
+
+        // NEW
+        // updating item orientation (in case user rotates object) ONLY WORKS FOR ONE TYPE OF PANEL SO FAR
+        itemOrientation =  itemInfo.UpdateItemOrienation(transform.eulerAngles.y);
 
         //foreach (GameObject SnapPointObject in ColliderListObjects)
         foreach (Collider SnapPointCollider in ColliderListObjects)
@@ -167,6 +178,13 @@ public class SnappingScriptCustom : MonoBehaviour
         //Debug.Log("X Rotation:" + currentRotation.x);
         //Debug.Log("Y Rotation:" + currentRotation.y);
         //Debug.Log("Z Rotation:" + currentRotation.z);
+
+        currentRotation.x = Mathf.Round(currentRotation.x / 90) * 90;
+        currentRotation.y = Mathf.Round(currentRotation.y / 90) * 90;
+        currentRotation.z = Mathf.Round(currentRotation.z / 90) * 90;
+        //transform.eulerAngles = currentRotation;
+
+        /*
         if (currentRotation.x % AngleSnappingNum < (AngleSnappingNum / 2))
         {
             currentRotation.x -= currentRotation.x % AngleSnappingNum;
@@ -191,6 +209,7 @@ public class SnappingScriptCustom : MonoBehaviour
         {
             currentRotation.z += AngleSnappingNum - (currentRotation.z % AngleSnappingNum);
         }
+        */
         transform.eulerAngles = currentRotation;
 
         if (minDistance >= 0f)
@@ -201,11 +220,22 @@ public class SnappingScriptCustom : MonoBehaviour
         snappedOnToObject = true;
 
         // play corresponding snap sound
-        FindObjectOfType<SoundManager>().PlaySoundAtLocation(itemType, transform.position);
+        
+        if (FindObjectOfType<SoundManager>() != null)
+        {
+            FindObjectOfType<SoundManager>().PlaySoundAtLocation(itemType, transform.position);
+        }
+        else
+        {
+            Debug.Log("SoundManager object not found");
+        }
+        
+        
 
         // since object is snapped onto another object, enable the other colliders
         enableColliderObjects();
     }
+
 
     /* 
      * enabling other colliders (like the slide snapping point) after it is snapped
