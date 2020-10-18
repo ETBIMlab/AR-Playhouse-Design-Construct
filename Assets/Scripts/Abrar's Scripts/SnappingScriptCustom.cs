@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public class SnappingScriptCustom : MonoBehaviour
 {
@@ -25,8 +25,13 @@ public class SnappingScriptCustom : MonoBehaviour
     [Header("Settings for Enabling other Snap Points After Being Snapped")]
     private bool snappedOnToObject = false;
     private bool collidersEnabled = true;
+
     // these will be enabled after
     [SerializeField] List<GameObject> colliderObjectsToEnable;
+
+    // Events
+    public UnityEvent OnObjectStartedSnapping;
+    public UnityEvent OnObjectFinishedSnapping;
 
     // Start is called before the first frame update
     void Start()
@@ -68,6 +73,9 @@ public class SnappingScriptCustom : MonoBehaviour
     public void SnapToLocation()
     {
         Debug.Log("\n-------------------------------");
+
+        // Invoke UnityAction (event)
+        OnObjectStartedSnapping.Invoke();
 
         minDistance = -1f;  // refresh min distance
 
@@ -145,7 +153,7 @@ public class SnappingScriptCustom : MonoBehaviour
                         }
                     }
                 }
-                else Debug.Log("CANT SNAP :(   item type is: " + itemType.ToString());
+                else Debug.Log("CANT SNAP, item type is: " + itemType.ToString());
             }
         }
 
@@ -172,7 +180,7 @@ public class SnappingScriptCustom : MonoBehaviour
 
     private void SnapObjectToLocation(Collider minDistChildCollider, Vector3 minDistHitColliderLocation)
     {
-        float AngleSnappingNum = 30f;
+        //float AngleSnappingNum = 30f;
 
         Vector3 currentRotation = transform.eulerAngles;
         //Debug.Log("X Rotation:" + currentRotation.x);
@@ -182,34 +190,7 @@ public class SnappingScriptCustom : MonoBehaviour
         currentRotation.x = Mathf.Round(currentRotation.x / 90) * 90;
         currentRotation.y = Mathf.Round(currentRotation.y / 90) * 90;
         currentRotation.z = Mathf.Round(currentRotation.z / 90) * 90;
-        //transform.eulerAngles = currentRotation;
 
-        /*
-        if (currentRotation.x % AngleSnappingNum < (AngleSnappingNum / 2))
-        {
-            currentRotation.x -= currentRotation.x % AngleSnappingNum;
-        }
-        else
-        {
-            currentRotation.x += AngleSnappingNum - (currentRotation.x % AngleSnappingNum);
-        }
-        if (currentRotation.y % AngleSnappingNum < (AngleSnappingNum / 2))
-        {
-            currentRotation.y -= currentRotation.y % AngleSnappingNum;
-        }
-        else
-        {
-            currentRotation.y += AngleSnappingNum - (currentRotation.y % AngleSnappingNum);
-        }
-        if (currentRotation.z % AngleSnappingNum < (AngleSnappingNum / 2))
-        {
-            currentRotation.z -= currentRotation.z % AngleSnappingNum;
-        }
-        else
-        {
-            currentRotation.z += AngleSnappingNum - (currentRotation.z % AngleSnappingNum);
-        }
-        */
         transform.eulerAngles = currentRotation;
 
         if (minDistance >= 0f)
@@ -229,11 +210,11 @@ public class SnappingScriptCustom : MonoBehaviour
         {
             Debug.Log("SoundManager object not found");
         }
-        
-        
 
         // since object is snapped onto another object, enable the other colliders
         enableColliderObjects();
+
+        OnObjectFinishedSnapping.Invoke();
     }
 
 

@@ -32,16 +32,17 @@ public class ItemInfo : MonoBehaviour
     
     public ItemOrientation UpdateItemOrienation(float yRotation)
     {
-        Debug.Log("orginal y angle is: " + yRotation);
+        //Debug.Log("orginal y angle is: " + yRotation);
 
+        // round to nearest 90 degree increment
         yRotation = Mathf.Round(yRotation / 90) * 90;
-        Debug.Log("rounded y angle is: " + yRotation);
+        //Debug.Log("rounded y angle is: " + yRotation);
 
-        // simplify rotation
+        
         while (yRotation >= 360 || yRotation < 0)
         {
             yRotation = SimplifyRotation(yRotation);
-            Debug.Log("Angle simplified: " + yRotation);
+            //Debug.Log("Angle simplified: " + yRotation);
         }
 
         switch (itemType)
@@ -49,7 +50,7 @@ public class ItemInfo : MonoBehaviour
 
             // TODO: ADD MORE TYPES and wait until all object pieces have the same rotation (prefabs)
             case ItemType.Full_Panel:
-                Debug.Log("Simplified/rounded angle is: " + yRotation);
+                //Debug.Log("Simplified/rounded angle is: " + yRotation);
 
                 switch (yRotation)
                 {
@@ -65,7 +66,7 @@ public class ItemInfo : MonoBehaviour
                 return itemOrientation;
                 break;
             case ItemType.Slide:
-                Debug.Log("Simplified/rounded angle is: " + yRotation);
+                //Debug.Log("Simplified/rounded angle is: " + yRotation);
 
                 switch (yRotation)
                 {
@@ -85,10 +86,10 @@ public class ItemInfo : MonoBehaviour
                 Debug.Log("ItemOrienation() failed");
                 return itemOrientation;
                 break;
-
         }
     }
 
+    // simplifies rotation (e.g. if angle was 450 degrees, it would become 90 degrees)
     private float SimplifyRotation(float rotation)
     {
         if (rotation >= 360f)

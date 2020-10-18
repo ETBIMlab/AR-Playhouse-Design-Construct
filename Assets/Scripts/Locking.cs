@@ -45,9 +45,15 @@ public class Locking : MonoBehaviour
                     // containing all the playhouse pieces)
                     /*
                      * TODO: make for loop/function that traverses up the gameobject hierarchy
-                     * until it finds the object or finds nothing (at root) and return
+                     * until it finds the object(contruction piece) or finds nothing (at root) and return
+                     * maybe use a object tag?
                      */
-                    toBeLockedObject = NearbyLockingPoint.transform.parent.parent.gameObject;
+                    if (NearbyLockingPoint.transform.parent.parent.gameObject != null)
+                    {
+                        toBeLockedObject = NearbyLockingPoint.transform.parent.parent.gameObject;
+                    }
+                    else { toBeLockedObject = NearbyLockingPoint.transform.root.gameObject; }   // .root references the gameobject that holds all the pieces (not wanted)
+                    
                 }
             }
         }
