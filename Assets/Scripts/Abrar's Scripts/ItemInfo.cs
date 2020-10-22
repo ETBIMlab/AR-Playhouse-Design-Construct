@@ -16,6 +16,8 @@ public class ItemInfo : MonoBehaviour
     }
 
     public ItemType itemType;
+
+    public bool hasDifferentOriginRotation = false;
     
 
     // Problem: Orientation/rototion of each object is different, which makes it very confusing to set up a orientation
@@ -52,6 +54,9 @@ public class ItemInfo : MonoBehaviour
             case ItemType.Full_Panel:
                 //Debug.Log("Simplified/rounded angle is: " + yRotation);
 
+                // for handling full panels with different origin rotation
+                if (hasDifferentOriginRotation) { yRotation += 90; }
+
                 switch (yRotation)
                 {
                     case 90:
@@ -65,6 +70,7 @@ public class ItemInfo : MonoBehaviour
                 }
                 return itemOrientation;
                 break;
+
             case ItemType.Slide:
                 //Debug.Log("Simplified/rounded angle is: " + yRotation);
 

@@ -656,6 +656,12 @@ MonoBehaviour:
   snappingRadius: 0.0625
   colliderObjectsToEnable:
   - {fileID: 889730936}
+  OnObjectStartedSnapping:
+    m_PersistentCalls:
+      m_Calls: []
+  OnObjectFinishedSnapping:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5265076942792558919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,6 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
+  hasDifferentOriginRotation: 1
   itemOrientation: 0
 --- !u!1 &7202515740206916753
 GameObject:

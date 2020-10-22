@@ -288,6 +288,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snappingRadius: 0.0625
   colliderObjectsToEnable: []
+  OnObjectStartedSnapping:
+    m_PersistentCalls:
+      m_Calls: []
+  OnObjectFinishedSnapping:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7469127551034523374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,4 +307,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
+  hasDifferentOriginRotation: 1
   itemOrientation: 0
