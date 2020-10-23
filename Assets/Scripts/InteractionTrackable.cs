@@ -160,12 +160,13 @@ public class InteractionTrackable : MonoBehaviour
     #region RemovalTracking
     private void StartRemoval()
     {
-        Debug.Log("Start Removal");
+        string message = gameObject.name + " was removed from scene";
+        ActionLogger.SendMessage("LogItem", message);
     }
 
     private void EndRemoval()
     {
-        Debug.Log("End Removal");
+        
     }
     #endregion RemovalTracking
 

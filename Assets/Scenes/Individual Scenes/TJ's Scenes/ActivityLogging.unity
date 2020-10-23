@@ -458,6 +458,7 @@ GameObject:
   - component: {fileID: 95699263}
   - component: {fileID: 95699264}
   - component: {fileID: 95699258}
+  - component: {fileID: 95699265}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -609,8 +610,26 @@ MonoBehaviour:
   trackSnapping: 0
   trackCollisions: 0
   trackVoiceCommands: 0
-  trackRemoval: 0
+  trackRemoval: 1
   trackOrdering: 0
+--- !u!114 &95699265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95699257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eaa6dc2a4938584bbee1becaf46ac93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnRemovalStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRemovalEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &120662765
 PrefabInstance:
   m_ObjectHideFlags: 0
