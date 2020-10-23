@@ -7,16 +7,21 @@ using UnityEngine;
 public class VoiceCreate : MonoBehaviour
 {
 
+
+
+
     // GameObject copies of all objects that can be ordered by voice
     public GameObject twoByFour;
     public GameObject ladder;
     public GameObject slide;
     public GameObject screw;
+
+
     //when spawning objects, instantiate 3 units in front of camera
     private int distFromCamera = 3;
     void Start()
     {
-
+        
     }
 
     // Called by SpeechManager when the user says the "Order two by four" command
