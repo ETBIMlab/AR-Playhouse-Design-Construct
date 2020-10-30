@@ -5,6 +5,7 @@ using UnityEngine;
 // class contains itemtype and maybe other things later..
 public class ItemInfo : MonoBehaviour
 {
+    public double itemPrice = 0;
     public enum ItemType
     {
         Half_Panel,
