@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestCommands : MonoBehaviour
 {
     //Audio Source Object to play a audio clip when spawning an object
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     // for attaching a cube object in the editor
     public GameObject twoByFour;
@@ -16,21 +16,29 @@ public class TestCommands : MonoBehaviour
 
     public AudioClip spawnClip;//clip to be played
 
+    private GameObject gameLog;
+
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();//get the audio source from the object for the audio to be played
+        //audioSource = GetComponent<AudioSource>();//get the audio source from the object for the audio to be played
+        gameLog = GameObject.Find("ActivityLogger");
+        audioSource = gameLog.GetComponent<AudioSource>();
     }
 
     // Called by SpeechManager when the user says the "Create Cube" command (creates a pink cube in front of player)
     void OrderTwoByFour()
     {
-        Debug.Log("Adding Two By Four to Scene!");
+        Debug.Log("Adding Two By Four to Scene! " + gameLog.ToString());
 
         int distFromCamera = 3;
 
         Instantiate(twoByFour, transform.position + transform.forward * distFromCamera, Quaternion.identity);    // creates a cube in front of camera
 
         audioSource.PlayOneShot(spawnClip, 1F);//play audio clip
+
+        //audioSource.Play();
+
+        //AudioCreate.playSpawnClip(audioSource,spawnClip);
     }
     void OrderLadder()
     {
