@@ -51,10 +51,10 @@ public class ActivityLogger : MonoBehaviour
         }
     }
 
-    void LogItem(string activity)
+    public void LogItem(string activity)
     {
         listOfActions.Add(activity);
-        for(int i = 0; i < 5; i++)
+        /*for(int i = 0; i < 5; i++)
         {
             TextMeshPro text = activityItems[i].GetComponent<TextMeshPro>();
             if (listOfActions.Count - i > 0)
@@ -65,7 +65,7 @@ public class ActivityLogger : MonoBehaviour
             {
                 text.text = "";
             }
-        }
+        }*/
     }
 
     void ExportActivityLog()

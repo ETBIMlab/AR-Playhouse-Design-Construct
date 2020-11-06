@@ -4861,6 +4861,7 @@ GameObject:
   - component: {fileID: 963194232}
   - component: {fileID: 963194231}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4956,6 +4957,25 @@ MonoBehaviour:
   minHeadVelocityThreshold: 0.5
   maxHeadVelocityThreshold: 2
   useEyeTracking: 1
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec75a6728f2764da5e9899e71adab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderableObjs:
+  - name: Slide
+    obj: {fileID: 2671488876096638595, guid: 2a12d33458505e24b8fad44eed7f39c0, type: 3}
+  - name: Plain full panel
+    obj: {fileID: 8576969920457788375, guid: 358dca8d17d21234bb5b92665c17ade1, type: 3}
+  - name: Plain half panel
+    obj: {fileID: 6806600271675092237, guid: 02bd6f888429edd45a7695aabeaed1b8, type: 3}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
