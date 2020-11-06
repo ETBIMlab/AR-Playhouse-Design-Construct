@@ -149,7 +149,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5749234}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.504}
+  m_LocalPosition: {x: 0, y: 0, z: 0.511}
   m_LocalScale: {x: 0.25, y: 0.15384616, z: 1}
   m_Children: []
   m_Father: {fileID: 265735269}
@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.5, y: 0.422}
+  m_AnchoredPosition: {x: 4.5, y: -0.259}
   m_SizeDelta: {x: 4, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5749236
@@ -206,8 +206,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 4
-  m_fontSizeBase: 4
+  m_fontSize: 2
+  m_fontSizeBase: 2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -252,7 +252,7 @@ MonoBehaviour:
     spaceCount: 2
     wordCount: 4
     linkCount: 0
-    lineCount: 3
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -447,7 +447,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134939308}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.498}
+  m_LocalPosition: {x: 0, y: 0, z: 0.408}
   m_LocalScale: {x: 0.25, y: 0.15384616, z: 1}
   m_Children: []
   m_Father: {fileID: 265735269}
@@ -455,7 +455,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.8, y: 0.008}
+  m_AnchoredPosition: {x: 6.8, y: -0.46}
   m_SizeDelta: {x: 4, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &134939310
@@ -512,8 +512,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 4
-  m_fontSizeBase: 4
+  m_fontSize: 2
+  m_fontSizeBase: 2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -917,7 +917,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583591262}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.002}
+  m_LocalPosition: {x: 0, y: 0, z: 0.006}
   m_LocalScale: {x: 0.25, y: 0.15384616, z: 1}
   m_Children: []
   m_Father: {fileID: 265735269}
@@ -974,14 +974,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 3
-  m_fontSizeBase: 3
+  m_fontSize: 2
+  m_fontSizeBase: 2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 258
+  m_textAlignment: 257
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 2.0187137, w: -5.4394565}
+  m_margin: {x: 0.006023428, y: 0, z: 0.030010862, w: -5.4394565}
   m_textInfo:
     textComponent: {fileID: 583591264}
     characterCount: 12
@@ -1312,6 +1312,27 @@ MonoBehaviour:
   total: {fileID: 5749236}
   listofitems: {fileID: 583591264}
   time: {fileID: 134939310}
+  installObjs:
+  - name: 
+    instalTime: 0
+  - name: 
+    instalTime: 0
+  - name: 
+    instalTime: 0
+  - name: 
+    instalTime: 0
+  - name: 
+    instalTime: 0
+  - name: 
+    instalTime: 0
+  - name: 
+    instalTime: 0
+  - name: 
+    instalTime: 0
+  - name: 
+    instalTime: 0
+  - name: 
+    instalTime: 0
 --- !u!4 &744303366
 Transform:
   m_ObjectHideFlags: 0
@@ -1320,8 +1341,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744303364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0029, y: 0, z: 0}
-  m_LocalScale: {x: 2.143, y: 2.143, z: 2.143}
+  m_LocalPosition: {x: -4.0649, y: 0, z: -0.0078729}
+  m_LocalScale: {x: 4.111131, y: 4.111131, z: 4.111131}
   m_Children:
   - {fileID: 265735269}
   - {fileID: 54390237}
@@ -1660,7 +1681,7 @@ MonoBehaviour:
   laptopinterface: {fileID: 744303364}
   orderableObjs:
   - name: platonic
-    price: 5.199999809265137
+    price: 5.12
     deliveryTime: 0
     instalTime: 0
     obj: {fileID: 4039267222725357984, guid: 4e4e8d8a7e119894bb1af4bb15bce26b, type: 3}

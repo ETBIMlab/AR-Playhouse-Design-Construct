@@ -20,42 +20,70 @@ public class laptopInterface : MonoBehaviour
     int schedulehours = 0;
     int scheduleminutes = 0;
 
+    [Serializable]
+    public struct installObj
+    {
+        public string name;
+        public int instalTime;
+    }
+    public installObj[] installObjs;
+    int itemIndex = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        total.text = "Total Spent: "+money.ToString();
+        total.text = "Total Spent: "+money.ToString()+"$";
         time.text = "Weeks: "+ scheduleweeks.ToString()+"\n"
             + "Days: " + scheduledays.ToString() + "\n"
             + "Hours:" + schedulehours.ToString() + "\n"
             + "Minutes:" + scheduleminutes.ToString() + "\n";
-        listofitems.text = "Items Ordered \n";
+        listofitems.text = "Items Ordered \n"+
+            "Item Name  Quantity  Cost  Time Arrived\n";
     }
     // Update is called once per frame
     void Update()
     {}
 
-    public void additem(double mon,int dtime,string iname)
+    public void additem(double mon,int dtime,string iname,int quant,int itime)
     {
-        money = money+mon;
+        installObjs[itemIndex].name = iname;
+        installObjs[itemIndex].instalTime = itime;
+        itemIndex++;
+        double itemscost = mon * quant;
+        money = money+ itemscost;
+
         convertTime(dtime);
-        total.text = "Total Spent: " + money.ToString();
+
+        string orderedTime = scheduleweeks.ToString() + "/" + scheduledays.ToString()
+            + "/" + schedulehours.ToString() + "/" + scheduleminutes.ToString();
+
+        listofitems.text = listofitems.text + iname + "                 " + quant.ToString() + "           "
+        + itemscost.ToString() + "          " + orderedTime + "\n";
+
+        total.text = "Total Spent: " + money.ToString() + "$";
         time.text = "Weeks: " + scheduleweeks.ToString() + "\n"
             + "Days: " + scheduledays.ToString() + "\n"
             + "Hours:" + schedulehours.ToString() + "\n"
             + "Minutes:" + scheduleminutes.ToString() + "\n";
-        listofitems.text = listofitems.text + iname + "\n";
     }
 
 
 
-    public void iteminstalled(int itime)
+    public void iteminstalled(string objName)
     {
-        convertTime(itime);
-        total.text = "Total Spent: " + money.ToString();
-        time.text = "Weeks: " + scheduleweeks.ToString() + "\n"
-            + "Days: " + scheduledays.ToString() + "\n"
-            + "Hours:" + schedulehours.ToString() + "\n"
-            + "Minutes:" + scheduleminutes.ToString() + "\n";
+        for (int i = 0; i < installObjs.Length; i++)
+        {
+            if(string.Equals(objName,installObjs[i].name))
+            {
+                convertTime(installObjs[i].instalTime);
+                time.text = "Weeks: " + scheduleweeks.ToString() + "\n"
+                     + "Days: " + scheduledays.ToString() + "\n"
+                     + "Hours:" + schedulehours.ToString() + "\n"
+                     + "Minutes:" + scheduleminutes.ToString() + "\n";
+            }
+        }
+
     }
     //change time in minutes into weeks-minutes
     public void convertTime(int t)
