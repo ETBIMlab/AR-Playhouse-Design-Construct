@@ -105,7 +105,7 @@ MonoBehaviour:
   canSnapFullFacePanel: 0
   canSnapSlide: 0
   canSnapFullFacePanelAttachment: 1
-  isOrientationSpecific: 1
+  isOrientationSpecific: 0
   allowedItemOrientation: 1
 --- !u!1 &717606999
 GameObject:
@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 215053645074064379}
   - component: {fileID: 215053645074064260}
   - component: {fileID: 3002852652108676799}
+  - component: {fileID: 7440808993385305212}
   m_Layer: 0
   m_Name: face panel 7
   m_TagString: Untagged
@@ -218,7 +219,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75bca0fdaa46048438e7072770e7a176, type: 2}
+  - {fileID: 2100000, guid: c6a70d4dbd1f2fa42a97d2d285b44098, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -271,7 +272,7 @@ MonoBehaviour:
   oneHandRotationModeNear: 4
   oneHandRotationModeFar: 4
   releaseBehavior: 3
-  constraintOnRotation: 0
+  constraintOnRotation: 2
   useLocalSpaceForConstraint: 0
   constraintOnMovement: 0
   smoothingActive: 1
@@ -374,3 +375,16 @@ MonoBehaviour:
   itemType: 1
   hasDifferentOriginRotation: 1
   itemOrientation: 1
+--- !u!114 &7440808993385305212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215053645074064261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0

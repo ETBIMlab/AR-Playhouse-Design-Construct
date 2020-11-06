@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 4279711960321618283}
   - component: {fileID: 4279711960321618280}
   - component: {fileID: 4279711960321618281}
+  - component: {fileID: 2542949352951290573}
   m_Layer: 0
   m_Name: TicTacToe
   m_TagString: Untagged
@@ -409,7 +410,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.78, y: 67.6, z: 99.2}
+  m_Size: {x: 22.5, y: 67.6, z: 99.2}
   m_Center: {x: -3.38, y: -71.6, z: -914.8}
 --- !u!114 &4279711960321618285
 MonoBehaviour:
@@ -425,12 +426,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hostTransform: {fileID: 0}
   manipulationType: 2
-  twoHandedManipulationType: 4
+  twoHandedManipulationType: 3
   allowFarManipulation: 1
   oneHandRotationModeNear: 4
   oneHandRotationModeFar: 4
   releaseBehavior: 3
-  constraintOnRotation: 0
+  constraintOnRotation: 2
   useLocalSpaceForConstraint: 0
   constraintOnMovement: 0
   smoothingActive: 1
@@ -511,6 +512,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snappingRadius: 0.0625
   colliderObjectsToEnable: []
+  OnObjectStartedSnapping:
+    m_PersistentCalls:
+      m_Calls: []
+  OnObjectFinishedSnapping:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4279711960321618281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,7 +531,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 3
+  hasDifferentOriginRotation: 0
   itemOrientation: 1
+--- !u!114 &2542949352951290573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279711960321618263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0
 --- !u!1 &4279711960527423278
 GameObject:
   m_ObjectHideFlags: 0

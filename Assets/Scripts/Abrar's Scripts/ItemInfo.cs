@@ -40,7 +40,6 @@ public class ItemInfo : MonoBehaviour
         yRotation = Mathf.Round(yRotation / 90) * 90;
         //Debug.Log("rounded y angle is: " + yRotation);
 
-        
         while (yRotation >= 360 || yRotation < 0)
         {
             yRotation = SimplifyRotation(yRotation);
@@ -49,12 +48,45 @@ public class ItemInfo : MonoBehaviour
 
         switch (itemType)
         {
-
             // TODO: ADD MORE TYPES and wait until all object pieces have the same rotation (prefabs)
             case ItemType.Full_Panel:
                 //Debug.Log("Simplified/rounded angle is: " + yRotation);
 
                 // for handling full panels with different origin rotation
+                if (hasDifferentOriginRotation) { yRotation += 90; }
+
+                switch (yRotation)
+                {
+                    case 90:
+                    case 270:
+                        itemOrientation = ItemOrientation.NorthSouth;
+                        break;
+                    case 0:
+                    case 180:
+                        itemOrientation = ItemOrientation.EastWest;
+                        break;
+                }
+                return itemOrientation;
+                break;
+
+            case ItemType.Half_Panel:
+                if (hasDifferentOriginRotation) { yRotation += 90;  }
+
+                switch (yRotation)
+                {
+                    case 90:
+                    case 270:
+                        itemOrientation = ItemOrientation.NorthSouth;
+                        break;
+                    case 0:
+                    case 180:
+                        itemOrientation = ItemOrientation.EastWest;
+                        break;
+                }
+                return itemOrientation;
+                break;
+
+            case ItemType.Full_Panel_Attachment:
                 if (hasDifferentOriginRotation) { yRotation += 90; }
 
                 switch (yRotation)
