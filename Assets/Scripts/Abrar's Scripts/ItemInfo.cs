@@ -6,6 +6,9 @@ using UnityEngine;
 // class contains itemtype and maybe other things later..
 public class ItemInfo : MonoBehaviour
 {
+    /// <summary>
+    /// Stores info on what type of object it is
+    /// </summary>
     public enum ItemType
     {
         Half_Panel,
@@ -17,13 +20,16 @@ public class ItemInfo : MonoBehaviour
 
     public ItemType itemType;
 
+    // for objects with a different origin rotation (remove once all individual models have the origins/rotations fixed)
     public bool hasDifferentOriginRotation = false;
-    
 
+    // FIX:
     // Problem: Orientation/rototion of each object is different, which makes it very confusing to set up a orientation
-    // Model needs to be fixed
-    
-    // For storing info on the objects orientaion (direction it is facing)
+    // Individual Models needs to be fixed
+
+    /// <summary>
+    /// Stores info on the objects orientaion (direction it is facing)
+    /// </summary>
     public enum ItemOrientation
     {
         NorthSouth,
@@ -32,18 +38,19 @@ public class ItemInfo : MonoBehaviour
 
     public ItemOrientation itemOrientation;
     
+    /// <summary>
+    /// Updates item's orientation
+    /// </summary>
+    /// <param name="yRotation">Object's y rotation component</param>
+    /// <returns>Returns updated object's ItemOrientaion value</returns>
     public ItemOrientation UpdateItemOrienation(float yRotation)
     {
-        //Debug.Log("orginal y angle is: " + yRotation);
-
         // round to nearest 90 degree increment
         yRotation = Mathf.Round(yRotation / 90) * 90;
-        //Debug.Log("rounded y angle is: " + yRotation);
 
         while (yRotation >= 360 || yRotation < 0)
         {
             yRotation = SimplifyRotation(yRotation);
-            //Debug.Log("Angle simplified: " + yRotation);
         }
 
         switch (itemType)
@@ -67,7 +74,6 @@ public class ItemInfo : MonoBehaviour
                         break;
                 }
                 return itemOrientation;
-                break;
 
             case ItemType.Half_Panel:
                 if (hasDifferentOriginRotation) { yRotation += 90;  }
@@ -84,7 +90,6 @@ public class ItemInfo : MonoBehaviour
                         break;
                 }
                 return itemOrientation;
-                break;
 
             case ItemType.Full_Panel_Attachment:
                 if (hasDifferentOriginRotation) { yRotation += 90; }
@@ -101,7 +106,6 @@ public class ItemInfo : MonoBehaviour
                         break;
                 }
                 return itemOrientation;
-                break;
 
             case ItemType.Slide:
                 //Debug.Log("Simplified/rounded angle is: " + yRotation);
@@ -118,16 +122,21 @@ public class ItemInfo : MonoBehaviour
                         break;
                 }
                 return itemOrientation;
-                break;
 
             default:
                 Debug.Log("ItemOrienation() failed");
                 return itemOrientation;
-                break;
         }
     }
 
-    // simplifies rotation (e.g. if angle was 450 degrees, it would become 90 degrees)
+    /// <summary>
+    /// Simplifies rotation to a value within: 0 - 360
+    /// </summary>
+    /// <example>
+    /// if angle was 450 degrees, it would become 90 degrees
+    /// </example>
+    /// <param name="rotation">rotation value to simplify</param>
+    /// <returns>simplified rotation value</returns>
     private float SimplifyRotation(float rotation)
     {
         if (rotation >= 360f)
