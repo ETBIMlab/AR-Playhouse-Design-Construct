@@ -13,8 +13,13 @@ public class ObjectOrderer : MonoBehaviour
     public struct OrderableObj
     {
         public string name;
+        public double price;
+        public int deliveryTime;
+        public int instalTime;
         public GameObject obj;
     }
+
+    public GameObject laptopinterface;
 
     KeywordRecognizer keywordRecognizer = null;
     List<string> keywords = new List<string>();
@@ -27,7 +32,7 @@ public class ObjectOrderer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < orderableObjs.Length; i++)
+        for (int i = 0; i < orderableObjs.Length; i++)
         {
             keywords.Add("Order " + orderableObjs[i].name);
             keywords.Add("Order a dozen " + orderableObjs[i].name+"s");
@@ -48,6 +53,8 @@ public class ObjectOrderer : MonoBehaviour
     // important
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
+        laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
+
         string temp = args.text.Substring(args.text.LastIndexOf(" ") + 1);
         temp = temp.Substring(0, temp.Length-1);
         for (int i = 0; i < orderableObjs.Length; i++)
@@ -55,6 +62,7 @@ public class ObjectOrderer : MonoBehaviour
 
             if (args.text.Substring(6) == orderableObjs[i].name)
             {
+                li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, orderableObjs[i].name);
                 AddObjectToScene(orderableObjs[i].obj);
                 return;
             }
@@ -66,6 +74,7 @@ public class ObjectOrderer : MonoBehaviour
                 int hold = numlist.IndexOf(h);
                 if (hold != -1)
                 {
+                    li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, args.text);
                     for (int j = 0; j < hold; j++)
                     {
                         AddObjectToScene(orderableObjs[i].obj);
@@ -73,6 +82,7 @@ public class ObjectOrderer : MonoBehaviour
                 }
                 else if(h.Equals("a"))
                 {
+                    li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, args.text);
                     for (int j = 0; j < 12; j++)
                     {
                         AddObjectToScene(orderableObjs[i].obj);
