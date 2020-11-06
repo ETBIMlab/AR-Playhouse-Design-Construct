@@ -44,6 +44,69 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &550961425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 550961426}
+  - component: {fileID: 550961428}
+  - component: {fileID: 550961427}
+  m_Layer: 0
+  m_Name: Full Panel Attachment Snapping Location
+  m_TagString: SnappingCollider
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &550961426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550961425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -80.7, y: 121.6, z: -155.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4997032434524909337}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &550961428
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550961425}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 110.281586, y: 82.21536, z: 39.899994}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &550961427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550961425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e1ebd2eb5426d4db8bbf786a1d486b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canSnapHalfFacePanel: 0
+  canSnapFullFacePanel: 0
+  canSnapSlide: 0
+  canSnapFullFacePanelAttachment: 1
+  isOrientationSpecific: 0
+  allowedItemOrientation: 1
 --- !u!1 &717606999
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +168,7 @@ GameObject:
   - component: {fileID: 215053645074064379}
   - component: {fileID: 215053645074064260}
   - component: {fileID: 3002852652108676799}
+  - component: {fileID: 7440808993385305212}
   m_Layer: 0
   m_Name: face panel 7
   m_TagString: Untagged
@@ -125,6 +189,7 @@ Transform:
   m_Children:
   - {fileID: 379385675}
   - {fileID: 717607000}
+  - {fileID: 550961426}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 89.999, z: 0}
@@ -154,7 +219,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75bca0fdaa46048438e7072770e7a176, type: 2}
+  - {fileID: 2100000, guid: c6a70d4dbd1f2fa42a97d2d285b44098, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -202,12 +267,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hostTransform: {fileID: 0}
   manipulationType: 2
-  twoHandedManipulationType: 5
+  twoHandedManipulationType: 3
   allowFarManipulation: 1
-  oneHandRotationModeNear: 6
-  oneHandRotationModeFar: 6
+  oneHandRotationModeNear: 4
+  oneHandRotationModeFar: 4
   releaseBehavior: 3
-  constraintOnRotation: 0
+  constraintOnRotation: 2
   useLocalSpaceForConstraint: 0
   constraintOnMovement: 0
   smoothingActive: 1
@@ -287,7 +352,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snappingRadius: 0.0625
-  colliderObjectsToEnable: []
+  colliderObjectsToEnable:
+  - {fileID: 550961425}
+  OnObjectStartedSnapping:
+    m_PersistentCalls:
+      m_Calls: []
+  OnObjectFinishedSnapping:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3002852652108676799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,3 +373,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
+  hasDifferentOriginRotation: 1
+  itemOrientation: 1
+--- !u!114 &7440808993385305212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215053645074064261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0

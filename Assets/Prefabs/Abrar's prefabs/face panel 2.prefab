@@ -154,7 +154,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75bca0fdaa46048438e7072770e7a176, type: 2}
+  - {fileID: 2100000, guid: c6a70d4dbd1f2fa42a97d2d285b44098, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -202,12 +202,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hostTransform: {fileID: 0}
   manipulationType: 2
-  twoHandedManipulationType: 5
+  twoHandedManipulationType: 3
   allowFarManipulation: 1
-  oneHandRotationModeNear: 6
-  oneHandRotationModeFar: 6
+  oneHandRotationModeNear: 4
+  oneHandRotationModeFar: 4
   releaseBehavior: 3
-  constraintOnRotation: 0
+  constraintOnRotation: 2
   useLocalSpaceForConstraint: 0
   constraintOnMovement: 0
   smoothingActive: 1
@@ -288,6 +288,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snappingRadius: 0.0625
   colliderObjectsToEnable: []
+  OnObjectStartedSnapping:
+    m_PersistentCalls:
+      m_Calls: []
+  OnObjectFinishedSnapping:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7469127551034523374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,3 +307,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
+  hasDifferentOriginRotation: 1
+  itemOrientation: 0

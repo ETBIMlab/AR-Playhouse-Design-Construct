@@ -1,5 +1,68 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &242638727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 242638728}
+  - component: {fileID: 242638729}
+  - component: {fileID: 242638730}
+  m_Layer: 0
+  m_Name: Full Panel Attachment Snapping Location
+  m_TagString: SnappingCollider
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &242638728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242638727}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -72, y: 124.9, z: -392.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6440470206975397256}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &242638729
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242638727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 112.05947, y: 68.28171, z: 23.09935}
+  m_Center: {x: -3.5982432, y: -1.5269846, z: -1.5289024}
+--- !u!114 &242638730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242638727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e1ebd2eb5426d4db8bbf786a1d486b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canSnapHalfFacePanel: 0
+  canSnapFullFacePanel: 0
+  canSnapSlide: 0
+  canSnapFullFacePanelAttachment: 1
+  isOrientationSpecific: 0
+  allowedItemOrientation: 1
 --- !u!1 &1404317754
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,6 +188,7 @@ Transform:
   m_Children:
   - {fileID: 1404317755}
   - {fileID: 1977624513}
+  - {fileID: 242638728}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -154,7 +218,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75bca0fdaa46048438e7072770e7a176, type: 2}
+  - {fileID: 2100000, guid: c6a70d4dbd1f2fa42a97d2d285b44098, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -202,12 +266,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hostTransform: {fileID: 0}
   manipulationType: 2
-  twoHandedManipulationType: 5
+  twoHandedManipulationType: 3
   allowFarManipulation: 1
-  oneHandRotationModeNear: 6
-  oneHandRotationModeFar: 6
+  oneHandRotationModeNear: 4
+  oneHandRotationModeFar: 4
   releaseBehavior: 3
-  constraintOnRotation: 0
+  constraintOnRotation: 2
   useLocalSpaceForConstraint: 0
   constraintOnMovement: 0
   smoothingActive: 1
@@ -287,7 +351,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snappingRadius: 0.0625
-  colliderObjectsToEnable: []
+  colliderObjectsToEnable:
+  - {fileID: 242638727}
+  OnObjectStartedSnapping:
+    m_PersistentCalls:
+      m_Calls: []
+  OnObjectFinishedSnapping:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3529212190919499776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,3 +372,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
+  hasDifferentOriginRotation: 1
+  itemOrientation: 1

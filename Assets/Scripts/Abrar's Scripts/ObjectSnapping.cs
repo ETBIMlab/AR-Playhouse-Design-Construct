@@ -1,44 +1,59 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class SnappingScriptCustom : MonoBehaviour
+public class ObjectSnapping : MonoBehaviour
 {
-    // Modified version of TJ's script "SnappingScript.cs"
     // This will snap to a specific point and not the origin of the snapping collider
+    #region Private Variables
 
-    //private List<GameObject> ColliderListObjects = new List<GameObject>();
-
-    private List<Collider> ColliderListObjects = new List<Collider>(); // new
+    // contains the child Colliders of the gameobject which this script is attached to (e.g. face panel object)
+    private List<Collider> SnappingColliderList = new List<Collider>(); 
 
     public float snappingRadius;
     private float minDistance = -1f;
 
+    private ItemInfo itemInfo;
     private ItemInfo.ItemType itemType;
     private ItemInfo.ItemOrientation itemOrientation;
 
     private Collider snappedCollider = null;
 
-    [Header("Settings for Enabling other Snap Points After Being Snapped")]
     private bool snappedOnToObject = false;
     private bool collidersEnabled = true;
-    // these will be enabled after
+    #endregion
+
+    [Header("Settings for Enabling other Snap Points After Being Snapped")]
     [SerializeField] List<GameObject> colliderObjectsToEnable;
 
-    // Start is called before the first frame update
+    // Events
+    public UnityEvent OnObjectStartedSnapping;
+    public UnityEvent OnObjectFinishedSnapping;
+
     void Start()
     {
-        // contains the gameobject with snapping colliders of the gameobject which this script is attached to (e.g. face panel object)
-        ColliderListObjects = GetChildSnappingColliders(transform.gameObject);
+        SnappingColliderList = GetChildSnappingColliders(transform.gameObject);
 
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.AddForce(new Vector3(0, 0, 10));
-
-        this.itemType = GetComponent<ItemInfo>().itemType;
-        this.itemOrientation = GetComponent<ItemInfo>().itemOrientation;
+        InitializeItemInfo();
     }
 
-    // changed to colliders instead of gameobject
+    /// <summary>
+    /// Gets info from ItemInfo component and stores info in relative variables
+    /// </summary>
+    private void InitializeItemInfo()
+    {
+        itemInfo = GetComponent<ItemInfo>();
+        this.itemType = itemInfo.itemType;
+        this.itemOrientation = itemInfo.itemOrientation;
+    }
+
+    /// <summary>
+    /// Searches and returns a list of colliders (child snapping colliders)
+    /// </summary>
+    /// <param name="obj">Gameobject that has snapping colliders as children</param>
+    /// <returns>List of Colliders</returns>
     private List<Collider> GetChildSnappingColliders(GameObject obj)
     {
         List<Collider> childSnappingColliders = new List<Collider>();
@@ -58,11 +73,15 @@ public class SnappingScriptCustom : MonoBehaviour
         return childSnappingColliders;
     }
 
+    /// <summary>
+    /// Checks, Verfies and then snaps to snap location if valid location is found
+    /// </summary>
     public void SnapToLocation()
     {
-        Debug.Log("\n-------------------------------");
+        // Invoke UnityAction (event)
+        OnObjectStartedSnapping.Invoke();
 
-        minDistance = -1f;  // refresh min distance
+        minDistance = -1f;  // refresh minimum distance
 
         snappedOnToObject = false;
         bool foundSnapLocation = false;
@@ -73,40 +92,60 @@ public class SnappingScriptCustom : MonoBehaviour
         Collider minDistanceChildCollider = null;
         Vector3 minDistanceHitColliderLocation = new Vector3(0, 0, 0);
 
-        //foreach (GameObject SnapPointObject in ColliderListObjects)
-        foreach (Collider SnapPointCollider in ColliderListObjects)
+        // updating item orientation (in case user rotates object)
+        itemOrientation =  itemInfo.UpdateItemOrienation(transform.eulerAngles.y);
+
+        #region Comments explaining code below
+        /*
+         * The first foreach loop, got though each potential snapping point
+         * 
+         * "Collider[] hitSnappingColliders = Physics.OverlapSphere(SnapPointCollider.transform.position, snappingRadius);"
+         * grabs all the colliders in in the sphere projected (restricted by the sphere's radius) and stores them inside the 
+         * array of colliders calledhitSnappingColliders
+         * 
+         * The next foreach loop looks at the colliders the colliders found by the overlap sphere and compares the distance 
+         * from the object the user just let go to each snapping point/collider in hitSnappingColliders.
+         * 
+         * Then it checks if it can snap to that snapping point/collider by verifying with the SnappingValidator component
+         * that should be attached to the snapping point gameobject
+         * 
+         * If a object is valid, then its distance from the object the user has let go of and the snapping point/collider
+         * is recorded. The distances are compared and the collider with the smallest distance will be the snap point/collider
+         * the object will snap to.
+         * 
+        */
+        #endregion
+
+        foreach (Collider SnapPointCollider in SnappingColliderList)
         {
-            //Debug.Log("Looking at collider: " + SnapPoint.name);
-            Collider[] hitColliders = Physics.OverlapSphere(SnapPointCollider.transform.position, snappingRadius);
+            Collider[] hitSnappingColliders = Physics.OverlapSphere(SnapPointCollider.transform.position, snappingRadius);
 
-            if (hitColliders.Length == 0)
-            {
-                return;
-            }
+            // if no snap colliders are found, then return
+            if (hitSnappingColliders.Length == 0) return;
 
-            foreach (Collider ConnectedSnappingPoint in hitColliders)
+            foreach (Collider ConnectedSnappingPoint in hitSnappingColliders)
             {
-                // error checking --------------------------------------------------------------- Remove
-                if (ConnectedSnappingPoint.GetComponent<SnappingValidator>() == null)
-                {
-                    continue; // Could not find SnappingValidator script on snap point collider so continue to next iteration of foreach loop
-                }
+                // if no SnappingValidator is found on the snap point collider, continue to next iteration of foreach loop
+                if (ConnectedSnappingPoint.GetComponent<SnappingValidator>() == null) continue; 
+
                 // NEW: checking if this object can even snap to that snapping point
                 bool canSnap = ConnectedSnappingPoint.GetComponent<SnappingValidator>().verifySnapCapability(itemType, itemOrientation);
+
                 if (canSnap == true)
                 {
-                    Debug.Log("Snap-able!!!   item is: " + itemType.ToString());
-                    //Debug.Log(SnapPoint.name + " is close enough to " + ConnectedSnappingPoint.gameObject.name);
                     if (ConnectedSnappingPoint.gameObject.CompareTag("SnappingCollider") && 
-                        !ColliderListObjects.Contains(ConnectedSnappingPoint.gameObject.GetComponent<Collider>()))
+                        !SnappingColliderList.Contains(ConnectedSnappingPoint.gameObject.GetComponent<Collider>()))
                     {
                         float distance = Vector3.Distance(SnapPointCollider.transform.position, ConnectedSnappingPoint.transform.position);
+
                         if (distance < minDistance || minDistance < 0)
                         {
                             Debug.Log("Found snapping point named:" + SnapPointCollider.name);
 
                             if (ConnectedSnappingPoint.transform.childCount > 0)
                             {
+                                #region Comparing Custom Snapping Points
+
                                 minDistance = distance;
                                 minDistanceChildCollider = SnapPointCollider;
 
@@ -117,24 +156,29 @@ public class SnappingScriptCustom : MonoBehaviour
 
                                 // keeping reference to collider we are going to snap to
                                 snappedCollider = ConnectedSnappingPoint;
+
+                                #endregion
                             }
                             else
                             {
+                                #region Comparing Normal Snapping Points
                                 // Made it so custom snapping points are optional
-                                Debug.Log("no child (custom snapping point) found");
-                                
+                                //Debug.Log("no child (custom snapping point) found");
+
                                 minDistance = distance;
                                 minDistanceChildCollider = SnapPointCollider;
                                 minDistanceHitColliderLocation = ConnectedSnappingPoint.transform.position;
 
-                                // keeping reference to collider we are going to snap to
-                                snappedCollider = ConnectedSnappingPoint;   
+                                // keeping reference to the snap collider that will be snapped to
+                                snappedCollider = ConnectedSnappingPoint;
+                                #endregion
                             }
+
                             foundSnapLocation = true;
                         }
                     }
                 }
-                else Debug.Log("CANT SNAP :(   item type is: " + itemType.ToString());
+                // else Debug.Log("CANT SNAP, item type is: " + itemType.ToString());
             }
         }
 
@@ -144,7 +188,6 @@ public class SnappingScriptCustom : MonoBehaviour
 
             // disabling snap collider to prevent other objects from snapping to it
             snappedCollider.enabled = false;
-            Debug.Log("Disabled: " + minDistanceChildCollider.name);
         }
     }
 
@@ -154,6 +197,11 @@ public class SnappingScriptCustom : MonoBehaviour
     * Will be called when user grabs object ("On Manipulation Started" in 
     * the ManipulationHandler component)
     */
+    /// <summary>
+    /// Enables the collider that had an object snapped to it,
+    /// Will be called when user grabs object ("On Manipulation Started" in 
+    /// the ManipulationHandler component)
+    /// </summary>
     public void EnableSnappedCollider()
     {
         if (snappedCollider != null)  snappedCollider.enabled = true; 
@@ -161,36 +209,14 @@ public class SnappingScriptCustom : MonoBehaviour
 
     private void SnapObjectToLocation(Collider minDistChildCollider, Vector3 minDistHitColliderLocation)
     {
-        float AngleSnappingNum = 30f;
-
         Vector3 currentRotation = transform.eulerAngles;
-        //Debug.Log("X Rotation:" + currentRotation.x);
-        //Debug.Log("Y Rotation:" + currentRotation.y);
-        //Debug.Log("Z Rotation:" + currentRotation.z);
-        if (currentRotation.x % AngleSnappingNum < (AngleSnappingNum / 2))
-        {
-            currentRotation.x -= currentRotation.x % AngleSnappingNum;
-        }
-        else
-        {
-            currentRotation.x += AngleSnappingNum - (currentRotation.x % AngleSnappingNum);
-        }
-        if (currentRotation.y % AngleSnappingNum < (AngleSnappingNum / 2))
-        {
-            currentRotation.y -= currentRotation.y % AngleSnappingNum;
-        }
-        else
-        {
-            currentRotation.y += AngleSnappingNum - (currentRotation.y % AngleSnappingNum);
-        }
-        if (currentRotation.z % AngleSnappingNum < (AngleSnappingNum / 2))
-        {
-            currentRotation.z -= currentRotation.z % AngleSnappingNum;
-        }
-        else
-        {
-            currentRotation.z += AngleSnappingNum - (currentRotation.z % AngleSnappingNum);
-        }
+
+        #region Code that Rounds Current Objects Rotation to nearest 90 degree increment
+        currentRotation.x = Mathf.Round(currentRotation.x / 90) * 90;
+        currentRotation.y = Mathf.Round(currentRotation.y / 90) * 90;
+        currentRotation.z = Mathf.Round(currentRotation.z / 90) * 90;
+        #endregion
+
         transform.eulerAngles = currentRotation;
 
         if (minDistance >= 0f)
@@ -200,18 +226,16 @@ public class SnappingScriptCustom : MonoBehaviour
 
         snappedOnToObject = true;
 
-        // play corresponding snap sound
-        FindObjectOfType<SoundManager>().PlaySoundAtLocation(itemType, transform.position);
-
         // since object is snapped onto another object, enable the other colliders
         enableColliderObjects();
+
+        OnObjectFinishedSnapping.Invoke();
     }
 
-    /* 
-     * enabling other colliders (like the slide snapping point) after it is snapped
-     * because when it was active, it would cause a bug where it refers to the slide's 
-     * snapping verfier script
-    */
+
+    /// <summary>
+    /// Enable additional snap collider on the current object
+    /// </summary>
     private void enableColliderObjects()
     {
         foreach (GameObject colliderObject in colliderObjectsToEnable)
@@ -221,6 +245,9 @@ public class SnappingScriptCustom : MonoBehaviour
         collidersEnabled = true;
     }
 
+    /// <summary>
+    /// Disable additional snap collider on the current object
+    /// </summary>
     private void disableColliderObjects()
     {
         foreach (GameObject colliderObject in colliderObjectsToEnable)

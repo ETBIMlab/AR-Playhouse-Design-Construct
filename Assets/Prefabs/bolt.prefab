@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 4496956547752669331}
   - component: {fileID: 6157930584401058186}
   - component: {fileID: 6157930584401058293}
-  - component: {fileID: 6157930584401058294}
-  - component: {fileID: 6157930584401058295}
   - component: {fileID: 6157930584401058292}
-  - component: {fileID: 1581815299}
+  - component: {fileID: 1012775934}
+  - component: {fileID: 1012775935}
   m_Layer: 0
   m_Name: bolt
   m_TagString: screw
@@ -33,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 2762026173616096335}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0.501, y: -0.189, z: 0.5823}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -99,7 +98,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &6157930584401058293
 CapsuleCollider:
@@ -111,56 +110,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.00705038
+  m_Radius: 0.009
   m_Height: 0.026931286
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: -0.0026670694}
---- !u!114 &6157930584401058294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2762026173616096335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8fa5e20926f8f649ba0a27683bfcee7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disableTime: 1
-  grabbed: 0
-  handlerEnabled: 1
---- !u!114 &6157930584401058295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2762026173616096335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1410eac1ae94b4d4492a09cc368e152c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  states: {fileID: 11400000, guid: 5eac1712038236e4b8ffdb3893804fe1, type: 2}
-  InputActionId: 0
-  isGlobal: 0
-  Dimensions: 1
-  dimensionIndex: 0
-  startDimensionIndex: 0
-  CanSelect: 1
-  CanDeselect: 1
-  VoiceCommand: 
-  voiceRequiresFocus: 1
-  profiles:
-  - Target: {fileID: 2762026173616096335}
-    Themes:
-    - {fileID: 11400000, guid: afb9a653b3359b345aeb3ab2e0479189, type: 2}
-  OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-  Events: []
-  enabledOnStart: 1
 --- !u!114 &6157930584401058292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hostTransform: {fileID: 0}
-  manipulationType: 2
+  manipulationType: 0
   twoHandedManipulationType: 5
   allowFarManipulation: 1
   oneHandRotationModeNear: 6
@@ -188,8 +141,8 @@ MonoBehaviour:
   onManipulationStarted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6157930584401058294}
-        m_MethodName: setGrabbedToTrue
+      - m_Target: {fileID: 1012775934}
+        m_MethodName: UnlockObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -202,8 +155,8 @@ MonoBehaviour:
   onManipulationEnded:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6157930584401058294}
-        m_MethodName: setGrabbedToFalse
+      - m_Target: {fileID: 1012775934}
+        m_MethodName: SnapToLockLocation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -219,7 +172,20 @@ MonoBehaviour:
   onHoverExited:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1581815299
+--- !u!114 &1012775934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2762026173616096335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6855e0dbd091813409669c392f03a5fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snappingRadius: 0.1
+--- !u!114 &1012775935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7612acbc1a4a4ed0afa5f4ccbe42bee4, type: 3}
-  m_Name: EditableHololens1Profile
+  m_Name: Playhouse_Hololens2ConfigurationProfile
   m_EditorClassIdentifier: 
   isCustomProfile: 1
   targetExperienceScale: 3
@@ -20,7 +20,7 @@ MonoBehaviour:
     reference: Microsoft.MixedReality.Toolkit.CameraSystem.MixedRealityCameraSystem,
       Microsoft.MixedReality.Toolkit.Services.CameraSystem
   enableInputSystem: 1
-  inputSystemProfile: {fileID: 11400000, guid: 5f9481a954567f340b13bd8802aa3fac, type: 2}
+  inputSystemProfile: {fileID: 11400000, guid: bec5ceabcd10992439d51532332137f9, type: 2}
   inputSystemType:
     reference: Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSystem, Microsoft.MixedReality.Toolkit.Services.InputSystem
   enableBoundarySystem: 0
@@ -51,5 +51,5 @@ MonoBehaviour:
     reference: 
   registeredServiceProvidersProfile: {fileID: 11400000, guid: efbaf6ea540c69f4fb75415a5d145a53,
     type: 2}
-  useServiceInspectors: 0
+  useServiceInspectors: 1
   renderDepthBuffer: 0
