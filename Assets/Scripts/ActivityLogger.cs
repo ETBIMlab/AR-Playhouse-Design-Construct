@@ -17,6 +17,7 @@ public class ActivityLogger : MonoBehaviour
     public GameObject[] activityItems = new GameObject[5];
 
     private ArrayList listOfActions = new ArrayList();
+    private ArrayList listOfPositions = new ArrayList();
 
     KeywordRecognizer keywordRecognizer = null;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
@@ -39,7 +40,7 @@ public class ActivityLogger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
@@ -72,14 +73,29 @@ public class ActivityLogger : MonoBehaviour
     {
         Debug.Log("Creating Activity Log");
         string fileContents = "";
-        for(int i = 0; i < listOfActions.Count; i++)
+        for (int i = 0; i < listOfActions.Count; i++)
         {
             fileContents += listOfActions[i];
-            if(i < listOfActions.Count - 1)
+            if (i < listOfActions.Count - 1)
             {
                 fileContents += "\n";
             }
         }
         File.WriteAllText("./ActivityLog.txt", fileContents);
+        string posFileContents = "";
+        for (int i = 0; i < listOfPositions.Count; i++)
+        {
+            posFileContents += listOfPositions[i];
+            if (i < listOfPositions.Count - 1)
+            {
+                posFileContents += "\n";
+            }
+        }
+        File.WriteAllText("./PositionLog.txt", posFileContents);
+    }
+
+    public void LogPosition(string activity)
+    {
+        listOfPositions.Add(activity);
     }
 }

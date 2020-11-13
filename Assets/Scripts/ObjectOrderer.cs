@@ -41,6 +41,7 @@ public class ObjectOrderer : MonoBehaviour
             totalPrice += itemObjects[i].GetComponent<ItemInfo>().itemPrice;
         }
         Debug.Log("Amount of objects:" + itemObjects.Length);
+        gameObject.GetComponent<ActivityLogger>().LogItem("starting total price:" + totalPrice);
         Debug.Log("totalPrice:" + totalPrice);
     }
 
@@ -75,6 +76,8 @@ public class ObjectOrderer : MonoBehaviour
         Instantiate(newObj, transform.position + (transform.forward * 0) + (transform.up * 0.25f) + (transform.right * -2), Quaternion.identity);
         
         totalPrice += newObj.GetComponent<ItemInfo>().itemPrice;
+        ActivityLogger logScript = GetComponent<ActivityLogger>();
+        gameObject.GetComponent<ActivityLogger>().LogItem("totalPrice:" + totalPrice);
         Debug.Log("totalPrice:" + totalPrice);
     }
 }
