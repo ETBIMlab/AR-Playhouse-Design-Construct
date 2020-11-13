@@ -5,6 +5,7 @@ using UnityEngine;
 public class Painter : MonoBehaviour
 {
     public GameObject objectToBePainted;
+    public Material material;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class Painter : MonoBehaviour
         Debug.Log("Painter trying to paint");
         if (objectToBePainted != null && objectToBePainted.GetComponent<Paintable>() != null)
         {
-            objectToBePainted.GetComponent<Paintable>().ChangeColor(paint);
+            objectToBePainted.GetComponent<Paintable>().ChangeColor(material);
         } 
         else if(objectToBePainted == null)
         {
@@ -31,6 +32,14 @@ public class Painter : MonoBehaviour
         else
         {
             Debug.Log("Paintable is null");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<Paintable>() != null)
+        {
+            other.GetComponent<MeshRenderer>().material = material;
         }
     }
 }
