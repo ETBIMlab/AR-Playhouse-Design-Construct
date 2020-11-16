@@ -11,12 +11,7 @@ public class Painter : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void PaintObject(Material paint)
     {
@@ -37,9 +32,20 @@ public class Painter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<Paintable>() != null)
+        if (other.GetComponent<Paintable>() != null)
         {
             other.GetComponent<MeshRenderer>().material = material;
         }
+
+        else if (other.GetComponent<isPaintBucket>() != null)
+        {
+            material = other.GetComponent<isPaintBucket>().material;
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
