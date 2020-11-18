@@ -2,9 +2,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEditorInternal;
+#endif
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,7 +16,7 @@ public class InteractionTrackable : MonoBehaviour
 {
     public GameObject ActionLogger;
 
-    #region TrackingChecks
+#region TrackingChecks
     public Boolean trackMovement = true;
     public Boolean trackRotation = true;
     public Boolean trackSnapping = true;
@@ -22,7 +24,7 @@ public class InteractionTrackable : MonoBehaviour
     public Boolean trackVoiceCommands = true;
     public Boolean trackRemoval = true;
     public Boolean trackOrdering = true;
-    #endregion
+#endregion
 
     private UnityAction<ManipulationEventData> StartMovementAction;
     private UnityAction<ManipulationEventData> EndMovementAction;
@@ -47,6 +49,7 @@ public class InteractionTrackable : MonoBehaviour
         if (gameObject.GetComponent<ManipulationHandler>() == null)
         {
             Debug.Log("Null Manipulation Handler");
+#if UNITY_EDITOR
             if (UnityEditor.EditorUtility.DisplayDialog("Missing required component", "Trackable object requires a ManipulationHandler component", "Add ManipulationHandler", "Stop Tracking Movement and/or Rotation"))
             {
                 gameObject.AddComponent(typeof(ManipulationHandler));
@@ -56,11 +59,13 @@ public class InteractionTrackable : MonoBehaviour
                 trackMovement = false;
                 trackRotation = false;
             }
+#endif
         }
         if (trackMovement || trackRotation) {
             if (gameObject.GetComponent<ManipulationHandler>() == null)
             {
                 Debug.Log("Null Manipulation Handler");
+#if UNITY_EDITOR
                 if (UnityEditor.EditorUtility.DisplayDialog("Missing required component", "Trackable object requires a \"ManipulationHandler component\"", "Add \"ManipulationHandler\"", "Stop Tracking Movement and/or Rotation"))
                 {
                     gameObject.AddComponent(typeof(ManipulationHandler));
@@ -70,6 +75,7 @@ public class InteractionTrackable : MonoBehaviour
                     trackMovement = false;
                     trackRotation = false;
                 }
+#endif
             }
             ManipulationHandler manipHandler = gameObject.GetComponent<ManipulationHandler>();
             StartMovementAction += StartMovement;
@@ -81,7 +87,8 @@ public class InteractionTrackable : MonoBehaviour
         {
             if(gameObject.GetComponent<Removable>() == null)
             {
-                if(UnityEditor.EditorUtility.DisplayDialog("Missing required component", "Trackable object requires a \"Removable\" component", "Add \"Removable\"", "Stop Tracking Removal"))
+#if UNITY_EDITOR
+                if (UnityEditor.EditorUtility.DisplayDialog("Missing required component", "Trackable object requires a \"Removable\" component", "Add \"Removable\"", "Stop Tracking Removal"))
                 {
                     gameObject.AddComponent(typeof(Removable));
                 }
@@ -89,6 +96,7 @@ public class InteractionTrackable : MonoBehaviour
                 {
                     trackRemoval = false;
                 }
+#endif
             }
             Removable removableComponent = gameObject.GetComponent<Removable>();
             StartRemovalAction += StartRemoval;
@@ -109,6 +117,7 @@ public class InteractionTrackable : MonoBehaviour
         if((trackMovement || trackRotation) && gameObject.GetComponent<ManipulationHandler>() == null)
         {
             Debug.Log("Null Manipulation Handler");
+#if UNITY_EDITOR
             if(UnityEditor.EditorUtility.DisplayDialog("Missing required component", "Trackable object requires a ManipulationHandler component", "Add ManipulationHandler", "Stop Tracking Movement and/or Rotation"))
             {
                 gameObject.AddComponent(typeof(ManipulationHandler));
@@ -119,11 +128,12 @@ public class InteractionTrackable : MonoBehaviour
                 trackMovement = false;
                 trackRotation = false;
             }
+#endif
         }
     }
 
 
-    #region MovementTracking
+#region MovementTracking
     private Vector3 storedPosition;
     private Quaternion storedRotation;
 
@@ -155,9 +165,9 @@ public class InteractionTrackable : MonoBehaviour
         }
         ActionLogger.SendMessage("LogItem", message);
     }
-    #endregion
+#endregion
 
-    #region RemovalTracking
+#region RemovalTracking
     private void StartRemoval()
     {
         string message = gameObject.name + " was removed from scene";
@@ -168,9 +178,9 @@ public class InteractionTrackable : MonoBehaviour
     {
         
     }
-    #endregion RemovalTracking
+#endregion RemovalTracking
 
-    #region SnappingTracking
+#region SnappingTracking
 
-    #endregion
+#endregion
 }
