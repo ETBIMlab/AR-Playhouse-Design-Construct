@@ -10,8 +10,8 @@ public class ShiftScale : MonoBehaviour
 
 
     private GameObject cube;
-    public Vector3 scaleChange, positionChange;
-    public GameObject environment;
+    public Vector3 scaleChange, positionChange, scaleIn, scaleOut; //shiftRight, shiftLeft;
+    public GameObject Environment;
 
     // Use this for initialization
     void Start()
@@ -23,9 +23,14 @@ public class ShiftScale : MonoBehaviour
         //create plane and adjust down by 0.5
         //GameObject plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
         //plane.transform.position = new Vector3(0, -0.5f, 0);
-        //scaleChange = new Vector3(5f, 5f, 5f);
-        //positionChange = new Vector3(0.0f, 5f, 0.0f);
+        scaleChange = new Vector3(5f, 5f, 5f);
+        positionChange = new Vector3(0.0f, 5f, 0.0f);
 
+        scaleIn = new Vector3(3.0f, 3.0f, 3.0f);
+        scaleOut = new Vector3(-3.0f, -3.0f, -3.0f);
+
+        //shiftRight = new Vector3(1.0f, 0.0f, 0.0f);
+        //shiftLeft = new Vector3(-1.0f, 0.0f, 0.0f);
     }
 
     void Update()
@@ -34,8 +39,22 @@ public class ShiftScale : MonoBehaviour
     }
     void Shift()
     {
-        environment.transform.localScale += scaleChange;
-        environment.transform.position += positionChange;
-        //Debug.Log("this is working");
+        Environment.transform.localScale += scaleChange;
+        Environment.transform.position += positionChange;
+        Debug.Log("this is working");
     }
+    void ScaleIn()
+    {
+        Environment.transform.localScale += scaleIn;
+        //Environment.transform.position += positionChange;
+        //Debug.Log("this is working");
+        Debug.Log("Scale in");
+    }
+    void ScaleOut()
+    {
+        Environment.transform.localScale += scaleOut;
+        //Environment.transform.position += positionChange;
+        Debug.Log("Shifting Down");
+    }
+
 }
