@@ -14,6 +14,7 @@ public class AudioScript : MonoBehaviour, IMixedRealityPointerHandler
     public AudioClip releaseClip;
     public AudioClip dragClip;
     public AudioClip clickClip;
+    public float volume = 1F;
 
 
     // Start is called before the first frame update
@@ -31,23 +32,23 @@ public class AudioScript : MonoBehaviour, IMixedRealityPointerHandler
     //plays audio file when the object is grabbed by the user
     public void OnPointerDown(MixedRealityPointerEventData eventData)
     {
-        theAudio1.PlayOneShot(grabClip, 1F);
+        theAudio1.PlayOneShot(grabClip, volume);
     }
 
     //plays audio file when object is let go by the user
     public void OnPointerUp(MixedRealityPointerEventData eventData)
     {
-        theAudio1.PlayOneShot(releaseClip, 1F);
+        theAudio1.PlayOneShot(releaseClip, volume);
     }
 
     public void OnPointerDragged(MixedRealityPointerEventData eventData)
     {
-        theAudio1.PlayOneShot(dragClip, 1f);
+        theAudio1.PlayOneShot(dragClip, volume);
     }
 
     public void OnPointerClicked(MixedRealityPointerEventData eventData)
     {
-        theAudio1.PlayOneShot(clickClip, 1f);
+        theAudio1.PlayOneShot(clickClip, volume);
     }
 
    

@@ -7,6 +7,7 @@ public class ObjectRemovalScript : MonoBehaviour
 
     private AudioSource audioSource;
     public AudioClip removeClip;
+    public float volume = 1F;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class ObjectRemovalScript : MonoBehaviour
             //other.GetComponent<Removable>().RemoveObject();
        // }
         other.gameObject.BroadcastMessage("Destroy");
-        audioSource.PlayOneShot(removeClip, 1F);
+        audioSource.PlayOneShot(removeClip, volume);
         Destroy(other.gameObject);
     }
 

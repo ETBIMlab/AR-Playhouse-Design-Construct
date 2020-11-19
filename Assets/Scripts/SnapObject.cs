@@ -17,6 +17,7 @@ public class SnapObject : MonoBehaviour
 
     private AudioSource theAudio1;
     public AudioClip snapClip;
+    public float volume = 1F;
 
 
     // Start is called before the first frame update
@@ -55,7 +56,7 @@ public class SnapObject : MonoBehaviour
         Debug.Log("DISABLED Grabbing");
         // diable manipulationHandler temporarily
         manipHandler.enabled = false;
-        theAudio1.PlayOneShot(snapClip, 0.2F);
+        theAudio1.PlayOneShot(snapClip, volume);
         // call courotine to enable it again after some time
         StartCoroutine(disableTemp());
     }
