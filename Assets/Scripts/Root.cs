@@ -37,7 +37,12 @@ public class Root : MonoBehaviour
 
     public void setSpace()
     {
-        environmentContainer.transform.position = environmentSetter.transform.position;
+        Vector3 newPosition = new Vector3();
+        newPosition.x = environmentSetter.transform.position.x + (float)14.89961;
+        newPosition.y = environmentSetter.transform.position.y - (float)2.887995;
+        newPosition.z = environmentSetter.transform.position.z - (float)18.44457;
+
+        environmentContainer.transform.position = newPosition;
 
         this.toggleVisibility(true, environmentContainer);
 
