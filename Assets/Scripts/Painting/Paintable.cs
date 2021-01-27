@@ -20,7 +20,7 @@ public class Paintable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
