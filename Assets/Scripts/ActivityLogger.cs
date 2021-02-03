@@ -17,6 +17,7 @@ public class ActivityLogger : MonoBehaviour
     public GameObject[] activityItems = new GameObject[5];
 
     private ArrayList listOfActions = new ArrayList();
+    private ArrayList listOfPositions = new ArrayList();
 
     KeywordRecognizer keywordRecognizer = null;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
@@ -81,5 +82,19 @@ public class ActivityLogger : MonoBehaviour
             }
         }
         File.WriteAllText("./ActivityLog.txt", fileContents);
+        string posFileContents = "";
+        for (int i = 0; i < listOfPositions.Count; i++)
+        {
+            posFileContents += listOfPositions[i];
+            if (i < listOfPositions.Count - 1)
+            {
+                posFileContents += "\n";
+            }
+        }
+        File.WriteAllText("./PositionLog.txt", posFileContents);
+    }
+    public void LogPosition(string activity)
+    {
+        listOfPositions.Add(activity);
     }
 }
