@@ -52,7 +52,7 @@ public class ActivityLogger : MonoBehaviour
         }
     }
 
-    void LogItem(string activity)
+    public void LogItem(string activity)
     {
         listOfActions.Add(activity);
         for(int i = 0; i < 5; i++)
