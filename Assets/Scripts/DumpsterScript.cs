@@ -16,18 +16,18 @@ public class DumpsterScript : MonoBehaviour
         
     }
 
-    /*private void OnCollisionEnter(Collision col)
+    private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "item")
         {
             Destroy(col.gameObject);
         }
-    }*/
-    private void OnTriggerEnter(Collider other)
+    }
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "item")
         {
             Destroy(other.gameObject);
         }
-    }
+    }*/
 }

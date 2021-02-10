@@ -43,7 +43,7 @@ public class ObjectOrderer : MonoBehaviour
             Debug.Log(totalPrice);
         }
         Debug.Log("Amount of objects:" + itemObjects.Length);
-        gameObject.GetComponent<ActivityLogger>().LogItem("starting total price:" + totalPrice);
+        //gameObject.GetComponent<ActivityLogger>().LogItem("starting total price:" + totalPrice);
         Debug.Log("totalPrice:" + totalPrice);
     }
 
@@ -79,7 +79,7 @@ public class ObjectOrderer : MonoBehaviour
         
         totalPrice += newObj.GetComponent<ItemInfo>().itemPrice;
         ActivityLogger logScript = GetComponent<ActivityLogger>();
-        gameObject.GetComponent<ActivityLogger>().LogItem("totalPrice:" + totalPrice);
+        //gameObject.GetComponent<ActivityLogger>().LogItem("totalPrice:" + totalPrice);
         Debug.Log("totalPrice:" + totalPrice);
     }
 }
