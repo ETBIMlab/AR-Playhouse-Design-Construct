@@ -601,6 +601,8 @@ GameObject:
   - component: {fileID: 1129966873}
   - component: {fileID: 1129966872}
   - component: {fileID: 1129966871}
+  - component: {fileID: 1129966874}
+  - component: {fileID: 1129966875}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -667,7 +669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129966867}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.8, y: 0.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1566467536}
@@ -695,7 +697,7 @@ MonoBehaviour:
   gazeTransform: {fileID: 0}
   minHeadVelocityThreshold: 0.5
   maxHeadVelocityThreshold: 2
-  useEyeTracking: 1
+  useEyeTracking: 0
 --- !u!114 &1129966872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,6 +732,36 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &1129966874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129966867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ec6f0b11439d648a2770a3d59c0eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderableObjs: []
+--- !u!114 &1129966875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129966867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99901ef33df05624b8192812de809128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  twoByFour: {fileID: 6722702420488133290, guid: ef730378367b4fb439e95003b3ab9a1f,
+    type: 3}
+  ladder: {fileID: 5895923864232879608, guid: 5c8362c8cd5704441a7ca10b5551b895, type: 3}
+  slide: {fileID: 4073827770485426337, guid: b044430e97aa34e42a34e6d1f70dc22c, type: 3}
+  screw: {fileID: 5610747442649219403, guid: 728dfd2f1b038434889a9c00085603cd, type: 3}
 --- !u!1 &1236121543
 GameObject:
   m_ObjectHideFlags: 0
