@@ -7,7 +7,7 @@ using UnityEngine.Windows.Speech;
 
 public class ObjectOrderer : MonoBehaviour
 {
-
+    double totalPrice = 0; //Holds value temp totalprice;
     [Serializable]
     public struct OrderableObj
     {
@@ -34,6 +34,17 @@ public class ObjectOrderer : MonoBehaviour
         // Register a callback for the KeywordRecognizer and START recognizing!!!!
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
         keywordRecognizer.Start();
+
+        GameObject[] itemObjects = GameObject.FindGameObjectsWithTag("item"); //Gets total price of all gameobjects with "item" tag
+        for (int i = 0; i < itemObjects.Length; i++)
+        {
+            Debug.Log(itemObjects[i].GetComponent<ItemInfo>().itemPrice);
+            totalPrice += itemObjects[i].GetComponent<ItemInfo>().itemPrice;
+            Debug.Log(totalPrice);
+        }
+        Debug.Log("Amount of objects:" + itemObjects.Length);
+        //gameObject.GetComponent<ActivityLogger>().LogItem("starting total price:" + totalPrice);
+        Debug.Log("totalPrice:" + totalPrice);
     }
 
     // important
@@ -65,5 +76,10 @@ public class ObjectOrderer : MonoBehaviour
     private void AddObjectToScene(GameObject newObj)
     {
         Instantiate(newObj, transform.position + (transform.forward * 0) + (transform.up * 0.25f) + (transform.right * -2), Quaternion.identity);
+        
+        totalPrice += newObj.GetComponent<ItemInfo>().itemPrice;
+        ActivityLogger logScript = GetComponent<ActivityLogger>();
+        //gameObject.GetComponent<ActivityLogger>().LogItem("totalPrice:" + totalPrice);
+        Debug.Log("totalPrice:" + totalPrice);
     }
 }

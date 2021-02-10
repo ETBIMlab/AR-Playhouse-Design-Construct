@@ -9,6 +9,7 @@ public class ItemInfo : MonoBehaviour
     /// <summary>
     /// Stores info on what type of object it is
     /// </summary>
+    public double itemPrice = 0;
     public enum ItemType
     {
         Half_Panel,

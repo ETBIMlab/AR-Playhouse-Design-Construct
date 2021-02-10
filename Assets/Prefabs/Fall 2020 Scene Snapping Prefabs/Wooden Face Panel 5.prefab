@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 8660295531429815133}
   m_Layer: 0
   m_Name: Wooden Face Panel 5
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342d4d90def262e428e7df10ffaa5658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemPrice: 100
   itemType: 1
   hasDifferentOriginRotation: 1
   itemOrientation: 0
@@ -297,7 +298,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
+  Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
@@ -337,7 +338,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
