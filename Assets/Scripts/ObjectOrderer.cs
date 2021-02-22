@@ -19,7 +19,7 @@ public class ObjectOrderer : MonoBehaviour
         public GameObject obj;
     }
 
-    public GameObject laptopinterface;
+    //public GameObject laptopinterface;
 
     KeywordRecognizer keywordRecognizer = null;
     List<string> keywords = new List<string>();
@@ -53,7 +53,7 @@ public class ObjectOrderer : MonoBehaviour
     // important
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
-        laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
+        //laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
 
         string temp = args.text.Substring(args.text.LastIndexOf(" ") + 1);
         temp = temp.Substring(0, temp.Length - 1);
@@ -62,7 +62,7 @@ public class ObjectOrderer : MonoBehaviour
 
             if (args.text.Substring(6) == orderableObjs[i].name)
             {
-                li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, orderableObjs[i].name, 1, orderableObjs[i].instalTime);
+                //li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, orderableObjs[i].name, 1, orderableObjs[i].instalTime);
                 AddObjectToScene(orderableObjs[i].obj);
                 return;
             }
@@ -74,7 +74,7 @@ public class ObjectOrderer : MonoBehaviour
                 int hold = numlist.IndexOf(h);
                 if (hold != -1)
                 {
-                    li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, orderableObjs[i].name, hold, orderableObjs[i].instalTime);
+                    //li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, orderableObjs[i].name, hold, orderableObjs[i].instalTime);
                     for (int j = 0; j < hold; j++)
                     {
                         AddObjectToScene(orderableObjs[i].obj);
@@ -82,7 +82,7 @@ public class ObjectOrderer : MonoBehaviour
                 }
                 else if (h.Equals("a"))
                 {
-                    li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, orderableObjs[i].name, 12, orderableObjs[i].instalTime);
+                    //li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, orderableObjs[i].name, 12, orderableObjs[i].instalTime);
                     for (int j = 0; j < 12; j++)
                     {
                         AddObjectToScene(orderableObjs[i].obj);
