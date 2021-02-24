@@ -10,6 +10,7 @@ public class ObjectOrderer : MonoBehaviour
 {
 
     [Serializable]
+    
     public struct OrderableObj
     {
         public string name;
@@ -18,7 +19,6 @@ public class ObjectOrderer : MonoBehaviour
         public int instalTime;
         public GameObject obj;
     }
-
     //public GameObject laptopinterface;
 
     KeywordRecognizer keywordRecognizer = null;

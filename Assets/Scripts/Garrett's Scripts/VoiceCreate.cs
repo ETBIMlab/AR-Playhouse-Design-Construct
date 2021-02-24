@@ -12,8 +12,10 @@ public class VoiceCreate : MonoBehaviour
     public GameObject ladder;
     public GameObject slide;
     public GameObject screw;
+    
     //when spawning objects, instantiate 3 units in front of camera
     private int distFromCamera = 3;
+
     void Start()
     {
 
