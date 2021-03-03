@@ -9,6 +9,8 @@ using UnityEngine.Windows.Speech;
 public class ObjectOrderer : MonoBehaviour
 {
 
+    private int distFromCamera = 3;
+
     [Serializable]
     
     public struct OrderableObj
@@ -108,6 +110,7 @@ public class ObjectOrderer : MonoBehaviour
 
     private void AddObjectToScene(GameObject newObj)
     {
-        Instantiate(newObj, transform.position + (transform.forward * 0) + (transform.up * 0.25f) + (transform.right * -2), Quaternion.identity);
+        //Instantiate(newObj, transform.position + (transform.forward * 0) + (transform.up * 0.25f) + (transform.right * -2), Quaternion.identity);
+        Instantiate(newObj, transform.position + transform.forward * distFromCamera, Quaternion.identity);
     }
 }
