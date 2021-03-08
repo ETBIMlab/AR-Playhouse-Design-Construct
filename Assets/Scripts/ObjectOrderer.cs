@@ -56,14 +56,13 @@ public class ObjectOrderer : MonoBehaviour
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
         //laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
-
         string temp = args.text.Substring(args.text.LastIndexOf(" ") + 1);
         temp = temp.Substring(0, temp.Length - 1);
         for (int i = 0; i < orderableObjs.Length; i++)
         {
-
-            if (args.text.Substring(6) == orderableObjs[i].name)
+            if (orderableObjs[i].name.Equals(args.text.Substring(6)))
             {
+                Debug.Log(orderableObjs[i].name + " ordered");
                 //li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, orderableObjs[i].name, 1, orderableObjs[i].instalTime);
                 AddObjectToScene(orderableObjs[i].obj);
                 return;
