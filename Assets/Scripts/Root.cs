@@ -9,7 +9,7 @@ using UnityEngine.Windows.Speech;
 //Parker
 public class Root : MonoBehaviour
 {
-
+    public AudioRoot audio;
     public GameObject environmentSetter;
     public GameObject environmentContainer;
     public int shiftAmount;
@@ -37,9 +37,9 @@ public class Root : MonoBehaviour
 
         this.toggleVisibility(false, environmentContainer);
 
-        keywords.Add("Set Space", () => { this.setSpace(); });
-        keywords.Add("Shift Level", () => { this.shiftLevel(); });
-        keywords.Add("Change View", () => { this.changeView(); });
+        keywords.Add("Set Space", () => { this.setSpace(); audio.setSpace(); });
+        keywords.Add("Shift Level", () => { this.shiftLevel(); audio.shiftLevel(); });
+        keywords.Add("Change View", () => { this.changeView(); audio.changeView(); });
         keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
 
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
