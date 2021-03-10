@@ -14,6 +14,7 @@ public class SnapObject : MonoBehaviour
     public bool handlerEnabled = true;      // just for debugging only
 
     private ManipulationHandler manipHandler;
+
     private AudioSource theAudio1;
     public AudioClip snapClip;
     public float volume = 1F;
