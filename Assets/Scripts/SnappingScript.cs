@@ -9,7 +9,6 @@ public class SnappingScript : MonoBehaviour
 {
     private List<GameObject> ColliderList = new List<GameObject>();
     public float snappingRadius;
-
     private void Reset()
     {
         
@@ -33,6 +32,7 @@ public class SnappingScript : MonoBehaviour
         {
             if(child.gameObject.tag.Equals("SnappingCollider"))
             {
+
                 //Debug.Log("Adding " + child.gameObject.name + " to colliders of " + transform.gameObject.name);
                 childSnappingColliders.Add(child.gameObject);
             }
