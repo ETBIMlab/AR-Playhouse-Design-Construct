@@ -187,7 +187,7 @@ public class ObjectSnapping : MonoBehaviour
             SnapObjectToLocation(minDistanceChildCollider, minDistanceHitColliderLocation);
 
             // disabling snap collider to prevent other objects from snapping to it
-            snappedCollider.enabled = false;
+            //snappedCollider.enabled = false;
         }
     }
 
