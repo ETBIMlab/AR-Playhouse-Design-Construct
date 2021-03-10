@@ -450,6 +450,8 @@ struct Component_t05064EF382ABCAF4B8C94F8A350EA85184C26621;
 struct ComponentU5BU5D_t7BE50AFB6301C06D990819B3D8F35CA326CDD155;
 // UnityEngine.ComputeShader
 struct ComputeShader_tF8B65214DC8C7C124C01984EB5CCD28F55C85B2A;
+// UnityEngine.ContextMenuItemAttribute
+struct ContextMenuItemAttribute_tDDFCBC1275049B3B93A9CE56A4144E7B5343B794;
 // UnityEngine.Coroutine
 struct Coroutine_tAE7DB2FC70A0AE6477F896F852057CB0754F06EC;
 // UnityEngine.CreateAssetMenuAttribute
@@ -6109,6 +6111,36 @@ public:
 	inline void set_m_RealtimeLightmapScaleOffset_4(Vector4_tD148D6428C3F8FF6CD998F82090113C2B490B76E  value)
 	{
 		___m_RealtimeLightmapScaleOffset_4 = value;
+	}
+};
+
+
+// UnityEngine.ContextMenuItemAttribute
+struct  ContextMenuItemAttribute_tDDFCBC1275049B3B93A9CE56A4144E7B5343B794  : public PropertyAttribute_t25BFFC093C9C96E3CCF4EAB36F5DC6F937B1FA54
+{
+public:
+	// System.String UnityEngine.ContextMenuItemAttribute::name
+	String_t* ___name_0;
+	// System.String UnityEngine.ContextMenuItemAttribute::function
+	String_t* ___function_1;
+
+public:
+	inline static int32_t get_offset_of_name_0() { return static_cast<int32_t>(offsetof(ContextMenuItemAttribute_tDDFCBC1275049B3B93A9CE56A4144E7B5343B794, ___name_0)); }
+	inline String_t* get_name_0() const { return ___name_0; }
+	inline String_t** get_address_of_name_0() { return &___name_0; }
+	inline void set_name_0(String_t* value)
+	{
+		___name_0 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___name_0), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_function_1() { return static_cast<int32_t>(offsetof(ContextMenuItemAttribute_tDDFCBC1275049B3B93A9CE56A4144E7B5343B794, ___function_1)); }
+	inline String_t* get_function_1() const { return ___function_1; }
+	inline String_t** get_address_of_function_1() { return &___function_1; }
+	inline void set_function_1(String_t* value)
+	{
+		___function_1 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___function_1), (void*)value);
 	}
 };
 
@@ -19087,6 +19119,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ComputeShader_FindKernel_m4CEBD37F967
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void UnityEngine.ContextMenuItemAttribute::.ctor(System.String,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ContextMenuItemAttribute__ctor_m47A27C6FC6D25DB7B15A1998A8CB85D132D18F1A (ContextMenuItemAttribute_tDDFCBC1275049B3B93A9CE56A4144E7B5343B794 * __this, String_t* ___name0, String_t* ___function1, const RuntimeMethod* method)
+{
+	{
+		PropertyAttribute__ctor_m7F5C473F39D5601486C1127DA0D52F2DC293FC35(__this, /*hidden argument*/NULL);
+		String_t* L_0 = ___name0;
+		__this->set_name_0(L_0);
+		String_t* L_1 = ___function1;
+		__this->set_function_1(L_1);
+		return;
+	}
+}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

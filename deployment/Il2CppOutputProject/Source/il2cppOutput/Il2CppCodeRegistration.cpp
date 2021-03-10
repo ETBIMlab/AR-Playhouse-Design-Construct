@@ -110,10 +110,11 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Microsoft_MixedReality_Toolkit_Servi
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Microsoft_MixedReality_Toolkit_Services_SceneSystemCodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Microsoft_MixedReality_Toolkit_Services_SpatialAwarenessSystemCodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Microsoft_MixedReality_Toolkit_Services_TeleportSystemCodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Microsoft_SpatialAudio_SpatializerCodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngineCodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_AssemblyU2DCSharpCodeGenModule;
 extern const Il2CppCodeGenModule* g_CodeGenModules[];
-const Il2CppCodeGenModule* g_CodeGenModules[78] = 
+const Il2CppCodeGenModule* g_CodeGenModules[79] = 
 {
 	(&g_mscorlibCodeGenModule),
 	(&g_System_ConfigurationCodeGenModule),
@@ -191,6 +192,7 @@ const Il2CppCodeGenModule* g_CodeGenModules[78] =
 	(&g_Microsoft_MixedReality_Toolkit_Services_SceneSystemCodeGenModule),
 	(&g_Microsoft_MixedReality_Toolkit_Services_SpatialAwarenessSystemCodeGenModule),
 	(&g_Microsoft_MixedReality_Toolkit_Services_TeleportSystemCodeGenModule),
+	(&g_Microsoft_SpatialAudio_SpatializerCodeGenModule),
 	(&g_UnityEngineCodeGenModule),
 	(&g_AssemblyU2DCSharpCodeGenModule),
 };
@@ -199,19 +201,19 @@ const Il2CppCodeRegistration g_CodeRegistration =
 {
 	2,
 	g_ReversePInvokeWrapperPointers,
-	40810,
+	40940,
 	g_Il2CppGenericMethodPointers,
-	5231,
+	5249,
 	g_Il2CppInvokerPointers,
-	9563,
+	9570,
 	g_AttributeGenerators,
-	2471,
+	2485,
 	g_UnresolvedVirtualMethodPointers,
-	7698,
+	7708,
 	g_Il2CppInteropData,
 	0,
 	NULL,
-	78,
+	79,
 	g_CodeGenModules,
 };
 IL2CPP_EXTERN_C_CONST Il2CppMetadataRegistration g_MetadataRegistration;

@@ -65,6 +65,10 @@
       <DeploymentContent>true</DeploymentContent>
       <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Data\sharedassets0.resource">
+      <DeploymentContent>true</DeploymentContent>
+      <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)Data\il2cpp_data\etc\mono\browscap.ini">
       <DeploymentContent>true</DeploymentContent>
       <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
@@ -157,6 +161,10 @@
       <DeploymentContent>true</DeploymentContent>
       <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)AudioPluginMicrosoftSpatializer.dll" Condition="Exists('$(MSBuildThisFileDirectory)Plugins\$(PlatformShortName)\AudioPluginMicrosoftSpatializer.dll')">
+      <DeploymentContent>true</DeploymentContent>
+      <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)AudioPluginMsHRTF.dll" Condition="Exists('$(MSBuildThisFileDirectory)Plugins\$(PlatformShortName)\AudioPluginMsHRTF.dll')">
       <DeploymentContent>true</DeploymentContent>
       <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
@@ -182,6 +190,9 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <Target Name="BeforeResolveReferences" Condition="'$(BuildingProject)' == 'true'">
+        <Copy SourceFiles="$(MSBuildThisFileDirectory)Plugins\$(PlatformShortName)\AudioPluginMicrosoftSpatializer.dll" DestinationFiles="$(MSBuildThisFileDirectory)AudioPluginMicrosoftSpatializer.dll" Condition="Exists('$(MSBuildThisFileDirectory)Plugins\$(PlatformShortName)\AudioPluginMicrosoftSpatializer.dll')" />
+        <Delete Files="$(MSBuildThisFileDirectory)AudioPluginMicrosoftSpatializer.pdb" Condition="Exists('$(MSBuildThisFileDirectory)AudioPluginMicrosoftSpatializer.pdb')" />
+        <Copy SourceFiles="$(MSBuildThisFileDirectory)Plugins\$(PlatformShortName)\AudioPluginMicrosoftSpatializer.pdb" DestinationFiles="$(MSBuildThisFileDirectory)AudioPluginMicrosoftSpatializer.pdb" Condition="Exists('$(MSBuildThisFileDirectory)Plugins\$(PlatformShortName)\AudioPluginMicrosoftSpatializer.pdb')" />
         <Copy SourceFiles="$(MSBuildThisFileDirectory)Plugins\$(PlatformShortName)\AudioPluginMsHRTF.dll" DestinationFiles="$(MSBuildThisFileDirectory)AudioPluginMsHRTF.dll" Condition="Exists('$(MSBuildThisFileDirectory)Plugins\$(PlatformShortName)\AudioPluginMsHRTF.dll')" />
         <Delete Files="$(MSBuildThisFileDirectory)AudioPluginMsHRTF.pdb" Condition="Exists('$(MSBuildThisFileDirectory)AudioPluginMsHRTF.pdb')" />
         <Copy SourceFiles="$(MSBuildThisFileDirectory)Plugins\$(PlatformShortName)\AudioPluginMsHRTF.pdb" DestinationFiles="$(MSBuildThisFileDirectory)AudioPluginMsHRTF.pdb" Condition="Exists('$(MSBuildThisFileDirectory)Plugins\$(PlatformShortName)\AudioPluginMsHRTF.pdb')" />
