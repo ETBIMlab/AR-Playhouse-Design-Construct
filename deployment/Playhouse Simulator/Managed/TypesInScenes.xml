@@ -17,6 +17,7 @@
 		<type fullname="UnityEngine.QualitySettings" preserve="nothing"/>
 		<type fullname="UnityEditor.Physics2DSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.Transform" preserve="nothing"/>
+		<type fullname="UnityEngine.Animation" preserve="nothing"/>
 		<type fullname="UnityEngine.AnimationClip" preserve="nothing"/>
 		<type fullname="UnityEngine.Camera" preserve="nothing"/>
 		<type fullname="UnityEngine.Renderer" preserve="nothing"/>
@@ -24,11 +25,13 @@
 		<type fullname="UnityEngine.Light" preserve="nothing"/>
 		<type fullname="UnityEngine.MeshFilter" preserve="nothing"/>
 		<type fullname="UnityEngine.MeshRenderer" preserve="nothing"/>
+		<type fullname="UnityEngine.AudioSource" preserve="nothing"/>
 		<type fullname="UnityEngine.AudioBehaviour" preserve="nothing"/>
 		<type fullname="UnityEngine.AudioListener" preserve="nothing"/>
 		<type fullname="UnityEngine.Texture" preserve="nothing"/>
 		<type fullname="UnityEngine.Rigidbody" preserve="nothing"/>
 		<type fullname="UnityEngine.Collider" preserve="nothing"/>
+		<type fullname="UnityEngine.MeshCollider" preserve="nothing"/>
 		<type fullname="UnityEngine.CapsuleCollider" preserve="nothing"/>
 		<type fullname="UnityEngine.BoxCollider" preserve="nothing"/>
 		<type fullname="UnityEngine.SphereCollider" preserve="nothing"/>
@@ -46,13 +49,29 @@
 		<type fullname="UnityEngine.Font" preserve="nothing"/>
 		<type fullname="UnityEngine.Mesh" preserve="nothing"/>
 		<type fullname="UnityEngine.Texture2D" preserve="nothing"/>
+		<type fullname="UnityEngine.Sprite" preserve="nothing"/>
 		<type fullname="UnityEngine.CanvasRenderer" preserve="nothing"/>
+		<type fullname="UnityEngine.AudioClip" preserve="nothing"/>
 		<type fullname="UnityEngine.RenderSettings" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Assembly-CSharp">
+		<type fullname="ActivityLogger" preserve="nothing"/>
+		<type fullname="AudioScript" preserve="nothing"/>
+		<type fullname="DumpsterScript" preserve="nothing"/>
+		<type fullname="EyeTrackingScript" preserve="nothing"/>
+		<type fullname="ItemInfo" preserve="nothing"/>
 		<type fullname="LocationSnapping" preserve="nothing"/>
+		<type fullname="Lockable" preserve="nothing"/>
+		<type fullname="Locking" preserve="nothing"/>
+		<type fullname="ObjectOrderer" preserve="nothing"/>
+		<type fullname="ObjectSnapping" preserve="nothing"/>
+		<type fullname="Paintable" preserve="nothing"/>
+		<type fullname="Painter" preserve="nothing"/>
 		<type fullname="Root" preserve="nothing"/>
 		<type fullname="SnapObject" preserve="nothing"/>
+		<type fullname="SnappingValidator" preserve="nothing"/>
+		<type fullname="isPaintBucket" preserve="nothing"/>
+		<type fullname="laptopInterface" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Microsoft.MixedReality.Toolkit.Providers.WindowsMixedReality.Shared">
 		<type fullname="Microsoft.MixedReality.Toolkit.WindowsMixedReality.WindowsMixedRealityCameraSettingsProfile" preserve="nothing"/>
@@ -86,6 +105,7 @@
 	<assembly fullname="Microsoft.MixedReality.Toolkit.Services.InputSystem">
 		<type fullname="Microsoft.MixedReality.Toolkit.Input.GazeProvider" preserve="nothing"/>
 		<type fullname="Microsoft.MixedReality.Toolkit.Input.MixedRealityInputModule" preserve="nothing"/>
+		<type fullname="Microsoft.MixedReality.Toolkit.Input.NearInteractionGrabbable" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Microsoft.MixedReality.Toolkit">
 		<type fullname="Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundaryVisualizationProfile" preserve="nothing"/>
