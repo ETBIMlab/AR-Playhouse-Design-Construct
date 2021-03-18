@@ -109,7 +109,12 @@ public class ObjectOrderer : MonoBehaviour
 
     private void AddObjectToScene(GameObject newObj)
     {
-        //Instantiate(newObj, transform.position + (transform.forward * 0) + (transform.up * 0.25f) + (transform.right * -2), Quaternion.identity);
-        Instantiate(newObj, transform.position + transform.forward * distFromCamera, Quaternion.identity);
+        //the following line spawns the object in front of the user
+        //Instantiate(newObj, transform.position + transform.forward * distFromCamera, Quaternion.identity);
+
+        //get position of the ordering truck
+        var orderPos = GameObject.Find("IndustrialSmallTruck").transform.position;
+        Debug.Log("truck is at " + orderPos);
+        Instantiate(newObj, new Vector3(orderPos.x + 1.24f, orderPos.y, orderPos.z - 1.6f), Quaternion.identity);
     }
 }
