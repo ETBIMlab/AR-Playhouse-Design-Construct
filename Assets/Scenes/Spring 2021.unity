@@ -1471,7 +1471,7 @@ GameObject:
   - component: {fileID: 549502601}
   - component: {fileID: 549502602}
   m_Layer: 0
-  m_Name: Full Panel Snapping Collider 1
+  m_Name: Snapping Collider
   m_TagString: SnappingCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1633,7 +1633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSnapHalfFacePanel: 0
   canSnapFullFacePanel: 0
-  canSnapSlide: 1
+  canSnapSlide: 0
   canSnapFullFacePanelAttachment: 0
   canSnapLadder: 1
   isOrientationSpecific: 0
@@ -4010,6 +4010,7 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents:
     - {fileID: 4193897955775659106, guid: 8ef87ba2651193a438c71f06a67d3aea, type: 3}
+    - {fileID: 6223757594264659885, guid: 8ef87ba2651193a438c71f06a67d3aea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8ef87ba2651193a438c71f06a67d3aea, type: 3}
 --- !u!33 &4104510276286799449
 MeshFilter:
