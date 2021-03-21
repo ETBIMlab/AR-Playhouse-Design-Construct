@@ -15,7 +15,9 @@ public class ItemInfo : MonoBehaviour
         Half_Panel,
         Full_Panel,
         Slide,
-        Full_Panel_Attachment
+        Full_Panel_Attachment,
+        Ladder,
+        Attachment
         // add more item types here
     }
 
@@ -111,6 +113,36 @@ public class ItemInfo : MonoBehaviour
             case ItemType.Slide:
                 //Debug.Log("Simplified/rounded angle is: " + yRotation);
 
+                switch (yRotation)
+                {
+                    case 90:
+                    case 270:
+                        itemOrientation = ItemOrientation.EastWest;
+                        break;
+                    case 0:
+                    case 180:
+                        itemOrientation = ItemOrientation.NorthSouth;
+                        break;
+                }
+                return itemOrientation;
+            case ItemType.Ladder:
+                //Debug.Log("Simplified/rounded angle is: " + yRotation);
+
+                switch (yRotation)
+                {
+                    case 90:
+                    case 270:
+                        itemOrientation = ItemOrientation.EastWest;
+                        break;
+                    case 0:
+                    case 180:
+                        itemOrientation = ItemOrientation.NorthSouth;
+                        break;
+                }
+                return itemOrientation;
+
+            case ItemType.Attachment:
+                //Debug.Log("Simplified/rounded angle is: " + yRotation);
                 switch (yRotation)
                 {
                     case 90:
