@@ -26,7 +26,7 @@ public class Root : MonoBehaviour
     void Start()
     {
         isShiftedUp = false;
-        scaleModeState = 0;
+        scaleModeState = 1;
 
         scaleLevels = new List<scaleState>();
         scaleLevels.Add(new scaleState(new Vector3(1.0f, 1.0f, 1.0f), 1f));
@@ -70,17 +70,21 @@ public class Root : MonoBehaviour
     {
         Vector3 newPosition = new Vector3();
 
-        if (!isShiftedUp)
+        if (isShiftedUp)
         {
-            newPosition.x = environmentSetter.transform.position.x + environmentContainer.transform.position.x + (float)shiftAmount;
-            newPosition.y = environmentSetter.transform.position.y + environmentContainer.transform.position.y + (float)shiftAmount;
-            newPosition.z = environmentSetter.transform.position.z + environmentContainer.transform.position.z + (float)shiftAmount;
+            Debug.Log("shifted up");
+            newPosition.x = environmentContainer.transform.position.x;//environmentSetter.transform.position.x + environmentOffset.x; // + environmentContainer.transform.position.x + (float)shiftAmount;
+            newPosition.y =  environmentContainer.transform.position.y + (float)shiftAmount;
+            newPosition.z = environmentContainer.transform.position.z;//environmentSetter.transform.position.z + environmentOffset.z;// + environmentContainer.transform.position.z + (float)shiftAmount;
+            isShiftedUp = false;
         }
         else
         {
-            newPosition.x = environmentSetter.transform.position.x + environmentContainer.transform.position.x - (float)shiftAmount;
-            newPosition.y = environmentSetter.transform.position.y + environmentContainer.transform.position.y - (float)shiftAmount;
-            newPosition.z = environmentSetter.transform.position.z + environmentContainer.transform.position.z - (float)shiftAmount;
+            Debug.Log("shifted down");
+            newPosition.x = environmentContainer.transform.position.x;//environmentSetter.transform.position.x + environmentOffset.x; //+ environmentContainer.transform.position.x - (float)shiftAmount;
+            newPosition.y =  environmentContainer.transform.position.y - (float)shiftAmount;
+            newPosition.z = environmentContainer.transform.position.z;//environmentSetter.transform.position.z + environmentOffset.z;// + environmentContainer.transform.position.z - (float)shiftAmount;
+            isShiftedUp = true;
         }
 
         environmentContainer.transform.position = newPosition;
@@ -91,10 +95,15 @@ public class Root : MonoBehaviour
     {
         Vector3 newPosition = new Vector3();
 
-        newPosition.x = environmentOffset.x * scaleLevels[scaleModeState].shift;
-        newPosition.y = environmentOffset.y * scaleLevels[scaleModeState].shift;
-        newPosition.z = environmentOffset.z * scaleLevels[scaleModeState].shift;
+        //newPosition.x = environmentOffset.x * scaleLevels[scaleModeState].shift;
+        //newPosition.y = environmentOffset.y * scaleLevels[scaleModeState].shift;
+        //newPosition.z = environmentOffset.z * scaleLevels[scaleModeState].shift;
+        //scale the level and move the level to the environmentSetter
+        newPosition.x = environmentSetter.transform.position.x + environmentOffset.x * scaleLevels[scaleModeState].shift;
+        newPosition.y = environmentSetter.transform.position.y + environmentOffset.y * scaleLevels[scaleModeState].shift;
+        newPosition.z = environmentSetter.transform.position.z + environmentOffset.z * scaleLevels[scaleModeState].shift;
 
+        //environmentContainer.transform.position = newPosition;
         environmentContainer.transform.localScale = scaleLevels[scaleModeState].scale;
         environmentContainer.transform.position = newPosition;
 
