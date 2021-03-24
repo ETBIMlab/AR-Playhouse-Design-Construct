@@ -19,6 +19,7 @@ public class Root : MonoBehaviour
     KeywordRecognizer keywordRecognizer = null;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
     bool isShiftedUp;
+    private bool floorVisible;
     int scaleModeState;
     List<scaleState> scaleLevels;
 
@@ -26,6 +27,7 @@ public class Root : MonoBehaviour
     void Start()
     {
         isShiftedUp = false;
+        floorVisible = true;
         scaleModeState = 1;
 
         scaleLevels = new List<scaleState>();
@@ -40,6 +42,7 @@ public class Root : MonoBehaviour
         keywords.Add("Set Space", () => { this.setSpace(); audio.setSpace(); });
         keywords.Add("Shift Level", () => { this.shiftLevel(); audio.shiftLevel(); });
         keywords.Add("Change View", () => { this.changeView(); audio.changeView(); });
+        keywords.Add("Toggle floor", () => { this.toggleFloor(); });
         keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
 
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
@@ -120,6 +123,13 @@ public class Root : MonoBehaviour
         {
             r.enabled = visible;
         }
+    }
+
+    public void toggleFloor()
+    {
+        Debug.Log("Changing floor");
+        toggleVisibility(floorVisible, GameObject.Find("Floor"));
+        floorVisible = !floorVisible;
     }
 
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
