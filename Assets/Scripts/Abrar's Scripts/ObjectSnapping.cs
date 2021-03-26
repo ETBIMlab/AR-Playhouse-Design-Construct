@@ -45,8 +45,8 @@ public class ObjectSnapping : MonoBehaviour
     private void InitializeItemInfo()
     {
         itemInfo = GetComponent<ItemInfo>();
-        //this.itemType = itemInfo.itemType;
-        //this.itemOrientation = itemInfo.itemOrientation;
+        this.itemType = itemInfo.itemType;
+        this.itemOrientation = itemInfo.itemOrientation;
     }
 
     /// <summary>
