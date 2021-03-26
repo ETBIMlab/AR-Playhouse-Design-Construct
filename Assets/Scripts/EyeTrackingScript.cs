@@ -23,7 +23,7 @@ public class EyeTrackingScript : MonoBehaviour
             ActivityLogger logScript = GetComponent<ActivityLogger>();
             //gameObject.GetComponent<ActivityLogger>().LogPosition(CoreServices.InputSystem.EyeGazeProvider.HitPosition.ToString());
 
-            Debug.Log("Position: " + CoreServices.InputSystem.EyeGazeProvider.HitPosition);
+            //Debug.Log("Position: " + CoreServices.InputSystem.EyeGazeProvider.HitPosition);
             nextTime += capturePositionWaitTime;
             //Debug.Log(CoreServices.InputSystem.EyeGazeProvider.HitInfo.)
         }

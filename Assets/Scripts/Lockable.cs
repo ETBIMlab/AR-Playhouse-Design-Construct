@@ -7,6 +7,7 @@ public class Lockable : MonoBehaviour
 {
     private int numLocks = 0;
     private List<GameObject> lockedBy = new List<GameObject>();
+    private bool isLocked = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +19,16 @@ public class Lockable : MonoBehaviour
     {
         
     }
-
+    public bool getIsLocked()
+    {
+        return isLocked;
+    }
     public void addLock(GameObject locker)
     {
         Debug.Log("Adding a lock");
         numLocks++;
         lockedBy.Add(locker);
+        isLocked = true;
         gameObject.GetComponent<ManipulationHandler>().enabled = false;
 
     }
@@ -33,10 +38,12 @@ public class Lockable : MonoBehaviour
         Debug.Log("Removing Lock");
         numLocks--;
         lockedBy.Remove(locker);
-        if (numLocks <= 0)
+        isLocked = false;
+        gameObject.GetComponent<ManipulationHandler>().enabled = true;
+        /*if (numLocks <= 0)
         {
             numLocks = 0;
             gameObject.GetComponent<ManipulationHandler>().enabled = true ;
-        }
+        }*/
     }
 }
