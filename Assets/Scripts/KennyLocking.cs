@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
-using System.Collections.Generic;
 using System.Linq;
 
 public class KennyLocking : MonoBehaviour
@@ -48,26 +47,46 @@ public class KennyLocking : MonoBehaviour
         collided = true;
         if (saidDrill)
         {
-            if(other.gameObject.GetComponent<Lockable>() != null)
+            saidDrill = false;
+            if (other.gameObject.GetComponent("Lockable") as Lockable != null)
             {
                 if (other.gameObject.GetComponent<Lockable>().getIsLocked())
                 {
                     Debug.Log("Remove lock");
                     other.gameObject.GetComponent<Lockable>().removeLock(gameObject);
+                    removeScrews(other.gameObject);
                 }
                 else if(other.gameObject.GetComponent<Lockable>().getIsLocked() == false)
                 {
                     Debug.Log("Add lock");
                     other.gameObject.GetComponent<Lockable>().addLock(gameObject);
+                    addScrews(other.gameObject);
                 }
             }
-            saidDrill = false;
         }
     }
 
     private void OnTriggerExit(Collider collison)
     {
-        Debug.Log("We exit collision");
         collided = false;
+    }
+
+    private void addScrews(GameObject collided)
+    {
+        GameObject lockingPoints = collided.transform.Find("Locking Points").gameObject;
+        //foreach (Transform child in lockingPoints.transform)
+        //{
+        //    child.gameObject.SetActive(true);
+        //}
+        lockingPoints.gameObject.SetActive(true);
+    }
+    private void removeScrews(GameObject collided)
+    {
+        GameObject lockingPoints = collided.transform.Find("Locking Points").gameObject;
+        //foreach (Transform child in lockingPoints.transform)
+        //{
+        //    child.gameObject.SetActive(false);
+        //}
+        lockingPoints.gameObject.SetActive(false);
     }
 }
