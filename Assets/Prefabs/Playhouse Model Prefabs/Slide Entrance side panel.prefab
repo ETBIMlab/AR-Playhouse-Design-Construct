@@ -237,6 +237,8 @@ MonoBehaviour:
   canSnapFullFacePanel: 0
   canSnapSlide: 1
   canSnapFullFacePanelAttachment: 0
+  canSnapLadder: 0
+  canSnapAttachment: 0
   isOrientationSpecific: 0
   allowedItemOrientation: 0
 --- !u!1 &3498621258064676543
@@ -601,7 +603,19 @@ MonoBehaviour:
       m_Calls: []
   OnObjectFinishedSnapping:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586436414694596161}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 1beaca2388760544882033dfdd0ffded,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &30365975085722852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,13 +725,13 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6848840b06cce9b4bb4c66584d9f7982, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
+  Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
@@ -812,7 +826,7 @@ MonoBehaviour:
   grabClip: {fileID: 8300000, guid: 13ad719f14620654f8f7588baaa5f9c4, type: 3}
   releaseClip: {fileID: 8300000, guid: 465a6a24f76b20746817efe51906d98e, type: 3}
   dragClip: {fileID: 8300000, guid: 45a90682f74bb0c41b65994c63b74e60, type: 3}
-  clickClip: {fileID: 8300000, guid: 9a10debaf8483ae49aa91211098634f1, type: 3}
+  clickClip: {fileID: 8300000, guid: 1beaca2388760544882033dfdd0ffded, type: 3}
   volume: 1
 --- !u!114 &-6195342696579519013
 MonoBehaviour:

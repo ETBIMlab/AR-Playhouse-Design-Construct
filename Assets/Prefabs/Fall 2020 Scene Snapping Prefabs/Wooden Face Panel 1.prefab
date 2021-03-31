@@ -226,7 +226,19 @@ MonoBehaviour:
       m_Calls: []
   OnObjectFinishedSnapping:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6061755347194051082}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 1beaca2388760544882033dfdd0ffded,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7187786416910278535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,7 +348,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6848840b06cce9b4bb4c66584d9f7982, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
