@@ -72,7 +72,7 @@ public class ActivityLogger : MonoBehaviour
     void ExportActivityLog()
     {
         Debug.Log("Creating Activity Log");
-        string fileContents = "";
+        string fileContents = "hello";
         for(int i = 0; i < listOfActions.Count; i++)
         {
             fileContents += listOfActions[i];

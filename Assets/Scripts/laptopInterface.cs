@@ -12,15 +12,11 @@ using UnityEngine.Windows.Speech;
 public class laptopInterface : MonoBehaviour
 {
     public TextMeshPro total;
-    public TextMeshPro listofitems;
-    public TextMeshPro time;
     KeywordRecognizer keywordRecognizer = null;
     List<string> keywords = new List<string>();
 
-
     double money = 0.0;
     int timeinminutes = 0;
-    int scheduleweeks = 0;
     int scheduledays = 0;
     int schedulehours = 0;
     int scheduleminutes = 0;
@@ -38,26 +34,30 @@ public class laptopInterface : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //head.onClick.AddListener(() => Debug.Log("hello"));
         keywords.Add("Switch to tab 1");
-        keywords.Add("Switch to tab 2");
         keywords.Add("Switch to tab 2");
 
         keywordRecognizer = new KeywordRecognizer(keywords.ToArray());
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
         keywordRecognizer.Start();
 
-        total.text = "Total Spent: " + money.ToString() + "$";
-        time.text = "Weeks: " + scheduleweeks.ToString() + "\n"
-            + "Days: " + scheduledays.ToString() + "\n"
-            + "Hours:" + schedulehours.ToString() + "\n"
-            + "Minutes:" + scheduleminutes.ToString() + "\n";
-        listofitems.text = "Items Ordered \n" +
-            "Item Name  Quantity  Cost  Time Arrived\n";
+        total.text = realtimeConversions(Time.realtimeSinceStartup) + "\n"
+            + "Cost: $" + money.ToString() + "\n"
+            + "Project time (d/h/m):" + "\n"
+            + "" + scheduledays.ToString() + ""
+             + "/" + schedulehours.ToString() + ""
+             + "/" + scheduleminutes.ToString() + "\n";
     }
     // Update is called once per frame
     void Update()
-    { }
+    {
+        total.text = realtimeConversions(Time.realtimeSinceStartup) + "\n"
+            + "Cost: $ " + money.ToString() + "\n"
+            + "Project time (d/h/m):" + "\n"
+            + "" + scheduledays.ToString() + ""
+             + "/" + schedulehours.ToString() + ""
+             + "/" + scheduleminutes.ToString() + "\n";
+    }
 
     public void additem(double mon, int dtime, string iname, int quant, int itime)
     {
@@ -69,21 +69,8 @@ public class laptopInterface : MonoBehaviour
         money = money + itemscost;
 
         convertTime(dtime);
-
-        string orderedTime = scheduleweeks.ToString() + "/" + scheduledays.ToString()
-            + "/" + schedulehours.ToString() + "/" + scheduleminutes.ToString();
-
-        listofitems.text = listofitems.text + iname + "                 " + quant.ToString() + "           "
-        + itemscost.ToString() + "          " + orderedTime + "\n";
-
-        total.text = "Total Spent: " + money.ToString() + "$";
-        time.text = "Weeks: " + scheduleweeks.ToString() + "\n"
-            + "Days: " + scheduledays.ToString() + "\n"
-            + "Hours:" + schedulehours.ToString() + "\n"
-            + "Minutes:" + scheduleminutes.ToString() + "\n";
+   
     }
-
-
 
     public void iteminstalled(string objName)
     {
@@ -92,10 +79,6 @@ public class laptopInterface : MonoBehaviour
             if (string.Equals(objName, installObjs[i].name))
             {
                 convertTime(installObjs[i].instalTime);
-                time.text = "Weeks: " + scheduleweeks.ToString() + "\n"
-                     + "Days: " + scheduledays.ToString() + "\n"
-                     + "Hours:" + schedulehours.ToString() + "\n"
-                     + "Minutes:" + scheduleminutes.ToString() + "\n";
             }
         }
 
@@ -103,17 +86,12 @@ public class laptopInterface : MonoBehaviour
     //change time in minutes into weeks-minutes
     public void convertTime(int t)
     {
-        scheduleweeks = 0;
+
         scheduledays = 0;
         schedulehours = 0;
         scheduleminutes = 0;
         timeinminutes = timeinminutes + t;
         int temp = timeinminutes;
-        while (temp > 10080)
-        {
-            temp = temp - 10080;
-            scheduleweeks++;
-        }
         while (temp > 1440)
         {
             temp = temp - 1440;
@@ -127,9 +105,38 @@ public class laptopInterface : MonoBehaviour
         scheduleminutes = temp;
     }
 
+
+
+
+    public String realtimeConversions(float seconds)
+    {
+        float mins = Mathf.Floor(seconds / 60);
+        float secs = Mathf.RoundToInt(seconds % 60);
+        String minss="";
+        String secss="";
+
+        if (mins < 10)
+        {
+            minss = "0" + mins.ToString();
+        }
+        else
+        {
+            minss = mins.ToString();
+        }
+        if (secs < 10)
+        {
+            secss = "0" + Mathf.RoundToInt(secs).ToString();
+        }
+        else
+        {
+            secss= Mathf.RoundToInt(secs).ToString();
+        }
+        String temp = minss + ":" +secss;
+        return temp;
+    }
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
-        time.text = "Real time:";
+        //time.text = "Real time:";
     }
 
 
