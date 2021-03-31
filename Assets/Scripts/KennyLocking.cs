@@ -42,7 +42,7 @@ public class KennyLocking : MonoBehaviour
             saidDrill = false;
         }
     }
-    private void OnTriggerStay(Collider other)
+    private void OnCollisionStay(Collision other)
     {
         collided = true;
         if (saidDrill)
@@ -56,7 +56,7 @@ public class KennyLocking : MonoBehaviour
                     other.gameObject.GetComponent<Lockable>().removeLock(gameObject);
                     removeScrews(other.gameObject);
                 }
-                else if(other.gameObject.GetComponent<Lockable>().getIsLocked() == false)
+                else if (other.gameObject.GetComponent<Lockable>().getIsLocked() == false)
                 {
                     Debug.Log("Add lock");
                     other.gameObject.GetComponent<Lockable>().addLock(gameObject);
@@ -66,10 +66,38 @@ public class KennyLocking : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider collison)
+    private void OnCollisionExit(Collision collision)
     {
         collided = false;
     }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    collided = true;
+    //    if (saidDrill)
+    //    {
+    //        saidDrill = false;
+    //        if (other.gameObject.GetComponent("Lockable") as Lockable != null)
+    //        {
+    //            if (other.gameObject.GetComponent<Lockable>().getIsLocked())
+    //            {
+    //                Debug.Log("Remove lock");
+    //                other.gameObject.GetComponent<Lockable>().removeLock(gameObject);
+    //                removeScrews(other.gameObject);
+    //            }
+    //            else if(other.gameObject.GetComponent<Lockable>().getIsLocked() == false)
+    //            {
+    //                Debug.Log("Add lock");
+    //                other.gameObject.GetComponent<Lockable>().addLock(gameObject);
+    //                addScrews(other.gameObject);
+    //            }
+    //        }
+    //    }
+    //}
+
+    //private void OnTriggerExit(Collider collison)
+    //{
+    //    collided = false;
+    //}
 
     private void addScrews(GameObject collided)
     {
