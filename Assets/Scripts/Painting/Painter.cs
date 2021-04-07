@@ -8,6 +8,7 @@ public class Painter : MonoBehaviour
     public Material material;
     public GameObject AssignToBrush;
     public bool colorPicked = false;
+    private bool toolGrabbed = false;
 
     public Renderer ren;
     public Material[] mat;
@@ -15,14 +16,19 @@ public class Painter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+
+    }
+
+    public void OnGrab()
+    {
+        toolGrabbed = true;
     }
 
 
     public void PaintObject(Material paint)
     {
         Debug.Log("Painter trying to paint");
-        if (objectToBePainted != null && objectToBePainted.GetComponent<Paintable>() != null)
+        if (objectToBePainted != null && objectToBePainted.GetComponent<Paintable>() != null && toolGrabbed == true)
         {
             objectToBePainted.GetComponent<Paintable>().ChangeColor(material);
         }
@@ -38,12 +44,12 @@ public class Painter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Paintable>() != null && colorPicked == true)
+        if (other.GetComponent<Paintable>() != null && colorPicked == true && toolGrabbed == true)
         {
             other.GetComponent<MeshRenderer>().material = material;
         }
 
-        else if (other.GetComponent<isPaintBucket>() != null)
+        else if (other.GetComponent<isPaintBucket>() != null && toolGrabbed == true)
         {
             colorPicked = true;
             material = other.GetComponent<isPaintBucket>().material;
@@ -52,6 +58,11 @@ public class Painter : MonoBehaviour
             mat[3] = material;
             AssignToBrush.GetComponent<MeshRenderer>().materials = mat;
         }
+    }
+
+    public void OnRelease()
+    {
+        toolGrabbed = false;
     }
 
     // Update is called once per frame
