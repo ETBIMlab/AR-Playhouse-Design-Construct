@@ -737,6 +737,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754023509}
     m_Modifications:
+    - target: {fileID: -8076418586824880019, guid: 4eee23a201fac9446a04fff5c0df2105,
+        type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312796530, guid: 4eee23a201fac9446a04fff5c0df2105, type: 3}
+      propertyPath: m_Radius
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1312796535, guid: 4eee23a201fac9446a04fff5c0df2105, type: 3}
       propertyPath: onManipulationEnded.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -862,12 +871,12 @@ PrefabInstance:
     - target: {fileID: 2518648455725209209, guid: 4eee23a201fac9446a04fff5c0df2105,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1799998
+      value: -6.1
       objectReference: {fileID: 0}
     - target: {fileID: 2518648455725209209, guid: 4eee23a201fac9446a04fff5c0df2105,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.4902322
+      value: 7.513
       objectReference: {fileID: 0}
     - target: {fileID: 2518648455725209209, guid: 4eee23a201fac9446a04fff5c0df2105,
         type: 3}
@@ -952,9 +961,9 @@ MonoBehaviour:
   initialToolRotationX: 8.622001
   initialToolRotationY: 0
   initialToolRotationZ: 0
-  initialToolPositionX: -0.087
-  initialToolPositionY: -0.109
-  initialToolPositionZ: 0.1245116
+  initialToolPositionX: -1.74
+  initialToolPositionY: -6.1
+  initialToolPositionZ: 7.502975
 --- !u!4 &359549973 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2518648455725209209, guid: 4eee23a201fac9446a04fff5c0df2105,
@@ -1493,6 +1502,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &809198158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000012619185292, guid: f5a2d19d564785d45a6207078113bcaa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2132717754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &809198163
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809198158}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &891202589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,6 +1762,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &976870142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013423646272, guid: f5a2d19d564785d45a6207078113bcaa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2132717754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &976870147
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976870142}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1129966867
 GameObject:
   m_ObjectHideFlags: 0
@@ -3009,6 +3062,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507249093}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1566227978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013507065274, guid: f5a2d19d564785d45a6207078113bcaa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2132717754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1566227983
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566227978}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1566467535
 GameObject:
   m_ObjectHideFlags: 0
@@ -3534,6 +3609,11 @@ PrefabInstance:
       propertyPath: onManipulationEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: -1404778150234912244, guid: f5a2d19d564785d45a6207078113bcaa,
+        type: 3}
+      propertyPath: twoHandedManipulationType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1000012695253110, guid: f5a2d19d564785d45a6207078113bcaa, type: 3}
       propertyPath: m_Name
       value: Drill
@@ -3544,11 +3624,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011496336782, guid: f5a2d19d564785d45a6207078113bcaa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7551184
+      value: -7.6751184
       objectReference: {fileID: 0}
     - target: {fileID: 4000011496336782, guid: f5a2d19d564785d45a6207078113bcaa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.4802067
+      value: 7.5029745
       objectReference: {fileID: 0}
     - target: {fileID: 4000011496336782, guid: f5a2d19d564785d45a6207078113bcaa, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3622,9 +3702,9 @@ MonoBehaviour:
   initialToolRotationX: 57.189
   initialToolRotationY: 0
   initialToolRotationZ: 0
-  initialToolPositionX: 0.103
-  initialToolPositionY: -0.1877559
-  initialToolPositionZ: 0.1240103
+  initialToolPositionX: 2.06
+  initialToolPositionY: -7.675118
+  initialToolPositionZ: 7.502975
 --- !u!4 &2132717757 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011496336782, guid: f5a2d19d564785d45a6207078113bcaa,
