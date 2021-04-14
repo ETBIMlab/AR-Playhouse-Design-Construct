@@ -13,10 +13,17 @@ public class KennyLocking : MonoBehaviour
     bool collided;
     bool saidDrill = false;
 
+    //audio components
+    private AudioSource theAudio1;
+    public AudioClip drillClip;
+    public float volume = 1F;
+
     // Start is called before the first frame update
     void Start()
     {
         keywords.Add("Drill");
+
+        theAudio1 = GetComponent<AudioSource>();//gets the audio file to be played on drill
 
         // Tell the KeywordRecognizer about our keywords.
         keywordRecognizer = new KeywordRecognizer(keywords.ToArray());
@@ -56,12 +63,14 @@ public class KennyLocking : MonoBehaviour
                     Debug.Log("Remove lock");
                     other.gameObject.GetComponent<Lockable>().removeLock(gameObject);
                     removeScrews(other.gameObject);
+                    theAudio1.PlayOneShot(drillClip, volume);
                 }
                 else if (other.gameObject.GetComponent<Lockable>().getIsLocked() == false)
                 {
                     Debug.Log("Add lock");
                     other.gameObject.GetComponent<Lockable>().addLock(gameObject);
                     addScrews(other.gameObject);
+                    theAudio1.PlayOneShot(drillClip, volume);
                 }
             }
         }
@@ -117,5 +126,10 @@ public class KennyLocking : MonoBehaviour
         //    child.gameObject.SetActive(false);
         //}
         lockingPoints.gameObject.SetActive(false);
+    }
+
+    public bool getSaidDrill()
+    {
+        return saidDrill;
     }
 }
