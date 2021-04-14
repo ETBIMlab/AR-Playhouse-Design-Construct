@@ -82,16 +82,6 @@ public class ActivityLogger : MonoBehaviour
             }
         }
         File.WriteAllText("./ActivityLog.txt", fileContents);
-        string posFileContents = "";
-        for (int i = 0; i < listOfPositions.Count; i++)
-        {
-            posFileContents += listOfPositions[i];
-            if (i < listOfPositions.Count - 1)
-            {
-                posFileContents += "\n";
-            }
-        }
-        File.WriteAllText("./PositionLog.txt", posFileContents);
     }
     public void LogPosition(string activity)
     {
