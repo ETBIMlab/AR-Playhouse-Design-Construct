@@ -8,6 +8,7 @@ public class PainterAudio : MonoBehaviour
     public AudioClip paintBucket;
     public AudioClip paintObject;
     public float volume = 1F;
+    private bool playingAudio = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,14 +18,19 @@ public class PainterAudio : MonoBehaviour
     //play audio when coliding with paintbucket or a paintable object
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Paintable>() != null)
+        if (other.GetComponent<Paintable>() != null && !playingAudio)
         {
+            playingAudio = true;
             theAudio.PlayOneShot(paintObject, volume);
+
         }
-        else if(other.GetComponent<isPaintBucket>() != null)
+        else if(other.GetComponent<isPaintBucket>() != null && !playingAudio)
         {
+            playingAudio = true;
             theAudio.PlayOneShot(paintBucket, volume);
         }
+        
+        playingAudio = false;
     }
 
     // Update is called once per frame

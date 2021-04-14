@@ -27,8 +27,8 @@ public class Root : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isShiftedUp = false;
-        floorVisible = true;
+        isShiftedUp = false;//player starts on the ground
+        floorVisible = false;//turns the floor visible
         scaleModeState = 1;
         currentScale = 0;
 
@@ -50,15 +50,33 @@ public class Root : MonoBehaviour
 
         this.toggleVisibility(false, environmentContainer);
 
-        keywords.Add("Set Space", () => { this.setSpace(); audio.setSpace(); });
-        keywords.Add("Shift Level", () => { this.shiftLevel(); audio.shiftLevel(); });
-        keywords.Add("Change View", () => { this.changeView(); audio.changeView(); });
-        keywords.Add("Toggle floor", () => { this.toggleFloor(); audio.changeView(); });
+        keywords.Add("Set Space", () => { this.setSpace(); audio.setSpace(); });//set the space for the simulator
+
+        keywords.Add("Shift Level", () => { this.shiftLevel(); audio.shiftLevel(); });//toggle the current level
+        keywords.Add("Move up", () => { //move to the upper level if the player is on the ground floor
+            if(!isShiftedUp)//player is on the ground floor
+            {
+                this.shiftLevel();
+                audio.shiftLevel();
+            }
+        });
+        keywords.Add("Move down", () => { //move to the upper level if the player is on the ground floor
+            if (isShiftedUp)//player is on the upper floor
+            {
+                this.shiftLevel();
+                audio.shiftLevel();
+            }
+        });
+        keywords.Add("Change View", () => { this.changeView(); audio.changeView(); });//move through the scaling
+        keywords.Add("Toggle floor", () => { this.toggleFloor(); audio.changeView(); });//toggle the  floor on or off
+
         keywords.Add("Scale one", () => { this.scale(0); audio.changeView(); });
         keywords.Add("Scale two", () => { this.scale(1); audio.changeView(); });
+        keywords.Add("Normal view", () => { this.scale(1); audio.changeView(); });//scale 2 is the aproximate size for the real play house
         keywords.Add("Scale three", () => { this.scale(2); audio.changeView(); });
         keywords.Add("Scale four", () => { this.scale(3); audio.changeView(); });
         keywords.Add("Scale five", () => { this.scale(4); audio.changeView(); });
+        keywords.Add("child view", () => { this.scale(4); audio.changeView(); });//scale 5 is the sproximate size for a childs view of the playhouse
         keywords.Add("Scale six", () => { this.scale(5); audio.changeView(); });
         keywords.Add("Scale seven", () => { this.scale(6); audio.changeView(); });
         keywords.Add("Scale eight", () => { this.scale(7); audio.changeView(); });
@@ -92,6 +110,7 @@ public class Root : MonoBehaviour
         environmentContainer.transform.position = newPosition;
 
         this.toggleVisibility(true, environmentContainer);
+        this.scale(1);
 
         Debug.Log("\n \n________________________________\nSETTING ENV: " + environmentContainer.transform.position.ToString());
     }
@@ -140,7 +159,7 @@ public class Root : MonoBehaviour
         Debug.Log("\n \n________________________________\nSETTING scale: " + environmentContainer.transform.localScale.ToString() +"\n MODE: "+scaleModeState);
 
         scaleModeState++;
-        if (scaleModeState > 4) scaleModeState = 0;
+        if (scaleModeState > 13) scaleModeState = 0;
     }
 
     public void scale(int scaler)
@@ -160,8 +179,14 @@ public class Root : MonoBehaviour
 
         Debug.Log("\nSETTING scale: " + environmentContainer.transform.localScale.ToString() + "\n SIZE: " + scaler);
         currentScale = scaler;
+        if(isShiftedUp)//player is currently on upper floor
+        {
+            isShiftedUp = false;//since scale returns to ground floor, reset the shifted state
+            this.shiftLevel();
+        }
+
         scaleModeState++;
-        if (scaleModeState > 4) scaleModeState = 0;
+        if (scaleModeState > 13) scaleModeState = 0;
     }
 
 
