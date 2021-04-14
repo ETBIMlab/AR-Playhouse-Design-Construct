@@ -20,6 +20,7 @@ public class SnappingValidator : MonoBehaviour
     [SerializeField] private bool canSnapFullFacePanelAttachment = false;
     [SerializeField] private bool canSnapLadder = false;
     [SerializeField] private bool canSnapAttachment = false;
+    [SerializeField] private bool canSnapPlank = false;
 
     [Header("Object Orientation")]
     [Tooltip("If set to false, orientation will not matter")]
@@ -98,7 +99,16 @@ public class SnappingValidator : MonoBehaviour
                     else return true;
                 }
                 break;
-
+            case ItemInfo.ItemType.Plank:
+                if (canSnapPlank == true)
+                {
+                    if (isOrientationSpecific)
+                    {
+                        return verifyOrientation(itemOrientation);
+                    }
+                    else return true;
+                }
+                break;
             default:
                 break;
         }

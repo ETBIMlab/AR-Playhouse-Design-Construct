@@ -17,7 +17,8 @@ public class ItemInfo : MonoBehaviour
         Slide,
         Full_Panel_Attachment,
         Ladder,
-        Attachment
+        Attachment,
+        Plank
         // add more item types here
     }
 
@@ -142,6 +143,21 @@ public class ItemInfo : MonoBehaviour
                 return itemOrientation;
 
             case ItemType.Attachment:
+                //Debug.Log("Simplified/rounded angle is: " + yRotation);
+                switch (yRotation)
+                {
+                    case 90:
+                    case 270:
+                        itemOrientation = ItemOrientation.EastWest;
+                        break;
+                    case 0:
+                    case 180:
+                        itemOrientation = ItemOrientation.NorthSouth;
+                        break;
+                }
+                return itemOrientation;
+
+            case ItemType.Plank:
                 //Debug.Log("Simplified/rounded angle is: " + yRotation);
                 switch (yRotation)
                 {
