@@ -1041,6 +1041,8 @@ GameObject:
   m_Component:
   - component: {fileID: 67745974284919298}
   - component: {fileID: 2945896094369471552}
+  - component: {fileID: 7744814527982558169}
+  - component: {fileID: 6605464123178405557}
   m_Layer: 0
   m_Name: Roof Shingles
   m_TagString: Untagged
@@ -1110,6 +1112,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &7744814527982558169
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67745974284919297}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 0.4, z: 0.7}
+  m_Center: {x: -0.3, y: 1.65, z: -0.3}
+--- !u!65 &6605464123178405557
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67745974284919297}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 0.4, z: 0.7}
+  m_Center: {x: -0.3, y: 1.65, z: -1.85}
 --- !u!1 &67745974299645019
 GameObject:
   m_ObjectHideFlags: 0
@@ -6286,15 +6314,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da412142241b1dc41b610bb748c6ce87, type: 3}
---- !u!1 &6593010716679854811 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6597697357246998747, guid: da412142241b1dc41b610bb748c6ce87,
-    type: 3}
-  m_PrefabInstance: {fileID: 67745973446013440}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4498512274143265716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4511836682554519988, guid: da412142241b1dc41b610bb748c6ce87,
+    type: 3}
+  m_PrefabInstance: {fileID: 67745973446013440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6593010716679854811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6597697357246998747, guid: da412142241b1dc41b610bb748c6ce87,
     type: 3}
   m_PrefabInstance: {fileID: 67745973446013440}
   m_PrefabAsset: {fileID: 0}

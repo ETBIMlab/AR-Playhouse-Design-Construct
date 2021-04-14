@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 using System.Linq;
+using System;
 
 public class KennyLocking : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class KennyLocking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
