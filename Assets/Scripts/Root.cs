@@ -3,6 +3,9 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
+using Microsoft.MixedReality.Toolkit.Input;
+using Microsoft.MixedReality.Toolkit.Utilities;
+using Microsoft.MixedReality.Toolkit.UI;
 
 //This is the root script that defines behavior at the root level
 //It is to be used by a GameObject at the root of the contruction simulator
@@ -12,6 +15,8 @@ public class Root : MonoBehaviour
     public AudioRoot audio;
     public GameObject environmentSetter;
     public GameObject environmentContainer;
+    public GameObject childToggle;
+    public GameObject levelToggle;
     public int shiftAmount;
     public Vector3 environmentOffset;
 
@@ -27,6 +32,8 @@ public class Root : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
         isShiftedUp = false;//player starts on the ground
         floorVisible = false;//turns the floor visible
         scaleModeState = 1;
@@ -44,16 +51,25 @@ public class Root : MonoBehaviour
         scaleLevels.Add(new scaleState(new Vector3(9.0f, 9.0f, 9.0f), 9f));
         scaleLevels.Add(new scaleState(new Vector3(10.0f, 10.0f, 10.0f), 10f));//index 9
         scaleLevels.Add(new scaleState(new Vector3(.5f, .5f, .5f), .5f));
-        scaleLevels.Add(new scaleState(new Vector3(1.25f, 1.25f, 1.25f), 1.25f));
-        scaleLevels.Add(new scaleState(new Vector3(1.5f, 1.5f, 1.5f), 1.5f));
-        scaleLevels.Add(new scaleState(new Vector3(1.75f, 1.75f, 1.75f), 1.75f));
+        scaleLevels.Add(new scaleState(new Vector3(2.25f, 2.25f, 2.25f), 2.25f));
+        scaleLevels.Add(new scaleState(new Vector3(2.5f, 2.5f, 2.5f), 2.5f));
+        scaleLevels.Add(new scaleState(new Vector3(2.75f, 2.75f, 2.75f), 2.75f));
 
         this.toggleVisibility(false, environmentContainer);
 
         keywords.Add("Set Space", () => { this.setSpace(); audio.setSpace(); });//set the space for the simulator
 
-        keywords.Add("Shift Level", () => { this.shiftLevel(); audio.shiftLevel(); });//toggle the current level
-        keywords.Add("Move up", () => { //move to the upper level if the player is on the ground floor
+
+        keywords.Add("Shift Level", () => { this.toggleLevel(); audio.shiftLevel(); });//toggle the current level
+        keywords.Add("Move down", () =>
+        {
+            this.toggleLevel(); audio.shiftLevel();
+        });
+        keywords.Add("Move up", () =>
+        {
+            this.toggleLevel(); audio.shiftLevel();
+        });
+        /*keywords.Add("Move up", () => { //move to the upper level if the player is on the ground floor
             if(!isShiftedUp)//player is on the ground floor
             {
                 this.shiftLevel();
@@ -66,23 +82,30 @@ public class Root : MonoBehaviour
                 this.shiftLevel();
                 audio.shiftLevel();
             }
-        });
-        keywords.Add("Change View", () => { this.changeView(); audio.changeView(); });//move through the scaling
+        });*/
+       
+        keywords.Add("Toggle Level", () => { this.toggleLevel();  });//toggle the  level up or down
+
         keywords.Add("Toggle floor", () => { this.toggleFloor(); audio.changeView(); });//toggle the  floor on or off
 
-        keywords.Add("Scale one", () => { this.scale(0); audio.changeView(); });
-        keywords.Add("Scale two", () => { this.scale(1); audio.changeView(); });
-        keywords.Add("Normal view", () => { this.scale(1); audio.changeView(); });//scale 2 is the aproximate size for the real play house
-        keywords.Add("Scale three", () => { this.scale(2); audio.changeView(); });
-        keywords.Add("Scale four", () => { this.scale(3); audio.changeView(); });
-        keywords.Add("Scale five", () => { this.scale(4); audio.changeView(); });
-        keywords.Add("child view", () => { this.scale(4); audio.changeView(); });//scale 5 is the sproximate size for a childs view of the playhouse
-        keywords.Add("Scale six", () => { this.scale(5); audio.changeView(); });
-        keywords.Add("Scale seven", () => { this.scale(6); audio.changeView(); });
-        keywords.Add("Scale eight", () => { this.scale(7); audio.changeView(); });
-        keywords.Add("Scale nine", () => { this.scale(8); audio.changeView(); });
-        keywords.Add("Scale ten", () => { this.scale(9); audio.changeView(); });
-        keywords.Add("Scale half", () => { this.scale(10); audio.changeView(); });
+
+        keywords.Add("Change View", () => { this.toggleButton(); audio.changeView(); });//move through the scaling
+        keywords.Add("Scale half", () => { this.scale(0); audio.changeView(); });
+        keywords.Add("Scale one", () => { this.scale(1); audio.changeView(); });
+        keywords.Add("Toggle view", () => { this.toggleButton(); audio.changeView(); });
+        keywords.Add("Normal view", () => { this.toggleButton(); audio.changeView(); });//scale 2 is the aproximate size for the real play house
+        keywords.Add("Scale two", () => { this.scale(2); audio.changeView(); });
+        keywords.Add("Scale three", () => { this.scale(3); audio.changeView(); });
+        keywords.Add("Scale four", () => { this.scale(4); audio.changeView(); });
+
+        keywords.Add("child view", () => { this.toggleButton(); audio.changeView(); });//scale 5 is the sproximate size for a childs view of the playhouse
+
+        keywords.Add("Scale five", () => { this.scale(5); audio.changeView(); });
+        keywords.Add("Scale six", () => { this.scale(6); audio.changeView(); });
+        keywords.Add("Scale seven", () => { this.scale(7); audio.changeView(); });
+        keywords.Add("Scale eight", () => { this.scale(8); audio.changeView(); });
+        keywords.Add("Scale nine", () => { this.scale(9); audio.changeView(); });
+        keywords.Add("Scale quarter", () => { this.scale(10); audio.changeView(); });//1/2 scale of default
         keywords.Add("Scale one and a quarter", () => { this.scale(11); audio.changeView(); });
         keywords.Add("Scale one and a half", () => { this.scale(12); audio.changeView(); });
         keywords.Add("Scale one and three quarters", () => { this.scale(13); audio.changeView(); });
@@ -98,6 +121,45 @@ public class Root : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void toggleButton()//toggle the switch button for child view
+    {
+       
+        childToggle.GetComponent<Interactable>().TriggerOnClick(); 
+        Debug.Log("Toggle View");
+        
+    }
+    //swap the text for the switch
+    public void swapChildText(bool toggle)
+    {
+        if (toggle)
+        {
+            childToggle.GetComponentInChildren<TextMesh>().text = "Child \nView";
+        }
+        else
+        {
+            childToggle.GetComponentInChildren<TextMesh>().text = "Normal \nView";
+        }
+    
+    }
+
+    public void toggleLevel()
+    {
+        levelToggle.GetComponent<Interactable>().TriggerOnClick();
+        Debug.Log("Toggle Level");
+    }
+
+    public void swapLevelText(bool toggle)
+    {
+        if (toggle)
+        {
+            levelToggle.GetComponentInChildren<TextMesh>().text = "Move \nUp";
+        }
+        else
+        {
+            levelToggle.GetComponentInChildren<TextMesh>().text = "Move \nDown";
+        }
     }
 
     public void setSpace()
