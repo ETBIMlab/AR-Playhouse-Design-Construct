@@ -115,6 +115,6 @@ public class ObjectOrderer : MonoBehaviour
         //get position of the ordering truck
         var orderPos = GameObject.Find("IndustrialSmallTruck").transform.position;
         Debug.Log("truck is at " + orderPos);
-        Instantiate(newObj, new Vector3(orderPos.x + 1.24f, orderPos.y, orderPos.z - 1.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
+        Instantiate(newObj, new Vector3(orderPos.x + 1.24f, orderPos.y, orderPos.z - 2.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
     }
 }
