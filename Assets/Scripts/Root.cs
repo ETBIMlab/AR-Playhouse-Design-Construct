@@ -13,6 +13,8 @@ using Microsoft.MixedReality.Toolkit.UI;
 public class Root : MonoBehaviour
 {
     public AudioRoot audio;
+    private AudioSource audioSource;
+    public AudioClip spaceSet;
     public GameObject environmentSetter;
     public GameObject environmentContainer;
     public GameObject childToggle;
@@ -32,7 +34,7 @@ public class Root : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
 
         isShiftedUp = false;//player starts on the ground
         floorVisible = false;//turns the floor visible
@@ -57,7 +59,7 @@ public class Root : MonoBehaviour
 
         this.toggleVisibility(false, environmentContainer);
 
-        keywords.Add("Set Space", () => { this.setSpace(); audio.setSpace(); });//set the space for the simulator
+        keywords.Add("Set Space", () => { this.setSpace(); audioSource.PlayOneShot(spaceSet,1F); });//set the space for the simulator
 
 
         keywords.Add("Shift Level", () => { this.toggleLevel(); audio.shiftLevel(); });//toggle the current level
