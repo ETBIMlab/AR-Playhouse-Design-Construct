@@ -20,6 +20,8 @@ public class laptopInterface : MonoBehaviour
     int scheduledays = 0;
     int schedulehours = 0;
     int scheduleminutes = 0;
+    Boolean istab1 = true;
+    String itemstoDisplay = "";
 
     [Serializable]
     public struct installObj
@@ -34,8 +36,8 @@ public class laptopInterface : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        keywords.Add("Switch to tab 1");
-        keywords.Add("Switch to tab 2");
+        keywords.Add("Switch Tab 1");
+        keywords.Add("Switch Tab 2");
 
         keywordRecognizer = new KeywordRecognizer(keywords.ToArray());
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
@@ -51,23 +53,32 @@ public class laptopInterface : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        total.text = realtimeConversions(Time.realtimeSinceStartup) + "\n"
-            + "Cost: $ " + money.ToString() + "\n"
-            + "Project time (d/h/m):" + "\n"
-            + "" + scheduledays.ToString() + ""
-             + "/" + schedulehours.ToString() + ""
-             + "/" + scheduleminutes.ToString() + "\n";
+        if(istab1)
+        {
+            total.fontSize = 7;
+            total.text = realtimeConversions(Time.realtimeSinceStartup) + "\n"
+                +"Cost: $ " + money.ToString() + "\n"
+                + "Project time (d/h/m):" + "\n"
+                + "" + scheduledays.ToString() + ""
+                 + "/" + schedulehours.ToString() + ""
+                 + "/" + scheduleminutes.ToString() + "\n";
+        }
+        else
+        {
+            total.fontSize = 6;
+            total.text = itemstoDisplay;
+        }
     }
 
     public void additem(double mon, int dtime, string iname, int quant, int itime)
     {
-        Debug.Log(itemIndex);
+        Debug.Log(iname);
         installObjs[itemIndex].name = iname;
         installObjs[itemIndex].instalTime = itime;
         itemIndex++;
         double itemscost = mon * quant;
         money = money + itemscost;
-
+        itemstoDisplay += iname + " x" + quant + " $" + mon + "\n";
         convertTime(dtime);
    
     }
@@ -136,6 +147,14 @@ public class laptopInterface : MonoBehaviour
     }
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
+        if(args.text== "Switch Tab 2")
+        {
+            istab1 = false;
+        }
+        else
+        {
+            istab1 = true;
+        }
         //time.text = "Real time:";
     }
 
