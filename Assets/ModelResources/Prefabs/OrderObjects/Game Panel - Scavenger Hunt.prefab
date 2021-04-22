@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 4903814376239041502}
   - component: {fileID: 4131735511333188072}
   - component: {fileID: 7668036860558069009}
+  - component: {fileID: 4342071116942640818}
   m_Layer: 0
   m_Name: Game Panel - Scavenger Hunt
   m_TagString: Untagged
@@ -348,7 +349,7 @@ Transform:
   m_GameObject: {fileID: 8238914308612323789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.5456507, y: 0.18, z: 1.5531149}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.0115, y: 0.0115, z: 0.0115}
   m_Children:
   - {fileID: 675908746069802037}
   m_Father: {fileID: 0}
@@ -401,3 +402,15 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4342071116942640818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238914308612323789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 665ef66b72792e94a84d5d6acc876829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
