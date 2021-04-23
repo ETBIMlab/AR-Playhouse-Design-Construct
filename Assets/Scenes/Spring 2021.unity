@@ -1915,6 +1915,7 @@ GameObject:
   - component: {fileID: 1129966874}
   - component: {fileID: 1129966877}
   - component: {fileID: 1129966871}
+  - component: {fileID: 1129966878}
   m_Layer: 12
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3004,6 +3005,26 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1129966878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129966867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48207a4f8ecc2344bf6df17f3bf9fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ren: {fileID: 0}
+  mat: []
+  Floor: {fileID: 8321261906074040954}
+  RubberTexture: {fileID: 2100000, guid: b9581edc5e9ec8c46b8b4979dbc3dbab, type: 2}
+  SandTexture: {fileID: 2100000, guid: 00c819dc44a621b439fea44f0b1bfd17, type: 2}
+  GrassTexture: {fileID: 2100000, guid: b01e02af67f6ef94e90a4a2527932d11, type: 2}
+  ConcreteTexture: {fileID: 2100000, guid: 840761b59fd348143b58026f027b08ea, type: 2}
+  MulchTexture: {fileID: 2100000, guid: dd20d25922cc2a941a583cbe00a77f83, type: 2}
 --- !u!1 &1209853207 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4820592758055021292, guid: 88bdc94026fd172458fcc565c839c9ae,
@@ -9877,8 +9898,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7109231596476768308, guid: 0fa0d6441526aa6469b5daf20d227cb3, type: 3}
-  - {fileID: -2263637718951746235, guid: 0fa0d6441526aa6469b5daf20d227cb3, type: 3}
+  - {fileID: 2100000, guid: 680505b4b4f3400f9fd3ebb242751819, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
