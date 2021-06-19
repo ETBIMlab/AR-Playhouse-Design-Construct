@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 6364103202275092173}
   - component: {fileID: 8162320954897718359}
   - component: {fileID: 8933591466713673010}
+  - component: {fileID: 8738124676362895194}
   m_Layer: 0
   m_Name: Stair A (Fixed)
   m_TagString: item
@@ -363,6 +364,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665ef66b72792e94a84d5d6acc876829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8738124676362895194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615838294698630349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 0
+  hasPlastic: 0
+  hasMetal: 1
+  isPaintBucket: 0
 --- !u!1 &5938034233355719306
 GameObject:
   m_ObjectHideFlags: 0

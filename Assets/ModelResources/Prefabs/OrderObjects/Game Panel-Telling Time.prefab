@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 1712041918897280825}
   - component: {fileID: -2773655987294242865}
   - component: {fileID: 4120408221231961294}
+  - component: {fileID: 8172880825496083633}
   m_Layer: 0
   m_Name: Game Panel-Telling Time
   m_TagString: Untagged
@@ -268,6 +269,21 @@ MonoBehaviour:
   itemType: 0
   hasDifferentOriginRotation: 0
   itemOrientation: 0
+--- !u!114 &8172880825496083633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152555372702163941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 0
+  hasPlastic: 0
+  hasMetal: 0
 --- !u!1 &1334570158491906657
 GameObject:
   m_ObjectHideFlags: 0

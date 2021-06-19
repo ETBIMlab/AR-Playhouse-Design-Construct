@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 3922256121711182419}
   - component: {fileID: -1862579641883036229}
   - component: {fileID: 1197607866228136337}
+  - component: {fileID: 7965345620224121621}
   m_Layer: 0
   m_Name: Sprial Climber (Fixed)
   m_TagString: item
@@ -363,6 +364,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665ef66b72792e94a84d5d6acc876829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7965345620224121621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634173366108896463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 0
+  hasPlastic: 1
+  hasMetal: 0
+  isPaintBucket: 0
 --- !u!1 &8991822910460563527
 GameObject:
   m_ObjectHideFlags: 0

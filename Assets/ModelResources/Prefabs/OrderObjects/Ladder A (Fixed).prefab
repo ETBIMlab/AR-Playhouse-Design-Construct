@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 3392806796136073724}
   - component: {fileID: 3059398094118676705}
   - component: {fileID: -8426990972550963408}
+  - component: {fileID: 3122575153673469986}
   m_Layer: 0
   m_Name: Ladder A (Fixed)
   m_TagString: item
@@ -456,6 +457,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665ef66b72792e94a84d5d6acc876829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3122575153673469986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4265626247116294185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 0
 --- !u!1 &6287399337594607254
 GameObject:
   m_ObjectHideFlags: 0

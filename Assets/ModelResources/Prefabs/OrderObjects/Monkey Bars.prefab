@@ -746,6 +746,7 @@ GameObject:
   - component: {fileID: 6677755042878806813}
   - component: {fileID: 1736015572799994577}
   - component: {fileID: 489450755902102869}
+  - component: {fileID: 447311995035122499}
   m_Layer: 0
   m_Name: Monkey Bars
   m_TagString: Untagged
@@ -989,6 +990,21 @@ MonoBehaviour:
   itemType: 0
   hasDifferentOriginRotation: 0
   itemOrientation: 0
+--- !u!114 &447311995035122499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4224057917134184581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 0
+  hasMetal: 1
 --- !u!114 &661462567602436371
 MonoBehaviour:
   m_ObjectHideFlags: 0

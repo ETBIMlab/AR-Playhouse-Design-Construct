@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: -6966012018975932912}
   - component: {fileID: 7371605126899456969}
   - component: {fileID: -6599597103853651485}
+  - component: {fileID: 1024000854405106540}
   m_Layer: 0
   m_Name: Tire Swing (Fixed)
   m_TagString: item
@@ -401,6 +402,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665ef66b72792e94a84d5d6acc876829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1024000854405106540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8436165452010217296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 0
+  hasPlastic: 0
+  hasMetal: 0
 --- !u!1001 &3148979781828935283
 PrefabInstance:
   m_ObjectHideFlags: 0

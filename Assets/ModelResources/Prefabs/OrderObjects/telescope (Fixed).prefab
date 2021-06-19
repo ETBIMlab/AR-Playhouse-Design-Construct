@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 2162572456793368601}
   - component: {fileID: -3163244546593408047}
   - component: {fileID: -1294967046649712089}
+  - component: {fileID: 6510182650522678872}
   m_Layer: 0
   m_Name: telescope (Fixed)
   m_TagString: item
@@ -370,6 +371,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665ef66b72792e94a84d5d6acc876829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6510182650522678872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557844184999513161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 0
+  hasMetal: 1
+  isPaintBucket: 0
 --- !u!1 &2889899052881914834
 GameObject:
   m_ObjectHideFlags: 0

@@ -1193,6 +1193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 67745974374690282}
   - component: {fileID: 5223098756385430726}
+  - component: {fileID: -6262982986840792591}
   m_Layer: 0
   m_Name: GoodPlayHouse
   m_TagString: Untagged
@@ -1256,6 +1257,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6262982986840792591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67745974374690281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 1
+  hasMetal: 1
+  isPaintBucket: 0
 --- !u!1 &67745974430628399
 GameObject:
   m_ObjectHideFlags: 0
@@ -6384,15 +6401,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da412142241b1dc41b610bb748c6ce87, type: 3}
---- !u!1 &6593010716679854811 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6597697357246998747, guid: da412142241b1dc41b610bb748c6ce87,
-    type: 3}
-  m_PrefabInstance: {fileID: 67745973446013440}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4498512274143265716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4511836682554519988, guid: da412142241b1dc41b610bb748c6ce87,
+    type: 3}
+  m_PrefabInstance: {fileID: 67745973446013440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6593010716679854811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6597697357246998747, guid: da412142241b1dc41b610bb748c6ce87,
     type: 3}
   m_PrefabInstance: {fileID: 67745973446013440}
   m_PrefabAsset: {fileID: 0}

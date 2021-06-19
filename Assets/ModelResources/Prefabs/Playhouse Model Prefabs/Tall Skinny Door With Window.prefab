@@ -770,6 +770,7 @@ GameObject:
   - component: {fileID: 574401701494524627}
   - component: {fileID: 7067195220671635091}
   - component: {fileID: 1815760555113058227}
+  - component: {fileID: -8082971959988855688}
   m_Layer: 0
   m_Name: Tall Skinny Door With Window
   m_TagString: Untagged
@@ -1102,6 +1103,22 @@ MonoBehaviour:
   dragClip: {fileID: 8300000, guid: 45a90682f74bb0c41b65994c63b74e60, type: 3}
   clickClip: {fileID: 8300000, guid: 9a10debaf8483ae49aa91211098634f1, type: 3}
   volume: 1
+--- !u!114 &-8082971959988855688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7800167075294790063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 0
+  hasMetal: 0
+  isPaintBucket: 0
 --- !u!1 &7859377092369084443
 GameObject:
   m_ObjectHideFlags: 0

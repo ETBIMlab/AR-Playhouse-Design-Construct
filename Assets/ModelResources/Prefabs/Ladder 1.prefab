@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 165567763356249397}
   - component: {fileID: 9157843067981911811}
   - component: {fileID: 3182840785345063930}
+  - component: {fileID: 1413467721634417406}
   m_Layer: 0
   m_Name: Ladder 1
   m_TagString: Untagged
@@ -80,3 +81,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1413467721634417406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753590688538435366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 0
+  hasMetal: 0
+  isPaintBucket: 0

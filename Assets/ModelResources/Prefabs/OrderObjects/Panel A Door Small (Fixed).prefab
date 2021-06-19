@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: -2564608588274829028}
   - component: {fileID: 9112788942266375895}
   - component: {fileID: -747028974799014065}
+  - component: {fileID: -5372678599482128289}
   m_Layer: 0
   m_Name: Panel A Door Small (Fixed)
   m_TagString: item
@@ -410,6 +411,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665ef66b72792e94a84d5d6acc876829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5372678599482128289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684801938563342536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 0
+  hasMetal: 0
 --- !u!1001 &806821370446678955
 PrefabInstance:
   m_ObjectHideFlags: 0

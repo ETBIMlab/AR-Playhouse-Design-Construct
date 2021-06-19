@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: -7389498626397507559}
   - component: {fileID: -1848361796028584593}
   - component: {fileID: 8138976577490487896}
+  - component: {fileID: 1323884698760819513}
   m_Layer: 0
   m_Name: Short Door With Narrow Window
   m_TagString: Untagged
@@ -662,6 +663,22 @@ MonoBehaviour:
   dragClip: {fileID: 8300000, guid: 45a90682f74bb0c41b65994c63b74e60, type: 3}
   clickClip: {fileID: 8300000, guid: 9a10debaf8483ae49aa91211098634f1, type: 3}
   volume: 1
+--- !u!114 &1323884698760819513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812651423592582181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 0
+  hasMetal: 0
+  isPaintBucket: 0
 --- !u!1 &5399052213877275170
 GameObject:
   m_ObjectHideFlags: 0
