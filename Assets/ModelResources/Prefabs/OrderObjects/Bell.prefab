@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 941303777543748343}
   - component: {fileID: -6824122924746373769}
   - component: {fileID: -4508969225637629747}
+  - component: {fileID: 240181132176561020}
   m_Layer: 0
   m_Name: Bell
   m_TagString: item
@@ -671,6 +672,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665ef66b72792e94a84d5d6acc876829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &240181132176561020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3033186207074723928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 0
+  hasMetal: 1
 --- !u!1 &3480971570936549333
 GameObject:
   m_ObjectHideFlags: 0

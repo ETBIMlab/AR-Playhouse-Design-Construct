@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3285507325544221819}
   - component: {fileID: -1953223277748455646}
   - component: {fileID: 3389842981591525035}
+  - component: {fileID: 8700473412395749196}
   m_Layer: 0
   m_Name: Game Panel - Solar System
   m_TagString: Untagged
@@ -110,6 +111,21 @@ MonoBehaviour:
   itemType: 0
   hasDifferentOriginRotation: 0
   itemOrientation: 0
+--- !u!114 &8700473412395749196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3865392010971314343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 0
+  hasPlastic: 0
+  hasMetal: 0
 --- !u!1 &5992632594925093162
 GameObject:
   m_ObjectHideFlags: 0

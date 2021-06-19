@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &-167880843157939923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2887161925410729172}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: -6666807308592442426}
+  m_Layer: 0
+  m_Name: Ships Wheel (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &-6666807308592442426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2887161925410729172}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -167880843157939923}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7901964503824759948}
+  m_Father: {fileID: 2887161924760315931}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2887161923647129425
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +344,7 @@ Transform:
   - {fileID: 8066885313739599211}
   - {fileID: 8066885312676749084}
   m_Father: {fileID: 2887161924760315931}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2887161924166058350
 GameObject:
@@ -453,7 +484,7 @@ Transform:
   - {fileID: 1427801773634879159}
   - {fileID: 1427801772547786300}
   m_Father: {fileID: 2887161924760315931}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2887161924365997913
 GameObject:
@@ -529,7 +560,7 @@ Transform:
   - {fileID: 3838397962635415778}
   - {fileID: 3838397962735773269}
   m_Father: {fileID: 2887161924760315931}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2887161924418481424
 GameObject:
@@ -655,7 +686,7 @@ Transform:
   - {fileID: 468776730107964209}
   - {fileID: 468776729889145401}
   m_Father: {fileID: 2887161924760315931}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2887161924760315928
 GameObject:
@@ -666,6 +697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2887161924760315931}
+  - component: {fileID: -2392800055250233295}
   m_Layer: 0
   m_Name: Reconstructed Playhouse of Prefabs - Missing Screws
   m_TagString: Untagged
@@ -708,7 +740,6 @@ Transform:
   - {fileID: 1624675729461773893}
   - {fileID: 3599521544263024169}
   - {fileID: 2887161924166058345}
-  - {fileID: 7901964503824759948}
   - {fileID: 2887161924967603393}
   - {fileID: 2887161924091652911}
   - {fileID: 2887161925502349670}
@@ -716,11 +747,28 @@ Transform:
   - {fileID: 2887161924326497085}
   - {fileID: 2887161924706484185}
   - {fileID: 2887161925014474012}
+  - {fileID: -6666807308592442426}
   - {fileID: 2887161924807060640}
   - {fileID: 2887161925122713587}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2392800055250233295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887161924760315928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 1
+  hasMetal: 1
+  isPaintBucket: 0
 --- !u!1 &2887161924801081886
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +901,7 @@ Transform:
   - {fileID: 6318600893271547630}
   - {fileID: 6318600892471360481}
   m_Father: {fileID: 2887161924760315931}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2887161925014474013
 GameObject:
@@ -891,7 +939,7 @@ Transform:
   - {fileID: 2808818638315020612}
   - {fileID: 2808818636892608828}
   m_Father: {fileID: 2887161924760315931}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2887161925103784362
 GameObject:
@@ -1117,7 +1165,7 @@ Transform:
   - {fileID: 4539439371192529006}
   - {fileID: 4539439371667480343}
   m_Father: {fileID: 2887161924760315931}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2887161925543080915
 GameObject:
@@ -1236,6 +1284,37 @@ Transform:
   - {fileID: 4140670312170769623}
   m_Father: {fileID: 2887161924760315931}
   m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6546923916990955624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2887161925410729172}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7901964503824759948}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7901964503824759948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5023810055801917528, guid: afef074a585992141973634286e97c16,
+    type: 3}
+  m_PrefabInstance: {fileID: 2887161925410729172}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6546923916990955624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: -6666807308592442426}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &924702550906739730
 PrefabInstance:
@@ -19206,12 +19285,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afef074a585992141973634286e97c16, type: 3}
---- !u!4 &7901964503824759948 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5023810055801917528, guid: afef074a585992141973634286e97c16,
-    type: 3}
-  m_PrefabInstance: {fileID: 2887161925410729172}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2887161925413182420
 PrefabInstance:
   m_ObjectHideFlags: 0

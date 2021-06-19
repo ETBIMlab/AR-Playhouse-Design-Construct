@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 1451182581801268460}
   - component: {fileID: 4090289252753859446}
   - component: {fileID: 6740354845025422660}
+  - component: {fileID: 5100846045406345293}
   m_Layer: 0
   m_Name: resting ladder_sparse rungs_fix
   m_TagString: Untagged
@@ -526,6 +527,21 @@ MonoBehaviour:
   OnObjectFinishedSnapping:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5100846045406345293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359497772915359531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 0
+  hasMetal: 1
 --- !u!1001 &1282401694448029238
 PrefabInstance:
   m_ObjectHideFlags: 0

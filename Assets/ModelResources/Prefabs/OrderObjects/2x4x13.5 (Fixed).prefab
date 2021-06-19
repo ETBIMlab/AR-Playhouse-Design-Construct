@@ -4686,6 +4686,7 @@ GameObject:
   - component: {fileID: -4780862905022457414}
   - component: {fileID: -8972645937882358059}
   - component: {fileID: -6129709025967602692}
+  - component: {fileID: 4324511080377590659}
   m_Layer: 0
   m_Name: 2x4x13.5 (Fixed)
   m_TagString: item
@@ -5043,6 +5044,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665ef66b72792e94a84d5d6acc876829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4324511080377590659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2249210353232098507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 0
+  hasMetal: 0
+  isPaintBucket: 0
 --- !u!64 &2271386235160465810
 MeshCollider:
   m_ObjectHideFlags: 0
