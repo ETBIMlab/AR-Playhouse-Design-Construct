@@ -57,11 +57,11 @@ public class laptopInterface : MonoBehaviour
         {
             total.fontSize = 7;
             total.text = //realtimeConversions(Time.realtimeSinceStartup) + "\n"
-                "Cost: $ " + money.ToString() + "\n"
-                + "Project time (d/h/m):" + "\n"
+                "Cost: $ " + money.ToString() + "\n" + "\n"
+                + "Time Spent (day:hr:min)" + "\n"
                 + "" + scheduledays.ToString() + ""
-                 + "/" + schedulehours.ToString() + ""
-                 + "/" + scheduleminutes.ToString() + "\n";
+                 + ":" + schedulehours.ToString() + ""
+                 + ":" + scheduleminutes.ToString() + "\n";
         }
         else
         {
