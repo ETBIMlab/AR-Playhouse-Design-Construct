@@ -44,11 +44,11 @@ public class laptopInterface : MonoBehaviour
         keywordRecognizer.Start();
 
         total.text = realtimeConversions(Time.realtimeSinceStartup) + "\n"
-            + "Cost: $" + money.ToString() + "\n"
-            + "Project time (d/h/m):" + "\n"
+            + "Cost: $" + money.ToString() + "\n" + "\n"
+            + "Project time (d:h:m):" + "\n"
             + "" + scheduledays.ToString() + ""
-             + "/" + schedulehours.ToString() + ""
-             + "/" + scheduleminutes.ToString() + "\n";
+             + ":" + schedulehours.ToString() + ""
+             + ":" + scheduleminutes.ToString() + "\n";
     }
     // Update is called once per frame
     void Update()
