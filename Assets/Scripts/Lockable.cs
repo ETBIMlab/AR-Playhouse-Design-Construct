@@ -7,7 +7,7 @@ public class Lockable : MonoBehaviour
 {
     private int numLocks = 0;
     private List<GameObject> lockedBy = new List<GameObject>();
-    private bool isLocked = false;
+    private bool isLocked = true;
     // Start is called before the first frame update
     void Start()
     {
