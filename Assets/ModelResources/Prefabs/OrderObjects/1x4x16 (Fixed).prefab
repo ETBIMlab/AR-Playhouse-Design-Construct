@@ -9098,6 +9098,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrice: 0
+  itemInstallTime: 0
+  itemFun: 0
   itemType: 6
   hasDifferentOriginRotation: 0
   itemOrientation: 0
@@ -9138,10 +9140,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ren: {fileID: 0}
   hasWood: 1
   hasPlastic: 0
   hasMetal: 0
   isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
 --- !u!135 &1692823857946652824
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16461,7 +16468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8218842683355281335
 Transform:
   m_ObjectHideFlags: 0

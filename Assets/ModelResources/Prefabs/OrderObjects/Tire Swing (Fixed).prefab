@@ -104,7 +104,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7109231596476768308, guid: b47c1649caa77d149a47059c652bf795, type: 3}
+  - {fileID: 2100000, guid: b9581edc5e9ec8c46b8b4979dbc3dbab, type: 2}
   - {fileID: -7439704923360819140, guid: b47c1649caa77d149a47059c652bf795, type: 3}
   - {fileID: -8894965008422782783, guid: b47c1649caa77d149a47059c652bf795, type: 3}
   - {fileID: -7909880111893685499, guid: b47c1649caa77d149a47059c652bf795, type: 3}
@@ -416,10 +416,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ren: {fileID: 0}
   hasWood: 0
   hasPlastic: 0
   hasMetal: 0
   isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
 --- !u!1001 &3148979781828935283
 PrefabInstance:
   m_ObjectHideFlags: 0

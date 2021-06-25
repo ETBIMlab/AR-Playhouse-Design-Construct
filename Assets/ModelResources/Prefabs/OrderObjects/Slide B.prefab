@@ -20,7 +20,6 @@ GameObject:
   - component: {fileID: -2429904620282565253}
   - component: {fileID: -6738353155871887935}
   - component: {fileID: -8946614561716027090}
-  - component: {fileID: 8210082108343597558}
   m_Layer: 0
   m_Name: Slide B
   m_TagString: Untagged
@@ -209,6 +208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrice: 850
+  itemInstallTime: 30
+  itemFun: 1
   itemType: 2
   hasDifferentOriginRotation: 0
   itemOrientation: 0
@@ -370,20 +371,6 @@ MonoBehaviour:
   dragClip: {fileID: 8300000, guid: 45a90682f74bb0c41b65994c63b74e60, type: 3}
   clickClip: {fileID: 8300000, guid: 9a10debaf8483ae49aa91211098634f1, type: 3}
   volume: 1
---- !u!114 &8210082108343597558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513684669115212936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaec75a6728f2764da5e9899e71adab2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laptopinterface: {fileID: 0}
-  orderableObjs: []
 --- !u!1 &4513095811718259038
 GameObject:
   m_ObjectHideFlags: 0

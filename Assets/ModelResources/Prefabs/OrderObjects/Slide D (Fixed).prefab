@@ -332,10 +332,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ren: {fileID: 0}
   hasWood: 0
   hasPlastic: 0
   hasMetal: 1
   isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
 --- !u!1 &4408202425011360070
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,8 +433,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -38001720312931106, guid: 83ebb4b195a9497498e3b1f60e9f3605, type: 3}
-  - {fileID: -6633593992874582198, guid: 83ebb4b195a9497498e3b1f60e9f3605, type: 3}
+  - {fileID: 2100000, guid: 6412fc3d848100c499da33874dbf7c38, type: 2}
+  - {fileID: 2100000, guid: 9b87aef5b43ca41148bad9bd73d8a8a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
