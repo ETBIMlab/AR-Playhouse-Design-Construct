@@ -138,10 +138,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ren: {fileID: 0}
   hasWood: 0
   hasPlastic: 0
   hasMetal: 0
   isPaintBucket: 1
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
 --- !u!114 &1776913751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a2f46536a94164195245d476555ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 2f9cfc5db1ef0a448aee541ab504578f, type: 2}
+  material: {fileID: 2100000, guid: 9012f13fac29ba343bee3e7594339ec6, type: 2}
 --- !u!114 &2646963427226613455
 MonoBehaviour:
   m_ObjectHideFlags: 0
