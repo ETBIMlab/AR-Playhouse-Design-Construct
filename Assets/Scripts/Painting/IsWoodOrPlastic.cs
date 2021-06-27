@@ -22,11 +22,13 @@ public class IsWoodOrPlastic : MonoBehaviour
     public bool orderableInColor = false;
     public bool paintWithPaint = false;
     public bool paintSomeNotOthers = false;
+    public Color paintColor;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        ren = objectToColor.GetComponent<Renderer>();
+
     }
 
     // Update is called once per frame
@@ -52,7 +54,16 @@ public class IsWoodOrPlastic : MonoBehaviour
         }
         else if (hasWood == true && hasPlastic == false && hasMetal == true && isPaintBucket == false)
         {
-            paintSomeNotOthers = true; // this will use different methods because unity needs to figure out where the wood is vs metal/plastic
+            paintSomeNotOthers = true; // this will use different methods because we need to get unity to figure out where the wood is vs metal/plastic
+        } 
+        else if (hasWood == true && hasPlastic == false && hasMetal == true && isPaintBucket == false)
+        {
+            paintSomeNotOthers = true; // this will use different methods because we need to get unity to figure out where the wood is vs metal/plastic
+        }
+        else if (hasWood == false && hasPlastic == false && hasMetal == false && isPaintBucket == true)
+        {
+            //we need to grab the color from our paint bucket
+            paintColor = ren.material.GetColor("_Color");
         }
     }
 }
