@@ -25,6 +25,8 @@ public class ObjectOrderer : MonoBehaviour
     KeywordRecognizer keywordRecognizer = null;
     List<string> keywords = new List<string>();
     public OrderableObj[] orderableObjs;
+
+
     List<string> numlist = new List<string>()  {
                         "zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"};
 
@@ -37,6 +39,7 @@ public class ObjectOrderer : MonoBehaviour
         {
             keywords.Add("Order " + orderableObjs[i].name);
             keywords.Add("Order a dozen " + orderableObjs[i].name + "s");
+
             for (int j = 0; j < numlist.Count; j++)
             {
                 keywords.Add("Order " + numlist[j] + " " + orderableObjs[i].name + "s");

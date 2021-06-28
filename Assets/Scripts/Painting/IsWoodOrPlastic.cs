@@ -29,6 +29,7 @@ public class IsWoodOrPlastic : MonoBehaviour
     {
         ren = objectToColor.GetComponent<Renderer>();
 
+
     }
 
     // Update is called once per frame
@@ -63,7 +64,8 @@ public class IsWoodOrPlastic : MonoBehaviour
         else if (hasWood == false && hasPlastic == false && hasMetal == false && isPaintBucket == true)
         {
             //we need to grab the color from our paint bucket
-            paintColor = ren.material.GetColor("_Color");
+            ren.material.color = paintColor;
+
         }
     }
 }
