@@ -62,7 +62,7 @@ public class ObjectOrderer : MonoBehaviour
         temp = temp.Substring(0, temp.Length - 1);
         for (int i = 0; i < orderableObjs.Length; i++)
         {
-            if (orderableObjs[i].name.Equals(args.text.Substring(6)))
+            if (orderableObjs[i].name.Equals(args.text.Substring(6))) //&& orderableObjs[i].obj.GetComponent<IsWoodOrPlastic>().orderableInColor == false needs to go here but we aren't ready yet
             {
                 Debug.Log(orderableObjs[i].name + " ordered");
                 li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, orderableObjs[i].name, 1, orderableObjs[i].instalTime);
