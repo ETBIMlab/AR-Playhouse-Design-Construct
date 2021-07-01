@@ -4,14 +4,15 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
-
+/// <summary>
+/// Hi, so welcome to stage 2 of painting. We have IsWoodOrPlastic which will sort items into items made of wood (paint w/ paintbrush), plastic (orderable in color)
+/// metal (no touchy with color), and paintbuckets (need the color for paint). Paintable is stage 1 where it is supposed to paint wood if you are holding a paintbrush.
+/// this script, as its name implies, is supposed to let you order objects in color (for the ones that can). I looked at ObjectOrderer and wanted to try to make something
+/// simplier so here we are. The code is more based off of SurfaceChanger bc it seemed like a simpler solution. 
+/// </summary>
 public class Paintable : MonoBehaviour
 {
-  public string name;
-  public double price;
-  public int deliveryTime;
-  public int installTime;
-  public Color objCurrentColor;
+  public Color objCurrentColor; //much like in Painter, we  need to render that so we can change it.
   //Color Wheel bc ROYGBIV isn't completely built into unity
     Color orderRed = Color.red;
     Color orderOrange = new Vector4(255, 165, 0, 1);
@@ -20,33 +21,36 @@ public class Paintable : MonoBehaviour
     Color orderBlue = Color.blue;
     Color orderIngdigo = new Vector4(75, 0, 130, 1);
     Color orderViolet = new Vector4(238, 130, 238, 1);
-    public GameObject objectOrdered; 
+    public GameObject objectOrdered;
     Renderer objectRen; //renderer for the object
     //voice command variables
     private Dictionary<string, Action> keywords = new Dictionary<string, Action>();
     private KeywordRecognizer keywordRecognizer;
-    // Start is called before the first frame update
 
     void Start()
      {
         objectRen = objectOrdered.GetComponent<Renderer>();
-        keywords.Add("Order" + objectOrdered.name + "in Red", () => { this.BroadcastMessage("Red"); });
-        keywords.Add("Order" + objectOrdered.name + "in Orange", () => { this.BroadcastMessage("Orange"); });
-        keywords.Add("Order" + objectOrdered.name + "in Yellow", () => { this.BroadcastMessage("Yellow"); });
-        keywords.Add("Order" + objectOrdered.name + "in Green", () => { this.BroadcastMessage("Green"); });
-        keywords.Add("Order" + objectOrdered.name + "in Blue", () => { this.BroadcastMessage("Blue"); });
-        keywords.Add("Order" + objectOrdered.name + "in Indigo", () => { this.BroadcastMessage("Indigo"); });
-        keywords.Add("Order" + objectOrdered.name + "in Violet", () => { this.BroadcastMessage("Violet"); });
+        if (objectOrdered.GetComponent<IsWoodOrPlastic>().orderableInColor == true) //we only want the plastic stuff to get different colors
+        {
+            keywords.Add("Order" + objectOrdered.name + "in Red", () => { this.BroadcastMessage("Red"); });
+            keywords.Add("Order" + objectOrdered.name + "in Orange", () => { this.BroadcastMessage("Orange"); });
+            keywords.Add("Order" + objectOrdered.name + "in Yellow", () => { this.BroadcastMessage("Yellow"); });
+            keywords.Add("Order" + objectOrdered.name + "in Green", () => { this.BroadcastMessage("Green"); });
+            keywords.Add("Order" + objectOrdered.name + "in Blue", () => { this.BroadcastMessage("Blue"); });
+            keywords.Add("Order" + objectOrdered.name + "in Indigo", () => { this.BroadcastMessage("Indigo"); });
+            keywords.Add("Order" + objectOrdered.name + "in Violet", () => { this.BroadcastMessage("Violet"); });
 
-        keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
-        keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
-        keywordRecognizer.Start();
+            keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
+            keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
+            keywordRecognizer.Start();
+        }
      }
 
 
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
      Action keywordAction;
+        //change the color based on the color we want
         if (args.text.Substring(18) == "Red")
         {
             objectRen.material.color = orderRed;
@@ -75,6 +79,10 @@ public class Paintable : MonoBehaviour
         {
             objectRen.material.color = orderViolet;
         }
+        //the following is from ObjectOrderer, from my understanding it loads the object into the truck
+        var orderPos = GameObject.Find("IndustrialSmallTruck").transform.position;
+        Debug.Log("truck is at " + orderPos);
+        Instantiate(objectOrdered, new Vector3(orderPos.x + 1.24f, orderPos.y, orderPos.z - 2.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
     }
 
 }
