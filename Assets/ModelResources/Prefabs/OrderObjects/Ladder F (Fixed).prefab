@@ -443,10 +443,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ren: {fileID: 0}
   hasWood: 0
-  hasPlastic: 1
-  hasMetal: 0
+  hasPlastic: 0
+  hasMetal: 1
   isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
+  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &7254285172556496896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,10 +465,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ren: {fileID: 0}
   hasWood: 0
   hasPlastic: 1
   hasMetal: 1
   isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
+  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &2643118390683181299
 PrefabInstance:
   m_ObjectHideFlags: 0

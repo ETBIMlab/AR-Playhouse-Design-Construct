@@ -686,10 +686,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ren: {fileID: 0}
   hasWood: 1
   hasPlastic: 0
   hasMetal: 1
   isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
+  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3480971570936549333
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +707,7 @@ GameObject:
   - component: {fileID: 577190016577915574}
   - component: {fileID: 4550368734556181393}
   - component: {fileID: 7532618327801473265}
+  - component: {fileID: 5202365639532672165}
   m_Layer: 0
   m_Name: Mesh06
   m_TagString: Untagged
@@ -772,6 +779,28 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5202365639532672165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3480971570936549333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ren: {fileID: 0}
+  hasWood: 1
+  hasPlastic: 0
+  hasMetal: 0
+  isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
+  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3592735636651718644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,6 +1132,7 @@ GameObject:
   - component: {fileID: 4298272011832981101}
   - component: {fileID: 6075695871931675914}
   - component: {fileID: 2214849637585563284}
+  - component: {fileID: 9215449088374824863}
   m_Layer: 0
   m_Name: Component_
   m_TagString: Untagged
@@ -1171,6 +1201,28 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &9215449088374824863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5598816343330477195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ren: {fileID: 0}
+  hasWood: 0
+  hasPlastic: 0
+  hasMetal: 1
+  isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
+  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6743059656209864174
 GameObject:
   m_ObjectHideFlags: 0

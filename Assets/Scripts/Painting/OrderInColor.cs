@@ -43,6 +43,7 @@ public class Paintable : MonoBehaviour
             keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
             keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
             keywordRecognizer.Start();
+            Debug.Log("Command Received" + objectOrdered.name);
         }
      }
 
@@ -54,30 +55,44 @@ public class Paintable : MonoBehaviour
         if (args.text.Substring(18) == "Red")
         {
             objectRen.material.color = orderRed;
+            Debug.Log("Color changed to red");
+
         }
         else if (args.text.Substring(18) == "Orange")
         {
             objectRen.material.color = orderOrange;
+            Debug.Log("Color changed to orange");
+
         }
         else if (args.text.Substring(18) == "Yellow")
         {
             objectRen.material.color = orderYellow;
+            Debug.Log("Color changed to yellow");
+
         }
         else if (args.text.Substring(18) == "Green")
         {
             objectRen.material.color = orderGreen;
+            Debug.Log("Color changed to green");
+
         }
         else if (args.text.Substring(18) == "Blue")
         {
             objectRen.material.color = orderBlue;
+            Debug.Log("Color changed to blue");
+
         }
         else if (args.text.Substring(18) == "Indigo")
         {
             objectRen.material.color = orderIngdigo;
+            Debug.Log("Color changed to indigo");
+
         }
         else if (args.text.Substring(18) == "Violet")
         {
             objectRen.material.color = orderViolet;
+            Debug.Log("Color changed to violet");
+
         }
         //the following is from ObjectOrderer, from my understanding it loads the object into the truck
         var orderPos = GameObject.Find("IndustrialSmallTruck").transform.position;

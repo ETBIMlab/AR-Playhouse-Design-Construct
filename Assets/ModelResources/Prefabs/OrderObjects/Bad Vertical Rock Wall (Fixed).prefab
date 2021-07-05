@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6237374481300482636}
   - component: {fileID: 592647187728778050}
   - component: {fileID: 8417209796910969898}
+  - component: {fileID: 7632271673393456977}
   m_Layer: 0
   m_Name: Bad Vertical Rock Wall (Fixed)
   m_TagString: item
@@ -359,6 +360,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7632271673393456977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7049809707610395610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ren: {fileID: 0}
+  hasWood: 0
+  hasPlastic: 0
+  hasMetal: 1
+  isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
+  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &2472602827145208641
 PrefabInstance:
   m_ObjectHideFlags: 0

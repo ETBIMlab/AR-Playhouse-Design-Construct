@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5616488907854158263}
   - component: {fileID: 3506826745852371841}
   - component: {fileID: 7176003540317724536}
+  - component: {fileID: -2818594375004970104}
   m_Layer: 0
   m_Name: Prefab Panel 5' by 1'
   m_TagString: Untagged
@@ -79,3 +80,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-2818594375004970104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911109908087663524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ren: {fileID: 0}
+  hasWood: 1
+  hasPlastic: 0
+  hasMetal: 0
+  isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
+  paintColor: {r: 0, g: 0, b: 0, a: 0}
