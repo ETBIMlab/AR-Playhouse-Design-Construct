@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 9130316705009645459}
   - component: {fileID: 283269466226494885}
   - component: {fileID: 5823974001607635292}
+  - component: {fileID: 4631283977221281175}
   m_Layer: 0
   m_Name: Tube Bridge
   m_TagString: Untagged
@@ -103,7 +104,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 533393047755536445, guid: 9c48f4d8eda67a64793c271ff9abe96e, type: 3}
   - {fileID: -955263120996831658, guid: 9c48f4d8eda67a64793c271ff9abe96e, type: 3}
-  - {fileID: -2263637718951746235, guid: 9c48f4d8eda67a64793c271ff9abe96e, type: 3}
+  - {fileID: 7109231596476768308, guid: 9c48f4d8eda67a64793c271ff9abe96e, type: 3}
   - {fileID: 7109231596476768308, guid: 9c48f4d8eda67a64793c271ff9abe96e, type: 3}
   - {fileID: -6562230368438142103, guid: 9c48f4d8eda67a64793c271ff9abe96e, type: 3}
   - {fileID: -6633593992874582198, guid: 9c48f4d8eda67a64793c271ff9abe96e, type: 3}
@@ -127,6 +128,28 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4631283977221281175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5255207582091232640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ren: {fileID: 0}
+  hasWood: 0
+  hasPlastic: 1
+  hasMetal: 1
+  isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
+  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &464145092548417027
 PrefabInstance:
   m_ObjectHideFlags: 0
