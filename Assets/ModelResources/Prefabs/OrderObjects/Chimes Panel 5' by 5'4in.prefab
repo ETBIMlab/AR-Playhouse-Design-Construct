@@ -88,9 +88,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2263637718951746235, guid: 5249647673515a94aa4700dd19d470f6, type: 3}
+  - {fileID: 2100000, guid: b840926184e7db74689de05139c2f1f8, type: 2}
   - {fileID: 8837170794644027002, guid: 5249647673515a94aa4700dd19d470f6, type: 3}
-  - {fileID: -3560408754599625886, guid: 5249647673515a94aa4700dd19d470f6, type: 3}
+  - {fileID: 2100000, guid: 1ed1f29efb4ed0c42a5db6a66e189233, type: 2}
   - {fileID: -8894965008422782783, guid: 5249647673515a94aa4700dd19d470f6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -691,6 +691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8432567058958448508}
+  - component: {fileID: 8066607724953841896}
   m_Layer: 0
   m_Name: Chimes Panel 5' by 5'4in
   m_TagString: Untagged
@@ -749,6 +750,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8066607724953841896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4854078678544811375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ren: {fileID: 0}
+  hasWood: 0
+  hasPlastic: 0
+  hasMetal: 1
+  isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
+  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5007504748806728890
 GameObject:
   m_ObjectHideFlags: 0

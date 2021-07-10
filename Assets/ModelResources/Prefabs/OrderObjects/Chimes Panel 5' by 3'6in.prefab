@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 2826477055521462750}
   - component: {fileID: 3054526377235825606}
   - component: {fileID: 921996509537038017}
+  - component: {fileID: 1122047948118191944}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -418,9 +419,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2263637718951746235, guid: a516511a7749f414683693d4b9fced6a, type: 3}
+  - {fileID: 2100000, guid: b840926184e7db74689de05139c2f1f8, type: 2}
   - {fileID: 8837170794644027002, guid: a516511a7749f414683693d4b9fced6a, type: 3}
-  - {fileID: -3560408754599625886, guid: a516511a7749f414683693d4b9fced6a, type: 3}
+  - {fileID: 2100000, guid: 1ed1f29efb4ed0c42a5db6a66e189233, type: 2}
   - {fileID: -8894965008422782783, guid: a516511a7749f414683693d4b9fced6a, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -442,6 +443,28 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1122047948118191944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2408829791970404163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ren: {fileID: 0}
+  hasWood: 0
+  hasPlastic: 0
+  hasMetal: 1
+  isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
+  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2448543533476835209
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,6 +984,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6235066529115274644}
+  - component: {fileID: 819570961630596503}
   m_Layer: 0
   m_Name: Chimes Panel 5' by 3'6in
   m_TagString: Untagged
@@ -1019,6 +1043,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &819570961630596503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979521837684297607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ren: {fileID: 0}
+  hasWood: 0
+  hasPlastic: 0
+  hasMetal: 1
+  isPaintBucket: 0
+  objectToColor: {fileID: 0}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
+  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7421690289263470162
 GameObject:
   m_ObjectHideFlags: 0
