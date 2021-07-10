@@ -10,7 +10,7 @@ using UnityEngine.Windows.Speech;
 /// this script, as its name implies, is supposed to let you order objects in color (for the ones that can). I looked at ObjectOrderer and wanted to try to make something
 /// simplier so here we are. The code is more based off of SurfaceChanger bc it seemed like a simpler solution. 
 /// </summary>
-public class Paintable : MonoBehaviour
+public class OrderInColor : MonoBehaviour
 {
   public Color objCurrentColor; //much like in Painter, we  need to render that so we can change it.
   //Color Wheel bc ROYGBIV isn't completely built into unity
