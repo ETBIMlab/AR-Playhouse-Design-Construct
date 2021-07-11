@@ -14,21 +14,25 @@ public class Painter : MonoBehaviour
 {
     public GameObject objectToBePainted;
     public Material material;
+
     public GameObject AssignToBrush; 
     public bool colorPicked = false;
     private bool toolGrabbed = false;
-    public Color newColor; 
+    public Color newColor; //color we want to paint it
     public Color objCurrentColor; //before painting
     public Material[] mat;
-    public Renderer ren; //renderer for paint brush - new color
-    public Renderer objectRen; //renderer for object so we  can change the color
+    //public Renderer ren; //renderer for paint brush - new color IGNORE THIS
+    //public Renderer objectRen; //renderer for object so we  can change the color
 
     void Start()
     {
-        objectRen = objectToBePainted.GetComponent<Renderer>();
-        ren = AssignToBrush.GetComponent<Renderer>();
-        ren.material.color = newColor;
-        objectRen.material.color = objCurrentColor;
+        newColor = AssignToBrush.GetComponent<IsWoodOrPlastic>().paintColor;
+        Debug.Log("Got the new color!");
+        //ren = AssignToBrush.GetComponent<Renderer>();
+        //ren.material.color = newColor;
+        objCurrentColor = objectToBePainted.GetComponent<Renderer>().material.color; //the current color is the current color
+        Debug.Log("Got the old color!");
+
     }
 
     public void OnGrab()
@@ -58,7 +62,8 @@ public class Painter : MonoBehaviour
                                    //AssignToBrush.GetComponent<MeshRenderer>().materials = mat;
 
                 //we are going to set the color as the color of the paint which is on the brush
-                objectRen.material.color = newColor;
+                objectToBePainted.GetComponent<Renderer>().material.color = newColor;
+                Debug.Log("Assigned the new color!");
             }
         }
         else if (objectToBePainted == null)

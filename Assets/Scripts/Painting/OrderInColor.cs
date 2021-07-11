@@ -29,7 +29,7 @@ public class OrderInColor : MonoBehaviour
 
     void Start()
      {
-        objectRen = objectOrdered.GetComponent<Renderer>();
+        //objectRen = objectOrdered.GetComponent<Renderer>();
         if (objectOrdered.GetComponent<IsWoodOrPlastic>().orderableInColor == true) //we only want the plastic stuff to get different colors
         {
             keywords.Add("Order" + objectOrdered.name + "in Red", () => { this.BroadcastMessage("Red"); });
@@ -54,43 +54,43 @@ public class OrderInColor : MonoBehaviour
         //change the color based on the color we want
         if (args.text.Substring(18) == "Red")
         {
-            objectRen.material.color = orderRed;
+            objectOrdered.GetComponent<Renderer>().material.color = orderRed;
             Debug.Log("Color changed to red");
 
         }
         else if (args.text.Substring(18) == "Orange")
         {
-            objectRen.material.color = orderOrange;
+            objectOrdered.GetComponent<Renderer>().material.color = orderOrange;
             Debug.Log("Color changed to orange");
 
         }
         else if (args.text.Substring(18) == "Yellow")
         {
-            objectRen.material.color = orderYellow;
+            objectOrdered.GetComponent<Renderer>().material.color = orderYellow;
             Debug.Log("Color changed to yellow");
 
         }
         else if (args.text.Substring(18) == "Green")
         {
-            objectRen.material.color = orderGreen;
+            objectOrdered.GetComponent<Renderer>().material.color = orderGreen;
             Debug.Log("Color changed to green");
 
         }
         else if (args.text.Substring(18) == "Blue")
         {
-            objectRen.material.color = orderBlue;
+            objectOrdered.GetComponent<Renderer>().material.color = orderBlue;
             Debug.Log("Color changed to blue");
 
         }
         else if (args.text.Substring(18) == "Indigo")
         {
-            objectRen.material.color = orderIngdigo;
+            objectOrdered.GetComponent<Renderer>().material.color = orderIngdigo;
             Debug.Log("Color changed to indigo");
 
         }
         else if (args.text.Substring(18) == "Violet")
         {
-            objectRen.material.color = orderViolet;
+            objectOrdered.GetComponent<Renderer>().material.color = orderViolet;
             Debug.Log("Color changed to violet");
 
         }

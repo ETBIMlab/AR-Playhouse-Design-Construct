@@ -13,7 +13,7 @@ public class IsWoodOrPlastic : MonoBehaviour
     /// in script and then toggle them as true or false in the editor so I tried to find as many prefabs as I could and label them.
     /// 
     /// </summary>
-    public Renderer ren;
+   // public Renderer ren;
     public bool hasWood = false;
     public bool hasPlastic = false;
     public bool hasMetal = false;
@@ -27,7 +27,7 @@ public class IsWoodOrPlastic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ren = objectToColor.GetComponent<Renderer>();
+        objectToColor.GetComponent<Renderer>();
 
 
     }
@@ -64,7 +64,7 @@ public class IsWoodOrPlastic : MonoBehaviour
         else if (hasWood == false && hasPlastic == false && hasMetal == false && isPaintBucket == true)
         {
             //we need to grab the color from our paint bucket
-            ren.material.color = paintColor;
+            paintColor = gameObject.GetComponent<Renderer>().material.color;
 
         }
     }
