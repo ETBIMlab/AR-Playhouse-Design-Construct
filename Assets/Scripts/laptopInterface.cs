@@ -2,9 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine.Windows.Speech;
 
