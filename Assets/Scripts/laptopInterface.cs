@@ -81,6 +81,7 @@ public class laptopInterface : MonoBehaviour
    
     }
 
+   
     public void iteminstalled(string objName)
     {
         for (int i = 0; i < installObjs.Length; i++)
@@ -92,6 +93,20 @@ public class laptopInterface : MonoBehaviour
         }
 
     }
+
+    public void removeitem(double mon, int dtime, string iname, int quant, int itime)
+    {
+        Debug.Log(iname);
+        installObjs[itemIndex].name = iname;
+        installObjs[itemIndex].instalTime = itime;
+        itemIndex++;
+        double itemscost = mon / quant;
+        money = money - itemscost;
+        itemstoDisplay += iname + " x" + quant + " $" + mon + "\n";
+        convertTime(dtime);
+
+    }
+
     //change time in minutes into weeks-minutes
     public void convertTime(int t)
     {
