@@ -81,8 +81,8 @@ public class TestActivityLogger : MonoBehaviour
         //string path = Path.Combine(Application.persistentDataPath, "ActivityLog.txt");
         
         // to test
-        //string path = "C:/Documents/DiagnosticLogs/ActivityLog.txt";
         string path = "./DiagnosticLogs/ActivityLog.txt";
+        //string path = "C:/Documents/DiagnosticLogs/ActivityLog.txt";
 
         if (!File.Exists(path)) 
         {
