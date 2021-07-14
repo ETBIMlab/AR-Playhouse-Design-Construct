@@ -78,7 +78,11 @@ public class TestActivityLogger : MonoBehaviour
         // testing various commands to figure out hololens directory path
         //File.WriteAllText("./ActivityLog.txt", fileContents);
         // string path = @"c:\Documents\DiagnosticLogs\ActivityLog.txt";
-        string path = Path.Combine(Application.persistentDataPath, "ActivityLog.txt");
+        //string path = Path.Combine(Application.persistentDataPath, "ActivityLog.txt");
+        
+        // to test
+        //string path = "C:/Documents/DiagnosticLogs/ActivityLog.txt";
+        string path = "./DiagnosticLogs/ActivityLog.txt";
 
         if (!File.Exists(path)) 
         {
