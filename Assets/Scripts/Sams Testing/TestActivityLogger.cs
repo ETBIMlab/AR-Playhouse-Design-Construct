@@ -79,10 +79,12 @@ public class TestActivityLogger : MonoBehaviour
         //File.WriteAllText("./ActivityLog.txt", fileContents);
         // string path = @"c:\Documents\DiagnosticLogs\ActivityLog.txt";
         //string path = Path.Combine(Application.persistentDataPath, "ActivityLog.txt");
-        
+
         // to test
-        string path = "./DiagnosticLogs/ActivityLog.txt";
+        string path = "/UserFolders/LocalAppData/Template3D_1.0.0.0_arm64__pzq3xp76mxafg/AppData/ActivityLog.txt";
+        //string path = ".\AppData\ActivityLog.txt";      //also try inverting to forward slash (not likely though)
         //string path = "C:/Documents/DiagnosticLogs/ActivityLog.txt";
+
 
         if (!File.Exists(path)) 
         {
