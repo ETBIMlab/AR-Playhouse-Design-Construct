@@ -9,11 +9,14 @@ using TMPro;
 using UnityEngine;
 public class TestActivityLogger : MonoBehaviour
 {
-//public GameObject activityItem1;
-//public GameObject activityItem2;
-//public GameObject activityItem3;
-//public GameObject activityItem4;
-//public GameObject activityItem5;
+    public AudioRoot audio;
+    private AudioSource audioSource;
+    public AudioClip spaceSet;
+    //public GameObject activityItem1;
+    //public GameObject activityItem2;
+    //public GameObject activityItem3;
+    //public GameObject activityItem4;
+    //public GameObject activityItem5;
     public GameObject[] activityItems = new GameObject[5];
 
     private ArrayList listOfActions = new ArrayList();
@@ -25,9 +28,10 @@ public class TestActivityLogger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        audioSource = GetComponent<AudioSource>();
+
         // global command
-        keywords.Add("Export Activity Log", ExportActivityLog);
+        keywords.Add("Export Activity Log", ExportActivityLog); 
 
 
         // Tell the KeywordRecognizer about our keywords.
@@ -75,15 +79,19 @@ public class TestActivityLogger : MonoBehaviour
         Debug.Log("Creating Activity Log");
         Debug.Log(Application.persistentDataPath);
         string fileContents = "Testing export activity log";
+        audioSource.PlayOneShot(spaceSet, 1F);
         // testing various commands to figure out hololens directory path
         //File.WriteAllText("./ActivityLog.txt", fileContents);
         // string path = @"c:\Documents\DiagnosticLogs\ActivityLog.txt";
         //string path = Path.Combine(Application.persistentDataPath, "ActivityLog.txt");
-
+        // string path = ".\\Documents\\ActivityLog.txt";    
         // to test
-        string path = "/UserFolders/LocalAppData/Template3D_1.0.0.0_arm64__pzq3xp76mxafg/AppData/ActivityLog.txt";
-        //string path = ".\AppData\ActivityLog.txt";      //also try inverting to forward slash (not likely though)
+        // string path = "/UserFolders/LocalAppData/Template3D_1.0.0.0_arm64__pzq3xp76mxafg/AppData/ActivityLog.txt";
+
+
+        string path = "C:\\Data\\Users\\asuetbimlab@gmail.com\\Documents\\ActivityLog.txt";
         //string path = "C:/Documents/DiagnosticLogs/ActivityLog.txt";
+
 
 
         if (!File.Exists(path)) 
