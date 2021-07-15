@@ -38,6 +38,7 @@ public class ObjectOrderer : MonoBehaviour
         for (int i = 0; i < orderableObjs.Length; i++)
         {
             keywords.Add("Order " + orderableObjs[i].name);
+
             keywords.Add("Order a dozen " + orderableObjs[i].name + "s");
 
             for (int j = 0; j < numlist.Count; j++)

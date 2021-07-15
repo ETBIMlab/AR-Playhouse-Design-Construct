@@ -94,16 +94,11 @@ public class laptopInterface : MonoBehaviour
 
     }
 
-    public void removeitem(double mon, int dtime, string iname, int quant, int itime)
+    public void removeitemCost(double mon)
     {
-        Debug.Log(iname);
-        installObjs[itemIndex].name = iname;
-        installObjs[itemIndex].instalTime = itime;
-        itemIndex++;
-        double itemscost = mon / quant;
-        money = money - itemscost;
-        itemstoDisplay += iname + " x" + quant + " $" + mon + "\n";
-        convertTime(dtime);
+        
+        money = money - mon;
+        itemstoDisplay += " $" + money + "\n";
 
     }
 
