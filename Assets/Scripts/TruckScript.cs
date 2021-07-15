@@ -5,11 +5,8 @@ using UnityEngine.Windows.Speech;
 
 public class TruckScript : MonoBehaviour
 {
-    public GameObject laptopinterface;
-    //private readonly object laptopinterface;
-    //laptopInterface li = new laptopInterface();
-    //ObjectOrderer orderObj = new ObjectOrderer();
-    // Start is called before the first frame update
+    GameObject itemInfo, li;
+
     void Start()
     {
         
@@ -26,17 +23,20 @@ public class TruckScript : MonoBehaviour
         if (col.gameObject.tag == "item")
         {
             Destroy(col.gameObject);
-            RemoveCost();
+           
         }
+
+
+        RemoveCost();
+
     }
 
     private void RemoveCost()
     {
-        double cost = 8.50; // need to know how to get the individual item cost from unity
+        ItemInfo myInfo = (ItemInfo)itemInfo.GetComponent(typeof(ItemInfo));
+        laptopInterface myLaptop = (laptopInterface)li.GetComponent(typeof(laptopInterface));
 
-        laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
-
-        li.removeitemCost(cost);
+        myLaptop.removeitemCost(  myInfo.itemPrice);
 
     }
     /*private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
