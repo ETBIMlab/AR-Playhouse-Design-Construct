@@ -64,7 +64,7 @@ public class IsWoodOrPlastic : MonoBehaviour
         else if (hasWood == false && hasPlastic == false && hasMetal == false && isPaintBucket == true)
         {
             //we need to grab the color from our paint bucket
-            paintColor = gameObject.GetComponent<Renderer>().material.color;
+            paintColor = gameObject.GetComponent<isPaintBucket>().material.color;
 
         }
     }

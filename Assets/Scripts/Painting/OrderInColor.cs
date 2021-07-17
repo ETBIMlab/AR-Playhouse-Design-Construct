@@ -32,13 +32,13 @@ public class OrderInColor : MonoBehaviour
         //objectRen = objectOrdered.GetComponent<Renderer>();
         if (objectOrdered.GetComponent<IsWoodOrPlastic>().orderableInColor == true) //we only want the plastic stuff to get different colors
         {
-            keywords.Add("Order Red" + objectOrdered.name, () => { this.BroadcastMessage("Red"); });
-            keywords.Add("Order Orange" + objectOrdered.name + "in Orange", () => { this.BroadcastMessage("Orange"); });
-            keywords.Add("Order Yellow" + objectOrdered.name, () => { this.BroadcastMessage("Yellow"); });
-            keywords.Add("Order Green" + objectOrdered.name, () => { this.BroadcastMessage("Green"); });
-            keywords.Add("Order Blue" + objectOrdered.name, () => { this.BroadcastMessage("Blue"); });
-            keywords.Add("Order Indigo" + objectOrdered.name, () => { this.BroadcastMessage("Indigo"); });
-            keywords.Add("Order Violet" + objectOrdered.name, () => { this.BroadcastMessage("Violet"); });
+            keywords.Add("Order " + objectOrdered.name + "in Red", () => { this.BroadcastMessage("Red"); });
+            keywords.Add("Order " + objectOrdered.name + "in Orange", () => { this.BroadcastMessage("Orange"); });
+            keywords.Add("Order " + objectOrdered.name + "in Yellow", () => { this.BroadcastMessage("Yellow"); });
+            keywords.Add("Order " + objectOrdered.name + "in Green", () => { this.BroadcastMessage("Green"); });
+            keywords.Add("Order " + objectOrdered.name + "in Blue", () => { this.BroadcastMessage("Blue"); });
+            keywords.Add("Order " + objectOrdered.name + "in Indigo", () => { this.BroadcastMessage("Indigo"); });
+            keywords.Add("Order " + objectOrdered.name + "in Violet", () => { this.BroadcastMessage("Violet"); });
 
             keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
             keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
