@@ -22,6 +22,10 @@ public class IsWoodOrPlastic : MonoBehaviour
     public bool orderableInColor = false;
     public bool paintWithPaint = false;
     public bool paintSomeNotOthers = false;
+    //many of the objects are seperable  into wood, metal, and plastic. Not so with the following objects so bools: 
+    public bool isTubeBridge = false;
+    public bool isChimesSmall = false;
+    public bool isChimesLarge = false;
     public Color paintColor;
 
     // Start is called before the first frame update
