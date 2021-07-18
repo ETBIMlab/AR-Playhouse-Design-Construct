@@ -613,7 +613,7 @@ MonoBehaviour:
   orderableInColor: 0
   paintWithPaint: 0
   paintSomeNotOthers: 0
-  isTubeSlide: 0
+  isTubeBridge: 0
   isChimesSmall: 0
   isChimesLarge: 0
   paintColor: {r: 0, g: 0, b: 0, a: 0}
@@ -1108,6 +1108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5030551907364014196}
   - component: {fileID: 1731854805971302519}
+  - component: {fileID: 2899608182026414735}
   m_Layer: 0
   m_Name: Chimes Panel 5' by 3'6in
   m_TagString: Untagged
@@ -1181,17 +1182,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasWood: 0
-  hasPlastic: 0
+  hasPlastic: 1
   hasMetal: 1
   isPaintBucket: 0
   objectToColor: {fileID: 0}
   orderableInColor: 0
   paintWithPaint: 0
   paintSomeNotOthers: 0
-  isTubeSlide: 0
+  isTubeBridge: 0
   isChimesSmall: 1
   isChimesLarge: 0
   paintColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &2899608182026414735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325824848434461287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c726eaf1f0c8434d93e9e4c2a48e83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AssignToYellowTubeBridge: {fileID: 5255207582091232640, guid: 896e17374c6b43f41bf200e9cb769f2c,
+    type: 3}
+  AssignToRedTubeBridge: {fileID: 6166122458979007812, guid: ae2c723a730c00d4cb65b73d8a41f704,
+    type: 3}
+  AssignToGreenTubeBridge: {fileID: 1230332567762628692, guid: bab8505e1798f4f4aa71a2fc06126ebc,
+    type: 3}
+  AssignToBlueTubeBridge: {fileID: 6463866594657544664, guid: 5f8f08586bb6dc94fac8ecd5ff449a03,
+    type: 3}
+  AssignToYellowSmallChimes: {fileID: 8325824848434461287}
+  AssignToRedSmallChimes: {fileID: 7616295443403988848, guid: c0592c134b7ffb84eaf5000fc2faebc9,
+    type: 3}
+  AssignToGreenSmallChimes: {fileID: 1576816660505485340, guid: a94a67f89647aff40b12f6958ab78851,
+    type: 3}
+  AssignToBlueSmallChimes: {fileID: 6979521837684297607, guid: ecac380a01c51bb4ea7c3fd2d4067946,
+    type: 3}
+  AssignToYellowBigChimes: {fileID: 6332753978563344227, guid: 10ae13c04be8438439e498748619cf71,
+    type: 3}
+  AssignToRedBigChimes: {fileID: 2325670399574634545, guid: 78669c2d0966e924ba41dce3e85ae671,
+    type: 3}
+  AssignToGreenBigChimes: {fileID: 1214097756570278157, guid: 424c98019177d274a86ef6e9b8a7fa3f,
+    type: 3}
+  AssignToBlueBigChimes: {fileID: 4854078678544811375, guid: ff7208bc3bfdba643a66adea03ede1fe,
+    type: 3}
+  objectOrdered: {fileID: 0}
 --- !u!1 &8478123367886263218
 GameObject:
   m_ObjectHideFlags: 0
