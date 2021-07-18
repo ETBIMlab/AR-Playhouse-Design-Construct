@@ -9,8 +9,9 @@ public class ItemInfo : MonoBehaviour
     /// <summary>
     /// Stores info on what type of object it is
     /// </summary>
-    public double itemPrice = 0;
+    public double itemPrice = 0; 
     public int itemInstallTime = 0;
+    public string itemName = "";
     public int itemFun = 0;
     public enum ItemType
     {

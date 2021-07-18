@@ -35,9 +35,13 @@ public class ObjectOrderer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject[] itemObjects = GameObject.FindGameObjectsWithTag("item");
+        for (int i = 0; i < itemObjects.Length; i++) { Debug.Log(itemObjects[i].GetComponent<ItemInfo>().itemPrice); }
+        Debug.Log("test");
         for (int i = 0; i < orderableObjs.Length; i++)
         {
             keywords.Add("Order " + orderableObjs[i].name);
+            Debug.Log("test");
 
             keywords.Add("Order a dozen " + orderableObjs[i].name + "s");
 
