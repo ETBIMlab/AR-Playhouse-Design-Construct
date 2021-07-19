@@ -36,24 +36,30 @@ public class MixedObjects : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if ((objectOrdered.GetComponent<IsWoodOrPlastic>().paintSomeNotOthers == true && objectOrdered.GetComponent<IsWoodOrPlastic>().isTubeBridge == true) || 
-            (objectOrdered.GetComponent<IsWoodOrPlastic>().paintSomeNotOthers == true && objectOrdered.GetComponent<IsWoodOrPlastic>().isChimesSmall == true) ||
-            (objectOrdered.GetComponent<IsWoodOrPlastic>().paintSomeNotOthers == true && objectOrdered.GetComponent<IsWoodOrPlastic>().isChimesLarge == true)) 
-        {
-            keywords.Add("Order " + objectOrdered.name + "in Red", () => { this.BroadcastMessage("Red"); });
-            keywords.Add("Order " + objectOrdered.name, () => { this.BroadcastMessage("Yellow"); });
-            keywords.Add("Order " + objectOrdered.name + "in Green", () => { this.BroadcastMessage("Green"); });
-            keywords.Add("Order " + objectOrdered.name + "in Blue", () => { this.BroadcastMessage("Blue"); });
-            keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
-            keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
-            keywordRecognizer.Start();
-            Debug.Log("Command Received" + objectOrdered.name);
-        }
+       //red
+            keywords.Add("Order Chimes Panel 5' by 3'6in in Red", () => { this.BroadcastMessage("Red"); });
+            keywords.Add("Order Chimes Panel 5' by 5'4in in Red", () => { this.BroadcastMessage("Red"); });
+            keywords.Add("Order Tube Bridge in Red", () => { this.BroadcastMessage("Red"); });
+        //yellow
+        keywords.Add("Order Chimes Panel 5' by 3'6in", () => { this.BroadcastMessage("Yellow"); });
+        keywords.Add("Order Chimes Panel 5' by 5'4in", () => { this.BroadcastMessage("Yellow"); });
+        keywords.Add("Order Tube Bridge", () => { this.BroadcastMessage("Yellow"); });
+        //green
+        keywords.Add("Order Chimes Panel 5' by 3'6in in Green", () => { this.BroadcastMessage("Green"); });
+        keywords.Add("Order Chimes Panel 5' by 5'4in in Green", () => { this.BroadcastMessage("Green"); });
+        keywords.Add("Order Tube Bridge in Green", () => { this.BroadcastMessage("Green"); });
+        //Blue
+        keywords.Add("Order Chimes Panel 5' by 3'6in in Blue", () => { this.BroadcastMessage("Blue"); });
+        keywords.Add("Order Chimes Panel 5' by 5'4in in Blue", () => { this.BroadcastMessage("Blue"); });
+        keywords.Add("Order Tube Bridge in Blue", () => { this.BroadcastMessage("Blue"); });
+        
+        keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
+        keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
+        keywordRecognizer.Start();
+        Debug.Log("Command Received" + objectOrdered.name);
+        
     }
-    /* public bool isTubeBridge = false;
-    public bool isChimesSmall = false;
-    public bool isChimesLarge = false;
-    */
+
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
         Action keywordAction;
