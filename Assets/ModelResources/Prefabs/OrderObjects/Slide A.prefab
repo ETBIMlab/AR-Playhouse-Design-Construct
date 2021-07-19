@@ -20,7 +20,6 @@ GameObject:
   - component: {fileID: 2808637232285692071}
   - component: {fileID: 8923960880521811887}
   - component: {fileID: 1267989543385782093}
-  - component: {fileID: 131946897913981496}
   - component: {fileID: -7526628081022394819}
   - component: {fileID: 30594356214710299}
   m_Layer: 0
@@ -248,6 +247,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrice: 649
+  itemInstallTime: 0
+  itemName: 
+  itemFun: 0
   itemType: 2
   hasDifferentOriginRotation: 0
   itemOrientation: 0
@@ -389,18 +391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &131946897913981496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310366903392720484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  objCurrentColor: {r: 0, g: 0, b: 0, a: 0}
+  objectOrdered: {fileID: 0}
 --- !u!114 &-7526628081022394819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +419,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasWood: 1
   hasPlastic: 0
+  hasMetal: 0
+  isPaintBucket: 0
+  objectToColor: {fileID: 7310366903392720484}
+  orderableInColor: 0
+  paintWithPaint: 0
+  paintSomeNotOthers: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8628250568640370237
 GameObject:
   m_ObjectHideFlags: 0

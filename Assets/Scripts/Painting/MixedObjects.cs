@@ -64,7 +64,7 @@ public class MixedObjects : MonoBehaviour
     {
         Action keywordAction;
         //change the color based on the color we want
-        if (args.text.Substring(18) == "Red")
+        if (args.text.Substring(32) == "Red")
         {
             if(objectOrdered.GetComponent<IsWoodOrPlastic>().isTubeBridge == true)
             {
@@ -82,7 +82,7 @@ public class MixedObjects : MonoBehaviour
 
         }
       
-        else if (args.text.Substring(18) == "Yellow")
+        else if (args.text.Substring(32) == "Yellow")
         {
             if (objectOrdered.GetComponent<IsWoodOrPlastic>().isTubeBridge == true)
             {
@@ -99,7 +99,7 @@ public class MixedObjects : MonoBehaviour
             Debug.Log("Ordered default yellow");
 
         }
-        else if (args.text.Substring(18) == "Green")
+        else if (args.text.Substring(32) == "Green")
         {
             if (objectOrdered.GetComponent<IsWoodOrPlastic>().isTubeBridge == true)
             {
@@ -116,7 +116,7 @@ public class MixedObjects : MonoBehaviour
             Debug.Log("Color changed to green");
 
         }
-        else if (args.text.Substring(18) == "Blue")
+        else if (args.text.Substring(32) == "Blue")
         {
             if (objectOrdered.GetComponent<IsWoodOrPlastic>().isTubeBridge == true)
             {

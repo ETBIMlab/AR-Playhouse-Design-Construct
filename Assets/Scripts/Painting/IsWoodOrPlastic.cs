@@ -57,14 +57,11 @@ public class IsWoodOrPlastic : MonoBehaviour
         {
             paintSomeNotOthers = true; //these will use different methods
         }
-        else if (hasWood == true && hasPlastic == false && hasMetal == true && isPaintBucket == false)
+        else if (isTubeBridge == true || isChimesLarge == true || isChimesSmall == true)
         {
             paintSomeNotOthers = true; // this will use different methods because we need to get unity to figure out where the wood is vs metal/plastic
         } 
-        else if (hasWood == false && hasPlastic == true && hasMetal == true && isPaintBucket == false)
-        {
-            paintSomeNotOthers = true; // this will use different methods because we need to get unity to figure out where the wood is vs metal/plastic
-        }
+       
         else if (hasWood == false && hasPlastic == false && hasMetal == false && isPaintBucket == true)
         {
             //we need to grab the color from our paint bucket
