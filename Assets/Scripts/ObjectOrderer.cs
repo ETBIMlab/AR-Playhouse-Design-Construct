@@ -8,7 +8,7 @@ using UnityEngine.Windows.Speech;
 public class ObjectOrderer : MonoBehaviour
 {
 
-    private int distFromCamera = 3;
+    //private int distFromCamera = 3;
 
     [Serializable]
     
@@ -49,6 +49,7 @@ public class ObjectOrderer : MonoBehaviour
             {
                 keywords.Add("Order " + numlist[j] + " " + orderableObjs[i].name + "s");
             }
+         
         }
 
         // Tell the KeywordRecognizer about our keywords.
@@ -117,11 +118,10 @@ public class ObjectOrderer : MonoBehaviour
     private void AddObjectToScene(GameObject newObj)
     {
         //the following line spawns the object in front of the user
-        //Instantiate(newObj, transform.position + transform.forward * distFromCamera, Quaternion.identity);
 
         //get position of the ordering truck
         var orderPos = GameObject.Find("IndustrialSmallTruck").transform.position;
         Debug.Log("truck is at " + orderPos);
-        Instantiate(newObj, new Vector3(orderPos.x + 1.24f, orderPos.y, orderPos.z - 2.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
+        Instantiate(newObj, new Vector3(orderPos.x + 1.24f, orderPos.y + 1.8, orderPos.z - 2.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
     }
 }
