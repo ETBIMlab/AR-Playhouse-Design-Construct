@@ -85,18 +85,19 @@ public class TestActivityLogger : MonoBehaviour
         // string path = @"c:\Documents\DiagnosticLogs\ActivityLog.txt";
         //string path = Path.Combine(Application.persistentDataPath, "ActivityLog.txt");
         // string path = ".\\Documents\\ActivityLog.txt";    
-        // to test
+
         // string path = "/UserFolders/LocalAppData/Template3D_1.0.0.0_arm64__pzq3xp76mxafg/AppData/ActivityLog.txt";
-
-
-        string path = "C:\\Data\\Users\\asuetbimlab@gmail.com\\Documents\\ActivityLog.txt";
-        //string path = "C:/Documents/DiagnosticLogs/ActivityLog.txt";
-
+        //string path = "C:\\Data\\Users\\asuetbimlab@gmail.com\\Documents\\ActivityLog.txt";
+        //string path = ".\\Documents\\DiagnosticLogs\\ActivityLog.txt";
+        // to test
+        //string path = "\\User Folders\\LocalAppData\\Template3D_1.0.0.0_arm64__pzq3xp76mxafg\\AppData\\ActivityLog.txt";
+        string path = "User Folders\\PublicDocuments\\";
 
 
         if (!File.Exists(path)) 
         {
             File.WriteAllText(path, fileContents);
+            
         }
         else
         {
