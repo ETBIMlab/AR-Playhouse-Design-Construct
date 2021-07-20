@@ -505,6 +505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 480
   itemInstallTime: 15
+  itemName: 
   itemFun: 1
   itemType: 4
   hasDifferentOriginRotation: 0
@@ -541,7 +542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
   hasWood: 1
   hasPlastic: 0
   hasMetal: 1
@@ -550,6 +550,9 @@ MonoBehaviour:
   orderableInColor: 0
   paintWithPaint: 0
   paintSomeNotOthers: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
   paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1282401694448029238
 PrefabInstance:
