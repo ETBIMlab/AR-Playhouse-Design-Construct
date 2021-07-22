@@ -21,6 +21,9 @@ public class OrderInColor : MonoBehaviour
     Color orderBlue = Color.blue;
     Color orderIngdigo = new Vector4(75, 0, 130, 1);
     Color orderViolet = new Vector4(238, 130, 238, 1);
+    Color orderGrey = Color.grey;
+    Color orderWhite = Color.white;
+
     public GameObject objectOrdered;
     Renderer objectRen; //renderer for the object
     //voice command variables
