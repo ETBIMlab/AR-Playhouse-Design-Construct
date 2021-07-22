@@ -189,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5929355770496337739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -0}
+  m_LocalPosition: {x: -0, y: 0.5, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 675908746069802037}
@@ -268,7 +268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7608123653858190945}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -0}
+  m_LocalPosition: {x: -0, y: 0.5, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 675908746069802037}
@@ -435,6 +435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 325
   itemInstallTime: 15
+  itemName: 
   itemFun: 1
   itemType: 0
   hasDifferentOriginRotation: 0
@@ -459,6 +460,9 @@ MonoBehaviour:
   orderableInColor: 0
   paintWithPaint: 0
   paintSomeNotOthers: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
   paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8382565851601777029
 GameObject:
