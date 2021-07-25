@@ -44,10 +44,10 @@ public class MixedObjects : MonoBehaviour
     public GameObject AssignToGreenFirepole;
     public GameObject AssignToBlueFirepole;
     //Coil Climber
-    public GameObject AssignToYellowSpiralClimber;
-    public GameObject AssignToRedSpiralClimber;
-    public GameObject AssignToGreenSpiralClimber;
-    public GameObject AssignToBlueSpiralClimber;
+    public GameObject AssignToYellowCoilClimber;
+    public GameObject AssignToRedCoilClimber;
+    public GameObject AssignToGreenCoilClimber;
+    public GameObject AssignToBlueCoilClimber;
     //Stairs
     public GameObject AssignToYellowStairs;
     public GameObject AssignToRedStairs;
