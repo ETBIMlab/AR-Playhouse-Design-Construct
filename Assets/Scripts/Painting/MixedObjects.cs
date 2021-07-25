@@ -28,6 +28,32 @@ public class MixedObjects : MonoBehaviour
     public GameObject AssignToRedBigChimes;
     public GameObject AssignToGreenBigChimes;
     public GameObject AssignToBlueBigChimes;
+    //Single Slide: 
+    public GameObject AssignToYellowSingleSlide;
+    public GameObject AssignToRedSingleSlide;
+    public GameObject AssignToGreenSingleSlide;
+    public GameObject AssignToBlueSingleSlide;
+    //Double Slide
+    public GameObject AssignToYellowDoubleSlide;
+    public GameObject AssignToRedDoubleSlide;
+    public GameObject AssignToGreenDoubleSlide;
+    public GameObject AssignToBlueDoubleSlide;
+    //Firepole
+    public GameObject AssignToYellowFirepole;
+    public GameObject AssignToRedFirepole;
+    public GameObject AssignToGreenFirepole;
+    public GameObject AssignToBlueFirepole;
+    //Coil Climber
+    public GameObject AssignToYellowSpiralClimber;
+    public GameObject AssignToRedSpiralClimber;
+    public GameObject AssignToGreenSpiralClimber;
+    public GameObject AssignToBlueSpiralClimber;
+    //Stairs
+    public GameObject AssignToYellowStairs;
+    public GameObject AssignToRedStairs;
+    public GameObject AssignToGreenStairs;
+    public GameObject AssignToBlueStairs;
+
 
     public GameObject objectOrdered;
     //voice command variables
@@ -37,22 +63,47 @@ public class MixedObjects : MonoBehaviour
     void Start()
     {
        //red
-            keywords.Add("Order Chimes Panel 5' by 3'6in in Red", () => { this.BroadcastMessage("Red"); });
-            keywords.Add("Order Chimes Panel 5' by 5'4in in Red", () => { this.BroadcastMessage("Red"); });
-            keywords.Add("Order Tube Bridge in Red", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Chimes Panel 5' by 3'6in in Red", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Chimes Panel 5' by 5'4in in Red", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Tube Bridge in Red", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Single Slide in Red", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Double Slide in Red", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Tube Slide in Red", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Firepole in Red", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Coil Climber in Red", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Stairs in Red", () => { this.BroadcastMessage("Red"); });
+
         //yellow
         keywords.Add("Order Chimes Panel 5' by 3'6in", () => { this.BroadcastMessage("Yellow"); });
         keywords.Add("Order Chimes Panel 5' by 5'4in", () => { this.BroadcastMessage("Yellow"); });
         keywords.Add("Order Tube Bridge", () => { this.BroadcastMessage("Yellow"); });
+        keywords.Add("Order Single Slide", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Double Slide", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Tube Slide", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Firepole", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Coil Climber", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Stairs", () => { this.BroadcastMessage("Red"); });
         //green
         keywords.Add("Order Chimes Panel 5' by 3'6in in Green", () => { this.BroadcastMessage("Green"); });
         keywords.Add("Order Chimes Panel 5' by 5'4in in Green", () => { this.BroadcastMessage("Green"); });
         keywords.Add("Order Tube Bridge in Green", () => { this.BroadcastMessage("Green"); });
+        keywords.Add("Order Single Slide in Green", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Double Slide in Green", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Tube Slide in Green", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Firepole in Green", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Coil Climber in Green", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Stairs in Green", () => { this.BroadcastMessage("Red"); });
         //Blue
         keywords.Add("Order Chimes Panel 5' by 3'6in in Blue", () => { this.BroadcastMessage("Blue"); });
         keywords.Add("Order Chimes Panel 5' by 5'4in in Blue", () => { this.BroadcastMessage("Blue"); });
         keywords.Add("Order Tube Bridge in Blue", () => { this.BroadcastMessage("Blue"); });
-        
+        keywords.Add("Order Single Slide in Blue", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Double Slide in Blue", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Tube Slide in Blue", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Firepole in Blue", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Coil Climber in Blue", () => { this.BroadcastMessage("Red"); });
+        keywords.Add("Order Stairs in Blue", () => { this.BroadcastMessage("Red"); });
+
         keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
         keywordRecognizer.Start();

@@ -26,6 +26,13 @@ public class IsWoodOrPlastic : MonoBehaviour
     public bool isTubeBridge = false;
     public bool isChimesSmall = false;
     public bool isChimesLarge = false;
+    public bool isSingleSlide = false;
+    public bool isDoubleSlide = false;
+    public bool isTubeSlide = false;
+    public bool isFirepole = false;
+    public bool isCoilClimber = false;
+    public bool isStairs = false;
+
     public Color paintColor;
 
     // Start is called before the first frame update
@@ -53,11 +60,8 @@ public class IsWoodOrPlastic : MonoBehaviour
             paintWithPaint = false;
             orderableInColor = false;
         }
-        else if (hasWood == true && hasPlastic == true && hasMetal == false && isPaintBucket == false)
-        {
-            paintSomeNotOthers = true; //these will use different methods
-        }
-        else if (isTubeBridge == true || isChimesLarge == true || isChimesSmall == true)
+        else if (isTubeBridge == true || isChimesLarge == true || isChimesSmall == true || isSingleSlide == true
+            || isDoubleSlide == true || isTubeSlide == true || isCoilClimber == true || isFirepole == true || isStairs == true)
         {
             paintSomeNotOthers = true; // this will use different methods because we need to get unity to figure out where the wood is vs metal/plastic
         } 
