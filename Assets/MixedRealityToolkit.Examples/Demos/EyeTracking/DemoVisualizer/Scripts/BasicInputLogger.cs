@@ -5,7 +5,10 @@ using System;
 using UnityEngine;
 using System.IO;
 using System.Text;
-
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine.Windows.Speech;
+using System.Collections;
 #if WINDOWS_UWP
 using Windows.Storage;
 #endif
@@ -14,6 +17,33 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking.Logging
 {
     public abstract class BasicInputLogger : MonoBehaviour
     {
+        KeywordRecognizer keywordRecognizer = null;
+        Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
+        void Start()
+        {
+        
+
+            // global command
+            keywords.Add("Export Activity Log", CheckIfInitialized);
+            // keywords.Add("Export Activity Log", WriteDataToFile());
+
+
+            // Tell the KeywordRecognizer about our keywords.
+            keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
+
+            // Register a callback for the KeywordRecognizer and START recognizing!!!!
+            keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
+            keywordRecognizer.Start();
+        }
+        private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
+        {
+            System.Action keywordAction;
+            if (keywords.TryGetValue(args.text, out keywordAction))
+            {
+                keywordAction.Invoke();     // if speech command recognized, then invoke the action
+            }
+        }
+
         public bool addTimestampToLogfileName = false;
 
         public void SetUserName(string name)
