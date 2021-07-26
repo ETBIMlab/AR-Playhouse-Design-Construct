@@ -34,7 +34,16 @@ public class IsWoodOrPlastic : MonoBehaviour
     public bool isStairs = false;
 
     public Color paintColor;
-
+    //Color Wheel bc ROYGBIV isn't completely built into unity
+    Color orderRed = Color.red;
+    Color orderOrange = new Vector4(255, 165, 0, 1);
+    Color orderYellow = Color.yellow;
+    Color orderGreen = Color.green;
+    Color orderBlue = Color.blue;
+    Color orderIngdigo = new Vector4(75, 0, 130, 1);
+    Color orderViolet = new Vector4(238, 130, 238, 1);
+    Color orderGrey = Color.grey;
+    Color orderWhite = Color.white;
     // Start is called before the first frame update
     void Start()
     {

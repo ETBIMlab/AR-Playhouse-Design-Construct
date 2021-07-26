@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: -8946614561716027090}
   - component: {fileID: 2560935719440348110}
   m_Layer: 0
-  m_Name: Yellow Slide
-  m_TagString: Untagged
+  m_Name: Single Slide
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,6 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 850
   itemInstallTime: 30
+  itemName: 
   itemFun: 1
   itemType: 2
   hasDifferentOriginRotation: 0
@@ -384,7 +385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
   hasWood: 0
   hasPlastic: 1
   hasMetal: 0
@@ -393,6 +393,15 @@ MonoBehaviour:
   orderableInColor: 0
   paintWithPaint: 0
   paintSomeNotOthers: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
   paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4513095811718259038
 GameObject:
