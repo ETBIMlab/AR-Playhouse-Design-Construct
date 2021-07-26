@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 574281869262169365}
   m_Layer: 0
   m_Name: Tube Bridge
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,6 +152,12 @@ MonoBehaviour:
   isTubeBridge: 1
   isChimesSmall: 0
   isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
   paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &574281869262169365
 MonoBehaviour:
@@ -188,6 +194,26 @@ MonoBehaviour:
     type: 3}
   AssignToBlueBigChimes: {fileID: 4854078678544811375, guid: ff7208bc3bfdba643a66adea03ede1fe,
     type: 3}
+  AssignToYellowSingleSlide: {fileID: 0}
+  AssignToRedSingleSlide: {fileID: 0}
+  AssignToGreenSingleSlide: {fileID: 0}
+  AssignToBlueSingleSlide: {fileID: 0}
+  AssignToYellowDoubleSlide: {fileID: 0}
+  AssignToRedDoubleSlide: {fileID: 0}
+  AssignToGreenDoubleSlide: {fileID: 0}
+  AssignToBlueDoubleSlide: {fileID: 0}
+  AssignToYellowFirepole: {fileID: 0}
+  AssignToRedFirepole: {fileID: 0}
+  AssignToGreenFirepole: {fileID: 0}
+  AssignToBlueFirepole: {fileID: 0}
+  AssignToYellowCoilClimber: {fileID: 0}
+  AssignToRedCoilClimber: {fileID: 0}
+  AssignToGreenCoilClimber: {fileID: 0}
+  AssignToBlueCoilClimber: {fileID: 0}
+  AssignToYellowStairs: {fileID: 0}
+  AssignToRedStairs: {fileID: 0}
+  AssignToGreenStairs: {fileID: 0}
+  AssignToBlueStairs: {fileID: 0}
   objectOrdered: {fileID: 5255207582091232640}
 --- !u!1001 &464145092548417027
 PrefabInstance:

@@ -621,7 +621,7 @@ Transform:
   m_GameObject: {fileID: 7555498050059641513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.339143, y: 0.18, z: 1.196691}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 8110654904239903893}
   - {fileID: 5587822380668380414}
@@ -705,6 +705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 325
   itemInstallTime: 15
+  itemName: 
   itemFun: 1
   itemType: 0
   hasDifferentOriginRotation: 0
@@ -729,6 +730,9 @@ MonoBehaviour:
   orderableInColor: 0
   paintWithPaint: 0
   paintSomeNotOthers: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
   paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8254089356161287460
 GameObject:

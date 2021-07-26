@@ -231,7 +231,7 @@ Transform:
   m_GameObject: {fileID: 5689863349140932595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.8012688, y: 0.18, z: 2.956862}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 3873582853378195979}
   - {fileID: 4682324343084777210}
@@ -314,6 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 325
   itemInstallTime: 15
+  itemName: 
   itemFun: 1
   itemType: 0
   hasDifferentOriginRotation: 0
@@ -338,6 +339,9 @@ MonoBehaviour:
   orderableInColor: 0
   paintWithPaint: 0
   paintSomeNotOthers: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
   paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &-7655195395184569182
 BoxCollider:
@@ -378,7 +382,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7992123320624478581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -0}
+  m_LocalPosition: {x: -0, y: 0.1, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3873582853378195979}
