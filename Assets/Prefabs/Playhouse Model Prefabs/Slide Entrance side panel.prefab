@@ -239,6 +239,7 @@ MonoBehaviour:
   canSnapFullFacePanelAttachment: 0
   canSnapLadder: 0
   canSnapAttachment: 0
+  canSnapPlank: 0
   isOrientationSpecific: 0
   allowedItemOrientation: 0
 --- !u!1 &3498621258064676543
@@ -481,7 +482,6 @@ GameObject:
   - component: {fileID: 324767220992605334}
   - component: {fileID: 586436414694596161}
   - component: {fileID: 5328453357699316548}
-  - component: {fileID: -6195342696579519013}
   m_Layer: 0
   m_Name: Slide Entrance side panel
   m_TagString: Untagged
@@ -699,6 +699,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrice: 0
+  itemInstallTime: 0
+  itemName: 
+  itemFun: 0
   itemType: 0
   hasDifferentOriginRotation: 0
   itemOrientation: 0
@@ -828,18 +831,6 @@ MonoBehaviour:
   dragClip: {fileID: 8300000, guid: 45a90682f74bb0c41b65994c63b74e60, type: 3}
   clickClip: {fileID: 8300000, guid: 1beaca2388760544882033dfdd0ffded, type: 3}
   volume: 1
---- !u!114 &-6195342696579519013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6597697357246998747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7024895361679766813
 GameObject:
   m_ObjectHideFlags: 0

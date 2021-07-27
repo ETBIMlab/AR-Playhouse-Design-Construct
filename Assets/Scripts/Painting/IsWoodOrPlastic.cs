@@ -18,7 +18,7 @@ public class IsWoodOrPlastic : MonoBehaviour
     public bool hasPlastic = false;
     public bool hasMetal = false;
     public bool isPaintBucket = false;
-    public GameObject objectToColor;
+    //public GameObject objectToColor;
     public bool orderableInColor = false;
     public bool paintWithPaint = false;
     public bool paintSomeNotOthers = false;
@@ -47,7 +47,7 @@ public class IsWoodOrPlastic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        objectToColor.GetComponent<Renderer>();
+       // objectToColor.GetComponent<Renderer>();
 
 
     }

@@ -37,6 +37,7 @@ public class Painter : MonoBehaviour
 
     public void OnGrab()
     {
+        Debug.Log("Tool has been grabbed!");
         toolGrabbed = true;
     }
 
@@ -44,7 +45,7 @@ public class Painter : MonoBehaviour
     private void OnTriggerEnter(Collider other) //for contact between two game objects
     {
         Debug.Log("Painter trying to paint");
-        if (objectToBePainted != null && objectToBePainted.GetComponent<IsWoodOrPlastic>().paintWithPaint == true && toolGrabbed == true)
+        if (objectToBePainted != null && toolGrabbed == true)
         {
 
             if (other.GetComponent<Painter>() != null && colorPicked == true && toolGrabbed == true)
