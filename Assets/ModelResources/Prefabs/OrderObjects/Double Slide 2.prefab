@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 5067336014486280961}
   - component: {fileID: 807188769237057915}
   - component: {fileID: 7008821824670194234}
+  - component: {fileID: 3826108634074667937}
   m_Layer: 0
   m_Name: Double Slide 2
   m_TagString: Untagged
@@ -133,10 +134,8 @@ MonoBehaviour:
   hasPlastic: 1
   hasMetal: 0
   isPaintBucket: 0
-  objectToColor: {fileID: 0}
   orderableInColor: 0
   paintWithPaint: 0
-  paintSomeNotOthers: 0
   isTubeBridge: 0
   isChimesSmall: 0
   isChimesLarge: 0
@@ -146,6 +145,7 @@ MonoBehaviour:
   isFirepole: 0
   isCoilClimber: 0
   isStairs: 0
+  paintColorMaterial: {fileID: 0}
   paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &7171748519113553711
 MonoBehaviour:
@@ -348,6 +348,43 @@ MonoBehaviour:
   GrassTexture: {fileID: 2100000, guid: 6a3d964ea61cca74aad9cd47ed31878d, type: 2}
   ConcreteTexture: {fileID: 2100000, guid: 5e8ed97749e472a4c9123bc956cf671c, type: 2}
   MulchTexture: {fileID: 2100000, guid: dd20d25922cc2a941a583cbe00a77f83, type: 2}
+--- !u!114 &3826108634074667937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18663216764884609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AssignToRedTubeBridge: {fileID: 0}
+  AssignToGreenTubeBridge: {fileID: 0}
+  AssignToBlueTubeBridge: {fileID: 0}
+  AssignToRedSmallChimes: {fileID: 0}
+  AssignToGreenSmallChimes: {fileID: 0}
+  AssignToBlueSmallChimes: {fileID: 0}
+  AssignToRedBigChimes: {fileID: 0}
+  AssignToGreenBigChimes: {fileID: 0}
+  AssignToBlueBigChimes: {fileID: 0}
+  AssignToRedSingleSlide: {fileID: 0}
+  AssignToGreenSingleSlide: {fileID: 0}
+  AssignToBlueSingleSlide: {fileID: 0}
+  AssignToRedDoubleSlide: {fileID: 0}
+  AssignToGreenDoubleSlide: {fileID: 0}
+  AssignToBlueDoubleSlide: {fileID: 0}
+  AssignToRedFirepole: {fileID: 0}
+  AssignToGreenFirepole: {fileID: 0}
+  AssignToBlueFirepole: {fileID: 0}
+  AssignToRedCoilClimber: {fileID: 0}
+  AssignToGreenCoilClimber: {fileID: 0}
+  AssignToBlueCoilClimber: {fileID: 0}
+  AssignToRedStairs: {fileID: 0}
+  AssignToGreenStairs: {fileID: 0}
+  AssignToBlueStairs: {fileID: 0}
+  objectOrdered: {fileID: 0}
 --- !u!1 &8386922854124280859
 GameObject:
   m_ObjectHideFlags: 0
