@@ -7,19 +7,50 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 
-/*#if WINDOWS_UWP
+
+#if WINDOWS_UWP
 using Windows.Storage;
 using Windows.System;
 using System.Threading.Tasks;
 using Windows.Storage.Streams;
 #endif
-*/
+
 
 
 public class TestActivityLogger : MonoBehaviour
     {
 
-        public AudioRoot audio;
+    
+#if WINDOWS_UWP
+    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+#endif
+
+
+    //private string saved line;
+    private string saveInformation = "";
+
+    private static string timeStamp = System.DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "");
+    private static string fileName = timeStamp + ".txt";
+
+    private static bool firstSave = true;
+#if WINDOWS_UWP
+    async void WriteData()
+    {
+        if (firstSave){
+        StorageFile sampleFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
+        await FileIO.AppendTextAsync(sampleFile, saveInformation + "\r\n");
+        firstSave = false;
+        }
+    else{
+        StorageFile sampleFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);
+        await FileIO.AppendTextAsync(sampleFile, saveInformation + "\r\n");
+    }
+    }
+#endif
+    
+
+    public AudioRoot audio;
         private AudioSource audioSource;
         public AudioClip spaceSet;
         //public GameObject activityItem1;
@@ -85,14 +116,14 @@ public class TestActivityLogger : MonoBehaviour
             }
         }
 
-    /*
+   /*
 #if WINDOWS_UWP
        async void WriteDataToFile()
       {
            string fileContents = "Testing export activity log";
             StorageFolder folder = ApplicationData.Current.LocalFolder;
             StorageFile textFile = await folder.CreateFileAsync("ActivityLog.txt", CreateCollisionOption.ReplaceExisting);
-          Await FileIO.AppendTextAsync(textfile, fileContents + "\n");
+             Await FileIO.AppendTextAsync(textfile, fileContents);
       }
 #endif
     */
@@ -117,13 +148,12 @@ public class TestActivityLogger : MonoBehaviour
             //string path = "./ActivityLog.txt";
             string path =  Application.persistentDataPath + "/ActivityLog.txt";
         // to test
-        /*
-         * #if WINDOWS_UWP
-                WriteDataToFile();
-        #endif
-         */
-
-
+    
+        
+#if WINDOWS_UWP
+                WriteData();
+#endif
+        
 
         if (!File.Exists(path))
         {
@@ -146,7 +176,7 @@ public class TestActivityLogger : MonoBehaviour
 
 
     }
-    public void LogPosition(string activity)
+      public void LogPosition(string activity)
         {
             listOfPositions.Add(activity);
         }
