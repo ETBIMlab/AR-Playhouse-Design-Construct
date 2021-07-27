@@ -15,23 +15,24 @@ public class Painter : MonoBehaviour
     public GameObject objectToBePainted;
     public Material material;
 
-    public GameObject AssignToBrush; 
+   public GameObject AssignToBrush; // we want to assign it to the brush but we do that in unity
     public bool colorPicked = false;
     private bool toolGrabbed = false;
     public Color newColor; //color we want to paint it
     public Color objCurrentColor; //before painting
+    public MeshRenderer ren;
     public Material[] mat;
     //public Renderer ren; //renderer for paint brush - new color IGNORE THIS
-    //public Renderer objectRen; //renderer for object so we  can change the color
+    //public Renderer objectRen; //renderer for object so we  can change the color IGNORE
 
     void Start()
     {
-        newColor = AssignToBrush.GetComponent<IsWoodOrPlastic>().paintColor;
-        Debug.Log("Got the new color!");
+       // newColor = AssignToBrush.GetComponent<IsWoodOrPlastic>().paintColor;
+        //Debug.Log("Got the new color!");
         //ren = AssignToBrush.GetComponent<Renderer>();
         //ren.material.color = newColor;
-        objCurrentColor = objectToBePainted.GetComponent<Renderer>().material.color; //the current color is the current color
-        Debug.Log("Got the old color!");
+        //objCurrentColor = objectToBePainted.GetComponent<Renderer>().material.color; //the current color is the current color
+        //Debug.Log("Got the old color!");
 
     }
 
@@ -44,27 +45,32 @@ public class Painter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) //for contact between two game objects
     {
-        Debug.Log("Painter trying to paint");
+
+        Debug.Log("Collided!");
         if (objectToBePainted != null && toolGrabbed == true)
         {
 
             if (other.GetComponent<Painter>() != null && colorPicked == true && toolGrabbed == true)
             {
-                other.GetComponent<MeshRenderer>().material = material; //we are leaving the thing alone
-            }
+                Debug.Log("I collided with a non paint bucket!");
 
+                //other.GetComponent<MeshRenderer>().material = material; //we are leaving the thing alone
+                //we are going to set the color as the color of the paint which is on the brush
+                other.GetComponent<MeshRenderer>().material.color = newColor;
+            }
+            //the below is if we come into contact with a paint bucket, the above is if we come into contact with
+            //another object (wood for example)
             else if (other.GetComponent<Painter>() != null && toolGrabbed == true) //checking we had a paint bucket and if we grabbed the tool
             {
+                Debug.Log("Collided with paint bucket!");
+
                 colorPicked = true;//yes we picked a color
                                    //I don't know how this works so we comment out and pray it doesn't break anything
-                                   //material = objectToBePainted.GetComponent<MeshRenderer>().material; //we want the object to keep it's current material, we just want to change the color
-                                   //mat = ren.materials;
-                                   //mat[3] = material;
-                                   //AssignToBrush.GetComponent<MeshRenderer>().materials = mat;
-
-                //we are going to set the color as the color of the paint which is on the brush
-                objectToBePainted.GetComponent<Renderer>().material.color = newColor;
-                Debug.Log("Assigned the new color!");
+                material = objectToBePainted.GetComponent<MeshRenderer>().material; //we want the object to keep it's current material, we just want to change the color
+                   mat = ren.materials;
+                   mat[3] = material;
+                  AssignToBrush.GetComponent<MeshRenderer>().materials = mat;
+                Debug.Log("Assigned Brush the new color!");
             }
         }
         else if (objectToBePainted == null)
