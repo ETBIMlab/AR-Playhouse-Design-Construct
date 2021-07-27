@@ -79,6 +79,7 @@ public class Painter : MonoBehaviour
 
     public void OnRelease()
     {
+        Debug.Log("Paintbrush dropped");
         toolGrabbed = false;
     }
 

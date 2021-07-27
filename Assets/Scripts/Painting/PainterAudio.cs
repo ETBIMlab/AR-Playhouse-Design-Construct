@@ -24,7 +24,7 @@ public class PainterAudio : MonoBehaviour
             theAudio.PlayOneShot(paintObject, volume);
 
         }
-        else if(other.GetComponent<isPaintBucket>() != null && !playingAudio)
+        else if(other.GetComponent<IsWoodOrPlastic>().isPaintBucket == true && !playingAudio)
         {
             playingAudio = true;
             theAudio.PlayOneShot(paintBucket, volume);
