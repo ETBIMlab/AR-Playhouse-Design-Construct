@@ -740,7 +740,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
   hasWood: 1
   hasPlastic: 0
   hasMetal: 0
@@ -749,6 +748,15 @@ MonoBehaviour:
   orderableInColor: 0
   paintWithPaint: 0
   paintSomeNotOthers: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
   paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4224057917134184581
 GameObject:
@@ -769,6 +777,8 @@ GameObject:
   - component: {fileID: 6677755042878806813}
   - component: {fileID: 489450755902102869}
   - component: {fileID: 447311995035122499}
+  - component: {fileID: 3757480581326238614}
+  - component: {fileID: 8957613601420847307}
   m_Layer: 0
   m_Name: Monkey Bars
   m_TagString: Untagged
@@ -994,6 +1004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 965
   itemInstallTime: 45
+  itemName: 
   itemFun: 1
   itemType: 2
   hasDifferentOriginRotation: 0
@@ -1010,7 +1021,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
   hasWood: 1
   hasPlastic: 0
   hasMetal: 1
@@ -1019,7 +1029,129 @@ MonoBehaviour:
   orderableInColor: 0
   paintWithPaint: 0
   paintSomeNotOthers: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
   paintColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &3757480581326238614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4224057917134184581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2e610252ff6844daf1a7f7040f4346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabClip: {fileID: 8300000, guid: 13ad719f14620654f8f7588baaa5f9c4, type: 3}
+  releaseClip: {fileID: 8300000, guid: 465a6a24f76b20746817efe51906d98e, type: 3}
+  dragClip: {fileID: 8300000, guid: 45a90682f74bb0c41b65994c63b74e60, type: 3}
+  clickClip: {fileID: 8300000, guid: 9a10debaf8483ae49aa91211098634f1, type: 3}
+  volume: 1
+--- !u!82 &8957613601420847307
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4224057917134184581}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &661462567602436371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1162,7 +1294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
   hasWood: 1
   hasPlastic: 0
   hasMetal: 0
@@ -1171,6 +1302,15 @@ MonoBehaviour:
   orderableInColor: 0
   paintWithPaint: 0
   paintSomeNotOthers: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
   paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4537560072123105853
 GameObject:
@@ -1265,7 +1405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
   hasWood: 1
   hasPlastic: 0
   hasMetal: 0
@@ -1274,6 +1413,15 @@ MonoBehaviour:
   orderableInColor: 0
   paintWithPaint: 0
   paintSomeNotOthers: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
   paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4610106660407916139
 GameObject:
@@ -2105,7 +2253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
   hasWood: 1
   hasPlastic: 0
   hasMetal: 0
@@ -2114,6 +2261,15 @@ MonoBehaviour:
   orderableInColor: 0
   paintWithPaint: 0
   paintSomeNotOthers: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
   paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1148153237994274837
 PrefabInstance:
@@ -2395,15 +2551,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28085414f9d1e04d8bf1091db7585dd, type: 3}
---- !u!1 &6709773390314894121 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5684799043432801875, guid: f28085414f9d1e04d8bf1091db7585dd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1439341833067730298}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2991592754426318281 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4214757957086877875, guid: f28085414f9d1e04d8bf1091db7585dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1439341833067730298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6709773390314894121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5684799043432801875, guid: f28085414f9d1e04d8bf1091db7585dd,
     type: 3}
   m_PrefabInstance: {fileID: 1439341833067730298}
   m_PrefabAsset: {fileID: 0}
@@ -3246,15 +3402,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28085414f9d1e04d8bf1091db7585dd, type: 3}
---- !u!1 &4509874259387847430 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5684799043432801875, guid: f28085414f9d1e04d8bf1091db7585dd,
-    type: 3}
-  m_PrefabInstance: {fileID: 8102604799796016469}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5336739329896967654 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4214757957086877875, guid: f28085414f9d1e04d8bf1091db7585dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 8102604799796016469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4509874259387847430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5684799043432801875, guid: f28085414f9d1e04d8bf1091db7585dd,
     type: 3}
   m_PrefabInstance: {fileID: 8102604799796016469}
   m_PrefabAsset: {fileID: 0}
@@ -3532,15 +3688,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28085414f9d1e04d8bf1091db7585dd, type: 3}
---- !u!1 &3887952477629384456 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5684799043432801875, guid: f28085414f9d1e04d8bf1091db7585dd,
-    type: 3}
-  m_PrefabInstance: {fileID: 8867797336126513499}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4714541716748892648 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4214757957086877875, guid: f28085414f9d1e04d8bf1091db7585dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 8867797336126513499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3887952477629384456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5684799043432801875, guid: f28085414f9d1e04d8bf1091db7585dd,
     type: 3}
   m_PrefabInstance: {fileID: 8867797336126513499}
   m_PrefabAsset: {fileID: 0}
