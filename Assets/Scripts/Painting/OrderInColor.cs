@@ -16,44 +16,44 @@ public class OrderInColor : MonoBehaviour
  
     //Tube Bridge
     //public GameObject AssignToYellowTubeBridge;
-    public GameObject AssignToRedTubeBridge; 
-    public GameObject AssignToGreenTubeBridge;
-    public GameObject AssignToBlueTubeBridge;
+    private GameObject AssignToRedTubeBridge;
+    private GameObject AssignToGreenTubeBridge;
+    private GameObject AssignToBlueTubeBridge;
     //Small Chimes: Chimes Panel 5' by 3'6in 
     //public GameObject AssignToYellowSmallChimes;
-    public GameObject AssignToRedSmallChimes; 
-    public GameObject AssignToGreenSmallChimes;
-    public GameObject AssignToBlueSmallChimes;
+    private GameObject AssignToRedSmallChimes;
+    private GameObject AssignToGreenSmallChimes;
+    private GameObject AssignToBlueSmallChimes;
     //Large Chimes: Chimes Panel 5' by 5'4in
-   // public GameObject AssignToYellowBigChimes;
-    public GameObject AssignToRedBigChimes;
-    public GameObject AssignToGreenBigChimes;
-    public GameObject AssignToBlueBigChimes;
+    // public GameObject AssignToYellowBigChimes;
+    private GameObject AssignToRedBigChimes;
+    private GameObject AssignToGreenBigChimes;
+    private GameObject AssignToBlueBigChimes;
     //Single Slide: 
-   // public GameObject AssignToYellowSingleSlide;
-    public GameObject AssignToRedSingleSlide;
-    public GameObject AssignToGreenSingleSlide;
-    public GameObject AssignToBlueSingleSlide;
+    // public GameObject AssignToYellowSingleSlide;
+    private GameObject AssignToRedSingleSlide;
+    private GameObject AssignToGreenSingleSlide;
+    private GameObject AssignToBlueSingleSlide;
     //Double Slide
-   // public GameObject AssignToYellowDoubleSlide;
-    public GameObject AssignToRedDoubleSlide;
-    public GameObject AssignToGreenDoubleSlide;
-    public GameObject AssignToBlueDoubleSlide;
+    // public GameObject AssignToYellowDoubleSlide;
+    private GameObject AssignToRedDoubleSlide;
+    private GameObject AssignToGreenDoubleSlide;
+    private GameObject AssignToBlueDoubleSlide;
     //Firepole
-   // public GameObject AssignToYellowFirepole;
-    public GameObject AssignToRedFirepole;
-    public GameObject AssignToGreenFirepole;
-    public GameObject AssignToBlueFirepole;
+    // public GameObject AssignToYellowFirepole;
+    private GameObject AssignToRedFirepole;
+    private GameObject AssignToGreenFirepole;
+    private GameObject AssignToBlueFirepole;
     //Coil Climber
-   // public GameObject AssignToYellowCoilClimber;
-    public GameObject AssignToRedCoilClimber;
-    public GameObject AssignToGreenCoilClimber;
-    public GameObject AssignToBlueCoilClimber;
+    // public GameObject AssignToYellowCoilClimber;
+    private GameObject AssignToRedCoilClimber;
+    private GameObject AssignToGreenCoilClimber;
+    private GameObject AssignToBlueCoilClimber;
     //Stairs
-   // public GameObject AssignToYellowStairs;
-    public GameObject AssignToRedStairs;
-    public GameObject AssignToGreenStairs;
-    public GameObject AssignToBlueStairs;
+    // public GameObject AssignToYellowStairs;
+    private GameObject AssignToRedStairs;
+    private GameObject AssignToGreenStairs;
+    private GameObject AssignToBlueStairs;
     
     public GameObject objectOrdered;
     //voice command variables
@@ -301,5 +301,13 @@ public class OrderInColor : MonoBehaviour
         var orderPos = GameObject.Find("IndustrialSmallTruck").transform.position;
         Debug.Log("truck is at " + orderPos);
         Instantiate(objectOrdered, new Vector3(orderPos.x + 1.24f, orderPos.y, orderPos.z - 2.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
+    }
+    void OnDestroy()
+    {
+        if (keywordRecognizer != null)
+        {
+            keywordRecognizer.Stop();
+            keywordRecognizer.Dispose();
+        }
     }
 }
