@@ -9,8 +9,8 @@ using UnityEditor.SceneManagement;
 
 public class Painter : MonoBehaviour
 {
-    public GameObject objectToBePainted;
-    public Material newColor;
+    //public GameObject objectToBePainted;
+    private Material newColor;
 
    public GameObject AssignToBrush; // we want to assign it to the brush but we do that in unity
     public bool colorPicked = false;
@@ -18,21 +18,18 @@ public class Painter : MonoBehaviour
     //public Color newColor; //color we want to paint it
     //public Color objCurrentColor; //before painting
     public MeshRenderer ren;
+    public MeshRenderer oren;
     public MeshRenderer pren;
 
     public Material[] mat;
+    public Material[] omat;
     public Material[] pmat;
     //public Renderer ren; //renderer for paint brush - new color IGNORE THIS
     //public Renderer objectRen; //renderer for object so we  can change the color IGNORE
 
     void Start()
     {
-       // newColor = AssignToBrush.GetComponent<IsWoodOrPlastic>().paintColor;
-        //Debug.Log("Got the new color!");
-        //ren = AssignToBrush.GetComponent<Renderer>();
-        //ren.material.color = newColor;
-        //objCurrentColor = objectToBePainted.GetComponent<Renderer>().material.color; //the current color is the current color
-        //Debug.Log("Got the old color!");
+       
 
     }
 
@@ -55,8 +52,8 @@ public class Painter : MonoBehaviour
                 Debug.Log("I collided with a non paint bucket!");
 
                 //we are going to set the color as the color of the paint which is on the brush
-                mat = other.GetComponent<MeshRenderer>().materials;
-                mat[0] = newColor;
+                omat = other.GetComponent<MeshRenderer>().materials;
+                omat[0] = newColor;
                 Debug.Log("I gave it a new color");
 
             }
