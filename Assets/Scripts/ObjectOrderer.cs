@@ -18,7 +18,7 @@ public class ObjectOrderer : MonoBehaviour
         public double price;
         public int deliveryTime;
         public int instalTime;
-        public int sustainability;
+        public double sustainability;
         public int fun;
         public GameObject obj;
     }
