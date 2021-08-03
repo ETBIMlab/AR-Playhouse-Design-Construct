@@ -110,6 +110,9 @@ public class TestActivityLogger : MonoBehaviour
             }
         }
 
+    // *TO ADD* object parameter from ObjectOrderer gets passed into exportActivityLog() 
+    // fileContents will be an object array that we will add to the txt file
+    // Append each object ordered.
 
      void ExportActivityLog()
         {
@@ -134,7 +137,7 @@ public class TestActivityLogger : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < listOfActions.Count; i++)
+            /*for (int i = 0; i < listOfActions.Count; i++)
             {
                 fileContents += listOfActions[i];
                 if (i < listOfActions.Count - 1)
@@ -142,6 +145,7 @@ public class TestActivityLogger : MonoBehaviour
                     fileContents += "\n";
                 }
             }
+            */
             File.AppendAllText(path, fileContents);
 
         }
