@@ -21,7 +21,7 @@ public class WheelMechanics : MonoBehaviour
         {
             this.rotSpeed = 10;
         }
-        transform.Rotate(0, 0, rotSpeed);
+        transform.Rotate(0, rotSpeed, 0);
 
         //Added for the speed to slow down
         this.rotSpeed *= 0.96f;
