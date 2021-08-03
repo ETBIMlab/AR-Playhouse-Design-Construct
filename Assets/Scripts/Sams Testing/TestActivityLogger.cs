@@ -20,35 +20,19 @@ using Windows.Storage.Streams;
 public class TestActivityLogger : MonoBehaviour
     {
 
-    
-#if WINDOWS_UWP
-    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-#endif
 
 
-    //private string saved line;
     private string saveInformation = "";
 
     private static string timeStamp = System.DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "");
     private static string fileName = timeStamp + ".txt";
 
     private static bool firstSave = true;
-#if WINDOWS_UWP
-    async void WriteData()
-    {
-        if (firstSave){
-        StorageFile sampleFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
-        await FileIO.AppendTextAsync(sampleFile, saveInformation + "\r\n");
-        firstSave = false;
-        }
-    else{
-        StorageFile sampleFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);
-        await FileIO.AppendTextAsync(sampleFile, saveInformation + "\r\n");
-    }
-    }
-#endif
-    
+
+    //private string saved line;
+
+
+
 
     public AudioRoot audio;
         private AudioSource audioSource;
@@ -71,6 +55,8 @@ public class TestActivityLogger : MonoBehaviour
         {
             audioSource = GetComponent<AudioSource>();
 
+
+
             // global command
             keywords.Add("Export Activity Log", ExportActivityLog);
        // keywords.Add("Export Activity Log", WriteDataToFile());
@@ -82,10 +68,31 @@ public class TestActivityLogger : MonoBehaviour
             // Register a callback for the KeywordRecognizer and START recognizing!!!!
             keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
             keywordRecognizer.Start();
+
+
+
         }
 
-        // Update is called once per frame
-        void Update()
+
+#if WINDOWS_UWP
+    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+     async void WriteData()
+    {
+        if (firstSave){
+        StorageFile sampleFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
+        await FileIO.AppendTextAsync(sampleFile, saveInformation + "\r\n");
+        firstSave = false;
+        }
+    else{
+        StorageFile sampleFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);
+        await FileIO.AppendTextAsync(sampleFile, saveInformation + "\r\n");
+    }
+    }
+#endif
+
+    // Update is called once per frame
+    void Update()
         {
 
         }
