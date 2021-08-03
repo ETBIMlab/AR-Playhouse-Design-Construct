@@ -18,55 +18,56 @@ public class IsWoodOrPlastic : MonoBehaviour
     public bool hasPlastic = false;
     public bool hasMetal = false;
     public bool isPaintBucket = false;
-    public GameObject objectToColor;
+    //public GameObject objectToColor;
     public bool orderableInColor = false;
     public bool paintWithPaint = false;
-    public bool paintSomeNotOthers = false;
     //many of the objects are seperable  into wood, metal, and plastic. Not so with the following objects so bools: 
     public bool isTubeBridge = false;
     public bool isChimesSmall = false;
     public bool isChimesLarge = false;
+    public bool isSingleSlide = false;
+    public bool isDoubleSlide = false;
+    public bool isTubeSlide = false;
+    public bool isFirepole = false;
+    public bool isCoilClimber = false;
+    public bool isStairs = false;
+    public Material paintColorMaterial;
     public Color paintColor;
-
+    //Color Wheel bc ROYGBIV isn't completely built into unity
+    Color orderRed = Color.red;
+    Color orderOrange = new Vector4(255, 165, 0, 1);
+    Color orderYellow = Color.yellow;
+    Color orderGreen = Color.green;
+    Color orderBlue = Color.blue;
+    Color orderIngdigo = new Vector4(75, 0, 130, 1);
+    Color orderViolet = new Vector4(238, 130, 238, 1);
+    Color orderGrey = Color.grey;
+    Color orderWhite = Color.white;
     // Start is called before the first frame update
     void Start()
     {
-        objectToColor.GetComponent<Renderer>();
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        // objectToColor.GetComponent<Renderer>();
         if (hasWood == true && hasPlastic == false && hasMetal == false && isPaintBucket == false)
         {
             paintWithPaint = true;
-        }
-        else if (hasWood == false && hasPlastic == true && hasMetal == false && isPaintBucket == false)
-        {
-            orderableInColor = true;
-
         }
         else if (hasWood == false && hasPlastic == false && hasMetal == true && isPaintBucket == false)
         {
             paintWithPaint = false;
             orderableInColor = false;
         }
-        else if (hasWood == true && hasPlastic == true && hasMetal == false && isPaintBucket == false)
+        else if (isTubeBridge == true || isChimesLarge == true || isChimesSmall == true || isSingleSlide == true
+            || isDoubleSlide == true || isTubeSlide == true || isCoilClimber == true || isFirepole == true || isStairs == true)
         {
-            paintSomeNotOthers = true; //these will use different methods
+            orderableInColor = true; //if you add onto the order in color script, hard code there and then add to the bools in this if / else
         }
-        else if (isTubeBridge == true || isChimesLarge == true || isChimesSmall == true)
-        {
-            paintSomeNotOthers = true; // this will use different methods because we need to get unity to figure out where the wood is vs metal/plastic
-        } 
-       
+
         else if (hasWood == false && hasPlastic == false && hasMetal == false && isPaintBucket == true)
         {
             //we need to grab the color from our paint bucket
-            paintColor = gameObject.GetComponent<isPaintBucket>().material.color;
+            paintColor = gameObject.GetComponent<Renderer>().material.color;
 
         }
+
     }
 }

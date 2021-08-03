@@ -18,6 +18,8 @@ public class ObjectOrderer : MonoBehaviour
         public double price;
         public int deliveryTime;
         public int instalTime;
+        public int sustainability;
+        public int fun;
         public GameObject obj;
     }
     public GameObject laptopinterface;
@@ -122,6 +124,6 @@ public class ObjectOrderer : MonoBehaviour
         //get position of the ordering truck
         var orderPos = GameObject.Find("IndustrialSmallTruck").transform.position;
         Debug.Log("truck is at " + orderPos);
-        Instantiate(newObj, new Vector3(orderPos.x + 1.24f, orderPos.y + 1.8f, orderPos.z - 2.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
+        Instantiate(newObj, new Vector3(orderPos.x - 0.1f, orderPos.y - .6f, orderPos.z - 3.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
     }
 }

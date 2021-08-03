@@ -66,7 +66,6 @@ GameObject:
   - component: {fileID: -3534956369292915093}
   - component: {fileID: 2906596838204930272}
   - component: {fileID: 7156615870686568210}
-  - component: {fileID: 548387929022376388}
   m_Layer: 0
   m_Name: High small window panel
   m_TagString: item
@@ -282,6 +281,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrice: 0
+  itemInstallTime: 0
+  itemName: 
+  itemFun: 0
   itemType: 1
   hasDifferentOriginRotation: 1
   itemOrientation: 0
@@ -411,18 +413,6 @@ MonoBehaviour:
   dragClip: {fileID: 8300000, guid: 45a90682f74bb0c41b65994c63b74e60, type: 3}
   clickClip: {fileID: 8300000, guid: 9a10debaf8483ae49aa91211098634f1, type: 3}
   volume: 1
---- !u!114 &548387929022376388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2823898278567159723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6546066243087034549
 GameObject:
   m_ObjectHideFlags: 0

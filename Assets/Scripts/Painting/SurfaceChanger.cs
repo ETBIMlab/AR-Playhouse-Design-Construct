@@ -70,4 +70,12 @@ public class SurfaceChanger : MonoBehaviour
             Floor.GetComponent<MeshRenderer>().material = MulchTexture;
         }
     }
+    void OnDestroy()
+    {
+        if (keywordRecognizer != null)
+        {
+            keywordRecognizer.Stop();
+            keywordRecognizer.Dispose();
+        }
+    }
 }

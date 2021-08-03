@@ -179,20 +179,7 @@ MonoBehaviour:
   onHoverExited:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &39073778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2395908521918299963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1a2f46536a94164195245d476555ff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 16a656294c5b8ca45b4180f39c299b65, type: 2}
---- !u!114 &3997896786837249381
+--- !u!114 &2430593441837028638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -207,7 +194,20 @@ MonoBehaviour:
   hasWood: 0
   hasPlastic: 0
   hasMetal: 0
-  isPaintBucket: 1
+  isPaintBucket: 0
+  orderableInColor: 0
+  paintWithPaint: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
+  paintColorMaterial: {fileID: 2100000, guid: 16a656294c5b8ca45b4180f39c299b65, type: 2}
+  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &5917192305639040562
 PrefabInstance:
   m_ObjectHideFlags: 0
