@@ -36,7 +36,7 @@ public class TruckScript : MonoBehaviour
         ItemInfo myInfo = (ItemInfo)itemInfo.GetComponent(typeof(ItemInfo));
         laptopInterface myLaptop = (laptopInterface)li.GetComponent(typeof(laptopInterface));
 
-        myLaptop.removeitemCost(  myInfo.itemPrice);
+        myLaptop.removeitemCost(myInfo.itemPrice);
 
     }
     /*private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
