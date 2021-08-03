@@ -7,7 +7,6 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 
-
 #if WINDOWS_UWP
 using Windows.Storage;
 using Windows.System;
@@ -15,40 +14,26 @@ using System.Threading.Tasks;
 using Windows.Storage.Streams;
 #endif
 
-
+// in the windows device portal (enter ip4 adddress from network hololens is using into search bar) 
+// Locate the data at User Folders > LocalAppData > Template3D_1.0.0.0_arm64__pzq3xp76mxafg > LocalState > activitylog.txt or the timestamp  
+//Template3D is the playhouse 
+// there are two files being created, there are two functions currently being called at the same time through verbal command export activity log.
 
 public class TestActivityLogger : MonoBehaviour
     {
-
-    
-#if WINDOWS_UWP
-    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-#endif
-
-
-    //private string saved line;
+    //this string gets added to the txt file printed
     private string saveInformation = "";
 
+    // Creates a timestamp.txt file to append to.
     private static string timeStamp = System.DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "");
     private static string fileName = timeStamp + ".txt";
 
     private static bool firstSave = true;
-#if WINDOWS_UWP
-    async void WriteData()
-    {
-        if (firstSave){
-        StorageFile sampleFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
-        await FileIO.AppendTextAsync(sampleFile, saveInformation + "\r\n");
-        firstSave = false;
-        }
-    else{
-        StorageFile sampleFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);
-        await FileIO.AppendTextAsync(sampleFile, saveInformation + "\r\n");
-    }
-    }
-#endif
-    
+
+    //private string saved line;
+
+
+
 
     public AudioRoot audio;
         private AudioSource audioSource;
@@ -71,9 +56,11 @@ public class TestActivityLogger : MonoBehaviour
         {
             audioSource = GetComponent<AudioSource>();
 
+
+
             // global command
             keywords.Add("Export Activity Log", ExportActivityLog);
-       // keywords.Add("Export Activity Log", WriteDataToFile());
+       
        
 
             // Tell the KeywordRecognizer about our keywords.
@@ -82,10 +69,34 @@ public class TestActivityLogger : MonoBehaviour
             // Register a callback for the KeywordRecognizer and START recognizing!!!!
             keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
             keywordRecognizer.Start();
+
+
+
         }
 
-        // Update is called once per frame
-        void Update()
+
+    // gets a handle on the applications localfolder to save to.
+    // uses async function to wait
+    // then creates the txt file and appends saveInformation string
+#if WINDOWS_UWP
+    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+     async void WriteData()
+    {
+        if (firstSave){
+        StorageFile localFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
+        await FileIO.AppendTextAsync(localFile, saveInformation + "\r\n");
+        firstSave = false;
+        }
+    else{
+        StorageFile localFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);
+        await FileIO.AppendTextAsync(localFile, saveInformation + "\r\n");
+        }
+    }
+#endif
+
+    // Update is called once per frame
+    void Update()
         {
 
         }
@@ -99,6 +110,55 @@ public class TestActivityLogger : MonoBehaviour
             }
         }
 
+    // *TO ADD* object parameter from ObjectOrderer gets passed into exportActivityLog() 
+    // fileContents will be an object array that we will add to the txt file
+    // Append each object ordered.
+
+     void ExportActivityLog()
+        {
+
+           // Debug.Log("Creating Activity Log");
+           // Debug.Log(Application.persistentDataPath);
+            string fileContents = "Testing export activity log";
+            audioSource.PlayOneShot(spaceSet, 1F);
+            string path =  Application.persistentDataPath + "/ActivityLog.txt";
+       
+    
+     //calls async function to write data   
+#if WINDOWS_UWP
+                WriteData();
+#endif
+        
+        // checks to see if file exists, then writes or appends to activitylog.txt
+        if (!File.Exists(path))
+        {
+            File.WriteAllText(path, fileContents);
+
+        }
+        else
+        {
+            /*for (int i = 0; i < listOfActions.Count; i++)
+            {
+                fileContents += listOfActions[i];
+                if (i < listOfActions.Count - 1)
+                {
+                    fileContents += "\n";
+                }
+            }
+            */
+            File.AppendAllText(path, fileContents);
+
+        }
+
+
+    }
+/*
+      public void LogPosition(string activity)
+        {
+            listOfPositions.Add(activity);
+        }
+
+    
         public void LogItem(string activity)
         {
             listOfActions.Add(activity);
@@ -116,68 +176,5 @@ public class TestActivityLogger : MonoBehaviour
             }
         }
 
-   /*
-#if WINDOWS_UWP
-       async void WriteDataToFile()
-      {
-           string fileContents = "Testing export activity log";
-            StorageFolder folder = ApplicationData.Current.LocalFolder;
-            StorageFile textFile = await folder.CreateFileAsync("ActivityLog.txt", CreateCollisionOption.ReplaceExisting);
-             Await FileIO.AppendTextAsync(textfile, fileContents);
-      }
-#endif
-    */
-
-     void ExportActivityLog()
-        {
-
-        Debug.Log("Creating Activity Log");
-            Debug.Log(Application.persistentDataPath);
-            string fileContents = "Testing export activity log";
-            audioSource.PlayOneShot(spaceSet, 1F);
-            // testing various commands to figure out hololens directory path
-            //File.WriteAllText("./ActivityLog.txt", fileContents);
-            //string path = @"c:\Documents\DiagnosticLogs\ActivityLog.txt";
-            //string path = Path.Combine(Application.persistentDataPath, "ActivityLog.txt");
-            //string path = ".\\Documents\\ActivityLog.txt";    
-            //string path = "/UserFolders/LocalAppData/Template3D_1.0.0.0_arm64__pzq3xp76mxafg/AppData/ActivityLog.txt";
-            //string path = "C:\\Data\\Users\\asuetbimlab@gmail.com\\Documents\\ActivityLog.txt";
-            //string path = ".\\Documents\\DiagnosticLogs\\ActivityLog.txt";
-            //string path = "\\User Folders\\LocalAppData\\Template3D_1.0.0.0_arm64__pzq3xp76mxafg\\AppData\\ActivityLog.txt";
-            //string path = "\\User Folders\\PublicDocuments\\ActivityLog.txt";
-            //string path = "./ActivityLog.txt";
-            string path =  Application.persistentDataPath + "/ActivityLog.txt";
-        // to test
-    
-        
-#if WINDOWS_UWP
-                WriteData();
-#endif
-        
-
-        if (!File.Exists(path))
-        {
-            File.WriteAllText(path, fileContents);
-
-        }
-        else
-        {
-            for (int i = 0; i < listOfActions.Count; i++)
-            {
-                fileContents += listOfActions[i];
-                if (i < listOfActions.Count - 1)
-                {
-                    fileContents += "\n";
-                }
-            }
-            File.AppendAllText(path, fileContents);
-
-        }
-
-
-    }
-      public void LogPosition(string activity)
-        {
-            listOfPositions.Add(activity);
-        }
+*/
     }
