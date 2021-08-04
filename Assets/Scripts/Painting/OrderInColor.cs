@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.Linq;
@@ -224,7 +224,7 @@ public class OrderInColor : MonoBehaviour
         {
             objectOrdered = AssignToYellowCoilClimber;
             Debug.Log("Yellow Coil Climber Ordered!");
-        }*/
+        }
         //green
         if (args.text.Substring(32) == "SmallChimesGreen")
         {
@@ -311,3 +311,4 @@ public class OrderInColor : MonoBehaviour
         }
     }
 }
+*/
