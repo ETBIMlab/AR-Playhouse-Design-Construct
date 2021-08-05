@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.Linq;
@@ -12,8 +12,8 @@ using UnityEngine.Windows.Speech;
 /// so these ojects are all the orderable in Color ones, it's all hard coded which is rough but I think it'll work better. 
 /// </summary>
 public class OrderInColor : MonoBehaviour
-{
- 
+{ }
+ /*
     //Tube Bridge
     //public GameObject AssignToYellowTubeBridge;
     private GameObject AssignToRedTubeBridge;
