@@ -12,8 +12,8 @@ using UnityEngine.Windows.Speech;
 /// so these ojects are all the orderable in Color ones, it's all hard coded which is rough but I think it'll work better. 
 /// </summary>
 public class OrderInColor : MonoBehaviour
-{
- 
+{ }
+ /*
     //Tube Bridge
     //public GameObject AssignToYellowTubeBridge;
     private GameObject AssignToRedTubeBridge;
@@ -224,7 +224,7 @@ public class OrderInColor : MonoBehaviour
         {
             objectOrdered = AssignToYellowCoilClimber;
             Debug.Log("Yellow Coil Climber Ordered!");
-        }*/
+        }
         //green
         if (args.text.Substring(32) == "SmallChimesGreen")
         {
@@ -311,3 +311,4 @@ public class OrderInColor : MonoBehaviour
         }
     }
 }
+*/
