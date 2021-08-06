@@ -18,7 +18,7 @@ public class SurfaceChanger : MonoBehaviour
     public Material ConcreteTexture;
     public Material MulchTexture;
 
-    KeywordRecognizer keywordRecognizer = null;
+    KeywordRecognizer skeywordRecognizer = null;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
 
 
@@ -34,11 +34,11 @@ public class SurfaceChanger : MonoBehaviour
 
 
         // Tell the KeywordRecognizer about our keywords.
-        keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
+        skeywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
 
         // Register a callback for the KeywordRecognizer and START recognizing!!!!
-        keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
-        keywordRecognizer.Start();
+        skeywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
+        skeywordRecognizer.Start();
     }
 
     // important
@@ -72,10 +72,10 @@ public class SurfaceChanger : MonoBehaviour
     }
     void OnDestroy()
     {
-        if (keywordRecognizer != null)
+        if (skeywordRecognizer != null)
         {
-            keywordRecognizer.Stop();
-            keywordRecognizer.Dispose();
+            skeywordRecognizer.Stop();
+            skeywordRecognizer.Dispose();
         }
     }
 }
