@@ -32,7 +32,6 @@ public class IsWoodOrPlastic : MonoBehaviour
     public bool isCoilClimber = false;
     public bool isStairs = false;
     public Material paintColorMaterial;
-    public Color paintColor;
     //Color Wheel bc ROYGBIV isn't completely built into unity
     Color orderRed = Color.red;
     Color orderOrange = new Vector4(255, 165, 0, 1);
@@ -61,13 +60,17 @@ public class IsWoodOrPlastic : MonoBehaviour
         {
             orderableInColor = true; //if you add onto the order in color script, hard code there and then add to the bools in this if / else
         }
-
+        /*
         else if (hasWood == false && hasPlastic == false && hasMetal == false && isPaintBucket == true)
         {
             //we need to grab the color from our paint bucket
-            paintColor = gameObject.GetComponent<Renderer>().material.color;
+            //paintColorMaterial = gameObject.GetComponent<MeshRenderer>().material;
 
-        }
+        }*/
 
+    }
+    public void ChangeColor(Material mat)
+    {
+        gameObject.GetComponent<MeshRenderer>().material = mat;
     }
 }

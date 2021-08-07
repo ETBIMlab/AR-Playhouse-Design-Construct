@@ -9,8 +9,8 @@ using UnityEngine.Windows.Speech;
 
 public class SurfaceChanger : MonoBehaviour
 {
-    public Renderer ren;
-    public Material[] mat;
+    //public Renderer ren;
+   // public Material[] mat;
     public GameObject Floor;
     public Material RubberTexture;
     public Material SandTexture;
