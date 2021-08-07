@@ -60,11 +60,11 @@ public class IsWoodOrPlastic : MonoBehaviour
         {
             orderableInColor = true; //if you add onto the order in color script, hard code there and then add to the bools in this if / else
         }
-        /*
-        else if (hasWood == false && hasPlastic == false && hasMetal == false && isPaintBucket == true)
+        
+       /* else if (hasWood == false && hasPlastic == false && hasMetal == false && isPaintBucket == true)
         {
             //we need to grab the color from our paint bucket
-            //paintColorMaterial = gameObject.GetComponent<MeshRenderer>().material;
+            paintColorMaterial = gameObject.GetComponent<MeshRenderer>().materials[2];
 
         }*/
 

@@ -28,13 +28,13 @@ public class Painter : MonoBehaviour
     public void PaintObject(Material paint)
     {
         Debug.Log("Painter trying to paint");
-        if (objectToBePainted != null && objectToBePainted.GetComponent<IsWoodOrPlastic>() != null && toolGrabbed == true) //need to add check if it can be painted here
+        if (gameObject != null && gameObject.GetComponent<IsWoodOrPlastic>() != null && toolGrabbed == true) //need to add check if it can be painted here
         {
             Debug.Log("Painter successful");
 
-            objectToBePainted.GetComponent<IsWoodOrPlastic>().ChangeColor(material);
+            gameObject.GetComponent<IsWoodOrPlastic>().ChangeColor(material);
         }
-        else if (objectToBePainted == null)
+        else if (gameObject == null)
         {
             Debug.Log("Object to be painted is null");
         }
@@ -52,6 +52,7 @@ public class Painter : MonoBehaviour
             Debug.Log("I collided with a non paint bucket!");
 
             other.GetComponent<MeshRenderer>().material = material;
+            PaintObject(material);
         }
 
         else if (other.GetComponent<IsWoodOrPlastic>() != null && toolGrabbed == true)
