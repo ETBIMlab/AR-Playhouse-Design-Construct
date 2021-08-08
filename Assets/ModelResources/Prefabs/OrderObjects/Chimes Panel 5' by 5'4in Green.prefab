@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 3480075115147882651}
   - component: {fileID: 4346600832540734398}
   - component: {fileID: -7471199809085971749}
+  - component: {fileID: -5845999283937723316}
+  - component: {fileID: -3221667106795666296}
   m_Layer: 0
   m_Name: Chimes Panel 5' by 5'4in Green
   m_TagString: item
@@ -225,7 +227,6 @@ MonoBehaviour:
   isCoilClimber: 0
   isStairs: 0
   paintColorMaterial: {fileID: 0}
-  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &8536445328085156086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,8 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48207a4f8ecc2344bf6df17f3bf9fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
-  mat: []
   Floor: {fileID: 8193609647626128483, guid: 7d37005cec6e714469d93c6abc1943ec, type: 3}
   RubberTexture: {fileID: 2100000, guid: b9581edc5e9ec8c46b8b4979dbc3dbab, type: 2}
   SandTexture: {fileID: 2100000, guid: 8b5da5c71f8ee4b87aa2bef188299409, type: 2}
@@ -345,31 +344,119 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
+--- !u!114 &-5845999283937723316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214097756570278157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2e610252ff6844daf1a7f7040f4346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabClip: {fileID: 8300000, guid: 13ad719f14620654f8f7588baaa5f9c4, type: 3}
+  releaseClip: {fileID: 8300000, guid: 465a6a24f76b20746817efe51906d98e, type: 3}
+  dragClip: {fileID: 8300000, guid: 45a90682f74bb0c41b65994c63b74e60, type: 3}
+  clickClip: {fileID: 8300000, guid: 9a10debaf8483ae49aa91211098634f1, type: 3}
+  volume: 1
+--- !u!82 &-3221667106795666296
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214097756570278157}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1655717884723900632
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1819593318042490115}
   - component: {fileID: 2378455530206995071}
   - component: {fileID: -4249715709568463959}
+  - component: {fileID: 349298453452306555}
   m_Layer: 0
   m_Name: Tube Bridge Green
   m_TagString: item
@@ -112,10 +113,8 @@ MonoBehaviour:
   hasPlastic: 1
   hasMetal: 1
   isPaintBucket: 0
-  objectToColor: {fileID: 0}
   orderableInColor: 0
   paintWithPaint: 0
-  paintSomeNotOthers: 0
   isTubeBridge: 1
   isChimesSmall: 0
   isChimesLarge: 0
@@ -125,7 +124,7 @@ MonoBehaviour:
   isFirepole: 0
   isCoilClimber: 0
   isStairs: 0
-  paintColor: {r: 0, g: 0, b: 0, a: 0}
+  paintColorMaterial: {fileID: 0}
 --- !u!114 &7941683105829691486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,6 +325,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &349298453452306555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230332567762628692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7789413769370519406
 GameObject:
   m_ObjectHideFlags: 0
