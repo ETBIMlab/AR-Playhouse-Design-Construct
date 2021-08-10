@@ -29,27 +29,17 @@ public class TestActivityLogger : MonoBehaviour
     private static string timeStamp = System.DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "");
     private static string timeStamp1 = System.DateTime.Now.ToString();
     private static string fileName = timeStamp + ".txt";
-
     private static bool firstSave = true;
-
-    //private string saved line;
-
-
+    private double totalCost = 0.0f;
+    private int totalTime = 0;
+    private int totalFun = 0;
+    private double totalSus = 0;
 
 
     public AudioRoot audio;
-        private AudioSource audioSource;
+    private AudioSource audioSource;
     public AudioClip spaceSet;
-        
-        //public GameObject activityItem1;
-        //public GameObject activityItem2;
-        //public GameObject activityItem3;
-        //public GameObject activityItem4;
-        //public GameObject activityItem5;
-        public GameObject[] activityItems = new GameObject[5];
 
-        private ArrayList listOfActions = new ArrayList();
-        private ArrayList listOfPositions = new ArrayList();
 
         KeywordRecognizer keywordRecognizer = null;
         Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
@@ -135,44 +125,43 @@ public class TestActivityLogger : MonoBehaviour
         if (!File.Exists(path))
         {
             File.WriteAllText(path, fileContents);
-
         }
         else
         {
-            /*for (int i = 0; i < listOfActions.Count; i++)
-            {
-                fileContents += listOfActions[i];
-                if (i < listOfActions.Count - 1)
-                {
-                    fileContents += "\n";
-                }
-            }
-            */
             File.AppendAllText(path, fileContents);
-
         }
 
 
     }
+    // function is called in Object orderer when an item is ordered.
     public void ExportActivityLog(OrderableObj obj)
     {
-        // function is called in Object orderer when an item is ordered.
-       // string path = Application.persistentDataPath + "/ActivityLog.txt";
+        totalCost += obj.price;
+        totalTime += obj.instalTime;
+        totalFun += obj.fun;
+        totalSus += obj.sustainability;
 
-        // for testing on cmomputer
+        //string path = Application.persistentDataPath + "/ActivityLog.txt";
+        // for testing on computer  file should show up in capstone folder
         string path = "./ActivityLog.txt";
-        string fileContents =   "User ordered " + obj.name + "\n" +
+        string fileContents =   "---------------------------------------\n" +
+                                "User ordered " + obj.name + "\n" +
                                 "Item cost " + obj.price + " $" +"\n" +
                                 "The time required is " + obj.instalTime + " minutes \n" +
                                 "The Item has a sustainability rank of " + obj.sustainability +"\n" +
                                 "And a fun rank  of " + obj.fun + "\n" +
-                                "This was ordered at " + timeStamp1 + "\n\n";
+                                "This was ordered at " + timeStamp1 + "\n" +
+                                "Total Cost = "+ totalCost + " $"+ "\n" +
+                                "Total Time = "+ totalTime + " Minutes" +"\n" +
+                                "Total Fun = " + totalFun + "\n" +
+                                "Total Sustainability = " + totalSus + "\n---------------------------------------\n\n";
 
-        saveInformation = "User ordered " + obj.name + "\n" +
-                               "Item cost " + obj.price + " $" + "\n" +
-                               "The time required is " + obj.instalTime + " minutes \n" +
-                               "The Item has a sustainability rank of " + obj.sustainability + "\n" +
-                               "And a fun rank  of " + obj.fun + "\n\n";
+        saveInformation =       "User ordered " + obj.name + "\n" +
+                                "Item cost " + obj.price + " $" + "\n" +
+                                "The time required is " + obj.instalTime + " minutes \n" +
+                                "The Item has a sustainability rank of " + obj.sustainability + "\n" +
+                                "And a fun rank  of " + obj.fun + "\n" +
+                                "This was ordered at " + timeStamp1 + "\n\n";
 
         // TO TEST > Do i need to set file contents = to a blank string?
         if (!File.Exists(path))
@@ -187,9 +176,12 @@ public class TestActivityLogger : MonoBehaviour
         }
 
 #if WINDOWS_UWP
-                WriteData();
+    WriteData();
 #endif
     }
+
+    // TO ADD   Remove Export Function(oderableobj obj)  this is called from ObjectOrderer script/ this is to log items returned and or thrown away.
+
     /*
           public void LogPosition(string activity)
             {
