@@ -61,7 +61,8 @@ public class ObjectOrderer : MonoBehaviour
         // Register a callback for the KeywordRecognizer and START recognizing!!!!
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
         keywordRecognizer.Start();
-
+        
+        //sam added
         logger = GetComponent<TestActivityLogger>();
 
     }

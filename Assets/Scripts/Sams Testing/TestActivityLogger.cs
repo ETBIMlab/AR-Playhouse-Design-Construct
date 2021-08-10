@@ -166,13 +166,14 @@ public class TestActivityLogger : MonoBehaviour
                                 "The time required is " + obj.instalTime + " minutes \n" +
                                 "The Item has a sustainability rank of " + obj.sustainability +"\n" +
                                 "And a fun rank  of " + obj.fun + "\n" +
-                                "this was ordered at " + timeStamp1 + "\n\n";
+                                "This was ordered at " + timeStamp1 + "\n\n";
 
         saveInformation = "User ordered " + obj.name + "\n" +
                                "Item cost " + obj.price + " $" + "\n" +
                                "The time required is " + obj.instalTime + " minutes \n" +
                                "The Item has a sustainability rank of " + obj.sustainability + "\n" +
                                "And a fun rank  of " + obj.fun + "\n\n";
+
         // TO TEST > Do i need to set file contents = to a blank string?
         if (!File.Exists(path))
         {
@@ -184,6 +185,7 @@ public class TestActivityLogger : MonoBehaviour
             File.AppendAllText(path, fileContents);
             fileContents = "";
         }
+
 #if WINDOWS_UWP
                 WriteData();
 #endif
