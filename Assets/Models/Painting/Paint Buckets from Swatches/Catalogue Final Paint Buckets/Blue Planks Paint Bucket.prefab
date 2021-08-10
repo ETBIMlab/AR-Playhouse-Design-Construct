@@ -1,12 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!54 &334667799
+--- !u!54 &5658958691240527474
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861591397063907280}
+  m_GameObject: {fileID: 6511129307078992139}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -16,13 +16,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &334667798
+--- !u!136 &5658958691240527477
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861591397063907280}
+  m_GameObject: {fileID: 6511129307078992139}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -30,13 +30,13 @@ CapsuleCollider:
   m_Height: 15.537899
   m_Direction: 1
   m_Center: {x: -33.974808, y: 7.3955154, z: -28.189312}
---- !u!82 &-143989563481055167
+--- !u!82 &6708066217957089251
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861591397063907280}
+  m_GameObject: {fileID: 6511129307078992139}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -126,13 +126,43 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &334667796
+--- !u!114 &795470680507493600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861591397063907280}
+  m_GameObject: {fileID: 6511129307078992139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2e610252ff6844daf1a7f7040f4346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabClip: {fileID: 8300000, guid: 13ad719f14620654f8f7588baaa5f9c4, type: 3}
+  releaseClip: {fileID: 8300000, guid: 465a6a24f76b20746817efe51906d98e, type: 3}
+  dragClip: {fileID: 8300000, guid: 45a90682f74bb0c41b65994c63b74e60, type: 3}
+  clickClip: {fileID: 8300000, guid: 9a10debaf8483ae49aa91211098634f1, type: 3}
+  volume: 1
+--- !u!114 &4677244736102847402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511129307078992139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7533f6916be328a4d9c6143087923366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paintColor: {fileID: 2100000, guid: db294234e89f23b4b8555ad0e7b014af, type: 2}
+--- !u!114 &5658958691240527479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511129307078992139}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03daa81ea5f685f4ebf6e32038d058ca, type: 3}
@@ -162,26 +192,13 @@ MonoBehaviour:
   onHoverExited:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &334667797
+--- !u!114 &8012918766616929432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861591397063907280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1a2f46536a94164195245d476555ff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1b0dc2f49a0c4d4478817c970a47babf, type: 2}
---- !u!114 &5916687439165043271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861591397063907280}
+  m_GameObject: {fileID: 6511129307078992139}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
@@ -191,24 +208,8 @@ MonoBehaviour:
   hasPlastic: 0
   hasMetal: 0
   isPaintBucket: 1
---- !u!114 &6079420146055682501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861591397063907280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e2e610252ff6844daf1a7f7040f4346, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabClip: {fileID: 8300000, guid: 13ad719f14620654f8f7588baaa5f9c4, type: 3}
-  releaseClip: {fileID: 8300000, guid: 465a6a24f76b20746817efe51906d98e, type: 3}
-  dragClip: {fileID: 8300000, guid: 45a90682f74bb0c41b65994c63b74e60, type: 3}
-  clickClip: {fileID: 8300000, guid: 9a10debaf8483ae49aa91211098634f1, type: 3}
-  volume: 1
---- !u!1001 &7706888857939447513
+  paintColorMaterial: {fileID: 2100000, guid: 16a656294c5b8ca45b4180f39c299b65, type: 2}
+--- !u!1001 &2989757439820920834
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -218,17 +219,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 4e345b2e9ed3f1240b1e5d4f5b158865,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8520001
+      value: -1.7232618
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4e345b2e9ed3f1240b1e5d4f5b158865,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.29399997
+      value: -0.018724296
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4e345b2e9ed3f1240b1e5d4f5b158865,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.176667
+      value: 0.9522172
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4e345b2e9ed3f1240b1e5d4f5b158865,
         type: 3}
@@ -289,7 +290,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 1b0dc2f49a0c4d4478817c970a47babf, type: 2}
+      objectReference: {fileID: 2100000, guid: db294234e89f23b4b8555ad0e7b014af, type: 2}
     - target: {fileID: -1504981713932161579, guid: 4e345b2e9ed3f1240b1e5d4f5b158865,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -305,7 +306,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 4e345b2e9ed3f1240b1e5d4f5b158865,
         type: 3}
       propertyPath: m_Name
-      value: Aria PaintBucket Variant
+      value: Blue Planks Paint Bucket
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 4e345b2e9ed3f1240b1e5d4f5b158865,
         type: 3}
@@ -314,9 +315,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e345b2e9ed3f1240b1e5d4f5b158865, type: 3}
---- !u!1 &1861591397063907280 stripped
+--- !u!1 &6511129307078992139 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 4e345b2e9ed3f1240b1e5d4f5b158865,
     type: 3}
-  m_PrefabInstance: {fileID: 7706888857939447513}
+  m_PrefabInstance: {fileID: 2989757439820920834}
   m_PrefabAsset: {fileID: 0}

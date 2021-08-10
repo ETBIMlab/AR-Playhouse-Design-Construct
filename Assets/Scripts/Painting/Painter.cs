@@ -77,7 +77,7 @@ public class Painter : MonoBehaviour
             //mat[3] = material;
             //AssignToBrush.GetComponent<Renderer>().materials[3] = material;
             mat = other.gameObject.GetComponent<Renderer>().materials; //get paint from pb
-            material = mat[3]; //assign correct to thing //not right
+            material = mat[2]; //assign correct to thing 
             other.gameObject.GetComponent<Renderer>().materials = mat; //set up how it was
             brushmat = AssignToBrush.GetComponent<Renderer>().materials; //get mat of brush
             brushmat[3] = material; //make it the color
