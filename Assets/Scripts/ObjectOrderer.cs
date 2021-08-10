@@ -23,6 +23,7 @@ public class ObjectOrderer : MonoBehaviour
         public GameObject obj;
     }
     public GameObject laptopinterface;
+    private  TestActivityLogger logger;
 
     KeywordRecognizer keywordRecognizer = null;
     List<string> keywords = new List<string>();
@@ -60,6 +61,9 @@ public class ObjectOrderer : MonoBehaviour
         // Register a callback for the KeywordRecognizer and START recognizing!!!!
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
         keywordRecognizer.Start();
+
+        logger = GetComponent<TestActivityLogger>();
+
     }
 
     // important
@@ -75,6 +79,9 @@ public class ObjectOrderer : MonoBehaviour
                 Debug.Log(orderableObjs[i].name + " ordered");
                 li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, orderableObjs[i].name, 1, orderableObjs[i].instalTime);
                 AddObjectToScene(orderableObjs[i].obj);
+
+                //Sam Added
+                logger.ExportActivityLog(orderableObjs[i]);
                 return;
             }
             else if (temp == orderableObjs[i].name)
@@ -89,6 +96,8 @@ public class ObjectOrderer : MonoBehaviour
                     for (int j = 0; j < hold; j++)
                     {
                         AddObjectToScene(orderableObjs[i].obj);
+                        //Sam Added
+                        logger.ExportActivityLog(orderableObjs[i]);
                     }
                 }
                 else if (h.Equals("a"))
@@ -97,6 +106,8 @@ public class ObjectOrderer : MonoBehaviour
                     for (int j = 0; j < 12; j++)
                     {
                         AddObjectToScene(orderableObjs[i].obj);
+                        //Sam Added
+                        logger.ExportActivityLog(orderableObjs[i]);
                     }
                 }
                 return;
@@ -125,5 +136,6 @@ public class ObjectOrderer : MonoBehaviour
         var orderPos = GameObject.Find("IndustrialSmallTruck").transform.position;
         Debug.Log("truck is at " + orderPos);
         Instantiate(newObj, new Vector3(orderPos.x - 0.1f, orderPos.y - .6f, orderPos.z - 3.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
+        
     }
 }

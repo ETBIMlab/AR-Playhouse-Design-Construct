@@ -1401,6 +1401,7 @@ GameObject:
   - component: {fileID: -4206282184159820354}
   - component: {fileID: -5234405087204375219}
   - component: {fileID: -6979544660487452971}
+  - component: {fileID: -7716507838247196627}
   m_Layer: 0
   m_Name: Swing Set
   m_TagString: item
@@ -1670,6 +1671,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-7716507838247196627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5621599406116833618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 1
+  hasMetal: 0
+  isPaintBucket: 0
+  paintColorMaterial: {fileID: 0}
 --- !u!1 &5668235678470913471
 GameObject:
   m_ObjectHideFlags: 0
