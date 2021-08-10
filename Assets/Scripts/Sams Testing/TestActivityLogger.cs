@@ -27,6 +27,7 @@ public class TestActivityLogger : MonoBehaviour
 
     // Creates a timestamp.txt file to append to.
     private static string timeStamp = System.DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "");
+    private static string timeStamp1 = System.DateTime.Now.ToString();
     private static string fileName = timeStamp + ".txt";
 
     private static bool firstSave = true;
@@ -156,16 +157,22 @@ public class TestActivityLogger : MonoBehaviour
     public void ExportActivityLog(OrderableObj obj)
     {
         // function is called in Object orderer when an item is ordered.
-        string path = Application.persistentDataPath + "/ActivityLog.txt";
+       // string path = Application.persistentDataPath + "/ActivityLog.txt";
 
         // for testing on cmomputer
-      //  string path = "./ActivityLog.txt";
-        string fileContents = "User ordered " + obj.name + "\n" +
+        string path = "./ActivityLog.txt";
+        string fileContents =   "User ordered " + obj.name + "\n" +
                                 "Item cost " + obj.price + " $" +"\n" +
                                 "The time required is " + obj.instalTime + " minutes \n" +
-                                "The Item has a sustainibility rank of " + obj.sustainability +"\n" +
-                                "And a fun rank  of " + obj.fun + "\n\n";
+                                "The Item has a sustainability rank of " + obj.sustainability +"\n" +
+                                "And a fun rank  of " + obj.fun + "\n" +
+                                "this was ordered at " + timeStamp1 + "\n\n";
 
+        saveInformation = "User ordered " + obj.name + "\n" +
+                               "Item cost " + obj.price + " $" + "\n" +
+                               "The time required is " + obj.instalTime + " minutes \n" +
+                               "The Item has a sustainability rank of " + obj.sustainability + "\n" +
+                               "And a fun rank  of " + obj.fun + "\n\n";
         // TO TEST > Do i need to set file contents = to a blank string?
         if (!File.Exists(path))
         {
@@ -177,30 +184,33 @@ public class TestActivityLogger : MonoBehaviour
             File.AppendAllText(path, fileContents);
             fileContents = "";
         }
+#if WINDOWS_UWP
+                WriteData();
+#endif
     }
-/*
-      public void LogPosition(string activity)
-        {
-            listOfPositions.Add(activity);
-        }
-
-    
-        public void LogItem(string activity)
-        {
-            listOfActions.Add(activity);
-            for (int i = 0; i < 5; i++)
+    /*
+          public void LogPosition(string activity)
             {
-                TextMeshPro text = activityItems[i].GetComponent<TextMeshPro>();
-                if (listOfActions.Count - i > 0)
+                listOfPositions.Add(activity);
+            }
+
+
+            public void LogItem(string activity)
+            {
+                listOfActions.Add(activity);
+                for (int i = 0; i < 5; i++)
                 {
-                    text.text = listOfActions[listOfActions.Count - (i + 1)].ToString();
-                }
-                else
-                {
-                    text.text = "";
+                    TextMeshPro text = activityItems[i].GetComponent<TextMeshPro>();
+                    if (listOfActions.Count - i > 0)
+                    {
+                        text.text = listOfActions[listOfActions.Count - (i + 1)].ToString();
+                    }
+                    else
+                    {
+                        text.text = "";
+                    }
                 }
             }
-        }
 
-*/
-    }
+    */
+}
