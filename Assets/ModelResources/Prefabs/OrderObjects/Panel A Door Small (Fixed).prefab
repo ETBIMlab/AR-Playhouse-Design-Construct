@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 9112788942266375895}
   - component: {fileID: -747028974799014065}
   - component: {fileID: -5372678599482128289}
+  - component: {fileID: 6028548268729302207}
   m_Layer: 0
   m_Name: Panel A Door Small (Fixed)
   m_TagString: item
@@ -365,6 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 40
   itemInstallTime: 10
+  itemName: 
   itemFun: 0
   itemType: 1
   hasDifferentOriginRotation: 0
@@ -425,16 +427,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
   hasWood: 1
   hasPlastic: 0
   hasMetal: 0
   isPaintBucket: 0
-  objectToColor: {fileID: 0}
-  orderableInColor: 0
-  paintWithPaint: 0
-  paintSomeNotOthers: 0
-  paintColor: {r: 0, g: 0, b: 0, a: 0}
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
+  paintColorMaterial: {fileID: 0}
+--- !u!114 &6028548268729302207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684801938563342536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d1435de29caf74baa5758379b38b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &806821370446678955
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 8773869432024016251}
   - component: {fileID: -1037209448092249528}
   - component: {fileID: 8407981436210428399}
+  - component: {fileID: -5392160582151918267}
   m_Layer: 0
   m_Name: Panel B (Fixed)
   m_TagString: item
@@ -319,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 25
   itemInstallTime: 10
+  itemName: 
   itemFun: 0
   itemType: 0
   hasDifferentOriginRotation: 0
@@ -383,11 +385,28 @@ MonoBehaviour:
   hasPlastic: 0
   hasMetal: 0
   isPaintBucket: 0
-  objectToColor: {fileID: 0}
-  orderableInColor: 0
-  paintWithPaint: 0
-  paintSomeNotOthers: 0
-  paintColor: {r: 0, g: 0, b: 0, a: 0}
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
+  paintColorMaterial: {fileID: 0}
+--- !u!114 &-5392160582151918267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5981676190144085401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d1435de29caf74baa5758379b38b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7601476342973562921
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,8 +19,8 @@ public class IsWoodOrPlastic : MonoBehaviour
     public bool hasMetal = false;
     public bool isPaintBucket = false;
     //public GameObject objectToColor;
-    public bool orderableInColor = false;
-    public bool paintWithPaint = false;
+    //public bool orderableInColor = false;
+   // public bool paintWithPaint = false;
     //many of the objects are seperable  into wood, metal, and plastic. Not so with the following objects so bools: 
     public bool isTubeBridge = false;
     public bool isChimesSmall = false;
@@ -48,29 +48,26 @@ public class IsWoodOrPlastic : MonoBehaviour
         // objectToColor.GetComponent<Renderer>();
         if (hasWood == true && hasPlastic == false && hasMetal == false && isPaintBucket == false)
         {
-            paintWithPaint = true;
+            gameObject.AddComponent<Paintable>();
         }
-        else if (hasWood == false && hasPlastic == false && hasMetal == true && isPaintBucket == false)
-        {
-            paintWithPaint = false;
-            orderableInColor = false;
-        }
-        else if (isTubeBridge == true || isChimesLarge == true || isChimesSmall == true || isSingleSlide == true
-            || isDoubleSlide == true || isTubeSlide == true || isCoilClimber == true || isFirepole == true || isStairs == true)
-        {
-            orderableInColor = true; //if you add onto the order in color script, hard code there and then add to the bools in this if / else
-        }
-        
-       /* else if (hasWood == false && hasPlastic == false && hasMetal == false && isPaintBucket == true)
-        {
-            //we need to grab the color from our paint bucket
-            paintColorMaterial = gameObject.GetComponent<MeshRenderer>().materials[2];
+        /* else if (hasWood == false && hasPlastic == false && hasMetal == true && isPaintBucket == false)
+       {
+           //paintWithPaint = false;
+          // orderableInColor = false;
+       }
+       else if (isTubeBridge == true || isChimesLarge == true || isChimesSmall == true || isSingleSlide == true
+           || isDoubleSlide == true || isTubeSlide == true || isCoilClimber == true || isFirepole == true || isStairs == true)
+       {
+           orderableInColor = true; //if you add onto the order in color script, hard code there and then add to the bools in this if / else
+       }
 
-        }*/
+     else if (hasWood == false && hasPlastic == false && hasMetal == false && isPaintBucket == true)
+       {
+           //we need to grab the color from our paint bucket
+           paintColorMaterial = gameObject.GetComponent<MeshRenderer>().materials[2];
+
+       }*/
 
     }
-    public void ChangeColor(Material mat)
-    {
-        gameObject.GetComponent<MeshRenderer>().material = mat;
-    }
+
 }

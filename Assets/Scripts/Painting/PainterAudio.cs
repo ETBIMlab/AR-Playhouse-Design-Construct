@@ -18,18 +18,18 @@ public class PainterAudio : MonoBehaviour
     //play audio when coliding with paintbucket or a paintable object
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<IsWoodOrPlastic>().paintWithPaint == true && !playingAudio)
+        if (other.GetComponent<Paintable>() != null && !playingAudio)
         {
             playingAudio = true;
             theAudio.PlayOneShot(paintObject, volume);
 
         }
-        else if(other.GetComponent<IsWoodOrPlastic>().isPaintBucket == true && !playingAudio)
+        else if (other.GetComponent<isPaintBucket>() != null && !playingAudio)
         {
             playingAudio = true;
             theAudio.PlayOneShot(paintBucket, volume);
         }
-        
+
         playingAudio = false;
     }
 

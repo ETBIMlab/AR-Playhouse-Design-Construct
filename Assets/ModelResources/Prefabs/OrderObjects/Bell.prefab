@@ -429,6 +429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 45
   itemInstallTime: 15
+  itemName: 
   itemFun: 1
   itemType: 5
   hasDifferentOriginRotation: 0
@@ -686,16 +687,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
   hasWood: 1
   hasPlastic: 0
   hasMetal: 1
   isPaintBucket: 0
-  objectToColor: {fileID: 0}
-  orderableInColor: 0
-  paintWithPaint: 0
-  paintSomeNotOthers: 0
-  paintColor: {r: 0, g: 0, b: 0, a: 0}
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
+  paintColorMaterial: {fileID: 0}
 --- !u!1 &3480971570936549333
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,6 +713,7 @@ GameObject:
   - component: {fileID: 4550368734556181393}
   - component: {fileID: 7532618327801473265}
   - component: {fileID: 5202365639532672165}
+  - component: {fileID: 2286307468581289986}
   m_Layer: 0
   m_Name: Mesh06
   m_TagString: Untagged
@@ -791,16 +797,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
   hasWood: 1
   hasPlastic: 0
   hasMetal: 0
   isPaintBucket: 0
-  objectToColor: {fileID: 0}
-  orderableInColor: 0
-  paintWithPaint: 0
-  paintSomeNotOthers: 0
-  paintColor: {r: 0, g: 0, b: 0, a: 0}
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
+  paintColorMaterial: {fileID: 0}
+--- !u!114 &2286307468581289986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3480971570936549333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d1435de29caf74baa5758379b38b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3592735636651718644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,16 +1235,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
   hasWood: 0
   hasPlastic: 0
   hasMetal: 1
   isPaintBucket: 0
-  objectToColor: {fileID: 0}
-  orderableInColor: 0
-  paintWithPaint: 0
-  paintSomeNotOthers: 0
-  paintColor: {r: 0, g: 0, b: 0, a: 0}
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
+  paintColorMaterial: {fileID: 0}
 --- !u!1 &6743059656209864174
 GameObject:
   m_ObjectHideFlags: 0

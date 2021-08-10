@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: -7670930960400987009}
   - component: {fileID: 3885762511765555617}
   - component: {fileID: 7272248050055285687}
+  - component: {fileID: -8894943812670663655}
   m_Layer: 0
   m_Name: Panel A Circle Window (Fixed)
   m_TagString: item
@@ -319,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 40
   itemInstallTime: 10
+  itemName: 
   itemFun: 0
   itemType: 1
   hasDifferentOriginRotation: 0
@@ -383,6 +385,28 @@ MonoBehaviour:
   hasPlastic: 0
   hasMetal: 0
   isPaintBucket: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
+  paintColorMaterial: {fileID: 0}
+--- !u!114 &-8894943812670663655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698737032896792276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d1435de29caf74baa5758379b38b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3679041066922047394
 GameObject:
   m_ObjectHideFlags: 0

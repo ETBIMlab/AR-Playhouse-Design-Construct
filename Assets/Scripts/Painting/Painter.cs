@@ -1,11 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
-using System.Linq;
-#if UNITY_EDITOR
-using UnityEditor.SceneManagement;
-#endif
 
 public class Painter : MonoBehaviour
 {
@@ -18,23 +13,26 @@ public class Painter : MonoBehaviour
     public Renderer ren;
     public Material[] mat;
 
-  
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
 
     public void OnGrab()
     {
-        Debug.Log("Tool has been grabbed!");
         toolGrabbed = true;
     }
+
+
     public void PaintObject(Material paint)
     {
         Debug.Log("Painter trying to paint");
-        if (gameObject != null && gameObject.GetComponent<IsWoodOrPlastic>() != null && toolGrabbed == true) //need to add check if it can be painted here
+        if (objectToBePainted != null && objectToBePainted.GetComponent<Paintable>() != null && toolGrabbed == true)
         {
-            Debug.Log("Painter successful");
-
-            gameObject.GetComponent<IsWoodOrPlastic>().ChangeColor(material);
+            objectToBePainted.GetComponent<Paintable>().ChangeColor(material);
         }
-        else if (gameObject == null)
+        else if (objectToBePainted == null)
         {
             Debug.Log("Object to be painted is null");
         }
@@ -43,36 +41,30 @@ public class Painter : MonoBehaviour
             Debug.Log("Paintable is null");
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collided!");
-
-        if (other.GetComponent<IsWoodOrPlastic>() != null && colorPicked == true && toolGrabbed == true)
+        if (other.GetComponent<Paintable>() != null && colorPicked == true && toolGrabbed == true)
         {
-            Debug.Log("I collided with a non paint bucket!");
-
             other.GetComponent<MeshRenderer>().material = material;
-            PaintObject(material);
         }
 
-        else if (other.GetComponent<IsWoodOrPlastic>() != null && toolGrabbed == true)
+        else if (other.GetComponent<isPaintBucket>() != null && toolGrabbed == true)
         {
-            Debug.Log("I collided with a paint bucket!");
-
             colorPicked = true;
-            material = other.GetComponent<IsWoodOrPlastic>().paintColorMaterial;
+            material = other.GetComponent<isPaintBucket>().material;
             ren = AssignToBrush.GetComponent<Renderer>();
             mat = ren.materials;
             mat[3] = material;
             AssignToBrush.GetComponent<MeshRenderer>().materials = mat;
         }
     }
-   
+
     public void OnRelease()
     {
-        Debug.Log("Paintbrush dropped");
         toolGrabbed = false;
     }
 
-  
+
+
 }

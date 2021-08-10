@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: -7260685819533309920}
   m_Layer: 0
   m_Name: Vertical Rock Climber_fix
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,6 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 845
   itemInstallTime: 20
+  itemName: 
   itemFun: 1
   itemType: 5
   hasDifferentOriginRotation: 0
@@ -371,15 +372,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
   hasWood: 0
   hasPlastic: 0
   hasMetal: 1
   isPaintBucket: 0
-  objectToColor: {fileID: 0}
   orderableInColor: 0
   paintWithPaint: 0
-  paintSomeNotOthers: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
+  paintColorMaterial: {fileID: 0}
 --- !u!114 &-7260685819533309920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,15 +400,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
   hasWood: 0
   hasPlastic: 0
   hasMetal: 0
   isPaintBucket: 0
-  objectToColor: {fileID: 0}
   orderableInColor: 0
   paintWithPaint: 0
-  paintSomeNotOthers: 0
+  isTubeBridge: 0
+  isChimesSmall: 0
+  isChimesLarge: 0
+  isSingleSlide: 0
+  isDoubleSlide: 0
+  isTubeSlide: 0
+  isFirepole: 0
+  isCoilClimber: 0
+  isStairs: 0
+  paintColorMaterial: {fileID: 0}
 --- !u!1 &3615271779976461132
 GameObject:
   m_ObjectHideFlags: 0
