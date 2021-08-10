@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5300004800154008313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179871167019485171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7533f6916be328a4d9c6143087923366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paintColor: {fileID: 2100000, guid: 9012f13fac29ba343bee3e7594339ec6, type: 2}
 --- !u!1001 &4945845234781421894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76,6 +89,34 @@ PrefabInstance:
         type: 3}
       propertyPath: paintColorMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 9012f13fac29ba343bee3e7594339ec6, type: 2}
-    m_RemovedComponents: []
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731964405529704726, guid: caba7aa95bf5b8d4ba7eaeb06e3797c7,
+        type: 3}
+      propertyPath: isPaintBucket
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143780692848918139, guid: caba7aa95bf5b8d4ba7eaeb06e3797c7,
+        type: 3}
+      propertyPath: Spatialize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143780692848918139, guid: caba7aa95bf5b8d4ba7eaeb06e3797c7,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143780692848918139, guid: caba7aa95bf5b8d4ba7eaeb06e3797c7,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6848840b06cce9b4bb4c66584d9f7982, type: 3}
+    m_RemovedComponents:
+    - {fileID: 7513539622692171405, guid: caba7aa95bf5b8d4ba7eaeb06e3797c7, type: 3}
+    - {fileID: 7907543922044802090, guid: caba7aa95bf5b8d4ba7eaeb06e3797c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: caba7aa95bf5b8d4ba7eaeb06e3797c7, type: 3}
+--- !u!1 &5179871167019485171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 234668116855522997, guid: caba7aa95bf5b8d4ba7eaeb06e3797c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 4945845234781421894}
+  m_PrefabAsset: {fileID: 0}

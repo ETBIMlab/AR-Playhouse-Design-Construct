@@ -126,6 +126,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8241668170163740469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490498744196572266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasWood: 1
+  hasPlastic: 0
+  hasMetal: 0
+  isPaintBucket: 0
+  paintColorMaterial: {fileID: 0}
 --- !u!114 &-1828695233589971932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToBePainted: {fileID: 0}
-  material: {fileID: 2100000, guid: b62873551dfeef943be6324c304cd0ab, type: 2}
+  material: {fileID: 0}
   AssignToBrush: {fileID: 1490498744196572266}
   colorPicked: 0
   ren: {fileID: 0}

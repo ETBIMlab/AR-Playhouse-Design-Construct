@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 3980709550280787470}
   - component: {fileID: 2131291714679106326}
   - component: {fileID: -6952803303871751}
+  - component: {fileID: 420840747173488693}
   m_Layer: 0
   m_Name: Panel A Rectangle Window (Fixed)
   m_TagString: item
@@ -319,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 40
   itemInstallTime: 10
+  itemName: 
   itemFun: 0
   itemType: 1
   hasDifferentOriginRotation: 0
@@ -383,6 +385,19 @@ MonoBehaviour:
   hasPlastic: 0
   hasMetal: 0
   isPaintBucket: 0
+  paintColorMaterial: {fileID: 0}
+--- !u!114 &420840747173488693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4269519253450293263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d1435de29caf74baa5758379b38b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7567834409388563928
 GameObject:
   m_ObjectHideFlags: 0
