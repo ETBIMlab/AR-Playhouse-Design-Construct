@@ -142,19 +142,7 @@ MonoBehaviour:
   hasPlastic: 0
   hasMetal: 0
   isPaintBucket: 0
-  orderableInColor: 0
-  paintWithPaint: 0
-  isTubeBridge: 0
-  isChimesSmall: 0
-  isChimesLarge: 0
-  isSingleSlide: 0
-  isDoubleSlide: 0
-  isTubeSlide: 0
-  isFirepole: 0
-  isCoilClimber: 0
-  isStairs: 0
   paintColorMaterial: {fileID: 0}
-  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &-1828695233589971932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,14 +170,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0abaf2287719194c81c6ce295f4dbc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToBePainted: {fileID: 0}
+  material: {fileID: 0}
   AssignToBrush: {fileID: 1490498744196572266}
   colorPicked: 0
   ren: {fileID: 0}
-  oren: {fileID: 0}
-  pren: {fileID: 0}
   mat: []
-  omat: []
-  pmat: []
 --- !u!114 &1312796535
 MonoBehaviour:
   m_ObjectHideFlags: 0

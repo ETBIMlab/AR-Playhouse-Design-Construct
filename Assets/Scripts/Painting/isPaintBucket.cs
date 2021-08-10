@@ -5,7 +5,7 @@ using UnityEngine;
 public class isPaintBucket : MonoBehaviour
 {
 
-    public Material material;
+    public Material paintColor;
     // Start is called before the first frame update
     void Start()
     {

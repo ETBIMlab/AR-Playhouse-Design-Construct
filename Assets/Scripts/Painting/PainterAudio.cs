@@ -13,21 +13,21 @@ public class PainterAudio : MonoBehaviour
     void Start()
     {
         theAudio = GetComponent<AudioSource>();
-        Debug.Log("Painter Audio starting");
+        Debug.Log("Painter Audio Script starting");
 
     }
 
     //play audio when coliding with paintbucket or a paintable object
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Paintable>() != null && !playingAudio)
+        if (other.gameObject.GetComponent<Paintable>() != null && !playingAudio)
         {
             playingAudio = true;
             theAudio.PlayOneShot(paintObject, volume);
             Debug.Log("Audio for non paint bucket...");
 
         }
-        else if (other.GetComponent<isPaintBucket>() != null && !playingAudio)
+        else if (other.gameObject.GetComponent<isPaintBucket>() != null && !playingAudio)
         {
             playingAudio = true;
             theAudio.PlayOneShot(paintBucket, volume);
