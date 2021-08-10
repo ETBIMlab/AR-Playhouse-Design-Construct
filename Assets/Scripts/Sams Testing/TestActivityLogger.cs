@@ -110,11 +110,11 @@ public class TestActivityLogger : MonoBehaviour
             }
         }
 
-    // *TO ADD* object parameter from ObjectOrderer gets passed into exportActivityLog() 
+    // *TO ADD* object  from ObjectOrderer gets passed into exportActivityLog(GameObject newObj) 
     // fileContents will be an object array that we will add to the txt file
     // Append each object ordered.
 
-     void ExportActivityLog()
+    void ExportActivityLog()
         {
 
            // Debug.Log("Creating Activity Log");
