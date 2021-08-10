@@ -140,8 +140,9 @@ public class TestActivityLogger : MonoBehaviour
         totalTime += obj.instalTime;
         totalFun += obj.fun;
         totalSus += obj.sustainability;
-
+        // for testing in hololens
         //string path = Application.persistentDataPath + "/ActivityLog.txt";
+
         // for testing on computer  file should show up in capstone folder
         string path = "./ActivityLog.txt";
         string fileContents =   "---------------------------------------\n" +
@@ -181,30 +182,5 @@ public class TestActivityLogger : MonoBehaviour
     }
 
     // TO ADD   Remove Export Function(oderableobj obj)  this is called from ObjectOrderer script/ this is to log items returned and or thrown away.
-
-    /*
-          public void LogPosition(string activity)
-            {
-                listOfPositions.Add(activity);
-            }
-
-
-            public void LogItem(string activity)
-            {
-                listOfActions.Add(activity);
-                for (int i = 0; i < 5; i++)
-                {
-                    TextMeshPro text = activityItems[i].GetComponent<TextMeshPro>();
-                    if (listOfActions.Count - i > 0)
-                    {
-                        text.text = listOfActions[listOfActions.Count - (i + 1)].ToString();
-                    }
-                    else
-                    {
-                        text.text = "";
-                    }
-                }
-            }
-
-    */
+    
 }
