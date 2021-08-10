@@ -6,6 +6,7 @@ using UnityEngine.Windows.Speech;
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using static ObjectOrderer;
 
 #if WINDOWS_UWP
 using Windows.Storage;
@@ -37,7 +38,8 @@ public class TestActivityLogger : MonoBehaviour
 
     public AudioRoot audio;
         private AudioSource audioSource;
-        public AudioClip spaceSet;
+    public AudioClip spaceSet;
+        
         //public GameObject activityItem1;
         //public GameObject activityItem2;
         //public GameObject activityItem3;
@@ -55,8 +57,7 @@ public class TestActivityLogger : MonoBehaviour
         void Start()
         {
             audioSource = GetComponent<AudioSource>();
-
-
+            
 
             // global command
             keywords.Add("Export Activity Log", ExportActivityLog);
@@ -115,11 +116,11 @@ public class TestActivityLogger : MonoBehaviour
     // Append each object ordered.
 
     void ExportActivityLog()
-        {
+    {
 
            // Debug.Log("Creating Activity Log");
            // Debug.Log(Application.persistentDataPath);
-            string fileContents = "Testing export activity log";
+            string fileContents = "Export Activity Log \n";
             audioSource.PlayOneShot(spaceSet, 1F);
             string path =  Application.persistentDataPath + "/ActivityLog.txt";
        
@@ -151,6 +152,31 @@ public class TestActivityLogger : MonoBehaviour
         }
 
 
+    }
+    public void ExportActivityLog(OrderableObj obj)
+    {
+        // function is called in Object orderer when an item is ordered.
+        string path = Application.persistentDataPath + "/ActivityLog.txt";
+
+        // for testing on cmomputer
+      //  string path = "./ActivityLog.txt";
+        string fileContents = "User ordered " + obj.name + "\n" +
+                                "Item cost " + obj.price + " $" +"\n" +
+                                "The time required is " + obj.instalTime + " minutes \n" +
+                                "The Item has a sustainibility rank of " + obj.sustainability +"\n" +
+                                "And a fun rank  of " + obj.fun + "\n\n";
+
+        // TO TEST > Do i need to set file contents = to a blank string?
+        if (!File.Exists(path))
+        {
+            File.WriteAllText(path, fileContents);
+            fileContents = "";
+        }
+        else
+        {
+            File.AppendAllText(path, fileContents);
+            fileContents = "";
+        }
     }
 /*
       public void LogPosition(string activity)
