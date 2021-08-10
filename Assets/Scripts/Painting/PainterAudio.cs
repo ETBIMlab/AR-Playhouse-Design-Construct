@@ -27,7 +27,7 @@ public class PainterAudio : MonoBehaviour
             Debug.Log("Audio for non paint bucket...");
 
         }
-        else if (other.gameObject.GetComponent<isPaintBucket>() != null && !playingAudio)
+        else if (other.GetComponent<isPaintBucket>() != null && !playingAudio)
         {
             playingAudio = true;
             theAudio.PlayOneShot(paintBucket, volume);

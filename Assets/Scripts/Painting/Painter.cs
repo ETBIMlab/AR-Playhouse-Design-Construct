@@ -5,12 +5,14 @@ using UnityEngine;
 public class Painter : MonoBehaviour
 {
     public GameObject objectToBePainted;
-    public Material material;
+    public Material material; //new material
+    public Material oldmaterial; 
     public GameObject AssignToBrush;
     public bool colorPicked = false;
     private bool toolGrabbed = false;
     public Renderer ren;
     public Material[] mat;
+    public Material[] brushmat;
     public isPaintBucket pbScript;
     public IsWoodOrPlastic iwop;
     public Paintable pScript;
@@ -56,22 +58,30 @@ public class Painter : MonoBehaviour
         if (other.gameObject.GetComponent<Paintable>() != null && colorPicked == true && toolGrabbed == true) //this is the same as PainterAudio where it has consistently been getting it
         {
             Debug.Log("I collided with non object I want to paint");
+            other.GetComponent<Renderer>().material = material;
 
-            other.GetComponent<MeshRenderer>().material = material; //not working either
+           // other.GetComponent<MeshRenderer>().material = material; //not working either
             //PaintObject(material); this essentiall calls a method which does the same as above line 
 
         }
 
-        else if (other.gameObject.GetComponent<Paintable>() != null && toolGrabbed == true)
+        else if (other.gameObject.GetComponent<isPaintBucket>() != null && toolGrabbed == true)
         {
             Debug.Log("I collided with paint bucket");
 
             colorPicked = true;
-            material = pbScript.paintColor; //nope
-            ren = AssignToBrush.GetComponent<Renderer>();
-            mat = ren.materials;
-            mat[3] = material;
-            AssignToBrush.GetComponent<Renderer>().materials[3] = material;
+
+            //material = pbScript.paintColor; 
+            //ren = AssignToBrush.GetComponent<Renderer>();
+            //mat = ren.materials;
+            //mat[3] = material;
+            //AssignToBrush.GetComponent<Renderer>().materials[3] = material;
+            mat = other.gameObject.GetComponent<Renderer>().materials; //get paint from pb
+            material = mat[3]; //assign correct to thing //not right
+            other.gameObject.GetComponent<Renderer>().materials = mat; //set up how it was
+            brushmat = AssignToBrush.GetComponent<Renderer>().materials; //get mat of brush
+            brushmat[3] = material; //make it the color
+            AssignToBrush.GetComponent<Renderer>().materials = brushmat; //put it back
             Debug.Log("I grabbed new color and put it on brush");
 
         }
