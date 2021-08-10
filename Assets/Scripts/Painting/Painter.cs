@@ -21,6 +21,8 @@ public class Painter : MonoBehaviour
 
     public void OnGrab()
     {
+        Debug.Log("Paint brushed grabbed!");
+
         toolGrabbed = true;
     }
 
@@ -31,6 +33,8 @@ public class Painter : MonoBehaviour
         if (objectToBePainted != null && objectToBePainted.GetComponent<Paintable>() != null && toolGrabbed == true)
         {
             objectToBePainted.GetComponent<Paintable>().ChangeColor(material);
+            Debug.Log("I painted!");
+
         }
         else if (objectToBePainted == null)
         {
@@ -44,27 +48,41 @@ public class Painter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Collided!");
+
         if (other.GetComponent<Paintable>() != null && colorPicked == true && toolGrabbed == true)
         {
+            Debug.Log("I collided with non object I want to paint");
+
             other.GetComponent<MeshRenderer>().material = material;
+
         }
 
         else if (other.GetComponent<isPaintBucket>() != null && toolGrabbed == true)
         {
+            Debug.Log("I collided with paint bucket");
+
             colorPicked = true;
             material = other.GetComponent<isPaintBucket>().material;
             ren = AssignToBrush.GetComponent<Renderer>();
             mat = ren.materials;
             mat[3] = material;
             AssignToBrush.GetComponent<MeshRenderer>().materials = mat;
+            Debug.Log("I grabbed new color and put it on brush");
+
         }
     }
 
     public void OnRelease()
     {
+        Debug.Log("Paint brush dropped");
+
         toolGrabbed = false;
     }
+    void Update()
+    {
 
+    }
 
 
 }

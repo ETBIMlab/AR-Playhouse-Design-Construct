@@ -13,7 +13,7 @@ public class IsWoodOrPlastic : MonoBehaviour
     /// in script and then toggle them as true or false in the editor so I tried to find as many prefabs as I could and label them.
     /// 
     /// </summary>
-   // public Renderer ren;
+    /// / // public Renderer ren;
     public bool hasWood = false;
     public bool hasPlastic = false;
     public bool hasMetal = false;
@@ -22,31 +22,31 @@ public class IsWoodOrPlastic : MonoBehaviour
     //public bool orderableInColor = false;
    // public bool paintWithPaint = false;
     //many of the objects are seperable  into wood, metal, and plastic. Not so with the following objects so bools: 
-    public bool isTubeBridge = false;
-    public bool isChimesSmall = false;
-    public bool isChimesLarge = false;
-    public bool isSingleSlide = false;
-    public bool isDoubleSlide = false;
-    public bool isTubeSlide = false;
-    public bool isFirepole = false;
-    public bool isCoilClimber = false;
-    public bool isStairs = false;
+  //  public bool isTubeBridge = false;
+    //public bool isChimesSmall = false;
+    //public bool isChimesLarge = false;
+    //public bool isSingleSlide = false;
+    //public bool isDoubleSlide = false;
+    //public bool isTubeSlide = false;
+    //public bool isFirepole = false;
+    //public bool isCoilClimber = false;
+    //public bool isStairs = false;
     public Material paintColorMaterial;
     //Color Wheel bc ROYGBIV isn't completely built into unity
-    Color orderRed = Color.red;
-    Color orderOrange = new Vector4(255, 165, 0, 1);
-    Color orderYellow = Color.yellow;
-    Color orderGreen = Color.green;
-    Color orderBlue = Color.blue;
-    Color orderIngdigo = new Vector4(75, 0, 130, 1);
-    Color orderViolet = new Vector4(238, 130, 238, 1);
-    Color orderGrey = Color.grey;
-    Color orderWhite = Color.white;
+  private Color orderRed = Color.red;
+    private Color orderOrange = new Vector4(255, 165, 0, 1);
+    private Color orderYellow = Color.yellow;
+    private Color orderGreen = Color.green;
+    private Color orderBlue = Color.blue;
+    private Color orderIngdigo = new Vector4(75, 0, 130, 1);
+    private Color orderViolet = new Vector4(238, 130, 238, 1);
+    private Color orderGrey = Color.grey;
+    private Color orderWhite = Color.white;
     // Start is called before the first frame update
     void Start()
     {
         // objectToColor.GetComponent<Renderer>();
-        if (hasWood == true && hasPlastic == false && hasMetal == false && isPaintBucket == false)
+        if (hasWood == true)
         {
             gameObject.AddComponent<Paintable>();
         }
@@ -66,8 +66,8 @@ public class IsWoodOrPlastic : MonoBehaviour
            //we need to grab the color from our paint bucket
            paintColorMaterial = gameObject.GetComponent<MeshRenderer>().materials[2];
 
-       }*/
-
+       }
+        */
     }
 
 }

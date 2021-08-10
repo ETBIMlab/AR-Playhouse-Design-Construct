@@ -9,6 +9,8 @@ public class Paintable : MonoBehaviour
     public void ChangeColor(Material mat)
     {
         gameObject.GetComponent<MeshRenderer>().material = mat;
+        Debug.Log("Change Color did a thing");
+
     }
-   
+
 }

@@ -13,6 +13,8 @@ public class PainterAudio : MonoBehaviour
     void Start()
     {
         theAudio = GetComponent<AudioSource>();
+        Debug.Log("Painter Audio starting");
+
     }
 
     //play audio when coliding with paintbucket or a paintable object
@@ -22,15 +24,23 @@ public class PainterAudio : MonoBehaviour
         {
             playingAudio = true;
             theAudio.PlayOneShot(paintObject, volume);
+            Debug.Log("Audio for non paint bucket...");
 
         }
         else if (other.GetComponent<isPaintBucket>() != null && !playingAudio)
         {
             playingAudio = true;
             theAudio.PlayOneShot(paintBucket, volume);
+            Debug.Log("Audio for paint bucket");
+
         }
 
         playingAudio = false;
-    }
+        Debug.Log("Done playing audio...");
 
+    }
+    void Update()
+    {
+
+    }
 }
