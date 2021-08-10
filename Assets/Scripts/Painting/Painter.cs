@@ -64,10 +64,10 @@ public class Painter : MonoBehaviour
 
             colorPicked = true;
             material = other.GetComponent<isPaintBucket>().material;
-            ren = AssignToBrush.GetComponent<Renderer>();
+            ren = AssignToBrush.GetComponent<MeshRenderer>();
             mat = ren.materials;
             mat[3] = material;
-            AssignToBrush.GetComponent<MeshRenderer>().materials = mat;
+            AssignToBrush.GetComponent<MeshRenderer>().materials[2] = material;
             Debug.Log("I grabbed new color and put it on brush");
 
         }

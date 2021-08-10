@@ -11,7 +11,6 @@ public class IsWoodOrPlastic : MonoBehaviour
     /// and the paintBuckets will allow us to possibly re-dip the paintbrush. A lot of these have both wood and plastic or metal
     /// so they will need to be painted differently than just wood or just plastic. In Unity, you can make public variables
     /// in script and then toggle them as true or false in the editor so I tried to find as many prefabs as I could and label them.
-    /// 
     /// </summary>
     /// / // public Renderer ren;
     public bool hasWood = false;
@@ -33,7 +32,7 @@ public class IsWoodOrPlastic : MonoBehaviour
     //public bool isStairs = false;
     public Material paintColorMaterial;
     //Color Wheel bc ROYGBIV isn't completely built into unity
-  private Color orderRed = Color.red;
+    /*private Color orderRed = Color.red;
     private Color orderOrange = new Vector4(255, 165, 0, 1);
     private Color orderYellow = Color.yellow;
     private Color orderGreen = Color.green;
@@ -41,14 +40,25 @@ public class IsWoodOrPlastic : MonoBehaviour
     private Color orderIngdigo = new Vector4(75, 0, 130, 1);
     private Color orderViolet = new Vector4(238, 130, 238, 1);
     private Color orderGrey = Color.grey;
-    private Color orderWhite = Color.white;
+    private Color orderWhite = Color.white;*/
     // Start is called before the first frame update
     void Start()
     {
         // objectToColor.GetComponent<Renderer>();
-        if (hasWood == true)
+       /* if (hasWood == true)
         {
-            gameObject.AddComponent<Paintable>();
+            if (gameObject.GetComponent<Paintable> != null)
+            {
+                gameObject.AddComponent<Paintable>();
+            }
+        }
+        else if(isPaintBucket == true)
+        {
+            if (gameObject.GetComponent<isPaintBucket> != null)
+            {
+                gameObject.AddComponent<isPaintBucket>();
+
+            }
         }
         /* else if (hasWood == false && hasPlastic == false && hasMetal == true && isPaintBucket == false)
        {
