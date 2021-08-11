@@ -164,16 +164,16 @@ public class TestActivityLogger : MonoBehaviour
                                 "And a fun rank  of " + obj.fun + "\n" +
                                 "This was ordered at " + timeStamp1 + "\n\n";
 
-        // TO TEST > Do i need to set file contents = to a blank string?
+        // TO TEST > Do I need to set file contents = to a blank string?
         if (!File.Exists(path))
         {
             File.WriteAllText(path, fileContents);
-            fileContents = "";
+            //fileContents = "";
         }
         else
         {
             File.AppendAllText(path, fileContents);
-            fileContents = "";
+           // fileContents = "";
         }
 
 #if WINDOWS_UWP
