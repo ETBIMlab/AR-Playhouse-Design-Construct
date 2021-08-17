@@ -2762,14 +2762,14 @@ MonoBehaviour:
     price: 649
     deliveryTime: 35
     instalTime: 90
-    sustainability: 0
+    sustainability: 5
     fun: 0
     obj: {fileID: 7310366903392720484, guid: 7a97952f7c2197f46ae585a854dafc76, type: 3}
   - name: Slide B
     price: 850
     deliveryTime: 42
     instalTime: 90
-    sustainability: 0
+    sustainability: 5
     fun: 0
     obj: {fileID: 4459210140172763119, guid: beaf2b6d94b321e40bd2756151888c3f, type: 3}
   - name: Slide C
@@ -2783,7 +2783,7 @@ MonoBehaviour:
     price: 824
     deliveryTime: 42
     instalTime: 90
-    sustainability: 0
+    sustainability: 2
     fun: 0
     obj: {fileID: 0}
   - name: Slide E
@@ -2811,21 +2811,21 @@ MonoBehaviour:
     price: 525
     deliveryTime: 42
     instalTime: 45
-    sustainability: 0
+    sustainability: 2
     fun: 0
     obj: {fileID: 4265626247116294185, guid: e9832cb39fe1f354e82362ab0d715f7e, type: 3}
   - name: Ladder B
     price: 510
     deliveryTime: 42
     instalTime: 45
-    sustainability: 0
+    sustainability: 3
     fun: 0
     obj: {fileID: 0}
   - name: Ladder C
     price: 480
     deliveryTime: 42
     instalTime: 45
-    sustainability: 0
+    sustainability: 1
     fun: 0
     obj: {fileID: 3375003333697075343, guid: 4e7b36b25c6ec824aaf3b14816b2c6f3, type: 3}
   - name: Ladder D
@@ -3579,8 +3579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48207a4f8ecc2344bf6df17f3bf9fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
-  mat: []
   Floor: {fileID: 8321261906074040954}
   RubberTexture: {fileID: 2100000, guid: b9581edc5e9ec8c46b8b4979dbc3dbab, type: 2}
   SandTexture: {fileID: 2100000, guid: 00c819dc44a621b439fea44f0b1bfd17, type: 2}
@@ -3601,12 +3599,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 509074953}
   spaceSet: {fileID: 8300000, guid: 570d5c84cf163914c8afdf35290ea64e, type: 3}
-  activityItems:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &1209853207 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4820592758055021292, guid: 88bdc94026fd172458fcc565c839c9ae,
@@ -8357,31 +8349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!65 &2945896095123235604
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10393,31 +10360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!114 &2945896095123235756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10430,31 +10372,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!114 &2945896095123235757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10467,31 +10384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!114 &2945896095123235758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10504,31 +10396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!114 &2945896095123235759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10541,31 +10408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!114 &2945896095123235760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10578,31 +10420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!114 &2945896095123235761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10615,31 +10432,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!114 &2945896095123235762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10652,31 +10444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!114 &2945896095123235763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10689,31 +10456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!65 &2945896095123235764
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10739,31 +10481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!65 &2945896095123235766
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10789,31 +10506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!65 &2945896095123235768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10839,31 +10531,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!65 &2945896095123235770
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10902,31 +10569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!65 &2945896095123235773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10952,31 +10594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!65 &2945896095123235775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11002,31 +10619,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!65 &2945896095123235777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11052,31 +10644,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!33 &4104510276286799449
 MeshFilter:
   m_ObjectHideFlags: 0

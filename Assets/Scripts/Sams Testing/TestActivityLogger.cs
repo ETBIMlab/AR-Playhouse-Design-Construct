@@ -33,8 +33,8 @@ public class TestActivityLogger : MonoBehaviour
     private double totalCost = 0.0f;
     private int totalTime = 0;
     private int totalFun = 0;
-    private double totalSus = 0;
-
+    private double avgSus = 0.0f;
+    private int objectCount = 0;
 
     public AudioRoot audio;
     private AudioSource audioSource;
@@ -139,7 +139,13 @@ public class TestActivityLogger : MonoBehaviour
         totalCost += obj.price;
         totalTime += obj.instalTime;
         totalFun += obj.fun;
-        totalSus += obj.sustainability;
+
+        if(obj.sustainability != 0)
+        {
+            objectCount++;
+            avgSus += obj.sustainability;
+        }
+       
         // for testing in hololens
         //string path = Application.persistentDataPath + "/ActivityLog.txt";
 
@@ -155,7 +161,7 @@ public class TestActivityLogger : MonoBehaviour
                                 "Total Cost = "+ totalCost + " $"+ "\n" +
                                 "Total Time = "+ totalTime + " Minutes" +"\n" +
                                 "Total Fun = " + totalFun + "\n" +
-                                "Total Sustainability = " + totalSus + "\n---------------------------------------\n\n";
+                                "Average Sustainability = " + (avgSus / objectCount) + "\n---------------------------------------\n\n";
 
         saveInformation =       "User ordered " + obj.name + "\n" +
                                 "Item cost " + obj.price + " $" + "\n" +
