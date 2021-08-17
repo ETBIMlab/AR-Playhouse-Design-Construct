@@ -36,40 +36,12 @@ public class TestActivityLogger : MonoBehaviour
     private double avgSus = 0.0f;
     private int objectCount = 0;
 
-    public AudioRoot audio;
-    private AudioSource audioSource;
-    public AudioClip spaceSet;
-
-
-        KeywordRecognizer keywordRecognizer = null;
-        Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
-
-        // Start is called before the first frame update
-        void Start()
-        {
-            audioSource = GetComponent<AudioSource>();
-            
-
-            // global command
-            keywords.Add("Export Activity Log", ExportActivityLog);
-       
-       
-
-            // Tell the KeywordRecognizer about our keywords.
-            keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
-
-            // Register a callback for the KeywordRecognizer and START recognizing!!!!
-            keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
-            keywordRecognizer.Start();
-
-
-
-        }
-
+   
 
     // gets a handle on the applications localfolder to save to.
     // uses async function to wait
     // then creates the txt file and appends saveInformation string
+
 #if WINDOWS_UWP
     Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
     Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
@@ -87,52 +59,8 @@ public class TestActivityLogger : MonoBehaviour
     }
 #endif
 
-    // Update is called once per frame
-    void Update()
-        {
+   
 
-        }
-
-        private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
-        {
-            System.Action keywordAction;
-            if (keywords.TryGetValue(args.text, out keywordAction))
-            {
-                keywordAction.Invoke();     // if speech command recognized, then invoke the action
-            }
-        }
-
-    // *TO ADD* object  from ObjectOrderer gets passed into exportActivityLog(GameObject newObj) 
-    // fileContents will be an object array that we will add to the txt file
-    // Append each object ordered.
-
-    void ExportActivityLog()
-    {
-
-           // Debug.Log("Creating Activity Log");
-           // Debug.Log(Application.persistentDataPath);
-            string fileContents = "Export Activity Log \n";
-            audioSource.PlayOneShot(spaceSet, 1F);
-            string path =  Application.persistentDataPath + "/ActivityLog.txt";
-       
-    
-     //calls async function to write data   
-#if WINDOWS_UWP
-                WriteData();
-#endif
-        
-        // checks to see if file exists, then writes or appends to activitylog.txt
-        if (!File.Exists(path))
-        {
-            File.WriteAllText(path, fileContents);
-        }
-        else
-        {
-            File.AppendAllText(path, fileContents);
-        }
-
-
-    }
     // function is called in Object orderer when an item is ordered.
     public void ExportActivityLog(OrderableObj obj)
     {
@@ -163,12 +91,17 @@ public class TestActivityLogger : MonoBehaviour
                                 "Total Fun = " + totalFun + "\n" +
                                 "Average Sustainability = " + (avgSus / objectCount) + "\n---------------------------------------\n\n";
 
-        saveInformation =       "User ordered " + obj.name + "\n" +
+        saveInformation =       "---------------------------------------\n" +
+                                "User ordered " + obj.name + "\n" +
                                 "Item cost " + obj.price + " $" + "\n" +
                                 "The time required is " + obj.instalTime + " minutes \n" +
                                 "The Item has a sustainability rank of " + obj.sustainability + "\n" +
                                 "And a fun rank  of " + obj.fun + "\n" +
-                                "This was ordered at " + timeStamp1 + "\n\n";
+                                "This was ordered at " + timeStamp1 + "\n" +
+                                "Total Cost = " + totalCost + " $" + "\n" +
+                                "Total Time = " + totalTime + " Minutes" + "\n" +
+                                "Total Fun = " + totalFun + "\n" +
+                                "Average Sustainability = " + (avgSus / objectCount) + "\n---------------------------------------\n\n";
 
         // TO TEST > Do i need to set file contents = to a blank string?
         if (!File.Exists(path))
@@ -183,10 +116,89 @@ public class TestActivityLogger : MonoBehaviour
         }
 
 #if WINDOWS_UWP
-    WriteData();
+        WriteData();
 #endif
     }
 
     // TO ADD   Remove Export Function(oderableobj obj)  this is called from ObjectOrderer script/ this is to log items returned and or thrown away.
+
+
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    // These comments are to add a voice commend to export something... probably will not use.  that something is defined in theExportActivityLog() function.
+
+    /* 
+        private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
+        {
+            System.Action keywordAction;
+            if (keywords.TryGetValue(args.text, out keywordAction))
+            {
+                keywordAction.Invoke();     // if speech command recognized, then invoke the action
+            }
+        }
+
     
+
+    void ExportActivityLog()
+    {
+
+           // Debug.Log("Creating Activity Log");
+           // Debug.Log(Application.persistentDataPath);
+            string fileContents = "Export Activity Log \n";
+            audioSource.PlayOneShot(spaceSet, 1F); // for testing
+            string path =  Application.persistentDataPath + "/ActivityLog.txt";
+       
+    
+     //calls async function to write data   
+#if WINDOWS_UWP
+                WriteData();
+#endif
+        
+        // checks to see if file exists, then writes or appends to activitylog.txt
+        if (!File.Exists(path))
+        {
+            File.WriteAllText(path, fileContents);
+        }
+        else
+        {
+            File.AppendAllText(path, fileContents);
+        }
+
+
+    }
+    
+   //for testing to delete 
+   public AudioRoot audio;
+   private AudioSource audioSource;
+   public AudioClip spaceSet;
+
+
+       KeywordRecognizer keywordRecognizer = null;
+       Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
+
+       // Start is called before the first frame update
+       void Start()
+       {
+
+           audioSource = GetComponent<AudioSource>(); //for testing to delete 
+
+
+       // global command
+       keywords.Add("Export Activity Log", ExportActivityLog);
+
+
+
+           // Tell the KeywordRecognizer about our keywords.
+           keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
+
+           // Register a callback for the KeywordRecognizer and START recognizing!!!!
+           keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
+           keywordRecognizer.Start();
+       }
+*/
 }
