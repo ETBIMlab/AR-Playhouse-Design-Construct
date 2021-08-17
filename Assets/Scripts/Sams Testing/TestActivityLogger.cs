@@ -140,7 +140,6 @@ public class TestActivityLogger : MonoBehaviour
         totalTime += obj.instalTime;
         totalFun += obj.fun;
         totalSus += obj.sustainability;
-
         // for testing in hololens
         //string path = Application.persistentDataPath + "/ActivityLog.txt";
 
@@ -165,16 +164,16 @@ public class TestActivityLogger : MonoBehaviour
                                 "And a fun rank  of " + obj.fun + "\n" +
                                 "This was ordered at " + timeStamp1 + "\n\n";
 
-        // TO TEST > Do I need to set file contents = to a blank string? it seems to work both ways. 
+        // TO TEST > Do i need to set file contents = to a blank string?
         if (!File.Exists(path))
         {
             File.WriteAllText(path, fileContents);
-            //fileContents = "";
+            fileContents = "";
         }
         else
         {
             File.AppendAllText(path, fileContents);
-           // fileContents = "";
+            fileContents = "";
         }
 
 #if WINDOWS_UWP
@@ -182,6 +181,6 @@ public class TestActivityLogger : MonoBehaviour
 #endif
     }
 
-    // TO ADD   Remove Export Function(oderableobj obj)  this is called from ObjectOrderer script (maybe truckscript)  this is to log items returned and or thrown away.
-
+    // TO ADD   Remove Export Function(oderableobj obj)  this is called from ObjectOrderer script/ this is to log items returned and or thrown away.
+    
 }
