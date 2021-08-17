@@ -7,6 +7,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using static ObjectOrderer;
+using Microsoft.MixedReality.Toolkit;
 
 #if WINDOWS_UWP
 using Windows.Storage;
@@ -29,14 +30,19 @@ public class TestActivityLogger : MonoBehaviour
     private static string timeStamp = System.DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "");
     private static string timeStamp1 = System.DateTime.Now.ToString();
     private static string fileName = timeStamp + ".txt";
+  
     private static bool firstSave = true;
+    private static bool firstSave1 = true;
     private double totalCost = 0.0f;
     private int totalTime = 0;
     private int totalFun = 0;
     private double avgSus = 0.0f;
     private int objectCount = 0;
 
-   
+    public float capturePositionWaitTime = 1.0f; // changes how many vector 3 locations are printed, lower time = more locations.
+    private float nextTime = 0.0f;
+    private string positions = "";
+ 
 
     // gets a handle on the applications localfolder to save to.
     // uses async function to wait
@@ -57,11 +63,13 @@ public class TestActivityLogger : MonoBehaviour
         await FileIO.AppendTextAsync(localFile, saveInformation + "\r\n");
         }
     }
-#endif
 
    
+#endif
 
-    // function is called in Object orderer when an item is ordered.
+
+
+    // function is called in Object orderer when an item is ordered. This logs the attributes of the objects ordered.
     public void ExportActivityLog(OrderableObj obj)
     {
         totalCost += obj.price;
@@ -74,11 +82,11 @@ public class TestActivityLogger : MonoBehaviour
             avgSus += obj.sustainability;
         }
        
-        // for testing in hololens
-        //string path = Application.persistentDataPath + "/ActivityLog.txt";
+        // for testing in hololens 
+        string path = Application.persistentDataPath + "/ActivityLog.txt";
 
         // for testing on computer  file should show up in capstone folder
-        string path = "./ActivityLog.txt";
+        //string path = "./ActivityLog.txt";
         string fileContents =   "---------------------------------------\n" +
                                 "User ordered " + obj.name + "\n" +
                                 "Item cost " + obj.price + " $" +"\n" +
@@ -103,17 +111,9 @@ public class TestActivityLogger : MonoBehaviour
                                 "Total Fun = " + totalFun + "\n" +
                                 "Average Sustainability = " + (avgSus / objectCount) + "\n---------------------------------------\n\n";
 
-        // TO TEST > Do i need to set file contents = to a blank string?
-        if (!File.Exists(path))
-        {
-            File.WriteAllText(path, fileContents);
-            fileContents = "";
-        }
-        else
-        {
-            File.AppendAllText(path, fileContents);
-            fileContents = "";
-        }
+
+        if (!File.Exists(path))  { File.WriteAllText(path, fileContents); }
+        else { File.AppendAllText(path, fileContents);    }
 
 #if WINDOWS_UWP
         WriteData();
@@ -123,12 +123,33 @@ public class TestActivityLogger : MonoBehaviour
     // TO ADD   Remove Export Function(oderableobj obj)  this is called from ObjectOrderer script/ this is to log items returned and or thrown away.
 
 
+        // This keeps track of the Vector 3 location that the user is looking at. 
+    void ExportPositionLog(string pos)
+    {    
+        //string path1 = "./PositionLog.txt";
+        string path2 = Application.persistentDataPath + "/PositionLog.txt";
 
-    // Update is called once per frame
-    void Update()
-    {
+        if (!File.Exists(path2)) { File.WriteAllText(path2, pos); }
+        else { File.AppendAllText(path2, pos); }
 
     }
+
+    // Update is called once per frame unless changed in unity
+    void Update()
+    {
+        if (Time.time >= nextTime)
+        {
+            positions += CoreServices.InputSystem.EyeGazeProvider.HitPosition.ToString() + "\n";
+            ExportPositionLog(positions);
+            nextTime += capturePositionWaitTime;
+        }
+    }
+
+
+
+
+
+
 
     // These comments are to add a voice commend to export something... probably will not use.  that something is defined in theExportActivityLog() function.
 
