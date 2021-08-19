@@ -28,7 +28,12 @@ public class ObjectOrderer : MonoBehaviour
     KeywordRecognizer keywordRecognizer = null;
     List<string> keywords = new List<string>();
     public OrderableObj[] orderableObjs;
-
+    
+    private OrderableObj[] data;
+    public OrderableObj[] ExportData()
+    {
+        return data;
+    }
 
     List<string> numlist = new List<string>()  {
                         "zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"};
