@@ -17,17 +17,8 @@ public class SurfaceChanger : MonoBehaviour
     public Material GrassTexture;
     public Material ConcreteTexture;
     public Material MulchTexture;
-    public struct FloorChanger
-    {
-        public string name;
-        public double price;
-        public int instalTime;
-        public double sustainability;
-        public int fun;
-        public GameObject floor;
-    }
+ 
     public GameObject laptopinterface;
-    public FloorChanger[] floorChanger;
 
     KeywordRecognizer skeywordRecognizer = null;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
@@ -60,45 +51,38 @@ public class SurfaceChanger : MonoBehaviour
 
         if (args.text.Substring(18) == "Rubber")
         {
-            li.additem(floorChanger[i].price, floorChanger[i].deliveryTime, floorChanger[i].name, 1, floorChanger[i].instalTime);
+            li.additem(2025.00, 0, "Rubber Floor", 1, 3);
 
             Floor.GetComponent<MeshRenderer>().material = RubberTexture;
         }
 
         else if (args.text.Substring(18) == "Sand")
         {
-            li.additem(floorChanger[i].price, floorChanger[i].deliveryTime, floorChanger[i].name, 1, floorChanger[i].instalTime);
+            li.additem(1425.00, 0, "Sand Floor", 1, 2);
 
             Floor.GetComponent<MeshRenderer>().material = SandTexture;
         }
 
         else if (args.text.Substring(18) == "Grass")
         {
-            li.additem(floorChanger[i].price, floorChanger[i].deliveryTime, floorChanger[i].name, 1, floorChanger[i].instalTime);
+            li.additem(0.00, 0, "Grass Floor", 1, 0);
 
             Floor.GetComponent<MeshRenderer>().material = GrassTexture;
         }
 
         else if (args.text.Substring(18) == "Concrete")
         {
-            li.additem(floorChanger[i].price, floorChanger[i].deliveryTime, floorChanger[i].name, 1, floorChanger[i].instalTime);
+            li.additem(5325.00, 0, "Concrete Floor", 1, 5);
 
             Floor.GetComponent<MeshRenderer>().material = ConcreteTexture;
         }
 
         else if (args.text.Substring(18) == "Mulch")
         {
-            li.additem(floorChanger[i].price, floorChanger[i].deliveryTime, floorChanger[i].name, 1, floorChanger[i].instalTime);
+            li.additem(1275.00, 0, "Mulch Floor", 1, 2);
 
             Floor.GetComponent<MeshRenderer>().material = MulchTexture;
         }
     }
-    void OnDestroy()
-    {
-        if (skeywordRecognizer != null)
-        {
-            skeywordRecognizer.Stop();
-            skeywordRecognizer.Dispose();
-        }
-    }
+    
 }
