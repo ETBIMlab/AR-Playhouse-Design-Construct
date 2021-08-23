@@ -10,15 +10,16 @@ using UnityEngine.Windows.Speech;
 public class SurfaceChanger : MonoBehaviour
 {
     //public Renderer ren;
-   // public Material[] mat;
+    // public Material[] mat;
     public GameObject Floor;
     public Material RubberTexture;
     public Material SandTexture;
     public Material GrassTexture;
     public Material ConcreteTexture;
     public Material MulchTexture;
- 
+
     public GameObject laptopinterface;
+    private TestActivityLogger logger;
 
     KeywordRecognizer skeywordRecognizer = null;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
@@ -84,5 +85,16 @@ public class SurfaceChanger : MonoBehaviour
             Floor.GetComponent<MeshRenderer>().material = MulchTexture;
         }
     }
-    
+ /*   public OrderableObj buildAnObject(String name, double price, int deliveryTime, int installTime, double sustainabilityFactor, int funFactor, GameObject floorGameObject)
+    {
+            public string name = this.name;
+            public double price = this.price;
+            public int deliveryTime = this.deliveryTime;
+            public int instalTime = installTime;
+            public double sustainability = sustainabilityFactor;
+            public int fun = funFactor;
+            public GameObject obj = floorGameObject;
+            return OrderableObj
+        }*/
+        
 }
