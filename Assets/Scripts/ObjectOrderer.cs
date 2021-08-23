@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
+//using TruckSpace.isCalled;
 
 public class ObjectOrderer : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ObjectOrderer : MonoBehaviour
     //private int distFromCamera = 3;
 
     [Serializable]
-    
+
     public struct OrderableObj
     {
         public string name;
@@ -21,19 +22,19 @@ public class ObjectOrderer : MonoBehaviour
         public double sustainability;
         public int fun;
         public GameObject obj;
+       
     }
+    bool didFunction = false;
     public GameObject laptopinterface;
     private  TestActivityLogger logger;
+   // public TruckScript truckScriptReference;
+   // TruckScript ts = new TruckScript();
 
     KeywordRecognizer keywordRecognizer = null;
     List<string> keywords = new List<string>();
     public OrderableObj[] orderableObjs;
     
-    private OrderableObj[] data;
-    public OrderableObj[] ExportData()
-    {
-        return data;
-    }
+    //TruckScript truckScript = new TruckScript;
 
     List<string> numlist = new List<string>()  {
                         "zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"};
@@ -43,8 +44,8 @@ public class ObjectOrderer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] itemObjects = GameObject.FindGameObjectsWithTag("item");
-        for (int i = 0; i < itemObjects.Length; i++) { Debug.Log(itemObjects[i].GetComponent<ItemInfo>().itemPrice); }
+       // GameObject[] itemObjects = GameObject.FindGameObjectsWithTag("item");
+       // for (int i = 0; i < itemObjects.Length; i++) { Debug.Log(itemObjects[i].GetComponent<ItemInfo>().itemPrice); }
         Debug.Log("test");
         for (int i = 0; i < orderableObjs.Length; i++)
         {
@@ -70,6 +71,33 @@ public class ObjectOrderer : MonoBehaviour
         //sam added
         logger = GetComponent<TestActivityLogger>();
 
+    }
+  
+    public void Update()
+    {
+        if (didFunction)
+        {
+            Debug.Log("didFunction is true");
+        }
+    }
+
+    //getting object name from the TruckScript once obj is in collision with truck
+    public string GetObjName(string objName)
+    {
+        didFunction = true;
+        Debug.Log("we got the name bois and it is..." + objName);
+        //RemoveFromLaptop(objName);
+        return objName;
+    }
+    //iterate through the Main Camera array on this script to find the objName match and remove price it from the laptop
+    public void RemoveFromLaptop(string objName)
+    {
+        laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
+        for (int i = 0; i < orderableObjs.Length; i++)
+        {
+            if (objName == orderableObjs[i].name)
+            Debug.Log(objName + " deleted from oo");
+        }
     }
 
     // important
