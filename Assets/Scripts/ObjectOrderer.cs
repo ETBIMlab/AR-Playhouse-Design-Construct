@@ -160,6 +160,7 @@ public class ObjectOrderer : MonoBehaviour
             {
                 Instantiate(orderableObjs[i].obj, new Vector3(0, 0, 0), Quaternion.identity);
                 return true;
+                //
             }
         }
         return false;
