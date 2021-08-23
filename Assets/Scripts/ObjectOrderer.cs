@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
+//using TruckSpace.isCalled;
 
 public class ObjectOrderer : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ObjectOrderer : MonoBehaviour
     //private int distFromCamera = 3;
 
     [Serializable]
-    
+
     public struct OrderableObj
     {
         public string name;
@@ -21,30 +22,31 @@ public class ObjectOrderer : MonoBehaviour
         public double sustainability;
         public int fun;
         public GameObject obj;
+       
     }
+    bool didFunction = false;
     public GameObject laptopinterface;
     private  TestActivityLogger logger;
+   // public TruckScript truckScriptReference;
+   // TruckScript ts = new TruckScript();
 
     KeywordRecognizer keywordRecognizer = null;
     List<string> keywords = new List<string>();
     public OrderableObj[] orderableObjs;
     
-    private OrderableObj[] data;
-    public OrderableObj[] ExportData()
-    {
-        return data;
-    }
+    //TruckScript truckScript = new TruckScript;
 
     List<string> numlist = new List<string>()  {
                         "zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"};
 
 
 
-    // Start is called before the first frame update
+    //add the keywords, knows the name of each object in the structure. You iterate through it and instantiate it as a keyword
+ 
     void Start()
     {
-        GameObject[] itemObjects = GameObject.FindGameObjectsWithTag("item");
-        for (int i = 0; i < itemObjects.Length; i++) { Debug.Log(itemObjects[i].GetComponent<ItemInfo>().itemPrice); }
+       // GameObject[] itemObjects = GameObject.FindGameObjectsWithTag("item");
+       // for (int i = 0; i < itemObjects.Length; i++) { Debug.Log(itemObjects[i].GetComponent<ItemInfo>().itemPrice); }
         Debug.Log("test");
         for (int i = 0; i < orderableObjs.Length; i++)
         {
@@ -71,16 +73,45 @@ public class ObjectOrderer : MonoBehaviour
         logger = GetComponent<TestActivityLogger>();
 
     }
+  
+    public void Update()
+    {
+        if (didFunction)
+        {
+            Debug.Log("didFunction is true");
+        }
+    }
+
+    //getting object name from the TruckScript once obj is in collision with truck
+    public string GetObjName(string objName)
+    {
+        didFunction = true;
+        Debug.Log("we got the name bois and it is..." + objName);
+        //RemoveFromLaptop(objName);
+        return objName;
+    }
+    //iterate through the Main Camera array on this script to find the objName match and remove price it from the laptop
+    public void RemoveFromLaptop(string objName)
+    {
+        laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
+        for (int i = 0; i < orderableObjs.Length; i++)
+        {
+            if (objName == orderableObjs[i].name)
+            Debug.Log(objName + " deleted from oo");
+        }
+    }
 
     // important
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
+        //call reference to laptop script 
         laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
+        //looking for object after the order command
         string temp = args.text.Substring(args.text.LastIndexOf(" ") + 1);
         temp = temp.Substring(0, temp.Length - 1);
         for (int i = 0; i < orderableObjs.Length; i++)
         {
-            if (orderableObjs[i].name.Equals(args.text.Substring(6))) 
+            if (orderableObjs[i].name.Equals(args.text.Substring(6))) //moving over the word, notifying, updating the laptop interface, adding it to the scene, and exporting the data
             {
                 Debug.Log(orderableObjs[i].name + " ordered");
                 li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, orderableObjs[i].name, 1, orderableObjs[i].instalTime);
@@ -96,7 +127,7 @@ public class ObjectOrderer : MonoBehaviour
                 h = h.Substring(0, h.IndexOf(" "));
                 Debug.Log(h);
                 int hold = numlist.IndexOf(h);
-                if (hold != -1)
+                if (hold != -1) //ordered a custom amount of objects
                 {
                     li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, orderableObjs[i].name, hold, orderableObjs[i].instalTime);
                     for (int j = 0; j < hold; j++)
@@ -106,7 +137,7 @@ public class ObjectOrderer : MonoBehaviour
                         logger.ExportActivityLog(orderableObjs[i]);
                     }
                 }
-                else if (h.Equals("a"))
+                else if (h.Equals("a")) //order a dozen objects
                 {
                     li.additem(orderableObjs[i].price, orderableObjs[i].deliveryTime, orderableObjs[i].name, 12, orderableObjs[i].instalTime);
                     for (int j = 0; j < 12; j++)
@@ -129,6 +160,7 @@ public class ObjectOrderer : MonoBehaviour
             {
                 Instantiate(orderableObjs[i].obj, new Vector3(0, 0, 0), Quaternion.identity);
                 return true;
+                //
             }
         }
         return false;
