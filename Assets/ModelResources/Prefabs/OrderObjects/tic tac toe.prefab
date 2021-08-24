@@ -70,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2263637718951746235, guid: bf4cedd7606592c499855e7394e19a4f, type: 3}
+  - {fileID: 2100000, guid: a7949345d4cfb914b88c4ea1998964b4, type: 2}
   - {fileID: -6562230368438142103, guid: bf4cedd7606592c499855e7394e19a4f, type: 3}
   - {fileID: -8894965008422782783, guid: bf4cedd7606592c499855e7394e19a4f, type: 3}
   m_StaticBatchInfo:
@@ -320,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrice: 350
   itemInstallTime: 15
+  itemName: 
   itemFun: 1
   itemType: 5
   hasDifferentOriginRotation: 0
@@ -384,6 +385,7 @@ MonoBehaviour:
   hasPlastic: 1
   hasMetal: 1
   isPaintBucket: 0
+  paintColorMaterial: {fileID: 0}
 --- !u!1 &8983693508285177637
 GameObject:
   m_ObjectHideFlags: 0
