@@ -106,7 +106,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2263637718951746235, guid: 4652999e3a8e45c4297e990ec9fec277, type: 3}
+  - {fileID: 2100000, guid: a7949345d4cfb914b88c4ea1998964b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -246,6 +246,7 @@ MonoBehaviour:
   GrassTexture: {fileID: 2100000, guid: 6a3d964ea61cca74aad9cd47ed31878d, type: 2}
   ConcreteTexture: {fileID: 2100000, guid: 5e8ed97749e472a4c9123bc956cf671c, type: 2}
   MulchTexture: {fileID: 2100000, guid: dd20d25922cc2a941a583cbe00a77f83, type: 2}
+  laptopinterface: {fileID: 0}
 --- !u!114 &7537340193585524843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,6 +602,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 6008820495480218392, guid: 1428f06dbccefe64b818061edf10699d,
+        type: 3}
+      propertyPath: hasMetal
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8084755504659225485, guid: 1428f06dbccefe64b818061edf10699d,
         type: 3}
       propertyPath: m_Name
@@ -765,6 +771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008820495480218392, guid: 1428f06dbccefe64b818061edf10699d,
+        type: 3}
+      propertyPath: hasMetal
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8084755504659225485, guid: 1428f06dbccefe64b818061edf10699d,
         type: 3}
@@ -931,6 +942,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 6008820495480218392, guid: 1428f06dbccefe64b818061edf10699d,
+        type: 3}
+      propertyPath: hasMetal
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8084755504659225485, guid: 1428f06dbccefe64b818061edf10699d,
         type: 3}
       propertyPath: m_Name
@@ -1020,6 +1036,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008820495480218392, guid: 1428f06dbccefe64b818061edf10699d,
+        type: 3}
+      propertyPath: hasMetal
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8084755504659225485, guid: 1428f06dbccefe64b818061edf10699d,
         type: 3}
