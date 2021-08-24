@@ -174,6 +174,8 @@ public class ObjectOrderer : MonoBehaviour
         var orderPos = GameObject.Find("IndustrialSmallTruck").transform.position;
         Debug.Log("truck is at " + orderPos);
         Instantiate(newObj, new Vector3(orderPos.x - 0.1f, orderPos.y - .6f, orderPos.z - 3.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
-        
+        //add surface changer if else here
+
+
     }
 }
