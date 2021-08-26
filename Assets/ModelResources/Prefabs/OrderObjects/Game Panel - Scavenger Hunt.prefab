@@ -460,17 +460,6 @@ MonoBehaviour:
   hasPlastic: 1
   hasMetal: 0
   isPaintBucket: 0
-  orderableInColor: 0
-  paintWithPaint: 0
-  isTubeBridge: 0
-  isChimesSmall: 0
-  isChimesLarge: 0
-  isSingleSlide: 0
-  isDoubleSlide: 0
-  isTubeSlide: 0
-  isFirepole: 0
-  isCoilClimber: 0
-  isStairs: 0
   paintColorMaterial: {fileID: 0}
 --- !u!114 &6542803915942535966
 MonoBehaviour:
@@ -535,13 +524,13 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6848840b06cce9b4bb4c66584d9f7982, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
+  Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
@@ -581,7 +570,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 8299001343273435151}
   - component: {fileID: 3530272421345096603}
   m_Layer: 0
-  m_Name: Game Panel - Sudoku
+  m_Name: Sudoku Game
   m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -339,17 +339,6 @@ MonoBehaviour:
   hasPlastic: 1
   hasMetal: 0
   isPaintBucket: 0
-  orderableInColor: 0
-  paintWithPaint: 0
-  isTubeBridge: 0
-  isChimesSmall: 0
-  isChimesLarge: 0
-  isSingleSlide: 0
-  isDoubleSlide: 0
-  isTubeSlide: 0
-  isFirepole: 0
-  isCoilClimber: 0
-  isStairs: 0
   paintColorMaterial: {fileID: 0}
 --- !u!65 &-7655195395184569182
 BoxCollider:
@@ -427,13 +416,13 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6848840b06cce9b4bb4c66584d9f7982, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
+  Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
@@ -473,7 +462,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -839,6 +828,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 6008820495480218392, guid: 1428f06dbccefe64b818061edf10699d,
+        type: 3}
+      propertyPath: hasMetal
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8084755504659225485, guid: 1428f06dbccefe64b818061edf10699d,
         type: 3}
       propertyPath: m_Name
@@ -928,6 +922,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008820495480218392, guid: 1428f06dbccefe64b818061edf10699d,
+        type: 3}
+      propertyPath: hasMetal
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8084755504659225485, guid: 1428f06dbccefe64b818061edf10699d,
         type: 3}
@@ -1094,6 +1093,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 6008820495480218392, guid: 1428f06dbccefe64b818061edf10699d,
+        type: 3}
+      propertyPath: hasMetal
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8084755504659225485, guid: 1428f06dbccefe64b818061edf10699d,
         type: 3}
       propertyPath: m_Name
@@ -1183,6 +1187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008820495480218392, guid: 1428f06dbccefe64b818061edf10699d,
+        type: 3}
+      propertyPath: hasMetal
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8084755504659225485, guid: 1428f06dbccefe64b818061edf10699d,
         type: 3}
@@ -1274,6 +1283,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 6008820495480218392, guid: 1428f06dbccefe64b818061edf10699d,
+        type: 3}
+      propertyPath: hasMetal
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8084755504659225485, guid: 1428f06dbccefe64b818061edf10699d,
         type: 3}
       propertyPath: m_Name
@@ -1363,6 +1377,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008820495480218392, guid: 1428f06dbccefe64b818061edf10699d,
+        type: 3}
+      propertyPath: hasMetal
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8084755504659225485, guid: 1428f06dbccefe64b818061edf10699d,
         type: 3}
