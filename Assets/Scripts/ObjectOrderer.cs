@@ -24,6 +24,12 @@ public class ObjectOrderer : MonoBehaviour
         public GameObject obj;
        
     }
+    public GameObject Floor;
+    public Material RubberTexture;
+    public Material SandTexture;
+    public Material GrassTexture;
+    public Material ConcreteTexture;
+    public Material MulchTexture;
     bool didFunction = false;
     public GameObject laptopinterface;
     private  TestActivityLogger logger;
@@ -173,9 +179,49 @@ public class ObjectOrderer : MonoBehaviour
         //get position of the ordering truck
         var orderPos = GameObject.Find("IndustrialSmallTruck").transform.position;
         Debug.Log("truck is at " + orderPos);
-        Instantiate(newObj, new Vector3(orderPos.x - 0.1f, orderPos.y - .6f, orderPos.z - 3.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
         //add surface changer if else here
+        if (newObj.name == "Rubber Surface")
+        {
+            Debug.Log("Changing to rubber surface");
+            Instantiate(newObj, new Vector3(orderPos.x - 0.1f, orderPos.y - .6f, orderPos.z - 3.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
 
+            Floor.GetComponent<MeshRenderer>().material = RubberTexture;
+        }
 
+        else if (newObj.name == "Sand Surface")
+        {
+            Debug.Log("Changing to sand surface");
+            Instantiate(newObj, new Vector3(orderPos.x - 0.1f, orderPos.y - .6f, orderPos.z - 3.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
+            Floor.GetComponent<MeshRenderer>().material = SandTexture;
+        }
+
+        else if (newObj.name == "Grass Surface")
+        {
+            Debug.Log("Changing to grass surface");
+            Instantiate(newObj, new Vector3(orderPos.x - 0.1f, orderPos.y - .6f, orderPos.z - 3.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
+
+            Floor.GetComponent<MeshRenderer>().material = GrassTexture;
+        }
+
+        else if (newObj.name == "Concrete Surface")
+        {
+            Debug.Log("Changing to concrete surface");
+            Instantiate(newObj, new Vector3(orderPos.x - 0.1f, orderPos.y - .6f, orderPos.z - 3.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
+
+            Floor.GetComponent<MeshRenderer>().material = ConcreteTexture;
+        }
+
+        else if (newObj.name == "Mulch Surface")
+        {
+            Debug.Log("Changing to mulch surface");
+            Instantiate(newObj, new Vector3(orderPos.x - 0.1f, orderPos.y - .6f, orderPos.z - 3.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
+
+            Floor.GetComponent<MeshRenderer>().material = MulchTexture;
+        }
+        else
+        {
+            Instantiate(newObj, new Vector3(orderPos.x - 0.1f, orderPos.y - .6f, orderPos.z - 3.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
+
+        }
     }
 }
