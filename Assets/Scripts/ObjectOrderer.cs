@@ -92,7 +92,7 @@ public class ObjectOrderer : MonoBehaviour
     public string GetObjName(string objName)
     {
         didFunction = true;
-        
+        //test
         //RemoveFromLaptop(objName);
         return objName;
     }
