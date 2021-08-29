@@ -75,7 +75,7 @@ public class TruckScript : MonoBehaviour
         {
             if (orderableObjs[i].name == objectName)
             {
-                li.removeitemCost(orderableObjs[i].price);
+                li.removeitemCost(orderableObjs[i].price, orderableObjs[i].instalTime);
                 Debug.Log(objectName + " deleted");
             }
         }
