@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 5009728048751161378}
   - component: {fileID: 8901398654189048919}
   - component: {fileID: 1891375027527577718}
+  - component: {fileID: 6776404033135725466}
   m_Layer: 0
   m_Name: Solar System Game
   m_TagString: item
@@ -322,6 +323,19 @@ MonoBehaviour:
   OnObjectFinishedSnapping:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &6776404033135725466
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3865392010971314343}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5992632594925093162
 GameObject:
   m_ObjectHideFlags: 0

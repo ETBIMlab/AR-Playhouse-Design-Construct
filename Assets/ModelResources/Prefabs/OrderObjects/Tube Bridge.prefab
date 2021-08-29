@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 2733124780939241141}
   - component: {fileID: 335413423816872673}
   - component: {fileID: -4280343557754936210}
+  - component: {fileID: -3602565930300482836}
   m_Layer: 0
   m_Name: Tube Bridge
   m_TagString: item
@@ -351,6 +352,19 @@ MonoBehaviour:
   OnObjectFinishedSnapping:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &-3602565930300482836
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5255207582091232640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 52, y: 48.884007, z: 104}
+  m_Center: {x: -26, y: 24.442003, z: -52}
 --- !u!1001 &464145092548417027
 PrefabInstance:
   m_ObjectHideFlags: 0

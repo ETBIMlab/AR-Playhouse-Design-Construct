@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: -7471199809085971749}
   - component: {fileID: -5845999283937723316}
   - component: {fileID: -3221667106795666296}
+  - component: {fileID: 2339675275826354739}
   m_Layer: 0
   m_Name: Chimes in Green
   m_TagString: item
@@ -440,6 +441,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &2339675275826354739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214097756570278157}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1655717884723900632
 GameObject:
   m_ObjectHideFlags: 0

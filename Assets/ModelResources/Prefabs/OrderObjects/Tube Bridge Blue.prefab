@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 7940622845113201080}
   - component: {fileID: -4631672922409961572}
   - component: {fileID: 8874506154400310027}
+  - component: {fileID: 539045897705058246}
   m_Layer: 0
   m_Name: Tube Bridge Blue
   m_TagString: item
@@ -364,6 +365,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &539045897705058246
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463866594657544664}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 52, y: 48.884007, z: 104}
+  m_Center: {x: -26, y: 24.442003, z: -52}
 --- !u!1001 &1669290204478421595
 PrefabInstance:
   m_ObjectHideFlags: 0

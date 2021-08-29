@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 5098451341028967888}
   - component: {fileID: 5561476910660380235}
   - component: {fileID: 8721830260153945794}
+  - component: {fileID: -925260819824356739}
   m_Layer: 0
   m_Name: Recycled Double Slide
   m_TagString: item
@@ -327,6 +328,19 @@ MonoBehaviour:
   OnObjectFinishedSnapping:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &-925260819824356739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946378202218566384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 60.875, y: 142.80507, z: 124}
+  m_Center: {x: -5.5625, y: 71.402534, z: 62}
 --- !u!1 &4819487043033290858
 GameObject:
   m_ObjectHideFlags: 0

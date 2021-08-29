@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 6336997422664282489}
   - component: {fileID: 4065798441860777698}
   - component: {fileID: 6683680237632475862}
+  - component: {fileID: 5639978383145560493}
   m_Layer: 0
   m_Name: Hanging Bridge
   m_TagString: item
@@ -377,6 +378,19 @@ MonoBehaviour:
   hasMetal: 0
   isPaintBucket: 0
   paintColorMaterial: {fileID: 0}
+--- !u!65 &5639978383145560493
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171655525472709338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 53.28, y: 11.778561, z: 104}
+  m_Center: {x: -26, y: 0.18222547, z: -52}
 --- !u!1001 &531449660524160745
 PrefabInstance:
   m_ObjectHideFlags: 0
