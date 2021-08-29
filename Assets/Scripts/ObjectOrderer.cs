@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
-//using TruckSpace.isCalled;
 
 public class ObjectOrderer : MonoBehaviour
 {
@@ -22,7 +21,7 @@ public class ObjectOrderer : MonoBehaviour
         public double sustainability;
         public int fun;
         public GameObject obj;
-       
+
     }
     public GameObject Floor;
     public Material RubberTexture;
@@ -31,14 +30,15 @@ public class ObjectOrderer : MonoBehaviour
     public Material ConcreteTexture;
     public Material MulchTexture;
     bool didFunction = false;
+    string objName = "";
     public GameObject laptopinterface;
-    private  TestActivityLogger logger;
-   // public TruckScript truckScriptReference;
-   // TruckScript ts = new TruckScript();
+    private TestActivityLogger logger;
+    // public TruckScript truckScriptReference;
+    // TruckScript ts = new TruckScript();
 
     KeywordRecognizer keywordRecognizer = null;
     List<string> keywords = new List<string>();
-    public OrderableObj[] orderableObjs;
+    public OrderableObj[] orderableObjs; 
     
     //TruckScript truckScript = new TruckScript;
 
@@ -51,9 +51,9 @@ public class ObjectOrderer : MonoBehaviour
  
     void Start()
     {
-       // GameObject[] itemObjects = GameObject.FindGameObjectsWithTag("item");
-       // for (int i = 0; i < itemObjects.Length; i++) { Debug.Log(itemObjects[i].GetComponent<ItemInfo>().itemPrice); }
-        Debug.Log("test");
+        // GameObject[] itemObjects = GameObject.FindGameObjectsWithTag("item");
+        // for (int i = 0; i < itemObjects.Length; i++) { Debug.Log(itemObjects[i].GetComponent<ItemInfo>().itemPrice); }
+       
         for (int i = 0; i < orderableObjs.Length; i++)
         {
             keywords.Add("Order " + orderableObjs[i].name);
@@ -65,9 +65,8 @@ public class ObjectOrderer : MonoBehaviour
             {
                 keywords.Add("Order " + numlist[j] + " " + orderableObjs[i].name + "s");
             }
-         
+ 
         }
-
         // Tell the KeywordRecognizer about our keywords.
         keywordRecognizer = new KeywordRecognizer(keywords.ToArray());
 
@@ -77,36 +76,24 @@ public class ObjectOrderer : MonoBehaviour
         
         //sam added
         logger = GetComponent<TestActivityLogger>();
-
+       
     }
-  
+
+    //string objName;
     public void Update()
     {
-        if (didFunction)
-        {
-            Debug.Log("didFunction is true");
-        }
+ 
     }
 
     //getting object name from the TruckScript once obj is in collision with truck
-    public string GetObjName(string objName)
+    public void GetObjName(string objName)
     {
-        didFunction = true;
-        //test
-        //RemoveFromLaptop(objName);
-        return objName;
-    }
-    //iterate through the Main Camera array on this script to find the objName match and remove price it from the laptop
-    public void RemoveFromLaptop(string objName)
-    {
-        laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
-        for (int i = 0; i < orderableObjs.Length; i++)
-        {
-            if (objName == orderableObjs[i].name)
-            Debug.Log(objName + " deleted from oo");
-        }
+       // RemoveFromLaptop(objName);
     }
 
+    //iterate through the Main Camera array on this script to find the objName match and remove price it from the laptop
+    
+   
     // important
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {

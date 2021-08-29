@@ -81,7 +81,6 @@ public class laptopInterface : MonoBehaviour
    
     }
 
-   
     public void iteminstalled(string objName)
     {
         for (int i = 0; i < installObjs.Length; i++)
@@ -96,7 +95,6 @@ public class laptopInterface : MonoBehaviour
 
     public void removeitemCost(double mon)
     {
-        
         money = money - mon;
         itemstoDisplay += " $" + money + "\n";
 
@@ -105,7 +103,6 @@ public class laptopInterface : MonoBehaviour
     //change time in minutes into weeks-minutes
     public void convertTime(int t)
     {
-
         scheduledays = 0;
         schedulehours = 0;
         scheduleminutes = 0;

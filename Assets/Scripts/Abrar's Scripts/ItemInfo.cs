@@ -9,8 +9,7 @@ public class ItemInfo : MonoBehaviour
     /// <summary>
     /// Stores info on what type of object it is
     /// </summary>
-    /// public GameObject 
-
+ 
     public double itemPrice = 0; 
     public int itemInstallTime = 0;
     public string itemName = "";

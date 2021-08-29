@@ -1,38 +1,42 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using System.Text;
-//using ObjectOrderer;
 
 public class TruckScript : MonoBehaviour
 {
-    GameObject itemInfo, li;
-    //public ObjectOrderer.OrderableObj[] orderableObjs;
-    // string name = ObjectOrderer.orderableObjs[0].name;
-    // ObjectOrderer 
-    // [SerializeField] private ObjectOrderer scriptAReference;
-    ObjectOrderer oo = new ObjectOrderer();
+
+    GameObject itemInfo;
     string objName = null;
     string filteredString = "";
 
-    public bool functionIsCalled = false;
+
+    [Serializable]
+    public struct OrderableObj
+    {
+        public string name;
+        public double price;
+        public int deliveryTime;
+        public int instalTime;
+        public double sustainability;
+        public int fun;
+        public GameObject obj;
+    }
+
+    public OrderableObj[] orderableObjs = new OrderableObj[100];
+    public GameObject laptopinterface;
 
     void Start()
     {
-        //Debug.Log(orderableObj.getValues(name));
-        //OrderableObj OrderableObj1 = new OrderableObj();
-        //Debug.Log(OrderableObj1.getValues(OrderableObj1));
-      //  scriptAReference = (scriptAReference)scriptAReference.GetComponent(typeof(ObjectOrderer));
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-       if (functionIsCalled == true)
-        {
-            oo.GetObjName(FilterString(objName));
-            functionIsCalled = false;
-        }
+        
     }
 
     public void OnCollisionEnter(Collision col)
@@ -40,7 +44,6 @@ public class TruckScript : MonoBehaviour
         //functionIsCalled = false;
         if (col.gameObject.tag == "item")
         {
-            functionIsCalled = true;
             Destroy(col.gameObject);
             objName = col.gameObject.name;
             FilterString(objName);
@@ -48,7 +51,7 @@ public class TruckScript : MonoBehaviour
     }
 
     //Filter string to match the current string in array
-    public string FilterString(string objName)
+    public void FilterString(string objName)
     {
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < objName.Length; i++)
@@ -60,18 +63,21 @@ public class TruckScript : MonoBehaviour
             }
             sb.Append(objName[i]);
         }
-        return sb.ToString();
+        filteredString = sb.ToString();
+        RemoveObjectFromLaptop(filteredString);
     }
-
-    /*
-    public void FunctionHasBeenCalled(bool functionIsCalled)
+    
+    public void RemoveObjectFromLaptop(string objectName)
     {
-        /*if (functionIsCalled == true)
+        //call reference to laptop script 
+        laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
+        for (int i = 0; i < orderableObjs.Length; i++)
         {
-            Debug.Log("bool is true");
+            if (orderableObjs[i].name == objectName)
+            {
+                li.removeitemCost(orderableObjs[i].price);
+                Debug.Log(objectName + " deleted");
+            }
         }
-        return; 
-
     }
-    */
 }
