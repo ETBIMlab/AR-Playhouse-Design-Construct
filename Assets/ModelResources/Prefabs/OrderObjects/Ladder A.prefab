@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6430334063346480327}
   - component: {fileID: 6501975144866811577}
   - component: {fileID: 6440174103133859469}
+  - component: {fileID: -4446750606541166788}
   m_Layer: 0
   m_Name: Ladder A
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 8480325015285990343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.2698726, y: -0.019067764, z: -1.1778588}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.0125, y: 0.0125, z: 0.0125}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -124,7 +125,7 @@ MonoBehaviour:
   hostTransform: {fileID: 0}
   manipulationType: 2
   twoHandedManipulationType: 5
-  allowFarManipulation: 1
+  allowFarManipulation: 0
   oneHandRotationModeNear: 6
   oneHandRotationModeFar: 6
   releaseBehavior: 3
@@ -307,3 +308,16 @@ MonoBehaviour:
   OnObjectFinishedSnapping:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &-4446750606541166788
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8480325015285990343}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 28.02175, y: 77.11224, z: 26.6875}
+  m_Center: {x: 2.5108747, y: 38.55612, z: -13.40625}

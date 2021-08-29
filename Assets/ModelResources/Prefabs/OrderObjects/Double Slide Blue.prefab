@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 680035752366205685}
   - component: {fileID: 4416772604611920508}
   - component: {fileID: 3500085581832493520}
+  - component: {fileID: 8020457833978893028}
   m_Layer: 0
   m_Name: Double Slide Blue
   m_TagString: item
@@ -81,7 +82,7 @@ Transform:
   m_GameObject: {fileID: 8252273685352521294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.1587205, y: 1.9785924, z: 7.2591233}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.0125, y: 0.0125, z: 0.0125}
   m_Children:
   - {fileID: 485169139888850651}
   - {fileID: 6915672001225927625}
@@ -195,7 +196,7 @@ MonoBehaviour:
   hostTransform: {fileID: 0}
   manipulationType: 2
   twoHandedManipulationType: 5
-  allowFarManipulation: 1
+  allowFarManipulation: 0
   oneHandRotationModeNear: 6
   oneHandRotationModeFar: 6
   releaseBehavior: 3
@@ -353,13 +354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48207a4f8ecc2344bf6df17f3bf9fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Floor: {fileID: 8193609647626128483, guid: 7d37005cec6e714469d93c6abc1943ec, type: 3}
-  RubberTexture: {fileID: 2100000, guid: b9581edc5e9ec8c46b8b4979dbc3dbab, type: 2}
-  SandTexture: {fileID: 2100000, guid: 8b5da5c71f8ee4b87aa2bef188299409, type: 2}
-  GrassTexture: {fileID: 2100000, guid: 6a3d964ea61cca74aad9cd47ed31878d, type: 2}
-  ConcreteTexture: {fileID: 2100000, guid: 5e8ed97749e472a4c9123bc956cf671c, type: 2}
-  MulchTexture: {fileID: 2100000, guid: dd20d25922cc2a941a583cbe00a77f83, type: 2}
-  laptopinterface: {fileID: 0}
 --- !u!114 &4416772604611920508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +386,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &8020457833978893028
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252273685352521294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 60.875, y: 142.80507, z: 124}
+  m_Center: {x: -5.5625, y: 71.402534, z: 62}
 --- !u!1001 &82728354949525963
 PrefabInstance:
   m_ObjectHideFlags: 0

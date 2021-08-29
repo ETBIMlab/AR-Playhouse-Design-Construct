@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 7079430447283050234}
   - component: {fileID: 7536015044860627403}
   - component: {fileID: 453174799472256128}
+  - component: {fileID: 8293831180684810437}
   m_Layer: 0
   m_Name: Five by Three Assembly
   m_TagString: item
@@ -70,7 +71,7 @@ Transform:
   m_GameObject: {fileID: 6369871651458335149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.147, y: 0.681, z: 1.752}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.0125, y: 0.0125, z: 0.0125}
   m_Children:
   - {fileID: 4470179785111852108}
   - {fileID: 3587950645827318302}
@@ -391,15 +392,6 @@ MonoBehaviour:
   hasPlastic: 0
   hasMetal: 0
   isPaintBucket: 0
-  isTubeBridge: 0
-  isChimesSmall: 0
-  isChimesLarge: 0
-  isSingleSlide: 0
-  isDoubleSlide: 0
-  isTubeSlide: 0
-  isFirepole: 0
-  isCoilClimber: 0
-  isStairs: 0
   paintColorMaterial: {fileID: 0}
 --- !u!114 &453174799472256128
 MonoBehaviour:
@@ -413,6 +405,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d1435de29caf74baa5758379b38b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &8293831180684810437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369871651458335149}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 36, z: 60.2}
+  m_Center: {x: -1.5, y: 18, z: -30.1}
 --- !u!1001 &844180966229519021
 PrefabInstance:
   m_ObjectHideFlags: 0

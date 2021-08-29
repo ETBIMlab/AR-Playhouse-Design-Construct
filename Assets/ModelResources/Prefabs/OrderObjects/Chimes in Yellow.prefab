@@ -851,6 +851,7 @@ GameObject:
   - component: {fileID: 5210808541613185880}
   - component: {fileID: 4110349207007730086}
   - component: {fileID: 7312205824776451532}
+  - component: {fileID: 7456950051296486043}
   m_Layer: 0
   m_Name: Chimes in Yellow
   m_TagString: item
@@ -867,7 +868,7 @@ Transform:
   m_GameObject: {fileID: 6332753978563344227}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.9337612, y: -0.021995306, z: 0.75267076}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.0125, y: 0.0125, z: 0.0125}
   m_Children:
   - {fileID: 4293536652511812868}
   - {fileID: 4944187757826596014}
@@ -983,13 +984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48207a4f8ecc2344bf6df17f3bf9fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Floor: {fileID: 8193609647626128483, guid: 7d37005cec6e714469d93c6abc1943ec, type: 3}
-  RubberTexture: {fileID: 2100000, guid: b9581edc5e9ec8c46b8b4979dbc3dbab, type: 2}
-  SandTexture: {fileID: 2100000, guid: 8b5da5c71f8ee4b87aa2bef188299409, type: 2}
-  GrassTexture: {fileID: 2100000, guid: 6a3d964ea61cca74aad9cd47ed31878d, type: 2}
-  ConcreteTexture: {fileID: 2100000, guid: 5e8ed97749e472a4c9123bc956cf671c, type: 2}
-  MulchTexture: {fileID: 2100000, guid: dd20d25922cc2a941a583cbe00a77f83, type: 2}
-  laptopinterface: {fileID: 0}
 --- !u!114 &7074285964193085906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1138,7 +1132,7 @@ MonoBehaviour:
   hostTransform: {fileID: 0}
   manipulationType: 2
   twoHandedManipulationType: 5
-  allowFarManipulation: 1
+  allowFarManipulation: 0
   oneHandRotationModeNear: 6
   oneHandRotationModeFar: 6
   releaseBehavior: 3
@@ -1159,6 +1153,19 @@ MonoBehaviour:
   onHoverExited:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &7456950051296486043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332753978563344227}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6695907876198842340
 GameObject:
   m_ObjectHideFlags: 0
