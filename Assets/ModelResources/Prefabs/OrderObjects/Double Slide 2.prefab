@@ -36,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 18663216764884609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.09641, y: -0.11, z: -7.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.0125, y: 0.0125, z: 0.0125}
   m_Children:
   - {fileID: 8393605701759405588}
   - {fileID: 3260287419369464582}
@@ -134,19 +134,7 @@ MonoBehaviour:
   hasPlastic: 1
   hasMetal: 0
   isPaintBucket: 0
-  orderableInColor: 0
-  paintWithPaint: 0
-  isTubeBridge: 0
-  isChimesSmall: 0
-  isChimesLarge: 0
-  isSingleSlide: 0
-  isDoubleSlide: 0
-  isTubeSlide: 0
-  isFirepole: 0
-  isCoilClimber: 0
-  isStairs: 0
   paintColorMaterial: {fileID: 0}
-  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &7171748519113553711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +150,7 @@ MonoBehaviour:
   hostTransform: {fileID: 0}
   manipulationType: 2
   twoHandedManipulationType: 5
-  allowFarManipulation: 1
+  allowFarManipulation: 0
   oneHandRotationModeNear: 6
   oneHandRotationModeFar: 6
   releaseBehavior: 3
@@ -340,14 +328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48207a4f8ecc2344bf6df17f3bf9fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
-  mat: []
-  Floor: {fileID: 8193609647626128483, guid: 7d37005cec6e714469d93c6abc1943ec, type: 3}
-  RubberTexture: {fileID: 2100000, guid: b9581edc5e9ec8c46b8b4979dbc3dbab, type: 2}
-  SandTexture: {fileID: 2100000, guid: 8b5da5c71f8ee4b87aa2bef188299409, type: 2}
-  GrassTexture: {fileID: 2100000, guid: 6a3d964ea61cca74aad9cd47ed31878d, type: 2}
-  ConcreteTexture: {fileID: 2100000, guid: 5e8ed97749e472a4c9123bc956cf671c, type: 2}
-  MulchTexture: {fileID: 2100000, guid: dd20d25922cc2a941a583cbe00a77f83, type: 2}
 --- !u!114 &3826108634074667937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,31 +340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!1 &8386922854124280859
 GameObject:
   m_ObjectHideFlags: 0

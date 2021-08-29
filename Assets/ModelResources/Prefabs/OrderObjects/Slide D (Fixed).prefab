@@ -35,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 1603609205428683895}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.1322155, y: -0.07, z: -6.0417833}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.0125, y: 0.0125, z: 0.0125}
   m_Children:
   - {fileID: 7887744231500284303}
   - {fileID: 6797943671854966350}
@@ -73,7 +73,7 @@ MonoBehaviour:
   hostTransform: {fileID: 0}
   manipulationType: 2
   twoHandedManipulationType: 3
-  allowFarManipulation: 1
+  allowFarManipulation: 0
   oneHandRotationModeNear: 6
   oneHandRotationModeFar: 6
   releaseBehavior: 3
@@ -337,14 +337,7 @@ MonoBehaviour:
   hasPlastic: 0
   hasMetal: 1
   isPaintBucket: 0
-  objectToColor: {fileID: 1603609205428683895}
-  orderableInColor: 0
-  paintWithPaint: 0
-  paintSomeNotOthers: 0
-  isTubeBridge: 0
-  isChimesSmall: 0
-  isChimesLarge: 0
-  paintColor: {r: 0, g: 0, b: 0, a: 0}
+  paintColorMaterial: {fileID: 0}
 --- !u!1 &4408202425011360070
 GameObject:
   m_ObjectHideFlags: 0

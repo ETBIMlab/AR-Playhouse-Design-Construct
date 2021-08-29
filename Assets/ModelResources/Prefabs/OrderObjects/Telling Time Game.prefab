@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 8451354459382624130}
   - component: {fileID: 5215758420635583119}
   - component: {fileID: 5389979740812156379}
+  - component: {fileID: -754846344569060934}
   m_Layer: 0
   m_Name: Telling Time Game
   m_TagString: item
@@ -224,7 +225,7 @@ Transform:
   m_GameObject: {fileID: 1152555372702163941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.536524, y: 0.18, z: 0.9538596}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.0125, y: 0.0125, z: 0.0125}
   m_Children:
   - {fileID: 8415394286577182237}
   - {fileID: 6868976700598071627}
@@ -460,6 +461,42 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnObjectFinishedSnapping:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-754846344569060934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152555372702163941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03daa81ea5f685f4ebf6e32038d058ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hostTransform: {fileID: 0}
+  manipulationType: 2
+  twoHandedManipulationType: 5
+  allowFarManipulation: 0
+  oneHandRotationModeNear: 6
+  oneHandRotationModeFar: 6
+  releaseBehavior: 3
+  constraintOnRotation: 0
+  useLocalSpaceForConstraint: 0
+  constraintOnMovement: 0
+  smoothingActive: 1
+  smoothingAmountOneHandManip: 0.001
+  onManipulationStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onManipulationEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  onHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  onHoverExited:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1334570158491906657

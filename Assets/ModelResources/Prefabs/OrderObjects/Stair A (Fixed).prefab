@@ -152,7 +152,7 @@ MonoBehaviour:
   hostTransform: {fileID: 0}
   manipulationType: 2
   twoHandedManipulationType: 3
-  allowFarManipulation: 1
+  allowFarManipulation: 0
   oneHandRotationModeNear: 6
   oneHandRotationModeFar: 6
   releaseBehavior: 3
@@ -416,19 +416,7 @@ MonoBehaviour:
   hasPlastic: 0
   hasMetal: 1
   isPaintBucket: 0
-  orderableInColor: 0
-  paintWithPaint: 0
-  isTubeBridge: 0
-  isChimesSmall: 0
-  isChimesLarge: 0
-  isSingleSlide: 0
-  isDoubleSlide: 0
-  isTubeSlide: 0
-  isFirepole: 0
-  isCoilClimber: 0
-  isStairs: 0
   paintColorMaterial: {fileID: 0}
-  paintColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &3685923357871713637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,31 +429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignToRedTubeBridge: {fileID: 0}
-  AssignToGreenTubeBridge: {fileID: 0}
-  AssignToBlueTubeBridge: {fileID: 0}
-  AssignToRedSmallChimes: {fileID: 0}
-  AssignToGreenSmallChimes: {fileID: 0}
-  AssignToBlueSmallChimes: {fileID: 0}
-  AssignToRedBigChimes: {fileID: 0}
-  AssignToGreenBigChimes: {fileID: 0}
-  AssignToBlueBigChimes: {fileID: 0}
-  AssignToRedSingleSlide: {fileID: 0}
-  AssignToGreenSingleSlide: {fileID: 0}
-  AssignToBlueSingleSlide: {fileID: 0}
-  AssignToRedDoubleSlide: {fileID: 0}
-  AssignToGreenDoubleSlide: {fileID: 0}
-  AssignToBlueDoubleSlide: {fileID: 0}
-  AssignToRedFirepole: {fileID: 0}
-  AssignToGreenFirepole: {fileID: 0}
-  AssignToBlueFirepole: {fileID: 0}
-  AssignToRedCoilClimber: {fileID: 0}
-  AssignToGreenCoilClimber: {fileID: 0}
-  AssignToBlueCoilClimber: {fileID: 0}
-  AssignToRedStairs: {fileID: 0}
-  AssignToGreenStairs: {fileID: 0}
-  AssignToBlueStairs: {fileID: 0}
-  objectOrdered: {fileID: 0}
 --- !u!1001 &3971716429381438600
 PrefabInstance:
   m_ObjectHideFlags: 0
