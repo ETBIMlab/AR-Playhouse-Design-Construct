@@ -20,6 +20,7 @@ public class laptopInterface : MonoBehaviour
     int scheduleminutes = 0;
     Boolean istab1 = true;
     String itemstoDisplay = "";
+    public bool removeCost = false;
 
     [Serializable]
     public struct installObj
@@ -81,7 +82,6 @@ public class laptopInterface : MonoBehaviour
    
     }
 
-   
     public void iteminstalled(string objName)
     {
         for (int i = 0; i < installObjs.Length; i++)
@@ -94,22 +94,29 @@ public class laptopInterface : MonoBehaviour
 
     }
 
-    public void removeitemCost(double mon)
+    public void removeitemCost(double mon, int time)
     {
-        
         money = money - mon;
         itemstoDisplay += " $" + money + "\n";
-
+        removeCost = true;
+        convertTime(time);
     }
 
     //change time in minutes into weeks-minutes
     public void convertTime(int t)
     {
-
         scheduledays = 0;
         schedulehours = 0;
         scheduleminutes = 0;
-        timeinminutes = timeinminutes + t;
+        if (removeCost)
+        {
+            timeinminutes = timeinminutes - t;
+            removeCost = false;
+        }
+        else
+        {
+            timeinminutes = timeinminutes + t;
+        }
         int temp = timeinminutes;
         while (temp > 1440)
         {
