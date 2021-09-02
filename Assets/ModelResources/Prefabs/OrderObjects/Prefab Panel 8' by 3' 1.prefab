@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3900089376120074843}
   - component: {fileID: -6026486249112050002}
   - component: {fileID: -8902155916017803857}
-  - component: {fileID: -7130820174621576368}
   - component: {fileID: -3394864971804832898}
   - component: {fileID: -2957260198162517129}
   - component: {fileID: -4636442702855811103}
@@ -113,23 +112,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 36, z: 96.66121}
   m_Center: {x: -1.5, y: 18, z: -48.330605}
---- !u!114 &-7130820174621576368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3324554358023734919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasWood: 1
-  hasPlastic: 0
-  hasMetal: 0
-  isPaintBucket: 0
-  paintColorMaterial: {fileID: 0}
 --- !u!114 &-3394864971804832898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,14 +292,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4368142063fdb41b98c5bd130fed36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snappingRadius: 0
+  snappingRadius: 0.0625
   colliderObjectsToEnable: []
   OnObjectStartedSnapping:
     m_PersistentCalls:
       m_Calls: []
   OnObjectFinishedSnapping:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -4636442702855811103}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 1beaca2388760544882033dfdd0ffded,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-6401579595013587924
 MonoBehaviour:
   m_ObjectHideFlags: 0
