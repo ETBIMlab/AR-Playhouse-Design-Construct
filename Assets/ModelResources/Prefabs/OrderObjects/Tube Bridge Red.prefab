@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 5326842759895121023}
   - component: {fileID: 891389774212786103}
   - component: {fileID: 7198974981710393492}
+  - component: {fileID: 3098924345823394576}
   m_Layer: 0
   m_Name: Tube Bridge Red
   m_TagString: item
@@ -381,6 +382,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 52, y: 48.884007, z: 104}
   m_Center: {x: -26, y: 24.442003, z: -52}
+--- !u!114 &3098924345823394576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6166122458979007812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0
 --- !u!1001 &1167474073912258929
 PrefabInstance:
   m_ObjectHideFlags: 0

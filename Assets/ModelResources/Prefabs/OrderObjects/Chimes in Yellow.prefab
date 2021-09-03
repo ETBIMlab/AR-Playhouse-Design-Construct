@@ -850,6 +850,7 @@ GameObject:
   - component: {fileID: 4110349207007730086}
   - component: {fileID: 7312205824776451532}
   - component: {fileID: 7456950051296486043}
+  - component: {fileID: 7007033864172282767}
   m_Layer: 0
   m_Name: Chimes in Yellow
   m_TagString: item
@@ -1169,6 +1170,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7007033864172282767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332753978563344227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0
 --- !u!1 &6695907876198842340
 GameObject:
   m_ObjectHideFlags: 0

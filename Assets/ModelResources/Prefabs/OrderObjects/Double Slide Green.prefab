@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5870109904391568186}
   - component: {fileID: 8207921162162813222}
   - component: {fileID: -6174226059148523004}
+  - component: {fileID: 1491975849848272182}
   m_Layer: 0
   m_Name: Double Slide Green
   m_TagString: item
@@ -344,6 +345,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 60.875, y: 142.80507, z: 124}
   m_Center: {x: -5.5625, y: 71.402534, z: 62}
+--- !u!114 &1491975849848272182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619752907302329260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0
 --- !u!1 &5799827754811691318
 GameObject:
   m_ObjectHideFlags: 0

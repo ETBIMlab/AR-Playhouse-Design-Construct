@@ -63,6 +63,7 @@ GameObject:
   - component: {fileID: 180420351049451886}
   - component: {fileID: 4416772604611920508}
   - component: {fileID: 8020457833978893028}
+  - component: {fileID: 7589630733548852988}
   m_Layer: 0
   m_Name: Double Slide Blue
   m_TagString: item
@@ -389,6 +390,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 60.875, y: 142.80507, z: 124}
   m_Center: {x: -5.5625, y: 71.402534, z: 62}
+--- !u!114 &7589630733548852988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252273685352521294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0
 --- !u!1001 &82728354949525963
 PrefabInstance:
   m_ObjectHideFlags: 0

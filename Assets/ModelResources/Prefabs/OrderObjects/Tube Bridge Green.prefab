@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: -4249715709568463959}
   - component: {fileID: 349298453452306555}
   - component: {fileID: -866721315801126496}
+  - component: {fileID: 1886940274873067994}
   m_Layer: 0
   m_Name: Tube Bridge Green
   m_TagString: item
@@ -374,6 +375,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 52, y: 48.884007, z: 104}
   m_Center: {x: -26, y: 24.442003, z: -52}
+--- !u!114 &1886940274873067994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230332567762628692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0
 --- !u!1 &7789413769370519406
 GameObject:
   m_ObjectHideFlags: 0

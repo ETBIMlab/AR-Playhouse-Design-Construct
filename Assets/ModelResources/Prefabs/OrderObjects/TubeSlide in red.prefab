@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -8661166335579705396}
   - component: {fileID: 2754663288089446853}
   - component: {fileID: -1365657772288693923}
-  - component: {fileID: -9132778085794648266}
   - component: {fileID: 4955882853010776640}
   - component: {fileID: 3508396740895601820}
   - component: {fileID: -1095089221710720420}
@@ -36,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 7693010273383703919}
   m_LocalRotation: {x: -0.5132317, y: -0.5132317, z: -0.48640853, w: 0.48640838}
   m_LocalPosition: {x: 5.2258806, y: -4.1223574, z: 3.0636368}
-  m_LocalScale: {x: 0.0125, y: 0.0125, z: 0.0125}
+  m_LocalScale: {x: 0.7, y: 0.65, z: 0.65}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -173,22 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTetherWhenManipulating: 0
---- !u!54 &-9132778085794648266
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7693010273383703919}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &4955882853010776640
 MonoBehaviour:
   m_ObjectHideFlags: 0

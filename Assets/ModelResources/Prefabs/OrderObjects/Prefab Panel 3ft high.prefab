@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 3257795755884028914}
   - component: {fileID: -8147080005131540963}
   - component: {fileID: -3365232537575116129}
+  - component: {fileID: 677747334330450018}
   m_Layer: 0
   m_Name: Prefab Panel 3ft high
   m_TagString: item
@@ -369,6 +370,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.852883, y: 36, z: 60.79874}
   m_Center: {x: -0.7924315, y: 18, z: -29.894781}
+--- !u!114 &677747334330450018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943161161930685489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0
 --- !u!1 &4952901140134322687
 GameObject:
   m_ObjectHideFlags: 0
