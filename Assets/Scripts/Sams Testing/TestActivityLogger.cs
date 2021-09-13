@@ -67,7 +67,10 @@ public class TestActivityLogger : MonoBehaviour
    
 #endif
 
-
+    // for testing in hololens 
+    string path = Application.persistentDataPath + "/ActivityLog.txt";
+    // for testing on computer  file should show up in capstone folder
+    //string path = "./ActivityLog.txt";
 
     // function is called in Object orderer when an item is ordered. This logs the attributes of the objects ordered.
     public void ExportActivityLog(OrderableObj obj)
@@ -82,11 +85,7 @@ public class TestActivityLogger : MonoBehaviour
             avgSus += obj.sustainability;
         }
        
-        // for testing in hololens 
-        string path = Application.persistentDataPath + "/ActivityLog.txt";
-
-        // for testing on computer  file should show up in capstone folder
-        //string path = "./ActivityLog.txt";
+       
         string fileContents =   "---------------------------------------\n" +
                                 "User ordered " + obj.name + "\n" +
                                 "Item cost " + obj.price + " $" +"\n" +
@@ -120,7 +119,43 @@ public class TestActivityLogger : MonoBehaviour
 #endif
     }
 
+
+
+
+
     // TO ADD   Remove Export Function(oderableobj obj)  this is called from ObjectOrderer script/ this is to log items returned and or thrown away.
+    public void ReturnObjectLog(OrderableObj obj)
+    {
+         totalCost -= obj.price;
+        totalTime -= obj.instalTime;
+        totalFun -= obj.fun;
+
+        if(obj.sustainability != 0)
+        {
+            objectCount--;
+            avgSus -= obj.sustainability;
+        }
+
+        string fileContents =   "---------------------------------------\n" +
+                                "User returned " + obj.name + "\n" +
+                                "Item cost refunded " + obj.price + " $" +"\n" +
+                                "The time retunred is " + obj.instalTime + " minutes \n" +
+                                "The Item had a sustainability rank of " + obj.sustainability +"\n" +
+                                "And a fun rank  of " + obj.fun + "\n" +
+                                "This was returned at " + timeStamp1 + "\n" +
+                                "Total Cost = "+ totalCost + " $"+ "\n" +
+                                "Total Time = "+ totalTime + " Minutes" +"\n" +
+                                "Total Fun = " + totalFun + "\n" +
+                                "Average Sustainability = " + (avgSus / objectCount) + "\n---------------------------------------\n\n";
+
+
+        if (!File.Exists(path))  { File.WriteAllText(path, fileContents); }
+        else { File.AppendAllText(path, fileContents);    }                            
+
+    }
+
+
+
 
 
         // This keeps track of the Vector 3 location that the user is looking at. 
@@ -151,7 +186,7 @@ public class TestActivityLogger : MonoBehaviour
 
 
 
-    // These comments are to add a voice commend to export something... probably will not use.  that something is defined in theExportActivityLog() function.
+    // These comments are to add a voice commend to export something... probably will not use.  that something is defined in the ExportActivityLog() function.
 
     /* 
         private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
