@@ -1100,16 +1100,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5030551907364014196}
-  - component: {fileID: 1731854805971302519}
   - component: {fileID: 7662635691686056438}
   - component: {fileID: 8483295873261653889}
   - component: {fileID: 3465838112393592630}
   - component: {fileID: 8194681641490639724}
   - component: {fileID: 3247206013392550112}
-  - component: {fileID: 5236183230528518154}
   - component: {fileID: 5351043627745486049}
-  - component: {fileID: 3686483925730545274}
   - component: {fileID: -5741728089653500710}
+  - component: {fileID: 7294595986189619523}
   m_Layer: 0
   m_Name: Chimes Panel 5' by 3'6in
   m_TagString: item
@@ -1170,23 +1168,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1731854805971302519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8325824848434461287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasWood: 0
-  hasPlastic: 1
-  hasMetal: 1
-  isPaintBucket: 0
-  paintColorMaterial: {fileID: 0}
 --- !u!114 &7662635691686056438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1220,7 +1201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hostTransform: {fileID: 0}
   manipulationType: 2
-  twoHandedManipulationType: 5
+  twoHandedManipulationType: 3
   allowFarManipulation: 0
   oneHandRotationModeNear: 6
   oneHandRotationModeFar: 6
@@ -1232,10 +1213,33 @@ MonoBehaviour:
   smoothingAmountOneHandManip: 0.001
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 291077478876368508, guid: beaf2b6d94b321e40bd2756151888c3f,
+          type: 3}
+        m_MethodName: EnableSnappedCollider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8325824848434461287}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -1367,18 +1371,6 @@ MonoBehaviour:
   dragClip: {fileID: 8300000, guid: 45a90682f74bb0c41b65994c63b74e60, type: 3}
   clickClip: {fileID: 8300000, guid: 9a10debaf8483ae49aa91211098634f1, type: 3}
   volume: 1
---- !u!114 &5236183230528518154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8325824848434461287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b48207a4f8ecc2344bf6df17f3bf9fb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5351043627745486049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,26 +1383,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4368142063fdb41b98c5bd130fed36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snappingRadius: 0
+  snappingRadius: 0.0625
   colliderObjectsToEnable: []
   OnObjectStartedSnapping:
     m_PersistentCalls:
       m_Calls: []
   OnObjectFinishedSnapping:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &3686483925730545274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8325824848434461287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls:
+      - m_Target: {fileID: 8194681641490639724}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 1beaca2388760544882033dfdd0ffded,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &-5741728089653500710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1424,6 +1416,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7294595986189619523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325824848434461287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0
 --- !u!1 &8478123367886263218
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7447616127395913}
   - component: {fileID: 9025621771100705407}
   - component: {fileID: 3350108872558161542}
-  - component: {fileID: 6834469922689314074}
   - component: {fileID: 9071480987105107281}
   - component: {fileID: 366969577209358255}
   - component: {fileID: 4892237732613734906}
@@ -20,6 +19,8 @@ GameObject:
   - component: {fileID: 832994195662402025}
   - component: {fileID: 5816848046286709313}
   - component: {fileID: -268622825802228705}
+  - component: {fileID: 524083609430722404}
+  - component: {fileID: 2291705485218876068}
   m_Layer: 0
   m_Name: Accessibility Ramp
   m_TagString: Untagged
@@ -93,23 +94,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &6834469922689314074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3909454646500170330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasWood: 1
-  hasPlastic: 0
-  hasMetal: 0
-  isPaintBucket: 0
-  paintColorMaterial: {fileID: 0}
 --- !u!114 &9071480987105107281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,8 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hostTransform: {fileID: 0}
   manipulationType: 2
-  twoHandedManipulationType: 5
-  allowFarManipulation: 1
+  twoHandedManipulationType: 3
+  allowFarManipulation: 0
   oneHandRotationModeNear: 6
   oneHandRotationModeFar: 6
   releaseBehavior: 3
@@ -155,10 +139,32 @@ MonoBehaviour:
   smoothingAmountOneHandManip: 0.001
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 832994195662402025}
+        m_MethodName: EnableSnappedCollider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 832994195662402025}
+        m_MethodName: SnapToLocation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -302,14 +308,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4368142063fdb41b98c5bd130fed36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snappingRadius: 0
+  snappingRadius: 0.0625
   colliderObjectsToEnable: []
   OnObjectStartedSnapping:
     m_PersistentCalls:
       m_Calls: []
   OnObjectFinishedSnapping:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1600232742232673312}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 1beaca2388760544882033dfdd0ffded,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5816848046286709313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +353,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 72, y: 4, z: 64}
   m_Center: {x: -36, y: 2, z: -32}
+--- !u!114 &524083609430722404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909454646500170330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0
+--- !u!54 &2291705485218876068
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909454646500170330}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7569732323035645773
 GameObject:
   m_ObjectHideFlags: 0

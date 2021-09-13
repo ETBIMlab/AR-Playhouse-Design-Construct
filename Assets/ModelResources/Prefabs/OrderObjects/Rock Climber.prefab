@@ -19,8 +19,6 @@ GameObject:
   - component: {fileID: 5120467134467307286}
   - component: {fileID: 8589251616043931239}
   - component: {fileID: -2850120343914002921}
-  - component: {fileID: 8289480847950750675}
-  - component: {fileID: -7260685819533309920}
   m_Layer: 0
   m_Name: Rock Climber
   m_TagString: item
@@ -360,40 +358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665ef66b72792e94a84d5d6acc876829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8289480847950750675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3477161777555957392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasWood: 0
-  hasPlastic: 0
-  hasMetal: 1
-  isPaintBucket: 0
-  paintColorMaterial: {fileID: 0}
---- !u!114 &-7260685819533309920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3477161777555957392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasWood: 0
-  hasPlastic: 0
-  hasMetal: 0
-  isPaintBucket: 0
-  paintColorMaterial: {fileID: 0}
 --- !u!1 &3615271779976461132
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 2662110860464515829}
   - component: {fileID: 6397933537887513167}
   - component: {fileID: 8746470220742002336}
-  - component: {fileID: 6430239019641189440}
   m_Layer: 0
   m_Name: Single Slide Blue
   m_TagString: item
@@ -168,8 +167,7 @@ MonoBehaviour:
   onManipulationStarted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 291077478876368508, guid: beaf2b6d94b321e40bd2756151888c3f,
-          type: 3}
+      - m_Target: {fileID: 399303906573529131}
         m_MethodName: EnableSnappedCollider
         m_Mode: 1
         m_Arguments:
@@ -183,8 +181,7 @@ MonoBehaviour:
   onManipulationEnded:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 291077478876368508, guid: beaf2b6d94b321e40bd2756151888c3f,
-          type: 3}
+      - m_Target: {fileID: 399303906573529131}
         m_MethodName: SnapToLocation
         m_Mode: 1
         m_Arguments:
@@ -269,8 +266,7 @@ MonoBehaviour:
   OnObjectFinishedSnapping:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1734450475139661465, guid: beaf2b6d94b321e40bd2756151888c3f,
-          type: 3}
+      - m_Target: {fileID: 6397933537887513167}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
@@ -407,23 +403,6 @@ MonoBehaviour:
   dragClip: {fileID: 8300000, guid: 45a90682f74bb0c41b65994c63b74e60, type: 3}
   clickClip: {fileID: 8300000, guid: 9a10debaf8483ae49aa91211098634f1, type: 3}
   volume: 1
---- !u!114 &6430239019641189440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9049544033204265734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3793ad1623e94874aa3f0d0dbe54b432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasWood: 0
-  hasPlastic: 1
-  hasMetal: 0
-  isPaintBucket: 0
-  paintColorMaterial: {fileID: 0}
 --- !u!1001 &1557433288404573677
 PrefabInstance:
   m_ObjectHideFlags: 0
