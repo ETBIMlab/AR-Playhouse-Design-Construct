@@ -65,7 +65,7 @@ public class TestActivityLogger : MonoBehaviour
 
 
 
-#if WINDOWS_UWP
+    #if WINDOWS_UWP
      async void WriteData()
     {
         if (firstSave){
@@ -78,7 +78,7 @@ public class TestActivityLogger : MonoBehaviour
         await FileIO.AppendTextAsync(localFile, saveInformation + "\r\n");
         }
     }
-#endif
+    #endif
 
 
 
@@ -126,9 +126,9 @@ public class TestActivityLogger : MonoBehaviour
         if (!File.Exists(path))  { File.WriteAllText(path, fileContents); }
         else { File.AppendAllText(path, fileContents);    }
 
-#if WINDOWS_UWP
+        #if WINDOWS_UWP
         WriteData();
-#endif
+        #endif
     }
 
 
@@ -176,9 +176,9 @@ public class TestActivityLogger : MonoBehaviour
         if (!File.Exists(path))  { File.WriteAllText(path, fileContents); }
         else { File.AppendAllText(path, fileContents);    }      
 
-#if WINDOWS_UWP
+        #if WINDOWS_UWP
         WriteData();
-#endif
+        #endif
     }
 
 
