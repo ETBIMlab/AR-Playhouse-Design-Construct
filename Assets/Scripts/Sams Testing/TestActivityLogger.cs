@@ -32,7 +32,6 @@ public class TestActivityLogger : MonoBehaviour
     private static string fileName = timeStamp + ".txt";
   
     private static bool firstSave = true;
-    private static bool firstSave1 = true;
     private double totalCost = 0.0f;
     private int totalTime = 0;
     private int totalFun = 0;
@@ -43,14 +42,30 @@ public class TestActivityLogger : MonoBehaviour
     private float nextTime = 0.0f;
     private string positions = "";
  
-
+    public string path;
+    public string path2;
     // gets a handle on the applications localfolder to save to.
     // uses async function to wait
     // then creates the txt file and appends saveInformation string
 
-#if WINDOWS_UWP
+
+    void Start()
+    {
+    // for testing in hololens 
+    path = Application.persistentDataPath + "/ActivityLog.txt";
+    // for testing on computer  file should show up in capstone folder
+    //string path = "./ActivityLog.txt";
+
+     path2 = Application.persistentDataPath + "/PositionLog.txt";
+     #if WINDOWS_UWP
     Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
     Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+     #endif
+    }
+
+
+
+#if WINDOWS_UWP
      async void WriteData()
     {
         if (firstSave){
@@ -63,14 +78,11 @@ public class TestActivityLogger : MonoBehaviour
         await FileIO.AppendTextAsync(localFile, saveInformation + "\r\n");
         }
     }
-
-   
 #endif
 
-    // for testing in hololens 
-    string path = Application.persistentDataPath + "/ActivityLog.txt";
-    // for testing on computer  file should show up in capstone folder
-    //string path = "./ActivityLog.txt";
+
+
+
 
     // function is called in Object orderer when an item is ordered. This logs the attributes of the objects ordered.
     public void ExportActivityLog(OrderableObj obj)
@@ -148,10 +160,25 @@ public class TestActivityLogger : MonoBehaviour
                                 "Total Fun = " + totalFun + "\n" +
                                 "Average Sustainability = " + (avgSus / objectCount) + "\n---------------------------------------\n\n";
 
+         saveInformation =   "---------------------------------------\n" +
+                                "User returned " + obj.name + "\n" +
+                                "Item cost refunded " + obj.price + " $" +"\n" +
+                                "The time retunred is " + obj.instalTime + " minutes \n" +
+                                "The Item had a sustainability rank of " + obj.sustainability +"\n" +
+                                "And a fun rank  of " + obj.fun + "\n" +
+                                "This was returned at " + timeStamp1 + "\n" +
+                                "Total Cost = "+ totalCost + " $"+ "\n" +
+                                "Total Time = "+ totalTime + " Minutes" +"\n" +
+                                "Total Fun = " + totalFun + "\n" +
+                                "Average Sustainability = " + (avgSus / objectCount) + "\n---------------------------------------\n\n";
+
 
         if (!File.Exists(path))  { File.WriteAllText(path, fileContents); }
-        else { File.AppendAllText(path, fileContents);    }                            
+        else { File.AppendAllText(path, fileContents);    }      
 
+#if WINDOWS_UWP
+        WriteData();
+#endif
     }
 
 
@@ -162,7 +189,7 @@ public class TestActivityLogger : MonoBehaviour
     void ExportPositionLog(string pos)
     {    
         //string path1 = "./PositionLog.txt";
-        string path2 = Application.persistentDataPath + "/PositionLog.txt";
+        
 
         if (!File.Exists(path2)) { File.WriteAllText(path2, pos); }
         else { File.AppendAllText(path2, pos); }
@@ -184,7 +211,7 @@ public class TestActivityLogger : MonoBehaviour
 
 
 
-
+}
 
     // These comments are to add a voice commend to export something... probably will not use.  that something is defined in the ExportActivityLog() function.
 
@@ -257,4 +284,4 @@ public class TestActivityLogger : MonoBehaviour
            keywordRecognizer.Start();
        }
 */
-}
+
