@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using System.Text;
-
+using ObjectOrderer;
 public class TruckScript : MonoBehaviour
 {
-
+    
     GameObject itemInfo;
     string objName = null;
     string filteredString = "";
 
-
+/*
     [Serializable]
     public struct OrderableObj
     {
@@ -24,9 +24,10 @@ public class TruckScript : MonoBehaviour
         public int fun;
         public GameObject obj;
     }
-
-    public OrderableObj[] orderableObjs = new OrderableObj[100];
+     public OrderableObj[] orderableObjs = new OrderableObj[100];
     public GameObject laptopinterface;
+*/
+   
 
     void Start()
     {
@@ -45,7 +46,8 @@ public class TruckScript : MonoBehaviour
         if (col.gameObject.tag == "item")
         {
             Destroy(col.gameObject);
-            objName = col.gameObject.name;
+            objName = col.OrderableObj.name;
+            Debug.log(objName);
             FilterString(objName);
         }
     }
