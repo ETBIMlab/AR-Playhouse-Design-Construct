@@ -216,14 +216,17 @@ public class ObjectOrderer : MonoBehaviour
 
 
 
-    public void ReturnValues(object objectP) 
+    public void ReturnValues(string objectP) 
     {
         for (int i = 0; i < orderableObjs.Length; i++)
         {
-            if (orderableObjs[i].obj == objectP)
+            if (orderableObjs[i].name == objectP)
             {
                 Debug.Log("successful return");
-                Debug.Log(objectP);
+               
+            }else
+            {
+                Debug.Log("UNsuccessful return");
             }
         }
     }
