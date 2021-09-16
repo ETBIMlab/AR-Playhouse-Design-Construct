@@ -4,34 +4,40 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using System.Text;
-using ObjectOrderer;
+using UnityEngine.UI;
+
 public class TruckScript : MonoBehaviour
 {
-    
-    GameObject itemInfo;
+    //public gameObject();
+    //GameObject itemInfo;
     string objName = null;
     string filteredString = "";
+    public ObjectOrderer Orderer;
+    string value;
+    GameObject gameObj;
+    /*
+        [Serializable]
+        public struct OrderableObj
+        {
+            public string name;
+            public double price;
+            public int deliveryTime;
+            public int instalTime;
+            public double sustainability;
+            public int fun;
+            public GameObject obj;
+        }
+         public OrderableObj[] orderableObjs = new OrderableObj[100];
 
-/*
-    [Serializable]
-    public struct OrderableObj
-    {
-        public string name;
-        public double price;
-        public int deliveryTime;
-        public int instalTime;
-        public double sustainability;
-        public int fun;
-        public GameObject obj;
-    }
-     public OrderableObj[] orderableObjs = new OrderableObj[100];
+    */
+
     public GameObject laptopinterface;
-*/
-   
-
     void Start()
     {
-    
+        //sam added
+        Orderer = GetComponent<ObjectOrderer>();
+        
+
     }
 
     // Update is called once per frame
@@ -45,14 +51,27 @@ public class TruckScript : MonoBehaviour
         //functionIsCalled = false;
         if (col.gameObject.tag == "item")
         {
+            // public GameObject(game) == col.gameObject;
+            Debug.Log(col.gameObject);
+
+            //  value = col.gameObject.name.ToString();
+            value = col.gameObject;
+            value = value.Replace("(Clone)","");
+            
+            Debug.Log(value);
+           
+           Orderer.ReturnValues(value);
+            Debug.Log("Returned item");
+
             Destroy(col.gameObject);
-            objName = col.OrderableObj.name;
-            Debug.log(objName);
-            FilterString(objName);
+            //  FilterString(objName);
         }
+
+       
     }
 
     //Filter string to match the current string in array
+    /*
     public void FilterString(string objName)
     {
         StringBuilder sb = new StringBuilder();
@@ -66,7 +85,7 @@ public class TruckScript : MonoBehaviour
             sb.Append(objName[i]);
         }
         filteredString = sb.ToString();
-        RemoveObjectFromLaptop(filteredString);
+       // RemoveObjectFromLaptop(filteredString);
     }
     
     public void RemoveObjectFromLaptop(string objectName)
@@ -82,4 +101,5 @@ public class TruckScript : MonoBehaviour
             }
         }
     }
+    */
 }

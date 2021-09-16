@@ -76,7 +76,8 @@ public class ObjectOrderer : MonoBehaviour
         
         //sam added
         logger = GetComponent<TestActivityLogger>();
-       
+
+        
     }
 
     //string objName;
@@ -152,6 +153,7 @@ public class ObjectOrderer : MonoBehaviour
             if (orderableObjs[i].name == objectName)
             {
                 Instantiate(orderableObjs[i].obj, new Vector3(0, 0, 0), Quaternion.identity);
+
                 return true;
                 //
             }
@@ -209,6 +211,20 @@ public class ObjectOrderer : MonoBehaviour
         {
             Instantiate(newObj, new Vector3(orderPos.x - 0.1f, orderPos.y - .6f, orderPos.z - 3.6f), Quaternion.identity, GameObject.Find("EnvironmentContainer").transform);
 
+        }
+    }
+
+
+
+    public void ReturnValues(object objectP) 
+    {
+        for (int i = 0; i < orderableObjs.Length; i++)
+        {
+            if (orderableObjs[i].obj == objectP)
+            {
+                Debug.Log("successful return");
+                Debug.Log(objectP);
+            }
         }
     }
 }
