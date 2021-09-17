@@ -57,15 +57,15 @@ public class TestActivityLogger : MonoBehaviour
     //string path = "./ActivityLog.txt";
 
      path2 = Application.persistentDataPath + "/PositionLog.txt";
-     #if WINDOWS_UWP
-    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-     #endif
+     
     }
 
 
 
-    #if WINDOWS_UWP
+#if WINDOWS_UWP
+
+    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
      async void WriteData()
     {
         if (firstSave){
@@ -78,7 +78,7 @@ public class TestActivityLogger : MonoBehaviour
         await FileIO.AppendTextAsync(localFile, saveInformation + "\r\n");
         }
     }
-    #endif
+#endif
 
 
 
