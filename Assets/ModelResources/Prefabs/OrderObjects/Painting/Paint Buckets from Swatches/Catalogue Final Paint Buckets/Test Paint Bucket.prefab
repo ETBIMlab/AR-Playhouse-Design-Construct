@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1213387665381904101}
   - component: {fileID: 8830875436954051557}
   - component: {fileID: -7305463728032122446}
+  - component: {fileID: 1056509083220415270}
   m_Layer: 0
   m_Name: Test Paint Bucket
   m_TagString: item
@@ -102,7 +103,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &3777735659726222707
 CapsuleCollider:
@@ -334,3 +335,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1056509083220415270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9106771969880586759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0

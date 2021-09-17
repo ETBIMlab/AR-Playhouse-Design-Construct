@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 5760874469994576545}
   - component: {fileID: 2713980651586394017}
   - component: {fileID: -9110422816466994703}
+  - component: {fileID: 8806768364109606994}
   m_Layer: 0
   m_Name: Yellow Paint
   m_TagString: item
@@ -317,3 +318,16 @@ MonoBehaviour:
   itemType: 0
   hasDifferentOriginRotation: 0
   itemOrientation: 0
+--- !u!114 &8806768364109606994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2397513359369834051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0

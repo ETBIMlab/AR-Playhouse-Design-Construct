@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3511539869499044264}
   - component: {fileID: 6548301079445970088}
   - component: {fileID: -4475746471234020582}
+  - component: {fileID: 2382619592458508393}
   m_Layer: 0
   m_Name: Purple Planks Paint Bucket
   m_TagString: item
@@ -102,7 +103,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &1441321060002679358
 CapsuleCollider:
@@ -334,3 +335,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2382619592458508393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776914222657176906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0
