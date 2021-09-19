@@ -91,7 +91,7 @@ public class ObjectOrderer : MonoBehaviour
     {
         didFunction = true;
         Debug.Log(objName + " deleted from scene");
-        ReturnValues(objName);
+       // ReturnValues(objName);
         return objName;
     }
 
