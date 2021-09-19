@@ -83,18 +83,15 @@ public class ObjectOrderer : MonoBehaviour
     //string objName;
     public void Update()
     {
-        if (didFunction == true)
-        {
-            Debug.Log("didFunction is true");
-        }
+ 
     }
 
     //getting object name from the TruckScript once obj is in collision with truck
     public string GetObjName(string objName)
     {
-        
         didFunction = true;
         Debug.Log(objName + " deleted from scene");
+        ReturnValues(objName);
         return objName;
     }
 
@@ -103,12 +100,9 @@ public class ObjectOrderer : MonoBehaviour
     {
         for (int i = 0; i < orderableObjs.Length; i++)
         {
-           if (orderableObjs[i].name.Equals(objName))
-           {
-                Debug.Log("successful return");
-            }
-           else {
-                Debug.Log("UNsuccessful return");
+            if (orderableObjs[i].name.Equals(objName))
+            {
+                Debug.Log("found a match to delete");
             }
         }
     }
