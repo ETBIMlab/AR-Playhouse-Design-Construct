@@ -9,13 +9,13 @@ using UnityEngine.UI;
 public class TruckScript : MonoBehaviour
 {
     //public gameObject();
-    //GameObject itemInfo;
-    //string objName = null;
-    //string filteredString = "";
-    public ObjectOrderer Orderer;
-    string value;
-    GameObject gameObj;
-    /*
+    GameObject itemInfo;
+    string objName = null;
+    string filteredString = "";
+    //public ObjectOrderer Orderer;
+    //string value;
+    //GameObject gameObj;
+   
         [Serializable]
         public struct OrderableObj
         {
@@ -27,12 +27,8 @@ public class TruckScript : MonoBehaviour
             public int fun;
             public GameObject obj;
         }
-         public OrderableObj[] orderableObjs = new OrderableObj[100];
-
-    */
-    ObjectOrderer oo = new ObjectOrderer();
-    string objName = null;
-    //string filteredString = "";
+    public OrderableObj[] orderableObjs = new OrderableObj[100];
+    //ObjectOrderer oo = new ObjectOrderer();
     public bool functionIsCalled = false;
     public GameObject laptopinterface;
     void Start()
@@ -46,11 +42,11 @@ public class TruckScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (functionIsCalled == true)
+        /*if (functionIsCalled == true)
         {
             oo.GetObjName(FilterString(objName));
             functionIsCalled = false;
-        }
+        }*/
     }
 
     public void OnCollisionEnter(Collision col)
@@ -69,7 +65,7 @@ public class TruckScript : MonoBehaviour
 
             //Orderer.ReturnValues(value);
             //Debug.Log("Returned item");
-            functionIsCalled = true;
+            //functionIsCalled = true;
             Destroy(col.gameObject);
             objName = col.gameObject.name;
             FilterString(objName);
@@ -80,7 +76,7 @@ public class TruckScript : MonoBehaviour
 
     //Filter string to match the current string in array
     
-    public string FilterString(string objName)
+    public void FilterString(string objName)
     {
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < objName.Length; i++)
@@ -92,10 +88,10 @@ public class TruckScript : MonoBehaviour
             }
             sb.Append(objName[i]);
         }
-        return sb.ToString();
-       // RemoveObjectFromLaptop(filteredString);
+        filteredString = sb.ToString();
+        RemoveObjectFromLaptop(filteredString);
     }
-    /*
+    
     public void RemoveObjectFromLaptop(string objectName)
     {
         //call reference to laptop script 
@@ -105,9 +101,9 @@ public class TruckScript : MonoBehaviour
             if (orderableObjs[i].name == objectName)
             {
                 li.removeitemCost(orderableObjs[i].price, orderableObjs[i].instalTime);
-                Debug.Log(objectName + " item deleted");
+                Debug.Log(objectName + " deleted from scene");
             }
         }
     }
-    */
+    
 }
