@@ -30,7 +30,7 @@ public class ObjectOrderer : MonoBehaviour
     public Material ConcreteTexture;
     public Material MulchTexture;
     bool didFunction = false;
-    string objName = "";
+    //string objName = "";
     public GameObject laptopinterface;
     private TestActivityLogger logger;
     // public TruckScript truckScriptReference;
@@ -83,18 +83,38 @@ public class ObjectOrderer : MonoBehaviour
     //string objName;
     public void Update()
     {
- 
+        if (didFunction == true)
+        {
+            Debug.Log("didFunction is true");
+        }
     }
 
     //getting object name from the TruckScript once obj is in collision with truck
-    public void GetObjName(string objName)
+    public string GetObjName(string objName)
     {
-       // RemoveFromLaptop(objName);
+        
+        didFunction = true;
+        Debug.Log(objName + " deleted from scene");
+        return objName;
     }
 
+
+    public void ReturnValues(string objName)
+    {
+        for (int i = 0; i < orderableObjs.Length; i++)
+        {
+           if (orderableObjs[i].name.Equals(objName))
+           {
+                Debug.Log("successful return");
+            }
+           else {
+                Debug.Log("UNsuccessful return");
+            }
+        }
+    }
     //iterate through the Main Camera array on this script to find the objName match and remove price it from the laptop
-    
-   
+
+
     // important
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
@@ -214,20 +234,4 @@ public class ObjectOrderer : MonoBehaviour
         }
     }
 
-
-
-    public void ReturnValues(string objectP) 
-    {
-        for (int i = 0; i < orderableObjs.Length; i++)
-        {
-            if (orderableObjs[i].name == objectP)
-            {
-                Debug.Log("successful return");
-               
-            }else
-            {
-                Debug.Log("UNsuccessful return");
-            }
-        }
-    }
 }
