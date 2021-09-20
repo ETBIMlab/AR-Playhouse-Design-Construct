@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 //using System.Runtime.Remoting.Messaging;
 using UnityEngine;
-
+/// <summary>
+/// RETIRED
+/// </summary>
 // class contains itemtype and maybe other things later..
 public class ItemInfo : MonoBehaviour
 {

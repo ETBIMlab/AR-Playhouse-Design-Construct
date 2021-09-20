@@ -5,11 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 /// <summary>
-/// Hi, so welcome to stage 2 of painting. We have IsWoodOrPlastic which will sort items into items made of wood (paint w/ paintbrush), plastic (orderable in color)
-/// metal (no touchy with color), and paintbuckets (need the color for paint). Paintable is stage 1 where it is supposed to paint wood if you are holding a paintbrush.
-/// this script, as its name implies, is supposed to let you order objects in color (for the ones that can). I looked at ObjectOrderer and wanted to try to make something
-/// simplier so here we are. The code is more based off of SurfaceChanger bc it seemed like a simpler solution. 
-/// so these ojects are all the orderable in Color ones, it's all hard coded which is rough but I think it'll work better. 
+/// RETIRED
 /// </summary>
 public class OrderInColor : MonoBehaviour
 { }

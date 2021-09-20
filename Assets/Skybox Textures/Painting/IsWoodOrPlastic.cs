@@ -6,11 +6,7 @@ using UnityEngine.Windows.Speech;
 public class IsWoodOrPlastic : MonoBehaviour
 {
     /// <summary>
-    /// tells us what the prefab is made of. The wood will be paintable using the paintbuckets,
-    /// the plastic will be orderable in different colors, the metal won't be paintable, 
-    /// and the paintBuckets will allow us to possibly re-dip the paintbrush. A lot of these have both wood and plastic or metal
-    /// so they will need to be painted differently than just wood or just plastic. In Unity, you can make public variables
-    /// in script and then toggle them as true or false in the editor so I tried to find as many prefabs as I could and label them.
+    /// RETIRED
     /// </summary>
     /// / // public Renderer ren;
     public bool hasWood = false;
