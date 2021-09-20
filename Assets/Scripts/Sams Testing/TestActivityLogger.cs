@@ -53,9 +53,9 @@ public class TestActivityLogger : MonoBehaviour
     void Start()
     {
     // for testing in hololens 
-   path = Application.persistentDataPath + "/ActivityLog.txt";
+   //path = Application.persistentDataPath + "/ActivityLog.txt";
     // for testing on computer  file should show up in capstone folder
-    //string path = "./ActivityLog.txt";
+     path = "./ActivityLog.txt";
 
      path2 = Application.persistentDataPath + "/PositionLog.txt";
      //string path2 = "/PositionLog.txt";
@@ -99,7 +99,7 @@ public class TestActivityLogger : MonoBehaviour
         }
        
        
-        string fileContents =   "---------------------------------------\n" +
+        string fileContents1 =   "---------------------------------------\n" +
                                 "User ordered " + obj.name + "\n" +
                                 "Item cost " + obj.price + " $" +"\n" +
                                 "The time required is " + obj.instalTime + " minutes \n" +
@@ -124,8 +124,8 @@ public class TestActivityLogger : MonoBehaviour
                                 "Average Sustainability = " + (avgSus / objectCount) + "\n---------------------------------------\n\n";
 
 
-        if (!File.Exists(path))  { File.WriteAllText(path, fileContents); }
-        else { File.AppendAllText(path, fileContents);    }
+        if (!File.Exists(path))  { File.WriteAllText(path, fileContents1); }
+        else { File.AppendAllText(path, fileContents1);    }
 
         #if WINDOWS_UWP
         WriteData();

@@ -11,6 +11,7 @@ public class TruckScript : MonoBehaviour
     //public gameObject();
     GameObject itemInfo;
     string objName = null;
+    GameObject returnObj;
     string filteredString = "";
     //public ObjectOrderer Orderer;
     //string value;
@@ -28,7 +29,7 @@ public class TruckScript : MonoBehaviour
             public GameObject obj;
         }
     private TestActivityLogger logger;
-    public ReturnableObj[] returnableObjs = new ReturnableObj[100];
+    public ReturnableObj[] returnableObjs;
     //ObjectOrderer oo = new ObjectOrderer();
     public bool functionIsCalled = false;
     public GameObject laptopinterface;
@@ -65,16 +66,36 @@ public class TruckScript : MonoBehaviour
             //Debug.Log(value);
 
             //Orderer.ReturnValues(value);
-            //Debug.Log("Returned item");
+            Debug.Log("Entering return");
             //functionIsCalled = true;
-            Destroy(col.gameObject);
+            //Destroy(col.gameObject);
             objName = col.gameObject.name;
-            FilterString(objName);
+            objName = objName.Replace("(Clone)","");
+            returnObj = col.gameObject;
+            //FilterString(objName);
+            //call reference to laptop script 
+            laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
+            for (int i = 0; i < returnableObjs.Length; i++)
+            {
+               
+
+                if (returnableObjs[i].name == objName)
+                {
+                  
+                        Debug.Log("Sending to Laptop Interface" + returnableObjs[i].name);
+                    li.removeitemCost(returnableObjs[i].price, returnableObjs[i].instalTime);
+                    Debug.Log("Sending to logger");
+                    logger.ReturnObjectLog(returnableObjs[i]);
+                    Debug.Log("Destroying the object...");
+                    Destroy(col.gameObject);
+
+                }
+            }
         }
 
        
     }
-
+    /*
     //Filter string to match the current string in array
     
     public void FilterString(string objName)
@@ -93,7 +114,7 @@ public class TruckScript : MonoBehaviour
         RemoveObjectFromLaptop(filteredString);
     }
     
-    public void RemoveObjectFromLaptop(string objectName)
+    public void RemoveObjectFromLaptop(ReturnableObj returnable)
     {
         //call reference to laptop script 
         laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
@@ -107,5 +128,5 @@ public class TruckScript : MonoBehaviour
             }
         }
     }
-    
+    */
 }
