@@ -53,12 +53,12 @@ public class TestActivityLogger : MonoBehaviour
     void Start()
     {
     // for testing in hololens 
-    path = Application.persistentDataPath + "/ActivityLog.txt";
+   // path = Application.persistentDataPath + "/ActivityLog.txt";
     // for testing on computer  file should show up in capstone folder
-    //string path = "./ActivityLog.txt";
+    string path = "./ActivityLog.txt";
 
-     path2 = Application.persistentDataPath + "/PositionLog.txt";
-     
+     //path2 = Application.persistentDataPath + "/PositionLog.txt";
+     string path2 = "/PositionLog.txt";
     }
 
 
