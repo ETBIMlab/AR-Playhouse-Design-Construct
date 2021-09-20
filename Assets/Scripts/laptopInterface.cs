@@ -78,7 +78,7 @@ public class laptopInterface : MonoBehaviour
         double itemscost = mon * quant;
         money = money + itemscost;
         itemstoDisplay += iname + " x" + quant + " $" + mon + "\n";
-        convertTime(dtime);
+        convertTime(itime);
    
     }
 

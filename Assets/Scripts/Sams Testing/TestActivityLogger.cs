@@ -33,12 +33,12 @@ public class TestActivityLogger : MonoBehaviour
     private static string fileName = timeStamp + ".txt";
   
     private static bool firstSave = true;
-    private double totalCost = 0.0f;
-    private int totalTime = 0;
-    private int totalFun = 0;
-    private double avgSus = 0.0f;
-    private int objectCount = 0;
-
+    private static double totalCost = 0.0d;
+    private static int totalTime = 0;
+    private static int totalFun = 0;
+    private static double avgSus = 0.0d;
+    private static int objectCount = 0;
+    
     public float capturePositionWaitTime = 1.0f; // changes how many vector 3 locations are printed, lower time = more locations.
     private float nextTime = 0.0f;
     private string positions = "";
@@ -139,7 +139,7 @@ public class TestActivityLogger : MonoBehaviour
     // TO ADD   Remove Export Function(oderableobj obj)  this is called from ObjectOrderer script/ this is to log items returned and or thrown away.
     public void ReturnObjectLog(ReturnableObj obj)
     {
-         totalCost -= obj.price;
+         totalCost = totalCost - obj.price;
         totalTime -= obj.instalTime;
         totalFun -= obj.fun;
 
