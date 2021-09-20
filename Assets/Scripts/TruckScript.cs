@@ -17,7 +17,7 @@ public class TruckScript : MonoBehaviour
     //GameObject gameObj;
    
         [Serializable]
-        public struct OrderableObj
+        public struct ReturnableObj
         {
             public string name;
             public double price;
@@ -27,7 +27,8 @@ public class TruckScript : MonoBehaviour
             public int fun;
             public GameObject obj;
         }
-    public OrderableObj[] orderableObjs = new OrderableObj[100];
+    private TestActivityLogger logger;
+    public ReturnableObj[] returnableObjs = new ReturnableObj[100];
     //ObjectOrderer oo = new ObjectOrderer();
     public bool functionIsCalled = false;
     public GameObject laptopinterface;
@@ -35,7 +36,7 @@ public class TruckScript : MonoBehaviour
     {
         //sam added
         //Orderer = GetComponent<ObjectOrderer>();
-        
+        logger = GetComponent<TestActivityLogger>();
 
     }
 
@@ -96,12 +97,13 @@ public class TruckScript : MonoBehaviour
     {
         //call reference to laptop script 
         laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
-        for (int i = 0; i < orderableObjs.Length; i++)
+        for (int i = 0; i < returnableObjs.Length; i++)
         {
-            if (orderableObjs[i].name == objectName)
+            if (returnableObjs[i].name == objectName)
             {
-                li.removeitemCost(orderableObjs[i].price, orderableObjs[i].instalTime);
+                li.removeitemCost(returnableObjs[i].price, returnableObjs[i].instalTime);
                 Debug.Log(objectName + " deleted from scene");
+                logger.ReturnObjectLog(returnableObjs[i]);
             }
         }
     }

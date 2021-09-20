@@ -7,6 +7,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using static ObjectOrderer;
+using static TruckScript;
 using Microsoft.MixedReality.Toolkit;
 
 #if WINDOWS_UWP
@@ -136,7 +137,7 @@ public class TestActivityLogger : MonoBehaviour
 
 
     // TO ADD   Remove Export Function(oderableobj obj)  this is called from ObjectOrderer script/ this is to log items returned and or thrown away.
-    public void ReturnObjectLog(OrderableObj obj)
+    public void ReturnObjectLog(ReturnableObj obj)
     {
          totalCost -= obj.price;
         totalTime -= obj.instalTime;
