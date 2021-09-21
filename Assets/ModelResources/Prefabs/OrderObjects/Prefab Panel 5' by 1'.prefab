@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: -4423094268455562080}
   - component: {fileID: 4711166565745422236}
   - component: {fileID: 4192288694555678859}
+  - component: {fileID: 5402844596847888629}
   m_Layer: 0
   m_Name: Prefab Panel 5' by 1'
   m_TagString: item
@@ -430,6 +431,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTetherWhenManipulating: 0
+--- !u!54 &5402844596847888629
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911109908087663524}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1898160724208262276
 PrefabInstance:
   m_ObjectHideFlags: 0

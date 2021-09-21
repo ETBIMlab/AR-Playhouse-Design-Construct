@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: -929774620828796100}
   - component: {fileID: -4701721817944439892}
   - component: {fileID: 3904358678955771341}
+  - component: {fileID: -3817115279115154235}
   m_Layer: 0
   m_Name: Chimes in Red
   m_TagString: item
@@ -607,6 +608,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTetherWhenManipulating: 0
+--- !u!54 &-3817115279115154235
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2325670399574634545}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2766737628518390244
 GameObject:
   m_ObjectHideFlags: 0
