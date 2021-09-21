@@ -73,17 +73,20 @@ public class TruckScript : MonoBehaviour
             objName = objName.Replace("(Clone)","");
             //objName = objName.Replace("(Fixed)", "");
             returnObj = col.gameObject;
+            Debug.Log("Name acquired and fixed");
+
             //FilterString(objName);
             //call reference to laptop script 
             laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
             for (int i = 0; i < returnableObjs.Length; i++)
             {
-               
+                Debug.Log("Iterating...");
+
 
                 if (returnableObjs[i].name == objName)
                 {
                   
-                        Debug.Log("Sending to Laptop Interface" + returnableObjs[i].name);
+                    Debug.Log("Sending to Laptop Interface" + returnableObjs[i].name);
                     li.removeitemCost(returnableObjs[i].price, returnableObjs[i].instalTime);
                     Debug.Log("Sending to logger");
                     logger.ReturnObjectLog(returnableObjs[i]);
