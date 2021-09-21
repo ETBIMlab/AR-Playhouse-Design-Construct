@@ -71,7 +71,7 @@ public class TruckScript : MonoBehaviour
             //Destroy(col.gameObject);
             objName = col.gameObject.name;
             objName = objName.Replace("(Clone)","");
-            objName = objName.Replace("(Fixed)", "");
+            //objName = objName.Replace("(Fixed)", "");
             returnObj = col.gameObject;
             //FilterString(objName);
             //call reference to laptop script 
