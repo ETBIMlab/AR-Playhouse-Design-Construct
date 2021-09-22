@@ -51,10 +51,10 @@ public class TruckScript : MonoBehaviour
         }*/
     }
 
-    public void OnCollisionEnter(Collision col)
+    public void OnTriggerEnter(Collider col)
     {
         //functionIsCalled = false;
-        if (col.gameObject.tag == "item")
+        if (col.gameObject.tag == "item" && col.gameObject != null)
         {
             // public GameObject(game) == col.gameObject;
             //Debug.Log(col.gameObject);
@@ -83,7 +83,7 @@ public class TruckScript : MonoBehaviour
                 Debug.Log("Iterating...");
 
 
-                if (returnableObjs[i].name == objName)
+                if (returnableObjs[i].name == objName && returnObj != null)
                 {
                   
                     Debug.Log("Sending to Laptop Interface" + returnableObjs[i].name);
@@ -92,12 +92,15 @@ public class TruckScript : MonoBehaviour
                     logger.ReturnObjectLog(returnableObjs[i]);
                     Debug.Log("Destroying the object...");
                     Destroy(col.gameObject);
-
+                    break;
                 }
+
             }
+            Debug.Log("Out of iteration...");
+
         }
 
-       
+
     }
     /*
     //Filter string to match the current string in array
