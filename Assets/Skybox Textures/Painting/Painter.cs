@@ -58,7 +58,7 @@ public class Painter : MonoBehaviour
         if (other.gameObject.GetComponent<Paintable>() != null && colorPicked == true && toolGrabbed == true) //this is the same as PainterAudio where it has consistently been getting it
         {
             Debug.Log("I collided with non object I want to paint");
-            other.GetComponent<Renderer>().material = material;
+            other.GetComponent<Renderer>().material.color = material.color;
 
            // other.GetComponent<MeshRenderer>().material = material; //not working either
             //PaintObject(material); this essentiall calls a method which does the same as above line 
