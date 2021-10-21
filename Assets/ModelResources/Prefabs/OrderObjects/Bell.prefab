@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: -6824122924746373769}
   - component: {fileID: -4508969225637629747}
   - component: {fileID: -7700235538984808886}
+  - component: {fileID: 4225295089257279938}
   m_Layer: 0
   m_Name: Bell
   m_TagString: item
@@ -691,6 +692,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &4225295089257279938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3033186207074723928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba824b3e816787d4c9c7141237a33b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Bell
+  price: 10
+  deliveryTime: 20
+  instalTime: 30
+  sustainability: 5
+  fun: 7
 --- !u!1 &3480971570936549333
 GameObject:
   m_ObjectHideFlags: 0

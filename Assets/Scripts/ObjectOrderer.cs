@@ -48,12 +48,17 @@ public class ObjectOrderer : MonoBehaviour
 
 
     //add the keywords, knows the name of each object in the structure. You iterate through it and instantiate it as a keyword
- 
+    //Debug.Log("Test12345");
     void Start()
     {
-        // GameObject[] itemObjects = GameObject.FindGameObjectsWithTag("item");
-        // for (int i = 0; i < itemObjects.Length; i++) { Debug.Log(itemObjects[i].GetComponent<ItemInfo>().itemPrice); }
-       
+        /*
+        GameObject[] itemObjects = GameObject.FindGameObjectsWithTag("item");
+         for (int i = 0; i < itemObjects.Length; i++)
+         {
+            Debug.Log(itemObjects[i].GetComponent<ItemInfo2021>().price);
+         } 
+         */
+        Debug.Log("Test1234");
         for (int i = 0; i < orderableObjs.Length; i++)
         {
             keywords.Add("Order " + orderableObjs[i].name);
@@ -113,11 +118,15 @@ public class ObjectOrderer : MonoBehaviour
     {
         //call reference to laptop script 
         laptopInterface li = (laptopInterface)laptopinterface.GetComponent(typeof(laptopInterface));
+
         //looking for object after the order command
         string temp = args.text.Substring(args.text.LastIndexOf(" ") + 1);
         temp = temp.Substring(0, temp.Length - 1);
+
+        //Traverse all orderable Objects
         for (int i = 0; i < orderableObjs.Length; i++)
         {
+            
             if (orderableObjs[i].name.Equals(args.text.Substring(6))) //moving over the word, notifying, updating the laptop interface, adding it to the scene, and exporting the data
             {
                 Debug.Log(orderableObjs[i].name + " ordered");
@@ -128,6 +137,7 @@ public class ObjectOrderer : MonoBehaviour
                 logger.ExportActivityLog(orderableObjs[i]);
                 return;
             }
+
             else if (temp == orderableObjs[i].name)
             {
                 string h = args.text.Substring(6);
