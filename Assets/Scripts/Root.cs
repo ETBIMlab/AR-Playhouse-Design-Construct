@@ -21,7 +21,11 @@ public class Root : MonoBehaviour
     public GameObject levelToggle;
     public int shiftAmount;
     public Vector3 environmentOffset;
-
+    public GameObject assignToDrillInScene;
+    public GameObject assignToPaintBrushInScene;
+    public GameObject assignToTableInScene;
+    //private Vector3 drillPos = new Vector3(10.4f, 9f, -41.6f);
+    private Vector3 drillOgPos;
 
     KeywordRecognizer keywordRecognizer = null;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
@@ -85,10 +89,15 @@ public class Root : MonoBehaviour
                 audio.shiftLevel();
             }
         });*/
-       
+        //drillOgPos = new Vector3(assignToDrillInScene.transform.position.x, assignToDrillInScene.transform.position.y, assignToDrillInScene.transform.position.z);
+        //alternatively, just: 
+        //drillOgPos = assignToDrillInScene.transform.position;
+       // drillOgPos = assignToTableInScene.transform.position;
+        Debug.Log("drillogPos: " + drillOgPos.ToString());
         keywords.Add("Toggle Level", () => { this.toggleLevel();  });//toggle the  level up or down
 
         keywords.Add("Toggle floor", () => { this.toggleFloor(); audio.changeView(); });//toggle the  floor on or off
+       // keywords.Add("Cleanup", () => { this.CleanUp(); });//transports the drill and paintbrush back to the workbench
 
 
         keywords.Add("Change View", () => { this.toggleButton(); audio.changeView(); });//move through the scaling
@@ -119,12 +128,18 @@ public class Root : MonoBehaviour
         keywordRecognizer.Start();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void CleanUp()
     {
+        //assignToDrillInScene.transform.position = new Vector3(10.41f, 9.02f, -40.61f);
+        //assignToPaintBrushInScene.transform.position = new Vector3(6.36f, 9.32f, -41.4f);
+        //assignToDrillInScene.transform.SetPositionAndRotation(new Vector3(10.41f, 9.02f, -40.61f), assignToDrillInScene.transform.rotation);
+        //assignToDrillInScene.transform.position = drillPos;
+        assignToDrillInScene.transform.position = drillOgPos;
+        Debug.Log("back 2 drillogPos: " + drillOgPos.ToString());
+
 
     }
-
     public void toggleButton()//toggle the switch button for child view
     {
        
@@ -261,7 +276,7 @@ public class Root : MonoBehaviour
             r.enabled = visible;
         }
     }
-
+  
     public void toggleFloor()
     {
         Debug.Log("Changing floor");
