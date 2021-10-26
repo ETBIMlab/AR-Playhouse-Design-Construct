@@ -58,6 +58,7 @@ MonoBehaviour:
   canSnapFullFacePanelAttachment: 0
   canSnapLadder: 1
   canSnapAttachment: 1
+  canSnapPlank: 0
   isOrientationSpecific: 0
   allowedItemOrientation: 0
 --- !u!64 &271934463244997549
@@ -118,6 +119,7 @@ MonoBehaviour:
   canSnapFullFacePanelAttachment: 0
   canSnapLadder: 1
   canSnapAttachment: 1
+  canSnapPlank: 0
   isOrientationSpecific: 0
   allowedItemOrientation: 0
 --- !u!1 &232811901051039636
@@ -132,6 +134,7 @@ GameObject:
   - component: {fileID: 5204826736809256881}
   - component: {fileID: 1947748824301919048}
   - component: {fileID: 3814720166007138826}
+  - component: {fileID: 716518654719413222}
   m_Layer: 0
   m_Name: Bridge Middle Support
   m_TagString: Untagged
@@ -221,6 +224,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4fa2c26ae609e24982c3bb50c09cb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &716518654719413222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232811901051039636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d1435de29caf74baa5758379b38b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &423914135953292560
@@ -371,6 +386,7 @@ MonoBehaviour:
   canSnapFullFacePanelAttachment: 0
   canSnapLadder: 1
   canSnapAttachment: 1
+  canSnapPlank: 0
   isOrientationSpecific: 0
   allowedItemOrientation: 0
 --- !u!65 &1956998915474148762
@@ -431,6 +447,7 @@ MonoBehaviour:
   canSnapFullFacePanelAttachment: 0
   canSnapLadder: 1
   canSnapAttachment: 1
+  canSnapPlank: 0
   isOrientationSpecific: 0
   allowedItemOrientation: 0
 --- !u!1 &2059723065738459031
@@ -521,6 +538,7 @@ MonoBehaviour:
   canSnapFullFacePanelAttachment: 0
   canSnapLadder: 1
   canSnapAttachment: 1
+  canSnapPlank: 0
   isOrientationSpecific: 0
   allowedItemOrientation: 0
 --- !u!64 &7345665054366810140
@@ -581,6 +599,7 @@ MonoBehaviour:
   canSnapFullFacePanelAttachment: 0
   canSnapLadder: 1
   canSnapAttachment: 1
+  canSnapPlank: 0
   isOrientationSpecific: 0
   allowedItemOrientation: 0
 --- !u!1 &3600340041880731921
@@ -671,6 +690,7 @@ MonoBehaviour:
   canSnapFullFacePanelAttachment: 0
   canSnapLadder: 1
   canSnapAttachment: 1
+  canSnapPlank: 0
   isOrientationSpecific: 0
   allowedItemOrientation: 0
 --- !u!65 &644767040075231516
@@ -731,6 +751,7 @@ MonoBehaviour:
   canSnapFullFacePanelAttachment: 0
   canSnapLadder: 1
   canSnapAttachment: 1
+  canSnapPlank: 0
   isOrientationSpecific: 0
   allowedItemOrientation: 0
 --- !u!1 &5240293359936576033
@@ -851,6 +872,7 @@ MonoBehaviour:
   canSnapFullFacePanelAttachment: 0
   canSnapLadder: 1
   canSnapAttachment: 1
+  canSnapPlank: 0
   isOrientationSpecific: 0
   allowedItemOrientation: 0
 --- !u!1 &7458316744930091193
@@ -1031,6 +1053,7 @@ MonoBehaviour:
   canSnapFullFacePanelAttachment: 0
   canSnapLadder: 1
   canSnapAttachment: 1
+  canSnapPlank: 0
   isOrientationSpecific: 0
   allowedItemOrientation: 0
 --- !u!65 &301651232023074223
@@ -1091,6 +1114,7 @@ MonoBehaviour:
   canSnapFullFacePanelAttachment: 0
   canSnapLadder: 1
   canSnapAttachment: 1
+  canSnapPlank: 0
   isOrientationSpecific: 0
   allowedItemOrientation: 0
 --- !u!1001 &1120549596310725008
@@ -1183,15 +1207,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3568858500484908211, guid: 029152c50e7efdf48ae70a8bad432d25, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 029152c50e7efdf48ae70a8bad432d25, type: 3}
---- !u!4 &7539652637507001309 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
-    type: 3}
-  m_PrefabInstance: {fileID: 1120549596310725008}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6897371660176659181 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5779419116815512445, guid: 029152c50e7efdf48ae70a8bad432d25,
+    type: 3}
+  m_PrefabInstance: {fileID: 1120549596310725008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7539652637507001309 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
     type: 3}
   m_PrefabInstance: {fileID: 1120549596310725008}
   m_PrefabAsset: {fileID: 0}
@@ -1591,15 +1615,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3568858500484908211, guid: 029152c50e7efdf48ae70a8bad432d25, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 029152c50e7efdf48ae70a8bad432d25, type: 3}
---- !u!1 &1378862610579143398 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5779419116815512445, guid: 029152c50e7efdf48ae70a8bad432d25,
-    type: 3}
-  m_PrefabInstance: {fileID: 4834098725662017947}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2610096459021759446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7435099710689376845, guid: 029152c50e7efdf48ae70a8bad432d25,
+    type: 3}
+  m_PrefabInstance: {fileID: 4834098725662017947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1378862610579143398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5779419116815512445, guid: 029152c50e7efdf48ae70a8bad432d25,
     type: 3}
   m_PrefabInstance: {fileID: 4834098725662017947}
   m_PrefabAsset: {fileID: 0}
