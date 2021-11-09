@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEditorInternal;
-using UnityEngine;
 using UnityEngine.Events;
 
 //2021 Cam & Samira's updated itemInfoScript (Retain all properties of the objects)
