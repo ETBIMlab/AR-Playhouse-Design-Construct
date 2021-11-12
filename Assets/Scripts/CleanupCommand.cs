@@ -48,7 +48,7 @@ public class CleanupCommand : MonoBehaviour
         assignToHDrillInScene = GameObject.FindWithTag("drillOpos");
         assignToHPbInScene = GameObject.FindWithTag("paintOpos");
 
-        Debug.Log("intiating cleanup...");
+       // Debug.Log("intiating cleanup...");
          
         keywords.Add("Cleanup", () => { this.CleanUp(); });//transports the drill and paintbrush back to the workbench
 
