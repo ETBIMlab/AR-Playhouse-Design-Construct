@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
-using UnityEditor.PackageManager;
-using UnityEditorInternal;
-using UnityEngine.Events;
+//using UnityEditor;
+//using UnityEditor.PackageManager;
+//using UnityEditorInternal;
+//using UnityEngine.Events;
 
 //2021 Cam & Samira's updated itemInfoScript (Retain all properties of the objects)
 public class ItemInfo2021: MonoBehaviour 
