@@ -19,9 +19,10 @@ GameObject:
   - component: {fileID: 5029231325011350064}
   - component: {fileID: 1535203103263296742}
   - component: {fileID: 3361163198248413142}
+  - component: {fileID: 6335838993016167783}
   m_Layer: 0
   m_Name: TubeSlide in blue
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,13 +34,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4402114513120243918}
-  m_LocalRotation: {x: -0.5132317, y: -0.5132317, z: -0.48640853, w: 0.48640838}
-  m_LocalPosition: {x: 5.2258806, y: -4.1223574, z: 3.0636368}
+  m_LocalRotation: {x: 0.6582223, y: -0.7407605, z: -0.09821031, w: -0.09149869}
+  m_LocalPosition: {x: 9.85, y: -4.345, z: 3.424}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -93.074, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: -15.424001, y: -180.37299, z: -83.19701}
 --- !u!33 &8509319174664124651
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -348,3 +349,19 @@ MonoBehaviour:
   dragClip: {fileID: 8300000, guid: 45a90682f74bb0c41b65994c63b74e60, type: 3}
   clickClip: {fileID: 8300000, guid: 9a10debaf8483ae49aa91211098634f1, type: 3}
   volume: 1
+--- !u!54 &6335838993016167783
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4402114513120243918}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
