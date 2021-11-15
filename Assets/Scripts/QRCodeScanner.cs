@@ -8,13 +8,13 @@ using UnityEngine.UI;
 /*
 public class QRCodeScanner : MonoBehaviour
 {
-    [SerializedField]
+    [SerializeField]
     private RawImage _rawImageBackground;
-    [SerializedField]
+    [SerializeField]
     private AspectRatioFitter _aspectRatioFitter;
-    [SerializedField]
+    [SerializeField]
     private TextMeshProUGUI _textOut;
-    [SerializedField]
+    [SerializeField]
     private RectTransform _scanZone;
 
     private bool _isCamAvailable;
