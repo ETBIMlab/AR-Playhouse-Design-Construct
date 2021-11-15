@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ZXing;
+//using ZXing;
 using TMPro;
 using UnityEngine.UI;
 /*
