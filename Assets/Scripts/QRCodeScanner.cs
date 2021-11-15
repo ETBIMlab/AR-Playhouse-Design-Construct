@@ -1,11 +1,11 @@
-﻿
+﻿/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ZXing;
+using ZXing; //why is this throwing errors
 using TMPro;
 using UnityEngine.UI;
-/*
+
 public class QRCodeScanner : MonoBehaviour
 {
     [SerializeField]
@@ -110,4 +110,5 @@ public class QRCodeScanner : MonoBehaviour
             }
         }
     
-}*/
+}
+*/
