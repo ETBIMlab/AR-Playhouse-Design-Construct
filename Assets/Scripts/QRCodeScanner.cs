@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ZXing;
 using TMPro;
 using UnityEngine.UI;
-
+/*
 public class QRCodeScanner : MonoBehaviour
 {
     [SerializedField]
@@ -109,4 +110,4 @@ public class QRCodeScanner : MonoBehaviour
             }
         }
     
-}
+}*/
