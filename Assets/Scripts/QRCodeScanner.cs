@@ -2,7 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
 using ZXing; //why is this throwing errors
+=======
+//using ZXing;
+>>>>>>> 6d95087d278fef74a71dca1799af9f1e19cd8922
 using TMPro;
 using UnityEngine.UI;
 
