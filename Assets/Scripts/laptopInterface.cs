@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using TMPro; //controls text mesh pro
 using UnityEngine.Windows.Speech;
 
 
@@ -19,6 +19,7 @@ public class laptopInterface : MonoBehaviour
     int schedulehours = 0;
     int scheduleminutes = 0;
     Boolean istab1 = true;
+    Boolean istab2 = false, istab3 = false;
     String itemstoDisplay = "";
     public bool removeCost = false;
 
@@ -37,6 +38,7 @@ public class laptopInterface : MonoBehaviour
     {
         keywords.Add("Switch Tab 1");
         keywords.Add("Switch Tab 2");
+        keywords.Add("Switch Tab 3");
 
         keywordRecognizer = new KeywordRecognizer(keywords.ToArray());
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
@@ -54,7 +56,7 @@ public class laptopInterface : MonoBehaviour
     {
         if(istab1)
         {
-            total.fontSize = 7;
+            total.fontSize = 6;
             total.text = //realtimeConversions(Time.realtimeSinceStartup) + "\n"
                 "Cost: $ " + money.ToString() + "\n" + "\n"
                 + "Time Spent (day:hr:min)" + "\n"
@@ -62,10 +64,26 @@ public class laptopInterface : MonoBehaviour
                  + ":" + schedulehours.ToString() + ""
                  + ":" + scheduleminutes.ToString() + "\n";
         }
-        else
+        else if (istab2)
         {
+            
             total.fontSize = 6;
             total.text = itemstoDisplay;
+        }
+        else if (istab3)
+        {
+            
+            total.fontSize = 6;
+            total.text = "<u>Voice Commands:</u> " + "\n"
+                + "Ordering objects: 'Order [Item name]' " + "\n"
+                + "Go up or down level: 'Shift Level' " + "\n"
+                 + "Fasten/unfasten an item while holding the drill: 'Drill' " + "\n"
+                 + "Turns floor on / off: 'Toggle Floor' " + "\n"
+                  + "Set floor level: 'Set Space' " + "\n"
+                   + "Hide pop can from sight: 'Vanish' " + "\n"
+                   + "View pop can: 'View Setter' " + "\n"
+                 + "returns the drill and paint brush back at the workbench: 'Cleanup' " + "\n"
+                 ;
         }
     }
 
@@ -165,10 +183,20 @@ public class laptopInterface : MonoBehaviour
         if(args.text== "Switch Tab 2")
         {
             istab1 = false;
+            istab2 = true;
+            istab3 = false;
         }
-        else
+        else if(args.text == "Switch Tab 1")
         {
             istab1 = true;
+            istab2 = false;
+            istab3 = false;
+        }
+        else if (args.text == "Switch Tab 3")
+        {
+            istab1 = false;
+            istab2 = false;
+            istab3 = true;
         }
         //time.text = "Real time:";
     }
