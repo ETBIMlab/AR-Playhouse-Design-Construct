@@ -22,7 +22,11 @@ public class laptopInterface : MonoBehaviour
     Boolean istab2 = false, istab3 = false;
     String itemstoDisplay = "";
     public bool removeCost = false;
-
+    //popup function
+    public Canvas canvas;
+    public bool toggle = false;
+    public GameObject laptop; //button for instantiation
+    //*****************************
     [Serializable]
     public struct installObj
     {
@@ -149,9 +153,6 @@ public class laptopInterface : MonoBehaviour
         scheduleminutes = temp;
     }
 
-
-
-
     public String realtimeConversions(float seconds)
     {
         float mins = Mathf.Floor(seconds / 60);
@@ -199,6 +200,19 @@ public class laptopInterface : MonoBehaviour
             istab3 = true;
         }
         //time.text = "Real time:";
+    }
+    public void popup()
+    {
+        if(toggle == false)
+        {
+            toggle = true;
+            canvas.enabled = false;
+
+        }else if(toggle == true)
+        {
+            toggle = false;
+            canvas.enabled = true; 
+        }
     }
 
 
