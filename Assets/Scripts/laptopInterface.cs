@@ -83,10 +83,11 @@ public class laptopInterface : MonoBehaviour
                 + "Go up or down level: 'Shift Level' " + "\n"
                  + "Fasten/unfasten an item while holding the drill: 'Drill' " + "\n"
                  + "Turns floor on / off: 'Toggle Floor' " + "\n"
-                  + "Set floor level: 'Set Space' " + "\n"
+                  + "Set floor level / reset scaling command: 'Set Space' " + "\n"
                    + "Hide pop can from sight: 'Vanish' " + "\n"
                    + "View pop can: 'View Setter' " + "\n"
                  + "returns the drill and paint brush back at the workbench: 'Cleanup' " + "\n"
+                 //need scaling, child, and adult view. 
                  ;
         }
     }
