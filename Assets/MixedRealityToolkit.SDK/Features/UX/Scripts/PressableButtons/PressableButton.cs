@@ -331,6 +331,7 @@ namespace Microsoft.MixedReality.Toolkit.UI
 
                 if (releaseOnTouchEnd && IsPressing)
                 {
+                    Debug.Log("Clicked");
                     UpdatePressedState(currentPushDistance);
                 }
             }
