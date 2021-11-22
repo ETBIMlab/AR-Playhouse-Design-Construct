@@ -1072,6 +1072,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1879398986}
     m_Modifications:
+    - target: {fileID: 10361944725086399, guid: 937ce507dd7ee334ba569554e24adbdd,
+        type: 3}
+      propertyPath: PanUpdated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10361944725086399, guid: 937ce507dd7ee334ba569554e24adbdd,
+        type: 3}
+      propertyPath: PanStarted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10361944725086399, guid: 937ce507dd7ee334ba569554e24adbdd,
+        type: 3}
+      propertyPath: PanUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10361944725086399, guid: 937ce507dd7ee334ba569554e24adbdd,
+        type: 3}
+      propertyPath: PanUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10361944725086399, guid: 937ce507dd7ee334ba569554e24adbdd,
+        type: 3}
+      propertyPath: PanUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 85276655}
+    - target: {fileID: 10361944725086399, guid: 937ce507dd7ee334ba569554e24adbdd,
+        type: 3}
+      propertyPath: PanStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10361944725086399, guid: 937ce507dd7ee334ba569554e24adbdd,
+        type: 3}
+      propertyPath: PanStarted.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10361944725086399, guid: 937ce507dd7ee334ba569554e24adbdd,
+        type: 3}
+      propertyPath: PanStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 85276655}
     - target: {fileID: 915644437212303363, guid: 937ce507dd7ee334ba569554e24adbdd,
         type: 3}
       propertyPath: m_Enabled
@@ -1182,6 +1222,11 @@ PrefabInstance:
       propertyPath: rightPoint
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6890004885709557393, guid: 937ce507dd7ee334ba569554e24adbdd,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b11f08112e7059542ae51c208db0af7c, type: 3}
     - target: {fileID: 7627769491567839026, guid: 937ce507dd7ee334ba569554e24adbdd,
         type: 3}
       propertyPath: m_Enabled
@@ -1482,9 +1527,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 85276655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fe779e737d02ce498bf320605d3f937, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d12bf11989d03349a580506fd32dace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  catalog:
+  - {fileID: 2100000, guid: 3c657efa06c0ec14fb7dfe8649cbac1c, type: 2}
+  - {fileID: 2100000, guid: 6bafe257f059c0e4093aa418690e53ef, type: 2}
+  - {fileID: 2100000, guid: a3cd89649d107a24ca8f7169472eb454, type: 2}
+  - {fileID: 2100000, guid: edbf87b35e22929438b2bb4e7ca182b2, type: 2}
+  - {fileID: 2100000, guid: 7ceedcc79d7f11d498df7e0072f0fedc, type: 2}
+  - {fileID: 2100000, guid: 4a702e169baa3ad4ba61d44a9ab8d089, type: 2}
+  - {fileID: 2100000, guid: 42153680282f1434086e80cb111e9de6, type: 2}
+  - {fileID: 2100000, guid: ddbbc00b56b79ff4abebd65b2da04955, type: 2}
+  - {fileID: 2100000, guid: 71e3aff70af21334e8494ade5132cf77, type: 2}
+  - {fileID: 2100000, guid: 2d9d5a1fbc9b48f4694709f32e5f8d82, type: 2}
+  - {fileID: 2100000, guid: bfd5a7af8e3024b49bbab7f95d3c076f, type: 2}
+  - {fileID: 2100000, guid: 243375031d35a01428b829db436ad297, type: 2}
+  - {fileID: 2100000, guid: a0e22963925d58b478439534346adf77, type: 2}
+  - {fileID: 2100000, guid: 3a3211e2737b5c741b188832d42b532c, type: 2}
+  - {fileID: 2100000, guid: f579ec797a6e3484dbdb60194129770f, type: 2}
+  - {fileID: 2100000, guid: 46c504babd225cd40986b47e224158be, type: 2}
+  - {fileID: 2100000, guid: 7d1c3c1a7553eaf43b03dae233c6632f, type: 2}
+  - {fileID: 2100000, guid: bcf5409bab3d0ee458031b7498291aa6, type: 2}
+  - {fileID: 2100000, guid: a7ed79c40077acb45bd35e9b2e7986bb, type: 2}
 --- !u!1001 &95362646
 PrefabInstance:
   m_ObjectHideFlags: 0
