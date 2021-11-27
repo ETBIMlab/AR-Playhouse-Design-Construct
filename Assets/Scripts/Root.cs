@@ -12,11 +12,12 @@ using Microsoft.MixedReality.Toolkit.UI;
 //Parker
 public class Root : MonoBehaviour
 {
+    public GameObject assignToHand, assignToTextTitle, assignToTextExp;
     public AudioRoot audio;
     private AudioSource audioSource;
     public AudioClip spaceSet;
     public GameObject environmentSetter;
-    public GameObject environmentContainer;
+    public GameObject environmentContainer, Tutorial;
     public GameObject childToggle;
     public GameObject levelToggle;
     public int shiftAmount;
@@ -62,6 +63,7 @@ public class Root : MonoBehaviour
         scaleLevels.Add(new scaleState(new Vector3(2.75f, 2.75f, 2.75f), 2.75f));
 
         this.toggleVisibility(false, environmentContainer);
+       // this.toggleVisibility(false, Tutorial); //does not fix it, it's under the environment container Idk why it shows
 
         keywords.Add("Set Space", () => { this.setSpace(); audioSource.PlayOneShot(spaceSet,1F); });//set the space for the simulator
 
@@ -187,7 +189,10 @@ public class Root : MonoBehaviour
         newPosition.z = environmentSetter.transform.position.z + environmentOffset.z;
 
         environmentContainer.transform.position = newPosition;
-
+        Tutorial.SetActive(true);
+        this.toggleVisibility(false, assignToHand);
+        this.toggleVisibility(false, assignToTextTitle);
+        this.toggleVisibility(false, assignToTextExp);
         this.toggleVisibility(true, environmentContainer);
         this.scale(1);
 

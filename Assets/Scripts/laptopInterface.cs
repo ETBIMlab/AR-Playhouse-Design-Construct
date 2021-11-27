@@ -10,9 +10,10 @@ using UnityEngine.Windows.Speech;
 public class laptopInterface : MonoBehaviour
 {
     public TextMeshPro total;
+     //   LaptopInterface, WindowInterface;
     KeywordRecognizer keywordRecognizer = null;
     List<string> keywords = new List<string>();
-
+  
     double money = 0.0;
     int timeinminutes = 0;
     int scheduledays = 0;
@@ -22,10 +23,7 @@ public class laptopInterface : MonoBehaviour
     Boolean istab2 = false, istab3 = false;
     String itemstoDisplay = "";
     public bool removeCost = false;
-    //popup function
-    public Canvas canvas;
-    public bool toggle = false;
-    public GameObject laptop; //button for instantiation
+
     //*****************************
     [Serializable]
     public struct installObj
@@ -60,7 +58,7 @@ public class laptopInterface : MonoBehaviour
     {
         if(istab1)
         {
-            total.fontSize = 6;
+            total.fontSize = 16;
             total.text = //realtimeConversions(Time.realtimeSinceStartup) + "\n"
                 "Cost: $ " + money.ToString() + "\n" + "\n"
                 + "Time Spent (day:hr:min)" + "\n"
@@ -71,13 +69,13 @@ public class laptopInterface : MonoBehaviour
         else if (istab2)
         {
             
-            total.fontSize = 6;
+            total.fontSize = 16;
             total.text = itemstoDisplay;
         }
         else if (istab3)
         {
             
-            total.fontSize = 6;
+            total.fontSize = 17;
             total.text = "<u>Voice Commands:</u> " + "\n"
                 + "Ordering objects: 'Order [Item name]' " + "\n"
                 + "Go up or down level: 'Shift Level' " + "\n"
@@ -202,19 +200,7 @@ public class laptopInterface : MonoBehaviour
         }
         //time.text = "Real time:";
     }
-    public void popup()
-    {
-        if(toggle == false)
-        {
-            toggle = true;
-            canvas.enabled = false;
-
-        }else if(toggle == true)
-        {
-            toggle = false;
-            canvas.enabled = true; 
-        }
-    }
+  
 
 
 }
