@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿ ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,7 +58,7 @@ public class laptopInterface : MonoBehaviour
     {
         if(istab1)
         {
-            total.fontSize = 16;
+            total.fontSize = 6;
             total.text = //realtimeConversions(Time.realtimeSinceStartup) + "\n"
                 "Cost: $ " + money.ToString() + "\n" + "\n"
                 + "Time Spent (day:hr:min)" + "\n"
@@ -69,13 +69,13 @@ public class laptopInterface : MonoBehaviour
         else if (istab2)
         {
             
-            total.fontSize = 16;
+            total.fontSize = 6;
             total.text = itemstoDisplay;
         }
         else if (istab3)
         {
             
-            total.fontSize = 17;
+            total.fontSize = 7;
             total.text = "<u>Voice Commands:</u> " + "\n"
                 + "Ordering objects: 'Order [Item name]' " + "\n"
                 + "Go up or down level: 'Shift Level' " + "\n"
