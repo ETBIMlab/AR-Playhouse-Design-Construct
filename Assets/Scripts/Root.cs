@@ -12,12 +12,13 @@ using Microsoft.MixedReality.Toolkit.UI;
 //Parker
 public class Root : MonoBehaviour
 {
-    public GameObject assignToHand, assignToTextTitle, assignToTextExp;
+ //   public GameObject assignToHand, assignToTextTitle, assignToTextExp;
     public AudioRoot audio;
     private AudioSource audioSource;
     public AudioClip spaceSet;
     public GameObject environmentSetter;
-    public GameObject environmentContainer, Tutorial;
+    public GameObject environmentContainer;
+   // public GameObject Tutorial;
     public GameObject childToggle;
     public GameObject levelToggle;
     public int shiftAmount;
@@ -99,20 +100,17 @@ public class Root : MonoBehaviour
         keywords.Add("Toggle Level", () => { this.toggleLevel();  });//toggle the  level up or down
 
         keywords.Add("Toggle floor", () => { this.toggleFloor(); audio.changeView(); });//toggle the  floor on or off
-       // keywords.Add("Cleanup", () => { this.CleanUp(); });//transports the drill and paintbrush back to the workbench
+        keywords.Add("Cleanup", () => { this.CleanUp(); });//transports the drill and paintbrush back to the workbench
 
-
-        keywords.Add("Change View", () => { this.toggleButton(); audio.changeView(); });//move through the scaling
+        keywords.Add("child view", () => { this.toggleButton(); audio.changeView(); });//scale 5 is the sproximate size for a childs view of the playhouse
+        // keywords.Add("Change View", () => { this.toggleButton(); audio.changeView(); });//move through the scaling
+        //  keywords.Add("Toggle view", () => { this.toggleButton(); audio.changeView(); });
+        //  keywords.Add("Normal view", () => { this.toggleButton(); audio.changeView(); });//scale 2 is the aproximate size for the real play house
         keywords.Add("Scale half", () => { this.scale(0); audio.changeView(); });
         keywords.Add("Scale one", () => { this.scale(1); audio.changeView(); });
-        keywords.Add("Toggle view", () => { this.toggleButton(); audio.changeView(); });
-        keywords.Add("Normal view", () => { this.toggleButton(); audio.changeView(); });//scale 2 is the aproximate size for the real play house
         keywords.Add("Scale two", () => { this.scale(2); audio.changeView(); });
         keywords.Add("Scale three", () => { this.scale(3); audio.changeView(); });
         keywords.Add("Scale four", () => { this.scale(4); audio.changeView(); });
-
-        keywords.Add("child view", () => { this.toggleButton(); audio.changeView(); });//scale 5 is the sproximate size for a childs view of the playhouse
-
         keywords.Add("Scale five", () => { this.scale(5); audio.changeView(); });
         keywords.Add("Scale six", () => { this.scale(6); audio.changeView(); });
         keywords.Add("Scale seven", () => { this.scale(7); audio.changeView(); });
@@ -189,15 +187,24 @@ public class Root : MonoBehaviour
         newPosition.z = environmentSetter.transform.position.z + environmentOffset.z;
 
         environmentContainer.transform.position = newPosition;
-        Tutorial.SetActive(true);
-        this.toggleVisibility(false, assignToHand);
-        this.toggleVisibility(false, assignToTextTitle);
-        this.toggleVisibility(false, assignToTextExp);
+       // Tutorial.SetActive(true);
+     //   this.toggleVisibility(false, assignToHand);
+      //  this.toggleVisibility(false, assignToTextTitle);
+        //this.toggleVisibility(false, assignToTextExp);
         this.toggleVisibility(true, environmentContainer);
         this.scale(1);
 
         Debug.Log("\n \n________________________________\nSETTING ENV: " + environmentContainer.transform.position.ToString());
     }
+
+    public void endgame()
+    {
+        //Here we can do many things. we can show the totals for the meta data collected, we could show a list of objects ordered and the price. 
+        // we first turn off the enviornment container NEXT TO ADD show a screen with totals and have it visible only after the butotn has been pressed.
+        this.toggleVisibility(false, environmentContainer);
+
+    }
+
 
     public void shiftLevel()
     {
