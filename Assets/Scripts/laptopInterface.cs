@@ -58,7 +58,7 @@ public class laptopInterface : MonoBehaviour
     {
        // if(istab1)
        // {
-            total.fontSize = 6;
+           // total.fontSize = 6;
             total.text = //realtimeConversions(Time.realtimeSinceStartup) + "\n"
                 "Cost: $ " + money.ToString() + "\n" + "\n"
                 + "Time Spent (day:hr:min)" + "\n"
