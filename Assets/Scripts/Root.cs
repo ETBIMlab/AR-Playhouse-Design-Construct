@@ -17,17 +17,13 @@ public class Root : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip spaceSet;
     public GameObject environmentSetter;
-    public GameObject environmentContainer;
+    public GameObject environmentContainer, handTutorial, titleHandText, subHandText;
    // public GameObject Tutorial;
     public GameObject childToggle;
     public GameObject levelToggle;
     public int shiftAmount;
     public Vector3 environmentOffset;
-    public GameObject assignToDrillInScene;
-    public GameObject assignToPaintBrushInScene;
-    public GameObject assignToTableInScene;
-    //private Vector3 drillPos = new Vector3(10.4f, 9f, -41.6f);
-    private Vector3 drillOgPos;
+    
 
     KeywordRecognizer keywordRecognizer = null;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
@@ -78,29 +74,10 @@ public class Root : MonoBehaviour
         {
             this.toggleLevel(); audio.shiftLevel();
         });
-        /*keywords.Add("Move up", () => { //move to the upper level if the player is on the ground floor
-            if(!isShiftedUp)//player is on the ground floor
-            {
-                this.shiftLevel();
-                audio.shiftLevel();
-            }
-        });
-        keywords.Add("Move down", () => { //move to the upper level if the player is on the ground floor
-            if (isShiftedUp)//player is on the upper floor
-            {
-                this.shiftLevel();
-                audio.shiftLevel();
-            }
-        });*/
-        //drillOgPos = new Vector3(assignToDrillInScene.transform.position.x, assignToDrillInScene.transform.position.y, assignToDrillInScene.transform.position.z);
-        //alternatively, just: 
-        //drillOgPos = assignToDrillInScene.transform.position;
-       // drillOgPos = assignToTableInScene.transform.position;
-        Debug.Log("drillogPos: " + drillOgPos.ToString());
+       
         keywords.Add("Toggle Level", () => { this.toggleLevel();  });//toggle the  level up or down
 
         keywords.Add("Toggle floor", () => { this.toggleFloor(); audio.changeView(); });//toggle the  floor on or off
-        keywords.Add("Cleanup", () => { this.CleanUp(); });//transports the drill and paintbrush back to the workbench
 
         keywords.Add("child view", () => { this.toggleButton(); audio.changeView(); });//scale 5 is the sproximate size for a childs view of the playhouse
         // keywords.Add("Change View", () => { this.toggleButton(); audio.changeView(); });//move through the scaling
@@ -129,17 +106,7 @@ public class Root : MonoBehaviour
     }
 
 
-    public void CleanUp()
-    {
-        //assignToDrillInScene.transform.position = new Vector3(10.41f, 9.02f, -40.61f);
-        //assignToPaintBrushInScene.transform.position = new Vector3(6.36f, 9.32f, -41.4f);
-        //assignToDrillInScene.transform.SetPositionAndRotation(new Vector3(10.41f, 9.02f, -40.61f), assignToDrillInScene.transform.rotation);
-        //assignToDrillInScene.transform.position = drillPos;
-        assignToDrillInScene.transform.position = drillOgPos;
-        Debug.Log("back 2 drillogPos: " + drillOgPos.ToString());
-
-
-    }
+   
     public void toggleButton()//toggle the switch button for child view
     {
        
@@ -192,6 +159,10 @@ public class Root : MonoBehaviour
       //  this.toggleVisibility(false, assignToTextTitle);
         //this.toggleVisibility(false, assignToTextExp);
         this.toggleVisibility(true, environmentContainer);
+        this.toggleVisibility(false, handTutorial); //this makes the hand go away
+        this.toggleVisibility(false, titleHandText); //this makes the hand go away
+        this.toggleVisibility(false, subHandText); //this makes the hand go away
+
         this.scale(1);
 
         Debug.Log("\n \n________________________________\nSETTING ENV: " + environmentContainer.transform.position.ToString());

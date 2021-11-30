@@ -9,8 +9,8 @@ using UnityEngine.Windows.Speech;
 
 public class laptopInterface : MonoBehaviour
 {
-    public TextMeshPro total;
-     //   LaptopInterface, WindowInterface;
+    public TextMeshPro total, WindowInterface;
+     //   LaptopInterface, ;
     KeywordRecognizer keywordRecognizer = null;
     List<string> keywords = new List<string>();
   
@@ -56,8 +56,8 @@ public class laptopInterface : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(istab1)
-        {
+       // if(istab1)
+       // {
             total.fontSize = 6;
             total.text = //realtimeConversions(Time.realtimeSinceStartup) + "\n"
                 "Cost: $ " + money.ToString() + "\n" + "\n"
@@ -65,14 +65,14 @@ public class laptopInterface : MonoBehaviour
                 + "" + scheduledays.ToString() + ""
                  + ":" + schedulehours.ToString() + ""
                  + ":" + scheduleminutes.ToString() + "\n";
-        }
-        else if (istab2)
-        {
-            
-            total.fontSize = 6;
-            total.text = itemstoDisplay;
-        }
-        else if (istab3)
+       // }
+       // else if (istab2)
+       // {
+
+            WindowInterface.fontSize = 16;
+            WindowInterface.text = itemstoDisplay;
+       // }
+      /*  else if (istab3)
         {
             
             total.fontSize = 7;
@@ -87,7 +87,7 @@ public class laptopInterface : MonoBehaviour
                  + "returns the drill and paint brush back at the workbench: 'Cleanup' " + "\n"
                  //need scaling, child, and adult view. 
                  ;
-        }
+        }*/
     }
 
     public void additem(double mon, int dtime, string iname, int quant, int itime)
