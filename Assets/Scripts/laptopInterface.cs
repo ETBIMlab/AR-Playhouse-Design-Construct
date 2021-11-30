@@ -9,11 +9,11 @@ using UnityEngine.Windows.Speech;
 
 public class laptopInterface : MonoBehaviour
 {
-    public TextMeshPro total, WindowInterface;
+    public TextMeshPro total = null, WindowInterface = null;
      //   LaptopInterface, ;
     KeywordRecognizer keywordRecognizer = null;
     List<string> keywords = new List<string>();
-  
+    public GameObject webBrowser;
     double money = 0.0;
     int timeinminutes = 0;
     int scheduledays = 0;
@@ -57,7 +57,7 @@ public class laptopInterface : MonoBehaviour
     void Update()
     {
        // if(istab1)
-       // {
+        //{
            // total.fontSize = 6;
             total.text = //realtimeConversions(Time.realtimeSinceStartup) + "\n"
                 "Cost: $ " + money.ToString() + "\n" + "\n"
@@ -65,13 +65,13 @@ public class laptopInterface : MonoBehaviour
                 + "" + scheduledays.ToString() + ""
                  + ":" + schedulehours.ToString() + ""
                  + ":" + scheduleminutes.ToString() + "\n";
-       // }
-       // else if (istab2)
-       // {
+        //}
+         if (istab2)
+        {
 
-            WindowInterface.fontSize = 16;
+         //   WindowInterface.fontSize = 16;
             WindowInterface.text = itemstoDisplay;
-       // }
+        }
       /*  else if (istab3)
         {
             
@@ -89,7 +89,10 @@ public class laptopInterface : MonoBehaviour
                  ;
         }*/
     }
-
+    public void webBrowserActive()
+    {
+        istab2 = true;
+    }
     public void additem(double mon, int dtime, string iname, int quant, int itime)
     {
         Debug.Log(iname);

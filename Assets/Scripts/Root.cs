@@ -58,6 +58,7 @@ public class Root : MonoBehaviour
         scaleLevels.Add(new scaleState(new Vector3(2.25f, 2.25f, 2.25f), 2.25f));
         scaleLevels.Add(new scaleState(new Vector3(2.5f, 2.5f, 2.5f), 2.5f));
         scaleLevels.Add(new scaleState(new Vector3(2.75f, 2.75f, 2.75f), 2.75f));
+        environmentContainer.gameObject.SetActive(false);
 
         this.toggleVisibility(false, environmentContainer);
        // this.toggleVisibility(false, Tutorial); //does not fix it, it's under the environment container Idk why it shows
@@ -159,9 +160,14 @@ public class Root : MonoBehaviour
       //  this.toggleVisibility(false, assignToTextTitle);
         //this.toggleVisibility(false, assignToTextExp);
         this.toggleVisibility(true, environmentContainer);
-        this.toggleVisibility(false, handTutorial); //this makes the hand go away
-        this.toggleVisibility(false, titleHandText); //this makes the hand go away
-        this.toggleVisibility(false, subHandText); //this makes the hand go away
+        environmentContainer.gameObject.SetActive(true);
+        handTutorial.gameObject.SetActive(false);
+        titleHandText.gameObject.SetActive(false);
+        subHandText.gameObject.SetActive(false);
+
+        //this.toggleVisibility(false, handTutorial); //this makes the hand go away
+        //this.toggleVisibility(false, titleHandText); //this makes the text go away
+        //this.toggleVisibility(false, subHandText); //this makes the text go away
 
         this.scale(1);
 
